@@ -21,7 +21,7 @@ OPTS     = -O6 -fno-second-underscore
 DRVOPTS  = $(OPTS)
 NOOPT    = -fno-second-underscore
 LOADER   = gfortran
-LOADOPTS = -O6 -fno-second-underscore -L/usr/local/lib -L/usr/X11R6/lib -L/sw/lib -L/usr/local/gfortran/lib -L/opt/local/lib
+LOADOPTS = -O6 -fno-second-underscore -L/usr/local//lib -L/usr/X11R6/lib -L/sw/lib -L/usr/local/gfortran/lib -L/opt/local/lib
 #
 #  The archiver and the flag(s) to use when building archive (library)
 #  If you system has no ranlib, set RANLIB = echo.
