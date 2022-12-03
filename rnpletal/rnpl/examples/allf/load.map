@@ -1,0 +1,2109 @@
+Archive member included because of file (symbol)
+
+../../../lib/librnpl.a(bbhutil_f.o)
+                              wave1df.o (rdvcpy_)
+../../../lib/librnpl.a(librnpl_f.o)
+                              wave1df.o (rvsxynt_)
+../../../lib/librnpl.a(librnplf77.o)
+                              wave1df.o (catsqz_)
+../../../lib/librnpl.a(sdf_f.o)
+                              wave1df.o (gft_set_single_)
+../../../lib/librnpl.a(bbhutil.o)
+                              ../../../lib/librnpl.a(bbhutil_f.o) (rdvcpy)
+../../../lib/librnpl.a(librnpl.o)
+                              ../../../lib/librnpl.a(librnpl_f.o) (rvsxynt)
+../../../lib/librnpl.a(sdf.o)
+                              ../../../lib/librnpl.a(sdf_f.o) (gft_set_single)
+../../../lib/librnpl.a(gpar.tab.o)
+                              ../../../lib/librnpl.a(bbhutil.o) (sget_param)
+../../../lib/librnpl.a(lex.gpar.o)
+                              ../../../lib/librnpl.a(gpar.tab.o) (gparlex)
+../../../lib/librnpl.a(cliser.o)
+                              ../../../lib/librnpl.a(sdf.o) (ser0_connect)
+/afs/.aei-potsdam.mpg.de/u/choptuik/lib/libxvs.a(libxvs.o)
+                              ../../../lib/librnpl.a(librnpl.o) (vsxynt)
+/afs/.aei-potsdam.mpg.de/u/choptuik/lib/libxvs.a(sdf_util.o)
+                              /afs/.aei-potsdam.mpg.de/u/choptuik/lib/libxvs.a(libxvs.o) (new_SDFDS)
+/afs/.aei-potsdam.mpg.de/u/choptuik/lib/libxvs.a(xvscliser.o)
+                              /afs/.aei-potsdam.mpg.de/u/choptuik/lib/libxvs.a(libxvs.o) (ser0_connect_xvs)
+/opt/net/afs/apps/intel/compiler91/lib/libifport.a(system.o)
+                              wave1df.o (system_)
+/opt/net/afs/apps/intel/compiler91/lib/libifport.a(utility_alloccstr.o)
+                              /opt/net/afs/apps/intel/compiler91/lib/libifport.a(system.o) (allocCstr)
+/opt/net/afs/apps/intel/compiler91/lib/libifcore.a(for_close.o)
+                              wave1df.o (for_close)
+/opt/net/afs/apps/intel/compiler91/lib/libifcore.a(for_close_proc.o)
+                              /opt/net/afs/apps/intel/compiler91/lib/libifcore.a(for_close.o) (for__close_proc)
+/opt/net/afs/apps/intel/compiler91/lib/libifcore.a(for_desc_item.o)
+                              /opt/net/afs/apps/intel/compiler91/lib/libifcore.a(for_close.o) (for__key_desc_ret_item)
+/opt/net/afs/apps/intel/compiler91/lib/libifcore.a(for_diags_intel.o)
+                              /opt/net/afs/apps/intel/compiler91/lib/libifcore.a(for_close.o) (for__issue_diagnostic)
+/opt/net/afs/apps/intel/compiler91/lib/libifcore.a(for_errsns.o)
+                              /opt/net/afs/apps/intel/compiler91/lib/libifport.a(utility_alloccstr.o) (for_errsns_load)
+/opt/net/afs/apps/intel/compiler91/lib/libifcore.a(for_exit_handler.o)
+                              /opt/net/afs/apps/intel/compiler91/lib/libifcore.a(for_diags_intel.o) (for__exit_handler)
+/opt/net/afs/apps/intel/compiler91/lib/libifcore.a(for_init.o)
+                              /opt/net/afs/apps/intel/compiler91/lib/libifcore.a(for_diags_intel.o) (for__l_excpt_info)
+/opt/net/afs/apps/intel/compiler91/lib/libifcore.a(for_inquire.o)
+                              ../../../lib/librnpl.a(librnplf77.o) (for_inquire)
+/opt/net/afs/apps/intel/compiler91/lib/libifcore.a(for_common_inquire.o)
+                              /opt/net/afs/apps/intel/compiler91/lib/libifcore.a(for_inquire.o) (for__common_inquire)
+/opt/net/afs/apps/intel/compiler91/lib/libifcore.a(for_io_util.o)
+                              /opt/net/afs/apps/intel/compiler91/lib/libifcore.a(for_diags_intel.o) (for_check_env_name)
+/opt/net/afs/apps/intel/compiler91/lib/libifcore.a(for_lub_mgt.o)
+                              /opt/net/afs/apps/intel/compiler91/lib/libifcore.a(for_close.o) (for__deallocate_lub)
+/opt/net/afs/apps/intel/compiler91/lib/libifcore.a(for_need_lf.o)
+                              /opt/net/afs/apps/intel/compiler91/lib/libifcore.a(for_close_proc.o) (for__rm_from_lf_table)
+/opt/net/afs/apps/intel/compiler91/lib/libifcore.a(for_open.o)
+                              wave1df.o (for_open)
+/opt/net/afs/apps/intel/compiler91/lib/libifcore.a(for_open_proc.o)
+                              /opt/net/afs/apps/intel/compiler91/lib/libifcore.a(for_open.o) (for__reopen_file)
+/opt/net/afs/apps/intel/compiler91/lib/libifcore.a(for_put.o)
+                              /opt/net/afs/apps/intel/compiler91/lib/libifcore.a(for_close_proc.o) (for__write_output)
+/opt/net/afs/apps/intel/compiler91/lib/libifcore.a(for_reentrancy.o)
+                              wave1df.o (for_set_reentrancy)
+/opt/net/afs/apps/intel/compiler91/lib/libifcore.a(for_rseq_fmt.o)
+                              wave1df.o (for_read_seq_fmt)
+/opt/net/afs/apps/intel/compiler91/lib/libifcore.a(for_rseq_lis.o)
+                              wave1df.o (for_read_seq_lis)
+/opt/net/afs/apps/intel/compiler91/lib/libifcore.a(for_stop.o)
+                              wave1df.o (for_stop_core)
+/opt/net/afs/apps/intel/compiler91/lib/libifcore.a(for_vm.o)
+                              /opt/net/afs/apps/intel/compiler91/lib/libifcore.a(for_close_proc.o) (for__get_vm)
+/opt/net/afs/apps/intel/compiler91/lib/libifcore.a(for_wint_fmt.o)
+                              wave1df.o (for_write_int_fmt)
+/opt/net/afs/apps/intel/compiler91/lib/libifcore.a(for_wseq.o)
+                              /opt/net/afs/apps/intel/compiler91/lib/libifcore.a(for_close_proc.o) (for__finish_ufseq_write)
+/opt/net/afs/apps/intel/compiler91/lib/libifcore.a(for_wseq_fmt.o)
+                              wave1df.o (for_write_seq_fmt)
+/opt/net/afs/apps/intel/compiler91/lib/libifcore.a(for_wseq_lis.o)
+                              wave1df.o (for_write_seq_lis)
+/opt/net/afs/apps/intel/compiler91/lib/libifcore.a(for_f90str.o)
+                              wave1df.o (for_cpystr)
+/opt/net/afs/apps/intel/compiler91/lib/libifcore.a(for_getarg.o)
+                              wave1df.o (for_iargc)
+/opt/net/afs/apps/intel/compiler91/lib/libifcore.a(for_90_index.o)
+                              ../../../lib/librnpl.a(librnplf77.o) (for_f90_index)
+/opt/net/afs/apps/intel/compiler91/lib/libifcore.a(cvt_text_to_int.o)
+                              /opt/net/afs/apps/intel/compiler91/lib/libifcore.a(for_lub_mgt.o) (cvt_text_to_integer)
+/opt/net/afs/apps/intel/compiler91/lib/libifcore.a(cvt_ieee_double.o)
+                              /opt/net/afs/apps/intel/compiler91/lib/libifcore.a(for_io_util.o) (cvt_ieee_double_to_cray)
+/opt/net/afs/apps/intel/compiler91/lib/libifcore.a(cvt_ieee_single.o)
+                              /opt/net/afs/apps/intel/compiler91/lib/libifcore.a(for_io_util.o) (cvt_ieee_single_to_ibm_short)
+/opt/net/afs/apps/intel/compiler91/lib/libifcore.a(cvt_vax_d.o)
+                              /opt/net/afs/apps/intel/compiler91/lib/libifcore.a(for_io_util.o) (cvt_vax_d_to_ieee_double)
+/opt/net/afs/apps/intel/compiler91/lib/libifcore.a(cvt_vax_f.o)
+                              /opt/net/afs/apps/intel/compiler91/lib/libifcore.a(for_io_util.o) (cvt_vax_f_to_ieee_single)
+/opt/net/afs/apps/intel/compiler91/lib/libifcore.a(cvt_vax_g.o)
+                              /opt/net/afs/apps/intel/compiler91/lib/libifcore.a(for_io_util.o) (cvt_vax_g_to_ieee_double)
+/opt/net/afs/apps/intel/compiler91/lib/libifcore.a(cvt_ibm_long.o)
+                              /opt/net/afs/apps/intel/compiler91/lib/libifcore.a(for_io_util.o) (cvt_ibm_long_to_ieee_double)
+/opt/net/afs/apps/intel/compiler91/lib/libifcore.a(cvt_ibm_short.o)
+                              /opt/net/afs/apps/intel/compiler91/lib/libifcore.a(for_io_util.o) (cvt_ibm_short_to_ieee_single)
+/opt/net/afs/apps/intel/compiler91/lib/libifcore.a(cvt_cray.o)
+                              /opt/net/afs/apps/intel/compiler91/lib/libifcore.a(for_io_util.o) (cvt_cray_to_ieee_double)
+/opt/net/afs/apps/intel/compiler91/lib/libifcore.a(tbk_traceback.o)
+                              /opt/net/afs/apps/intel/compiler91/lib/libifcore.a(for_diags_intel.o) (tbk_stack_trace)
+/opt/net/afs/apps/intel/compiler91/lib/libifcore.a(for_exit.o)
+                              /opt/net/afs/apps/intel/compiler91/lib/libifcore.a(for_reentrancy.o) (for_exit)
+/opt/net/afs/apps/intel/compiler91/lib/libifcore.a(for_fmt_comp.o)
+                              /opt/net/afs/apps/intel/compiler91/lib/libifcore.a(for_rseq_fmt.o) (for__format_compiler)
+/opt/net/afs/apps/intel/compiler91/lib/libifcore.a(for_fmt_val.o)
+                              /opt/net/afs/apps/intel/compiler91/lib/libifcore.a(for_wint_fmt.o) (for__format_value)
+/opt/net/afs/apps/intel/compiler91/lib/libifcore.a(for_get.o)
+                              /opt/net/afs/apps/intel/compiler91/lib/libifcore.a(for_open_proc.o) (for__get_su)
+/opt/net/afs/apps/intel/compiler91/lib/libifcore.a(for_index.o)
+                              /opt/net/afs/apps/intel/compiler91/lib/libifcore.a(for_90_index.o) (for_index)
+/opt/net/afs/apps/intel/compiler91/lib/libifcore.a(for_intrp_fmt.o)
+                              /opt/net/afs/apps/intel/compiler91/lib/libifcore.a(for_rseq_fmt.o) (for__interp_fmt)
+/opt/net/afs/apps/intel/compiler91/lib/libifcore.a(for_ldir_wfs.o)
+                              /opt/net/afs/apps/intel/compiler91/lib/libifcore.a(for_rseq_lis.o) (for__wfs_table)
+/opt/net/afs/apps/intel/compiler91/lib/libifcore.a(cvt_cvtas_s.o)
+                              /opt/net/afs/apps/intel/compiler91/lib/libifcore.a(for_fmt_val.o) (cvt_ieee_s_to_text_ex)
+/opt/net/afs/apps/intel/compiler91/lib/libifcore.a(cvt_cvtas_t.o)
+                              /opt/net/afs/apps/intel/compiler91/lib/libifcore.a(for_fmt_val.o) (cvt_ieee_t_to_text_ex)
+/opt/net/afs/apps/intel/compiler91/lib/libifcore.a(cvt_cvtas_x.o)
+                              /opt/net/afs/apps/intel/compiler91/lib/libifcore.a(for_fmt_val.o) (cvt_ieee_x_to_text_ex)
+/opt/net/afs/apps/intel/compiler91/lib/libifcore.a(cvt__globals.o)
+                              /opt/net/afs/apps/intel/compiler91/lib/libifcore.a(cvt_ieee_double.o) (vax_c)
+/opt/net/afs/apps/intel/compiler91/lib/libifcore.a(cvt_int_to_text.o)
+                              /opt/net/afs/apps/intel/compiler91/lib/libifcore.a(for_fmt_val.o) (cvt_integer_to_text)
+/opt/net/afs/apps/intel/compiler91/lib/libifcore.a(cvt_data_to_text.o)
+                              /opt/net/afs/apps/intel/compiler91/lib/libifcore.a(for_fmt_val.o) (cvt_data_to_text)
+/opt/net/afs/apps/intel/compiler91/lib/libifcore.a(cvt_log_to_text.o)
+                              /opt/net/afs/apps/intel/compiler91/lib/libifcore.a(for_fmt_val.o) (cvt_boolean_to_text_ex)
+/opt/net/afs/apps/intel/compiler91/lib/libifcore.a(cvt_text_to_data.o)
+                              /opt/net/afs/apps/intel/compiler91/lib/libifcore.a(for_fmt_val.o) (cvt_text_to_data)
+/opt/net/afs/apps/intel/compiler91/lib/libifcore.a(cvt_text_to_log.o)
+                              /opt/net/afs/apps/intel/compiler91/lib/libifcore.a(for_fmt_val.o) (cvt_text_to_boolean)
+/opt/net/afs/apps/intel/compiler91/lib/libifcore.a(cvtas_a_to_s.o)
+                              /opt/net/afs/apps/intel/compiler91/lib/libifcore.a(cvt_cvtas_s.o) (cvtas_a_to_s)
+/opt/net/afs/apps/intel/compiler91/lib/libifcore.a(cvtas_a_to_t.o)
+                              /opt/net/afs/apps/intel/compiler91/lib/libifcore.a(cvt_cvtas_t.o) (cvtas_a_to_t)
+/opt/net/afs/apps/intel/compiler91/lib/libifcore.a(cvtas_s_to_a.o)
+                              /opt/net/afs/apps/intel/compiler91/lib/libifcore.a(cvt_cvtas_s.o) (cvtas_s_to_a)
+/opt/net/afs/apps/intel/compiler91/lib/libifcore.a(cvtas_t_to_a.o)
+                              /opt/net/afs/apps/intel/compiler91/lib/libifcore.a(cvt_cvtas_t.o) (cvtas_t_to_a)
+/opt/net/afs/apps/intel/compiler91/lib/libifcore.a(cvtas_nan_s.o)
+                              /opt/net/afs/apps/intel/compiler91/lib/libifcore.a(cvtas_a_to_s.o) (cvtas_string_to_nan_s)
+/opt/net/afs/apps/intel/compiler91/lib/libifcore.a(cvtas_nan_t.o)
+                              /opt/net/afs/apps/intel/compiler91/lib/libifcore.a(cvtas_a_to_t.o) (cvtas_string_to_nan_t)
+/opt/net/afs/apps/intel/compiler91/lib/libifcore.a(cvtas_a_to_x.o)
+                              /opt/net/afs/apps/intel/compiler91/lib/libifcore.a(cvt_cvtas_x.o) (cvtas_a_to_x)
+/opt/net/afs/apps/intel/compiler91/lib/libifcore.a(cvtas_x_to_a.o)
+                              /opt/net/afs/apps/intel/compiler91/lib/libifcore.a(cvt_cvtas_x.o) (cvtas_x_to_a)
+/opt/net/afs/apps/intel/compiler91/lib/libifcore.a(cvtas_nan_x.o)
+                              /opt/net/afs/apps/intel/compiler91/lib/libifcore.a(cvtas_a_to_x.o) (cvtas_string_to_nan_x)
+/opt/net/afs/apps/intel/compiler91/lib/libifcore.a(cvtas_globals.o)
+                              /opt/net/afs/apps/intel/compiler91/lib/libifcore.a(cvtas_a_to_s.o) (cvtas_globals_t)
+/opt/net/afs/apps/intel/compiler91/lib/libifcore.a(cvtas_pow_ten_t.o)
+                              /opt/net/afs/apps/intel/compiler91/lib/libifcore.a(cvtas_a_to_s.o) (cvtas_pten_t)
+/opt/net/afs/apps/intel/compiler91/lib/libifcore.a(cvtas_pow_ten_64.o)
+                              /opt/net/afs/apps/intel/compiler91/lib/libifcore.a(cvtas_a_to_t.o) (cvtas_pten_64)
+/opt/net/afs/apps/intel/compiler91/lib/libifcore.a(cvtas_pow_ten_128.o)
+                              /opt/net/afs/apps/intel/compiler91/lib/libifcore.a(cvtas_s_to_a.o) (cvtas_pten_128)
+/opt/net/afs/apps/intel/compiler91/lib/libimf.a(f__powi4i4.o)
+                              ../../../lib/librnpl.a(librnplf77.o) (__powi4i4)
+/opt/net/afs/apps/intel/compiler91/lib/libimf.a(f__powr4i4.o)
+                              wave1df.o (__powr4i4)
+/opt/net/afs/apps/intel/compiler91/lib/libimf.a(pow_stub.o)
+                              ../../../lib/librnpl.a(bbhutil.o) (pow)
+/opt/net/afs/apps/intel/compiler91/lib/libimf.a(sqrt_stub.o)
+                              ../../../lib/librnpl.a(bbhutil.o) (sqrt)
+/opt/net/afs/apps/intel/compiler91/lib/libimf.a(pow_gen.o)
+                              /opt/net/afs/apps/intel/compiler91/lib/libimf.a(pow_stub.o) (pow.A)
+/opt/net/afs/apps/intel/compiler91/lib/libimf.a(pow_wmt.o)
+                              /opt/net/afs/apps/intel/compiler91/lib/libimf.a(pow_stub.o) (pow.J)
+/opt/net/afs/apps/intel/compiler91/lib/libimf.a(rcp_table.o)
+                              /opt/net/afs/apps/intel/compiler91/lib/libimf.a(pow_gen.o) (__libm_rcp_table_256)
+/opt/net/afs/apps/intel/compiler91/lib/libimf.a(sqrt_gen.o)
+                              /opt/net/afs/apps/intel/compiler91/lib/libimf.a(sqrt_stub.o) (sqrt.A)
+/opt/net/afs/apps/intel/compiler91/lib/libimf.a(sqrt_wmt.o)
+                              /opt/net/afs/apps/intel/compiler91/lib/libimf.a(sqrt_stub.o) (sqrt.J)
+/opt/net/afs/apps/intel/compiler91/lib/libimf.a(libm_error.ost)
+                              /opt/net/afs/apps/intel/compiler91/lib/libimf.a(pow_gen.o) (__libm_error_support)
+/opt/net/afs/apps/intel/compiler91/lib/libimf.a(exp_table.o)
+                              /opt/net/afs/apps/intel/compiler91/lib/libimf.a(pow_gen.o) (__libm_exp_table_128)
+/opt/net/afs/apps/intel/compiler91/lib/libimf.a(log_table.o)
+                              /opt/net/afs/apps/intel/compiler91/lib/libimf.a(pow_gen.o) (__libm_log_table_256)
+/opt/net/afs/apps/intel/compiler91/lib/libimf.a(matherr.o)
+                              /opt/net/afs/apps/intel/compiler91/lib/libimf.a(libm_error.ost) (matherr)
+/opt/net/afs/apps/intel/compiler91/lib/libimf.a(matherrf.o)
+                              /opt/net/afs/apps/intel/compiler91/lib/libimf.a(libm_error.ost) (matherrf)
+/opt/net/afs/apps/intel/compiler91/lib/libimf.a(matherrl.o)
+                              /opt/net/afs/apps/intel/compiler91/lib/libimf.a(libm_error.ost) (matherrl)
+/opt/net/afs/apps/intel/compiler91/lib/libirc.a(tbk_display.o)
+                              /opt/net/afs/apps/intel/compiler91/lib/libifcore.a(tbk_traceback.o) (tbk_string_stack_signal)
+/opt/net/afs/apps/intel/compiler91/lib/libirc.a(q2ints.o)
+                              /opt/net/afs/apps/intel/compiler91/lib/libifcore.a(for_rseq_lis.o) (__qtoj)
+/opt/net/afs/apps/intel/compiler91/lib/libirc.a(w_divq.o)
+                              /opt/net/afs/apps/intel/compiler91/lib/libifcore.a(cvt_cvtas_x.o) (a_divq)
+/opt/net/afs/apps/intel/compiler91/lib/libirc.a(w_mulq.o)
+                              /opt/net/afs/apps/intel/compiler91/lib/libifcore.a(cvt_cvtas_x.o) (a_mulq)
+/opt/net/afs/apps/intel/compiler91/lib/libirc.a(ia32_memcmp.o)
+                              /opt/net/afs/apps/intel/compiler91/lib/libifcore.a(for_f90str.o) (_intel_fast_memcmp)
+/opt/net/afs/apps/intel/compiler91/lib/libirc.a(tbk_backtrace.o)
+                              /opt/net/afs/apps/intel/compiler91/lib/libirc.a(tbk_display.o) (tbk_getPC)
+/opt/net/afs/apps/intel/compiler91/lib/libirc.a(cpu_disp.o)
+                              wave1df.o (__intel_cpu_indicator_init)
+/opt/net/afs/apps/intel/compiler91/lib/libirc.a(fastmemcpy.o)
+                              /opt/net/afs/apps/intel/compiler91/lib/libifcore.a(for_diags_intel.o) (_intel_fast_memcpy)
+/opt/net/afs/apps/intel/compiler91/lib/libirc.a(fastmemset.o)
+                              /opt/net/afs/apps/intel/compiler91/lib/libifcore.a(for_close_proc.o) (_intel_fast_memset)
+/opt/net/afs/apps/intel/compiler91/lib/libirc.a(proc_init.o)
+                              wave1df.o (__intel_new_proc_init)
+/opt/net/afs/apps/intel/compiler91/lib/libirc.a(ia32_mulq.o)
+                              /opt/net/afs/apps/intel/compiler91/lib/libirc.a(w_mulq.o) (__mulq)
+/opt/net/afs/apps/intel/compiler91/lib/libirc.a(ia32_divq.o)
+                              /opt/net/afs/apps/intel/compiler91/lib/libirc.a(w_divq.o) (__divq)
+/opt/net/afs/apps/intel/compiler91/lib/libirc.a(q2fp.o)
+                              /opt/net/afs/apps/intel/compiler91/lib/libifcore.a(for_rseq_lis.o) (__qtod)
+/opt/net/afs/apps/intel/compiler91/lib/libirc.a(fast_memset.o)
+                              /opt/net/afs/apps/intel/compiler91/lib/libirc.a(fastmemset.o) (__intel_new_memset)
+/opt/net/afs/apps/intel/compiler91/lib/libirc.a(fast_memcpy.o)
+                              /opt/net/afs/apps/intel/compiler91/lib/libirc.a(fastmemcpy.o) (__intel_new_memcpy)
+/opt/net/afs/apps/intel/compiler91/lib/libirc.a(fast_memset_p3.o)
+                              /opt/net/afs/apps/intel/compiler91/lib/libirc.a(fastmemset.o) (__intel_new_memset_P3)
+/opt/net/afs/apps/intel/compiler91/lib/libirc.a(fast_memcpy_p3.o)
+                              /opt/net/afs/apps/intel/compiler91/lib/libirc.a(fastmemcpy.o) (__intel_new_memcpy_P3)
+/opt/net/afs/apps/intel/compiler91/lib/libirc.a(udiv64_gcc.o)
+                              /opt/net/afs/apps/intel/compiler91/lib/libifcore.a(cvt_text_to_int.o) (__udivdi3)
+/opt/net/afs/apps/intel/compiler91/lib/libirc.a(fast_mem_ops.o)
+                              /opt/net/afs/apps/intel/compiler91/lib/libirc.a(fast_memset.o) (_memcpy_mem_ops_method)
+/usr/lib/libc_nonshared.a(elf-init.oS)
+                              /usr/lib/gcc/i386-redhat-linux/4.1.1/../../../crt1.o (__libc_csu_fini)
+
+Allocating common symbols
+Common symbol       size              file
+
+com_oglb_int_       0x178             wave1df.o
+com_glob_float_     0x8               wave1df.o
+first_tok           0x4               ../../../lib/librnpl.a(gpar.tab.o)
+commm_              0x3e90            wave1df.o
+gparnerrs           0x4               ../../../lib/librnpl.a(gpar.tab.o)
+l_XVSPORT           0x4               /afs/.aei-potsdam.mpg.de/u/choptuik/lib/libxvs.a(libxvs.o)
+gparlval            0x18              ../../../lib/librnpl.a(gpar.tab.o)
+BL                  0x400             /afs/.aei-potsdam.mpg.de/u/choptuik/lib/libxvs.a(libxvs.o)
+Xvsrc               0x4               /afs/.aei-potsdam.mpg.de/u/choptuik/lib/libxvs.a(libxvs.o)
+inputerror          0x4               ../../../lib/librnpl.a(gpar.tab.o)
+com_oglb_float_     0x50              wave1df.o
+gparchar            0x4               ../../../lib/librnpl.a(gpar.tab.o)
+sg_param_type       0x4               ../../../lib/librnpl.a(gpar.tab.o)
+com_glob_char_      0x180             wave1df.o
+com_glob_int_       0x84              wave1df.o
+myasgn              0x18              ../../../lib/librnpl.a(gpar.tab.o)
+for__l_excpt_info   0x4               /opt/net/afs/apps/intel/compiler91/lib/libifcore.a(for_init.o)
+gotit               0x4               ../../../lib/librnpl.a(gpar.tab.o)
+gparleng            0x4               ../../../lib/librnpl.a(lex.gpar.o)
+com_gfuni0_         0x7a3918          wave1df.o
+tbk__jmp_env        0x9c              /opt/net/afs/apps/intel/compiler91/lib/libirc.a(tbk_backtrace.o)
+sg_param_end        0x4               ../../../lib/librnpl.a(gpar.tab.o)
+sg_param_buf        0x4               ../../../lib/librnpl.a(gpar.tab.o)
+gpartext            0x4               ../../../lib/librnpl.a(lex.gpar.o)
+for__l_argc         0x4               /opt/net/afs/apps/intel/compiler91/lib/libifcore.a(for_init.o)
+sg_param_ptr        0x4               ../../../lib/librnpl.a(gpar.tab.o)
+for__a_argv         0x4               /opt/net/afs/apps/intel/compiler91/lib/libifcore.a(for_init.o)
+
+Memory Configuration
+
+Name             Origin             Length             Attributes
+*default*        0x00000000         0xffffffff
+
+Linker script and memory map
+
+LOAD /usr/lib/gcc/i386-redhat-linux/4.1.1/../../../crt1.o
+LOAD /usr/lib/gcc/i386-redhat-linux/4.1.1/../../../crti.o
+LOAD /usr/lib/gcc/i386-redhat-linux/4.1.1/crtbegin.o
+LOAD /opt/net/afs/apps/intel/compiler91/lib/for_main.o
+LOAD wave1df.o
+LOAD updates.o
+LOAD residuals.o
+LOAD ../../../lib/librnpl.a
+LOAD /afs/.aei-potsdam.mpg.de/u/choptuik/lib/libxvs.a
+LOAD /opt/net/afs/apps/intel/compiler91/lib/libsvml.a
+LOAD /opt/net/afs/apps/intel/compiler91/lib/libifport.a
+LOAD /opt/net/afs/apps/intel/compiler91/lib/libifcore.a
+LOAD /opt/net/afs/apps/intel/compiler91/lib/libimf.a
+LOAD /usr/lib/gcc/i386-redhat-linux/4.1.1/../../..//libm.so
+LOAD /opt/net/afs/apps/intel/compiler91/lib/libipgo.a
+LOAD /opt/net/afs/apps/intel/compiler91/lib/libirc.a
+LOAD /usr/lib/gcc/i386-redhat-linux/4.1.1/../../..//libc.so
+START GROUP
+LOAD /lib/libc.so.6
+LOAD /usr/lib/libc_nonshared.a
+LOAD /lib/ld-linux.so.2
+END GROUP
+LOAD /usr/lib/gcc/i386-redhat-linux/4.1.1//libgcc_s.so
+LOAD /usr/lib/gcc/i386-redhat-linux/4.1.1//libgcc.a
+LOAD /opt/net/afs/apps/intel/compiler91/lib/libirc_s.a
+LOAD /usr/lib/gcc/i386-redhat-linux/4.1.1/../../..//libdl.so
+LOAD /usr/lib/gcc/i386-redhat-linux/4.1.1/../../..//libc.so
+START GROUP
+LOAD /lib/libc.so.6
+LOAD /usr/lib/libc_nonshared.a
+LOAD /lib/ld-linux.so.2
+END GROUP
+LOAD /usr/lib/gcc/i386-redhat-linux/4.1.1/crtend.o
+LOAD /usr/lib/gcc/i386-redhat-linux/4.1.1/../../../crtn.o
+                0x08048000                PROVIDE (__executable_start, 0x8048000)
+                0x08048114                . = (0x8048000 + SIZEOF_HEADERS)
+
+.interp         0x08048114       0x13
+ *(SORT(.interp))
+ .interp        0x08048114       0x13 /usr/lib/gcc/i386-redhat-linux/4.1.1/../../../crt1.o
+
+.note.ABI-tag   0x08048128       0x20
+ .note.ABI-tag  0x08048128       0x20 /usr/lib/gcc/i386-redhat-linux/4.1.1/../../../crt1.o
+
+.hash           0x08048148      0x344
+ *(SORT(.hash))
+ .hash          0x08048148      0x344 /usr/lib/gcc/i386-redhat-linux/4.1.1/../../../crt1.o
+
+.dynsym         0x0804848c      0x6e0
+ *(SORT(.dynsym))
+ .dynsym        0x0804848c      0x6e0 /usr/lib/gcc/i386-redhat-linux/4.1.1/../../../crt1.o
+
+.dynstr         0x08048b6c      0x3a4
+ *(SORT(.dynstr))
+ .dynstr        0x08048b6c      0x3a4 /usr/lib/gcc/i386-redhat-linux/4.1.1/../../../crt1.o
+
+.gnu.version    0x08048f10       0xdc
+ *(SORT(.gnu.version))
+ .gnu.version   0x08048f10       0xdc /usr/lib/gcc/i386-redhat-linux/4.1.1/../../../crt1.o
+
+.gnu.version_d  0x08048fec        0x0
+ *(SORT(.gnu.version_d))
+
+.gnu.version_r  0x08048fec       0x60
+ *(SORT(.gnu.version_r))
+ .gnu.version_r
+                0x08048fec       0x60 /usr/lib/gcc/i386-redhat-linux/4.1.1/../../../crt1.o
+
+.rel.dyn        0x0804904c       0x20
+ *(SORT(.rel.init))
+ *(SORT(.rel.text) .rel.text.* .rel.gnu.linkonce.t.*)
+ *(SORT(.rel.fini))
+ *(SORT(.rel.rodata) .rel.rodata.* .rel.gnu.linkonce.r.*)
+ *(SORT(.rel.data.rel.ro*) .rel.gnu.linkonce.d.rel.ro.*)
+ *(SORT(.rel.data) .rel.data.* .rel.gnu.linkonce.d.*)
+ *(SORT(.rel.tdata) .rel.tdata.* .rel.gnu.linkonce.td.*)
+ *(SORT(.rel.tbss) .rel.tbss.* .rel.gnu.linkonce.tb.*)
+ *(SORT(.rel.ctors))
+ *(SORT(.rel.dtors))
+ *(SORT(.rel.got))
+ .rel.got       0x0804904c        0x8 /usr/lib/gcc/i386-redhat-linux/4.1.1/../../../crt1.o
+ *(SORT(.rel.bss) .rel.bss.* .rel.gnu.linkonce.b.*)
+ .rel.bss       0x08049054       0x18 /usr/lib/gcc/i386-redhat-linux/4.1.1/../../../crt1.o
+
+.rela.dyn
+ *(SORT(.rela.init))
+ *(SORT(.rela.text) .rela.text.* .rela.gnu.linkonce.t.*)
+ *(SORT(.rela.fini))
+ *(SORT(.rela.rodata) .rela.rodata.* .rela.gnu.linkonce.r.*)
+ *(SORT(.rela.data) .rela.data.* .rela.gnu.linkonce.d.*)
+ *(SORT(.rela.tdata) .rela.tdata.* .rela.gnu.linkonce.td.*)
+ *(SORT(.rela.tbss) .rela.tbss.* .rela.gnu.linkonce.tb.*)
+ *(SORT(.rela.ctors))
+ *(SORT(.rela.dtors))
+ *(SORT(.rela.got))
+ *(SORT(.rela.bss) .rela.bss.* .rela.gnu.linkonce.b.*)
+
+.rel.plt        0x0804906c      0x318
+ *(SORT(.rel.plt))
+ .rel.plt       0x0804906c      0x318 /usr/lib/gcc/i386-redhat-linux/4.1.1/../../../crt1.o
+
+.rela.plt
+ *(SORT(.rela.plt))
+
+.init           0x08049384       0x17
+ *(SORT(.init))
+ .init          0x08049384        0xb /usr/lib/gcc/i386-redhat-linux/4.1.1/../../../crti.o
+                0x08049384                _init
+ .init          0x0804938f        0x5 /usr/lib/gcc/i386-redhat-linux/4.1.1/crtbegin.o
+ .init          0x08049394        0x5 /usr/lib/gcc/i386-redhat-linux/4.1.1/crtend.o
+ .init          0x08049399        0x2 /usr/lib/gcc/i386-redhat-linux/4.1.1/../../../crtn.o
+
+.plt            0x0804939c      0x640
+ *(SORT(.plt))
+ .plt           0x0804939c      0x640 /usr/lib/gcc/i386-redhat-linux/4.1.1/../../../crt1.o
+                0x080493ac                readlink@@GLIBC_2.0
+                0x080493bc                mkdir@@GLIBC_2.0
+                0x080493cc                ttyname@@GLIBC_2.0
+                0x080493dc                ntohl@@GLIBC_2.0
+                0x080493ec                sigaction@@GLIBC_2.0
+                0x080493fc                strncat@@GLIBC_2.0
+                0x0804940c                vsprintf@@GLIBC_2.0
+                0x0804941c                strchr@@GLIBC_2.0
+                0x0804942c                fdopen@@GLIBC_2.1
+                0x0804943c                getpid@@GLIBC_2.0
+                0x0804944c                strdup@@GLIBC_2.0
+                0x0804945c                siglongjmp@@GLIBC_2.0
+                0x0804946c                write@@GLIBC_2.0
+                0x0804947c                fileno@@GLIBC_2.0
+                0x0804948c                strcmp@@GLIBC_2.0
+                0x0804949c                close@@GLIBC_2.0
+                0x080494ac                perror@@GLIBC_2.0
+                0x080494bc                fprintf@@GLIBC_2.0
+                0x080494cc                getenv@@GLIBC_2.0
+                0x080494dc                signal@@GLIBC_2.0
+                0x080494ec                fflush@@GLIBC_2.0
+                0x080494fc                unlink@@GLIBC_2.0
+                0x0804950c                htonl@@GLIBC_2.0
+                0x0804951c                setenv@@GLIBC_2.0
+                0x0804952c                strerror@@GLIBC_2.0
+                0x0804953c                isalnum@@GLIBC_2.0
+                0x0804954c                bcopy@@GLIBC_2.0
+                0x0804955c                __errno_location@@GLIBC_2.0
+                0x0804956c                rewind@@GLIBC_2.0
+                0x0804957c                memchr@@GLIBC_2.0
+                0x0804958c                ftell@@GLIBC_2.0
+                0x0804959c                accept@@GLIBC_2.0
+                0x080495ac                system@@GLIBC_2.0
+                0x080495bc                tolower@@GLIBC_2.0
+                0x080495cc                shutdown@@GLIBC_2.0
+                0x080495dc                listen@@GLIBC_2.0
+                0x080495ec                malloc@@GLIBC_2.0
+                0x080495fc                fscanf@@GLIBC_2.0
+                0x0804960c                fread@@GLIBC_2.0
+                0x0804961c                memmove@@GLIBC_2.0
+                0x0804962c                freopen64@@GLIBC_2.1
+                0x0804963c                __h_errno_location@@GLIBC_2.0
+                0x0804964c                getsockopt@@GLIBC_2.0
+                0x0804965c                abort@@GLIBC_2.0
+                0x0804966c                __sigsetjmp@@GLIBC_2.0
+                0x0804967c                __xstat@@GLIBC_2.0
+                0x0804968c                setsockopt@@GLIBC_2.0
+                0x0804969c                fseek@@GLIBC_2.0
+                0x080496ac                fgets@@GLIBC_2.0
+                0x080496bc                fputs@@GLIBC_2.0
+                0x080496cc                strstr@@GLIBC_2.0
+                0x080496dc                strlen@@GLIBC_2.0
+                0x080496ec                sleep@@GLIBC_2.0
+                0x080496fc                ftruncate64@@GLIBC_2.1
+                0x0804970c                __xpg_basename@@GLIBC_2.0
+                0x0804971c                lseek64@@GLIBC_2.1
+                0x0804972c                sigprocmask@@GLIBC_2.0
+                0x0804973c                __xstat64@@GLIBC_2.2
+                0x0804974c                memcmp@@GLIBC_2.0
+                0x0804975c                __libc_start_main@@GLIBC_2.0
+                0x0804976c                realloc@@GLIBC_2.0
+                0x0804977c                dladdr@@GLIBC_2.0
+                0x0804978c                strcat@@GLIBC_2.0
+                0x0804979c                printf@@GLIBC_2.0
+                0x080497ac                bind@@GLIBC_2.0
+                0x080497bc                fcntl@@GLIBC_2.0
+                0x080497cc                memcpy@@GLIBC_2.0
+                0x080497dc                open64@@GLIBC_2.1
+                0x080497ec                fclose@@GLIBC_2.1
+                0x080497fc                isdigit@@GLIBC_2.0
+                0x0804980c                fopen64@@GLIBC_2.1
+                0x0804981c                closedir@@GLIBC_2.0
+                0x0804982c                opendir@@GLIBC_2.0
+                0x0804983c                snprintf@@GLIBC_2.0
+                0x0804984c                gethostname@@GLIBC_2.0
+                0x0804985c                memalign@@GLIBC_2.0
+                0x0804986c                gethostbyname@@GLIBC_2.0
+                0x0804987c                sigemptyset@@GLIBC_2.0
+                0x0804988c                mkstemp64@@GLIBC_2.2
+                0x0804989c                bzero@@GLIBC_2.0
+                0x080498ac                exit@@GLIBC_2.0
+                0x080498bc                atoi@@GLIBC_2.0
+                0x080498cc                sscanf@@GLIBC_2.0
+                0x080498dc                free@@GLIBC_2.0
+                0x080498ec                htons@@GLIBC_2.0
+                0x080498fc                getcwd@@GLIBC_2.0
+                0x0804990c                isatty@@GLIBC_2.0
+                0x0804991c                memset@@GLIBC_2.0
+                0x0804992c                connect@@GLIBC_2.0
+                0x0804993c                strncpy@@GLIBC_2.0
+                0x0804994c                fopen@@GLIBC_2.1
+                0x0804995c                sprintf@@GLIBC_2.0
+                0x0804996c                fwrite@@GLIBC_2.0
+                0x0804997c                socket@@GLIBC_2.0
+                0x0804998c                read@@GLIBC_2.0
+                0x0804999c                __fxstat64@@GLIBC_2.2
+                0x080499ac                valloc@@GLIBC_2.0
+                0x080499cc                strcpy@@GLIBC_2.0
+
+.text           0x080499e0    0x7b608
+ *(SORT(.text) .stub .text.* .gnu.linkonce.t.*)
+ .text          0x080499e0       0x24 /usr/lib/gcc/i386-redhat-linux/4.1.1/../../../crt1.o
+                0x080499e0                _start
+ .text          0x08049a04       0x26 /usr/lib/gcc/i386-redhat-linux/4.1.1/../../../crti.o
+ *fill*         0x08049a2a        0x6 90909090
+ .text          0x08049a30       0x53 /usr/lib/gcc/i386-redhat-linux/4.1.1/crtbegin.o
+ *fill*         0x08049a83        0x1 90909090
+ .text          0x08049a84       0x58 /opt/net/afs/apps/intel/compiler91/lib/for_main.o
+                0x08049a84                main
+ .text          0x08049adc     0x5fb8 wave1df.o
+                0x0804c1d4                getpcoord_.
+                0x0804e566                getlatid_
+                0x0804be20                getrank_.
+                0x0804d096                read_state_.
+                0x0804bdea                swap_levels_
+                0x0804d054                read_attributes_.
+                0x0804c198                getpshape_
+                0x0804e6d4                write_params_attribs_
+                0x0804f890                mmdump_
+                0x0804e6c2                getshape_.
+                0x0804b5d0                sread_parameters_
+                0x0804be36                latinfo_
+                0x0804f63c                init_coord_difs_
+                0x0804be1c                getrank_
+                0x0804e450                mmfree_
+                0x0804c1b6                getlatcs_.
+                0x0804e5b4                output_gfuncs_
+                0x0804c1b2                getlatcs_
+                0x0804e236                cleanup_
+                0x0804bd60                calc_resid_
+                0x0804edf0                init_gfuncs_
+                0x0804e8d0                mmaloc_.
+                0x0804f2d8                init_lats_
+                0x0804cba6                read_parameters_
+                0x0804e9a4                getsize_.
+                0x0804e54a                getnlat_
+                0x0804c1e6                handler_
+                0x0804b5d8                sread_parameters_.
+                0x0804e8cc                mmaloc_
+                0x0804be42                latinfo_.
+                0x0804e59a                getbounds_
+                0x0804e9ba                dump_state_
+                0x0804c19c                getpshape_.
+                0x0804ba76                update_gfuncs_
+                0x0804dc2e                check_params_attribs_
+                0x0804cb46                mmini_
+                0x0804cbae                read_parameters_.
+                0x0804d93a                read_params_attribs_
+                0x0804e6ba                getshape_
+                0x0804e23c                mmdeal_
+                0x0804bc94                take_step_.
+                0x0804d04c                read_attributes_
+                0x0804d08a                read_state_
+                0x0804e9a0                getsize_
+                0x0804cb4a                mmini_.
+                0x0804ba7a                update_gfuncs_.
+                0x08049adc                MAIN__
+                0x0804c1cc                getpcoord_
+                0x0804ea8a                init_params_attribs_
+                0x0804e580                getpbounds_
+                0x0804edac                initial_guess_
+                0x0804bc90                take_step_
+ .text          0x0804fa94      0x794 updates.o
+                0x0804fa94                update0_
+ .text          0x08050228      0x630 residuals.o
+                0x08050228                res_phi_
+ .text          0x08050858      0xc10 ../../../lib/librnpl.a(bbhutil_f.o)
+                0x08050a3e                _VSTRCPY_cvt_bbhutil
+                0x08050ee6                sget_str_param_
+                0x0805141a                gft_close_all_
+                0x08050a00                _STRCPY_cvt_bbhutil
+                0x08050d1e                sget_ivec_param_
+                0x08050c1c                rdvupdatemean_
+                0x08051082                get_ivec_param_
+                0x08050b28                rdvprod_
+                0x08050b56                rivprod_
+                0x08050b02                rdvcpy_
+                0x08051386                fixup_ivec_
+                0x0805111a                get_int_param_
+                0x080511b2                get_real_param_
+                0x0805124a                get_str_param_
+                0x08050b84                rivcpy_
+                0x080513b8                fixup_fvec_
+                0x08050baa                rdvramp_
+                0x08050fea                get_fvec_param_
+                0x08050858                _STRING_cvt_bbhutil
+                0x08050db6                sget_int_param_
+                0x0805134e                do_ivec_
+                0x080513ec                get_fvec_
+                0x08050e4e                sget_real_param_
+                0x080513ca                size_fvec_
+                0x080508fc                _VSTRING_cvt_bbhutil
+                0x08051424                gft_close_
+                0x08050aa6                _free_VSTRING_cvt_bbhutil
+                0x08050bdc                rdvaddc_
+                0x08050c58                l2norm_
+                0x08050c86                sget_fvec_param_
+ .text          0x08051468      0x550 ../../../lib/librnpl.a(librnpl_f.o)
+                0x08051468                _STRING_cvt_rnpl
+                0x0805176e                rvsxynt_
+                0x08051976                rnpl_id_end_
+                0x080516b6                _free_VSTRING_cvt_rnpl
+                0x0805164e                _VSTRCPY_cvt_rnpl
+                0x08051980                set_interrupt_
+                0x080518ea                rnpl_id_set_rank_
+                0x08051712                mkdir_
+                0x0805198a                unset_interrupt_
+                0x0805199e                query_interrupt_
+                0x08051994                reset_interrupt_
+                0x0805150c                _VSTRING_cvt_rnpl
+                0x08051928                rnpl_id_write_
+                0x080518fe                rnpl_id_set_shape_
+                0x080518a6                rnpl_id_set_file_
+                0x08051870                encode_
+                0x08051610                _STRCPY_cvt_rnpl
+                0x08051800                realtostring_
+ .text          0x080519b8     0x3fe4 ../../../lib/librnpl.a(librnplf77.o)
+                0x08052914                psexpr_
+                0x08052920                psexpr_.
+                0x0805436e                makind_.
+                0x0805410a                skblnk_
+                0x08054362                makind_
+                0x08054e34                irdivn_
+                0x08054796                livrmp_
+                0x080541b2                ctoi_.
+                0x08052de6                ggroup_.
+                0x08055006                locivramp_
+                0x08055012                locivramp_.
+                0x080555e6                indlnb_
+                0x08055844                l_ivls_
+                0x080519b8                cload_
+                0x08055914                l_ivprod_
+                0x080550aa                gtok_
+                0x080541aa                ctoi_
+                0x08052dda                ggroup_
+                0x08051d54                inptiv_
+                0x08051a34                gettok_
+                0x0805483a                ixspan_
+                0x0805565c                indfnb_
+                0x080547a2                livrmp_.
+                0x08054710                chkgrp_.
+                0x08054bbe                readiv_
+                0x08054116                skblnk_.
+                0x0805518a                catsqz_
+                0x08054974                itoc_
+                0x08054704                chkgrp_
+                0x08054d12                rdivnl_
+                0x080535be                grange_
+                0x080556e8                getu_
+                0x08054f0c                irdiv_
+                0x080535ca                grange_.
+ .text          0x0805599c      0xfcc ../../../lib/librnpl.a(sdf_f.o)
+                0x08055e96                gft_read_id_gf_
+                0x0805664a                gft_read_shape_
+                0x080562d6                gft_outm_
+                0x08056510                gft_read_full_
+                0x080563c6                gft_outm_bbox_
+                0x0805634e                gft_outm_brief_
+                0x08056876                gft_out_part_xyz_
+                0x08056776                gft_read_name_
+                0x08055cfe                gft_write_id_int_
+                0x08056146                gft_out_bbox_
+                0x08055efe                gft_read_id_int_
+                0x08056096                gft_out_full_
+                0x080561c0                gft_out_brief_
+                0x08055dc6                gft_write_id_str_
+                0x08055fc6                gft_read_id_str_
+                0x08055c46                gft_set_single_
+                0x08055a40                _VSTRING_cvt_sdf
+                0x08055f62                gft_read_id_float_
+                0x08056712                gft_read_rank_
+                0x08055c8a                gft_set_multi_
+                0x08055b82                _VSTRCPY_cvt_sdf
+                0x080565e6                gft_read_brief_
+                0x080568f0                gft_out_part_xyzf_
+                0x08056446                gft_outm_full_
+                0x0805599c                _STRING_cvt_sdf
+                0x08055c94                gft_write_id_gf_
+                0x08055bea                _free_VSTRING_cvt_sdf
+                0x08055d62                gft_write_id_float_
+                0x080562a8                gft_out_set_bbox_
+                0x08056234                gft_out_
+                0x08055b44                _STRCPY_cvt_sdf
+                0x08056826                gft_read_sdf_ntlevs_
+                0x080566ae                gft_read_bbox_
+ .text          0x08056968     0x3020 ../../../lib/librnpl.a(bbhutil.o)
+                0x080598f2                gft_close
+                0x08056dfe                rdvmin
+                0x08056b64                rivcpy
+                0x08057c1a                get_real_param_v
+                0x08057146                read_ascii_int
+                0x080579f8                sget_int_param
+                0x0805994a                gft_write_id_str_p
+                0x08058d4a                fixup_ivec
+                0x08059940                gft_read_idata
+                0x08058f5e                fixup_fvec
+                0x08056c04                rdvaddc
+                0x08057abe                get_fvec_param
+                0x08056a80                rdvcpy
+                0x08057974                sget_fvec_param
+                0x08059954                gft_write_id_int_p
+                0x0805995e                gft_write_id_float_p
+                0x08056b1c                rivprod
+                0x08057af8                get_ivec_param
+                0x08057a7c                sget_str_param
+                0x08059936                gft_read_1idata
+                0x08058070                l_str2lc
+                0x08058b80                do_ivec
+                0x08057e4e                is_param_assigned_in_file_nc
+                0x08056fd0                vec_alloc_n
+                0x08059922                gft_read_id_float_p
+                0x08057c54                get_str_param_v
+                0x0805997c                gft_write_idata
+                0x08059436                get_fvec
+                0x0805771e                read_ascii_fvec
+                0x080569b4                strcmp_nc
+                0x08056c78                rdvupdatemean
+                0x08059968                gft_write_2idata
+                0x08057508                read_ascii_string
+                0x0805967c                gft_make_bbox
+                0x08056f2a                ivec_alloc
+                0x08058494                get_param_nc
+                0x08057a3a                sget_real_param
+                0x08057ba6                get_str_param
+                0x08058120                get_param
+                0x08059972                gft_write_1idata
+                0x08056f7e                cvec_alloc
+                0x08057b32                get_int_param
+                0x08057714                read_ascii_ivec
+                0x08058808                get_param_nc_v
+                0x080572f0                read_ascii_double
+                0x08057c8e                is_param_assigned_in_file
+                0x08059778                gft_make_full_func_name
+                0x08056ed6                vec_alloc
+                0x08057be0                get_int_param_v
+                0x08056e6a                rdvmax
+                0x080579b6                sget_ivec_param
+                0x08057b6c                get_real_param
+                0x0805992c                gft_read_2idata
+                0x08059904                gft_close_all
+                0x0805990e                gft_read_id_str_p
+                0x08056d84                l2norm
+                0x0805704e                ivec_alloc_n
+                0x08056968                lowcase
+                0x08056bba                rdvramp
+                0x08056ad6                rdvprod
+                0x08059918                gft_read_id_int_p
+                0x080570cc                cvec_alloc_n
+                0x08059356                size_fvec
+ .text          0x08059988      0x208 ../../../lib/librnpl.a(librnpl.o)
+                0x08059b74                reset_interrupt
+                0x08059b84                query_interrupt
+                0x08059aa2                rnpl_id_end
+                0x08059a36                rnpl_id_set_file
+                0x08059a48                rnpl_id_set_rank
+                0x08059b52                unset_interrupt
+                0x080599e8                encode
+                0x08059988                rvsxynt
+                0x08059afe                sig_onintr
+                0x080599c2                realtostring
+                0x08059b28                set_interrupt
+                0x08059a74                rnpl_id_write
+                0x08059a56                rnpl_id_set_shape
+ .gnu.linkonce.t.stat
+                0x08059b90       0x2c ../../../lib/librnpl.a(sdf.o)
+                0x08059b90                stat
+ .text          0x08059bbc     0x957c ../../../lib/librnpl.a(sdf.o)
+                0x0805db6a                gft_sendm_sdf_stream_brief
+                0x0805a09e                gsfi_insert
+                0x08062d90                gft_out_part_xyzf
+                0x0805e59e                gft_read_sdf_stream_brief
+                0x080623ee                gft_outm_bbox
+                0x08059fbe                get_gsfiitem
+                0x08060e96                gft_write_id_float
+                0x0805afe0                gft_set_multi_sdf
+                0x0806130a                gft_read_id_int
+                0x08061e54                gft_out_full
+                0x08061cca                gft_read_rank
+                0x08061db2                gft_read_full
+                0x0805b030                gft_make_sdf_name
+                0x08062530                gft_outm_full
+                0x0805eaec                gft_read_sdf_shape
+                0x0805f422                gft_read_sdf_ntlevs
+                0x0805fe3a                gft_extract_sdf
+                0x0805b026                gft_set_multi
+                0x0805e22a                gft_writem_sdf_stream_brief
+                0x08061d3e                gft_read_bbox
+                0x0805ac0a                gsfd_make_index
+                0x0805d4f8                gft_send_sdf_stream_brief
+                0x0805a6dc                gsfd_remove
+                0x0806198a                gft_read_id_str
+                0x0805b262                gft_create_sdf_stream
+                0x08060caa                gft_write_id_float_old
+                0x08061082                gft_write_id_str
+                0x0805a562                gsfd_rotate_l
+                0x0805dd8c                gft_write_sdf_stream
+                0x08061e1a                gft_read_brief
+                0x0805aa80                gsfd_close_all
+                0x0806034a                GFT_extract2
+                0x08061e10                gft_out_slice
+                0x0805df3c                gft_write_sdf_stream_brief
+                0x0805f116                gft_read_sdf_name
+                0x08061270                gft_read_id_gf
+                0x0805aaba                gsfd_file_changed
+                0x08059da8                get_item
+                0x0806164a                gft_read_id_float
+                0x08059e0c                new_gsfiarray
+                0x0805e31c                gft_read_sdf_stream
+                0x080622ba                gft_outm_brief
+                0x08059cd0                add_item
+                0x0805a37c                gsfd_parent
+                0x0805d696                gft_sendm_sdf_stream
+                0x0805c4e6                low_read_sdf_stream
+                0x0805b7a6                mid_write_sdf_stream
+                0x08059dea                dynarray_len
+                0x0805a2ae                gsfi_delete
+                0x08059c9e                delete_dynarray
+                0x0805a624                gsfd_insert
+                0x0805e112                gft_writem_sdf_stream_bbox
+                0x0805e7fe                gft_read_sdf_rank
+                0x0805f560                gft_read_sdf_full
+                0x0806227a                gft_outm
+                0x0805afa6                gft_set_single_sdf
+                0x0805a86c                gsfd_find
+                0x0805fdbe                gft_close_sdf_stream
+                0x0805a456                gsfd_successor
+                0x08059e86                delete_gsfiarray
+                0x0805de92                gft_write_sdf_stream_bbox
+                0x0805a4a0                gsfd_rotate_r
+                0x0805a912                gsfd_new
+                0x0805d11e                gft_send_sdf_stream
+                0x0805d938                gft_sendm_sdf_stream_bbox
+                0x08062680                gft_verify_file
+                0x0805fe26                gft_close_all_sdf
+                0x0805af74                gft_make_index
+                0x08059bbc                gsfipvec_alloc
+                0x0805faaa                gft_read_sdf_brief
+                0x08061d04                gft_read_shape
+                0x0805dfe6                gft_writem_sdf_stream
+                0x08059ef2                add_gsfiitem
+                0x08059c18                new_dynarray
+                0x0805b85c                mid_read_sdf_stream
+                0x0805d35a                gft_send_sdf_stream_bbox
+                0x0805b986                low_write_sdf_stream
+                0x0805a222                gsfi_new
+                0x08062874                gft_open_sdf_file
+                0x0805a07c                gsfiarray_len
+                0x0805ee00                gft_read_sdf_bbox
+                0x08061d78                gft_read_name
+                0x080621f6                gft_out
+                0x0805a9a2                gsfd_delete
+                0x08060ac6                gft_write_id_gf
+                0x0806295c                gft_out_part_xyz
+                0x080620d0                gft_out_brief
+                0x0805b1f4                gft_file_changed
+                0x0805b014                gft_set_single
+                0x08061f9c                gft_out_bbox
+                0x08062230                gft_out_set_bbox
+                0x0805aa56                gsfd_close
+                0x08060afe                gft_write_id_int
+                0x0805b4e6                gft_open_sdf_stream
+ .text          0x08063138     0x22d0 ../../../lib/librnpl.a(gpar.tab.o)
+                0x0806314c                gparparse
+                0x08064204                new_value_list
+                0x08064144                new_ivel_list
+                0x080641a4                new_fvel_list
+                0x08064264                sget_param
+ .text          0x08065408     0x1690 ../../../lib/librnpl.a(lex.gpar.o)
+                0x08066a08                my_gparinput
+                0x080667a2                gpar_scan_buffer
+                0x08066a8c                gparwrap
+                0x080665ee                gpar_create_buffer
+                0x080665b0                gpar_load_buffer_state
+                0x08066a7c                gparerror
+                0x0806674c                gpar_flush_buffer
+                0x08065408                gparlex
+                0x08066866                gpar_scan_string
+                0x080664fe                gparrestart
+                0x080668b8                gpar_scan_bytes
+                0x08066552                gpar_switch_to_buffer
+                0x080666d4                gpar_init_buffer
+                0x08066688                gpar_delete_buffer
+ .text          0x08066a98      0x61c ../../../lib/librnpl.a(cliser.o)
+                0x08066d9e                ser0_serve_block
+                0x0806706a                checkenv
+                0x08066ed0                ser0_connect
+                0x08066a98                ser0_start
+                0x08066e76                ser0_stop
+ .text          0x080670b4     0x1140 /afs/.aei-potsdam.mpg.de/u/choptuik/lib/libxvs.a(libxvs.o)
+                0x0806723e                xvs_recv_status
+                0x08068030                vsmxynt
+                0x0806776c                xvs_io
+                0x08067ff6                xvs
+                0x080670b4                xvs_recv_buf
+                0x08067e6a                xvs_open
+                0x08067e84                xvs_close
+                0x08067aa2                xvs_stream
+                0x08067e98                vsxynt
+                0x0806769a                xvs_control_send_message
+                0x08068186                l_int_env
+                0x08067538                xvs_send_status
+                0x08067192                xvs_send_buf
+ .text          0x080681f4      0xf6c /afs/.aei-potsdam.mpg.de/u/choptuik/lib/libxvs.a(sdf_util.o)
+                0x080689e0                test_SDFDS_1d
+                0x08068e3a                l_dvvfscanf
+                0x08068d5e                l_dvfdump
+                0x08068c82                l_ivfdump
+                0x080681f4                new_SDFDS
+                0x08068c2a                l_dvmax
+                0x0806833c                message_SDFDS
+                0x080685b0                dquad_SDFDS
+                0x0806848e                write_SDFDS
+                0x080686d0                dump_SDFDS
+                0x08068266                free_SDFDS
+                0x08068386                read_SDFDS
+                0x08068bd2                l_dvmin
+                0x0806903e                gft_read_rank_first
+                0x08068566                new_read_SDFDS
+ .text          0x08069160      0xaa0 /afs/.aei-potsdam.mpg.de/u/choptuik/lib/libxvs.a(xvscliser.o)
+                0x08069942                ser0_connect_xvs
+                0x08069b08                l_herror_xvs
+                0x0806957e                ser0_stop_xvs
+                0x08069916                ser0_ping_xvs
+                0x08069160                ser0_start_xvs
+                0x080694a6                ser0_serve_block_xvs
+                0x08069596                ser0_comm_xvs
+                0x0806996e                dump_hostent_xvs
+ .text          0x08069c00       0x38 /opt/net/afs/apps/intel/compiler91/lib/libifport.a(system.o)
+                0x08069c00                system_
+ .text          0x08069c38       0xa0 /opt/net/afs/apps/intel/compiler91/lib/libifport.a(utility_alloccstr.o)
+                0x08069c38                allocCstr
+                0x08069cc8                deallocCstr
+ .text          0x08069cd8      0x2f8 /opt/net/afs/apps/intel/compiler91/lib/libifcore.a(for_close.o)
+                0x08069f3a                for__close_default
+                0x08069cd8                for_close
+                0x08069e42                for__close_args
+ .text          0x08069fd0      0x5fc /opt/net/afs/apps/intel/compiler91/lib/libifcore.a(for_close_proc.o)
+                0x08069fd0                for__close_proc
+ .text          0x0806a5cc      0x3fc /opt/net/afs/apps/intel/compiler91/lib/libifcore.a(for_desc_item.o)
+                0x0806a91a                for__desc_zero_length_item
+                0x0806a698                for__desc_ret_item.
+                0x0806a604                for__desc_test_item
+                0x0806a5cc                for__key_desc_ret_item
+                0x0806a68c                for__desc_ret_item
+ .text          0x0806a9c8     0x1d18 /opt/net/afs/apps/intel/compiler91/lib/libifcore.a(for_diags_intel.o)
+                0x0806abf6                for__io_return
+                0x0806c222                for_perror_
+                0x0806a9c8                for__issue_diagnostic
+                0x0806c688                for_gerror_
+                0x0806be54                TRACEBACKQQ
+                0x0806be72                tracebackqq_
+                0x0806bb44                for__rtc_uninit_use
+                0x0806b604                for_emit_diagnostic
+ .text          0x0806c6e0      0x1c4 /opt/net/afs/apps/intel/compiler91/lib/libifcore.a(for_errsns.o)
+                0x0806c736                for_errsns_w
+                0x0806c7ee                for_errsns
+                0x0806c6e0                for_errsns_load
+ .text          0x0806c8a4      0x1d8 /opt/net/afs/apps/intel/compiler91/lib/libifcore.a(for_exit_handler.o)
+                0x0806c8a4                for__fpe_exit_handler
+                0x0806c968                for__exit_handler
+ .text          0x0806ca7c     0x1918 /opt/net/afs/apps/intel/compiler91/lib/libifcore.a(for_init.o)
+                0x0806dadc                for_setup_mxcsr
+                0x0806da04                for_get_fpe_
+                0x0806ca84                for_setup_mxcsr.H
+                0x0806db14                for_get_fpe_counts_
+                0x0806db72                dump_dfil_exception_info
+                0x0806cb0e                for_setup_mxcsr.J
+                0x0806d9ee                for_enable_underflow
+                0x0806db66                for_rtl_finish_
+                0x0806da10                for_set_fpe_
+                0x0806ca7c                for_setup_mxcsr.A
+                0x0806e130                for_rtl_init_
+                0x0806cbda                for__signal_handler
+ .text          0x0806e394     0x421c /opt/net/afs/apps/intel/compiler91/lib/libifcore.a(for_inquire.o)
+                0x0806e394                for_inquire
+ .text          0x080725b0     0x1054 /opt/net/afs/apps/intel/compiler91/lib/libifcore.a(for_common_inquire.o)
+                0x08073144                for__inquire_args
+                0x080725b0                for__common_inquire
+ .text          0x08073604      0xb84 /opt/net/afs/apps/intel/compiler91/lib/libifcore.a(for_io_util.o)
+                0x08073fd0                for__cvt_foreign_check
+                0x080738ee                for__cvt_foreign_read
+                0x0807408a                for_check_env_name
+                0x08073884                for__lower_bound_index.
+                0x08073604                for__adjust_buffer
+                0x08073878                for__lower_bound_index
+                0x08073a9a                for__cvt_foreign_write
+ .text          0x08074188      0xca0 /opt/net/afs/apps/intel/compiler91/lib/libifcore.a(for_lub_mgt.o)
+                0x08074188                for__deallocate_lub
+                0x080743f4                for__acquire_lun
+                0x080747a2                for__release_lun.
+                0x08074400                for__acquire_lun.
+                0x08074b8a                for__preconnected_units_create
+                0x0807479e                for__release_lun
+                0x080748b8                for__get_next_lub
+                0x08074d42                for__recl_env_init
+ .text          0x08074e28      0x36c /opt/net/afs/apps/intel/compiler91/lib/libifcore.a(for_need_lf.o)
+                0x08075122                for__rm_from_lf_table
+                0x08074e28                for__add_to_lf_table
+ .text          0x08075194     0x1cd4 /opt/net/afs/apps/intel/compiler91/lib/libifcore.a(for_open.o)
+                0x08076680                for__set_conversion_option
+                0x08076b22                for__open_default
+                0x0807603c                for__set_foreign_bits
+                0x08075b5c                for__open_key
+                0x080769a2                for__is_special_device
+                0x08075d62                for__update_reopen_keywords
+                0x08075194                for_open
+                0x080762fe                CheckEndian
+                0x08075860                for__open_args
+                0x08076302                CheckEndian.
+                0x0807635e                SetEndian
+                0x08075d6a                for__update_reopen_keywords.
+                0x08076688                for__set_conversion_option.
+                0x08075b68                for__open_key.
+                0x08076044                for__set_foreign_bits.
+ .text          0x08076e68     0x455c /opt/net/afs/apps/intel/compiler91/lib/libifcore.a(for_open_proc.o)
+                0x0807b3ba                for__decl_exit_hand
+                0x0807710a                for__compute_filename
+                0x08078714                for__open_proc.
+                0x08077116                for__compute_filename.
+                0x08076e68                for__reopen_file
+                0x0807870c                for__open_proc
+ .text          0x0807b3c4     0x1cd4 /opt/net/afs/apps/intel/compiler91/lib/libifcore.a(for_put.o)
+                0x0807bc00                for__put_sf
+                0x0807ba16                for__write_output.
+                0x0807ba0a                for__write_output
+                0x0807cd36                for__put_d
+                0x0807b3c4                for__put_su
+                0x0807cf70                for__flush_readahead
+ .text          0x0807d098      0x23c /opt/net/afs/apps/intel/compiler91/lib/libifcore.a(for_reentrancy.o)
+                0x0807d156                for__once_private
+                0x0807d1a8                for__InterlockedExchange
+                0x0807d0cc                for__reentrancy_cleanup
+                0x0807d124                for__disable_asynch_deliv_private
+                0x0807d098                for_set_reentrancy
+                0x0807d13e                for__enable_asynch_deliv_private
+                0x0807d1be                for__reentrancy_init
+ .text          0x0807d2d4     0x196c /opt/net/afs/apps/intel/compiler91/lib/libifcore.a(for_rseq_fmt.o)
+                0x0807d2d4                for_read_seq_fmt
+                0x0807da9e                for_read_seq_fmt_xmit
+                0x0807d8ea                for__read_args
+ .text          0x0807ec40     0x20f4 /opt/net/afs/apps/intel/compiler91/lib/libifcore.a(for_rseq_lis.o)
+                0x0807ec40                for_read_seq_lis
+                0x0807fe96                for__swallow_imaginary_part
+                0x0807f058                for_read_seq_lis_xmit
+                0x0807fe9a                for__swallow_imaginary_part.
+ .text          0x08080d34      0x854 /opt/net/afs/apps/intel/compiler91/lib/libifcore.a(for_stop.o)
+                0x08080d60                for_stop_core
+                0x08080d34                for_abort
+                0x08081556                for_stop
+ .text          0x08081588      0x468 /opt/net/afs/apps/intel/compiler91/lib/libifcore.a(for_vm.o)
+                0x08081738                for__spec_align_alloc
+                0x080815f2                for__free_vm
+                0x080817fc                for_deallocate.
+                0x080819e0                for__spec_align_free
+                0x08081662                for_allocate.
+                0x080815c0                for__realloc_vm
+                0x080818e6                for_check_mult_overflow64
+                0x08081604                for_alloc_allocatable
+                0x0808176a                for_dealloc_allocatable
+                0x080817f4                for_deallocate
+                0x08081656                for_allocate
+                0x08081588                for__get_vm
+                0x08081740                for__spec_align_alloc.
+                0x0808185e                for_check_mult_overflow
+ .text          0x080819f0     0x150c /opt/net/afs/apps/intel/compiler91/lib/libifcore.a(for_wint_fmt.o)
+                0x080819f0                for_write_int_fmt
+                0x08081f1c                for_write_int_fmt_xmit
+ .text          0x08082efc     0x356c /opt/net/afs/apps/intel/compiler91/lib/libifcore.a(for_wseq.o)
+                0x08082efc                for_write_seq
+                0x080834ea                for_write_seq_xmit
+                0x080860ce                for__finish_ufseq_write
+                0x08085108                for__write_UFSEQD_record_to_file.
+                0x080850fc                for__write_UFSEQD_record_to_file
+ .text          0x08086468     0x1e0c /opt/net/afs/apps/intel/compiler91/lib/libifcore.a(for_wseq_fmt.o)
+                0x08086c4a                for__write_args
+                0x08086468                for_write_seq_fmt
+                0x08086c56                for__write_args.
+                0x08086da8                for_write_seq_fmt_xmit
+ .text          0x08088274     0x37a0 /opt/net/afs/apps/intel/compiler91/lib/libifcore.a(for_wseq_lis.o)
+                0x08088274                for_write_seq_lis
+                0x08088a4a                for_write_seq_lis_xmit
+ .text          0x0808ba14     0x1284 /opt/net/afs/apps/intel/compiler91/lib/libifcore.a(for_f90str.o)
+                0x0808bf5a                for_cpstr_eq
+                0x0808c15a                for_cpstr_ne
+                0x0808c360                for_cpstr_ge
+                0x0808c5c6                for_cpstr_le
+                0x0808ba9a                for_cpstr_gt
+                0x0808ca48                for_concat
+                0x0808c82c                for_cpstr
+                0x0808bcfa                for_cpstr_lt
+                0x0808ba14                for_cpystr
+ .text          0x0808cc98      0x47c /opt/net/afs/apps/intel/compiler91/lib/libifcore.a(for_getarg.o)
+                0x0808cd6c                for_getarg_i2
+                0x0808ccb4                for_getarg
+                0x0808cc98                for_nargs
+                0x0808ce64                getarg_
+                0x0808ce34                iargc_
+                0x0808cca4                for_iargc
+                0x0808ce44                iarg_
+                0x0808ce54                numarg_
+                0x0808ce28                nargs_
+                0x0808cefc                for_getcmd_arg
+ .text          0x0808d114      0x200 /opt/net/afs/apps/intel/compiler91/lib/libifcore.a(for_90_index.o)
+                0x0808d160                for_index_back.
+                0x0808d154                for_index_back
+                0x0808d114                for_f90_index
+ .text          0x0808d314      0x648 /opt/net/afs/apps/intel/compiler91/lib/libifcore.a(cvt_text_to_int.o)
+                0x0808d704                cvt_text_to_unsigned
+                0x0808d35a                cvt_text_to_integer64
+                0x0808d74c                cvt_text_to_unsigned64
+                0x0808d314                cvt_text_to_integer
+ .text          0x0808d95c     0x1a68 /opt/net/afs/apps/intel/compiler91/lib/libifcore.a(cvt_ieee_double.o)
+                0x0808dec0                cvt_ieee_double_to_ibm_long
+                0x0808e982                CVT_IEEE_DOUBLE_TO_VAX_D
+                0x0808e4da                cvt_ieee_double_to_vax_d_
+                0x0808ee62                cvt_ieee_double_to_vax_h_
+                0x0808ee88                cvt_ieee_double_to_vax_h.
+                0x0808e9b6                cvt_ieee_double_to_vax_g
+                0x0808d982                cvt_ieee_double_to_cray.
+                0x0808de8c                CVT_IEEE_DOUBLE_TO_CRAY
+                0x0808e4f4                cvt_ieee_double_to_vax_d
+                0x0808decc                cvt_ieee_double_to_ibm_long.
+                0x0808e4c0                CVT_IEEE_DOUBLE_TO_IBM_LONG
+                0x0808e9c2                cvt_ieee_double_to_vax_g.
+                0x0808f3a8                CVT_IEEE_DOUBLE_TO_VAX_H
+                0x0808d95c                cvt_ieee_double_to_cray_
+                0x0808d976                cvt_ieee_double_to_cray
+                0x0808e99c                cvt_ieee_double_to_vax_g_
+                0x0808ee7c                cvt_ieee_double_to_vax_h
+                0x0808ee48                CVT_IEEE_DOUBLE_TO_VAX_G
+                0x0808dea6                cvt_ieee_double_to_ibm_long_
+                0x0808e500                cvt_ieee_double_to_vax_d.
+ .text          0x0808f3c4      0xd50 /opt/net/afs/apps/intel/compiler91/lib/libifcore.a(cvt_ieee_single.o)
+                0x0808fd6c                cvt_ieee_single_to_vax_f.
+                0x0808f848                cvt_ieee_single_to_ibm_short_
+                0x0808f3de                cvt_ieee_single_to_cray
+                0x0808f3ea                cvt_ieee_single_to_cray.
+                0x0808f82e                CVT_IEEE_SINGLE_TO_CRAY
+                0x0808fd46                cvt_ieee_single_to_vax_f_
+                0x0808f3c4                cvt_ieee_single_to_cray_
+                0x0808fd2c                CVT_IEEE_SINGLE_TO_IBM_SHORT
+                0x080900fa                CVT_IEEE_SINGLE_TO_VAX_F
+                0x0808fd60                cvt_ieee_single_to_vax_f
+                0x0808f862                cvt_ieee_single_to_ibm_short
+                0x0808f86e                cvt_ieee_single_to_ibm_short.
+ .text          0x08090114      0x630 /opt/net/afs/apps/intel/compiler91/lib/libifcore.a(cvt_vax_d.o)
+                0x08090114                cvt_vax_d_to_ieee_double_
+                0x0809013a                cvt_vax_d_to_ieee_double.
+                0x0809012e                cvt_vax_d_to_ieee_double
+                0x08090728                CVT_VAX_D_TO_IEEE_DOUBLE
+ .text          0x08090744      0x534 /opt/net/afs/apps/intel/compiler91/lib/libifcore.a(cvt_vax_f.o)
+                0x08090c5c                CVT_VAX_F_TO_IEEE_SINGLE
+                0x0809075e                cvt_vax_f_to_ieee_single
+                0x08090744                cvt_vax_f_to_ieee_single_
+                0x0809076a                cvt_vax_f_to_ieee_single.
+ .text          0x08090c78      0x62c /opt/net/afs/apps/intel/compiler91/lib/libifcore.a(cvt_vax_g.o)
+                0x08090c78                cvt_vax_g_to_ieee_double_
+                0x08090c9e                cvt_vax_g_to_ieee_double.
+                0x08090c92                cvt_vax_g_to_ieee_double
+                0x0809128a                CVT_VAX_G_TO_IEEE_DOUBLE
+ .text          0x080912a4      0x6b4 /opt/net/afs/apps/intel/compiler91/lib/libifcore.a(cvt_ibm_long.o)
+                0x0809193e                CVT_IBM_LONG_TO_IEEE_DOUBLE
+                0x080912be                cvt_ibm_long_to_ieee_double
+                0x080912ca                cvt_ibm_long_to_ieee_double.
+                0x080912a4                cvt_ibm_long_to_ieee_double_
+ .text          0x08091958      0x56c /opt/net/afs/apps/intel/compiler91/lib/libifcore.a(cvt_ibm_short.o)
+                0x08091eaa                CVT_IBM_SHORT_TO_IEEE_SINGLE
+                0x08091958                cvt_ibm_short_to_ieee_single_
+                0x0809197e                cvt_ibm_short_to_ieee_single.
+                0x08091972                cvt_ibm_short_to_ieee_single
+ .text          0x08091ec4      0xca8 /opt/net/afs/apps/intel/compiler91/lib/libifcore.a(cvt_cray.o)
+                0x080924ee                cvt_cray_to_ieee_double.
+                0x08091ede                cvt_cray_to_ieee_single
+                0x08092b50                CVT_CRAY_TO_IEEE_DOUBLE
+                0x080924c8                cvt_cray_to_ieee_double_
+                0x08091ec4                cvt_cray_to_ieee_single_
+                0x080924ae                CVT_CRAY_TO_IEEE_SINGLE
+                0x08091eea                cvt_cray_to_ieee_single.
+                0x080924e2                cvt_cray_to_ieee_double
+ .text          0x08092b6c      0xa44 /opt/net/afs/apps/intel/compiler91/lib/libifcore.a(tbk_traceback.o)
+                0x080934ec                tbk_stack_trace
+ .text          0x080935b0       0x14 /opt/net/afs/apps/intel/compiler91/lib/libifcore.a(for_exit.o)
+                0x080935b0                for_exit
+ .text          0x080935c4     0x1f6c /opt/net/afs/apps/intel/compiler91/lib/libifcore.a(for_fmt_comp.o)
+                0x080935c4                for__format_compiler
+ .text          0x08095530     0x1680 /opt/net/afs/apps/intel/compiler91/lib/libifcore.a(for_fmt_val.o)
+                0x08095530                for__format_value
+                0x0809611e                for__cvt_value
+ .text          0x08096bb0      0xecc /opt/net/afs/apps/intel/compiler91/lib/libifcore.a(for_get.o)
+                0x08097818                for__get_d
+                0x0809777e                for__read_input.
+                0x08096bb0                for__get_su
+                0x08097772                for__read_input
+ .text          0x08097a7c       0xfc /opt/net/afs/apps/intel/compiler91/lib/libifcore.a(for_index.o)
+                0x08097ad4                for_string_index.
+                0x08097a9c                for_index
+                0x08097a7c                for_index_ssll
+                0x08097ac8                for_string_index
+                0x08097aa8                for_index.
+ .text          0x08097b78      0x964 /opt/net/afs/apps/intel/compiler91/lib/libifcore.a(for_intrp_fmt.o)
+                0x08097b78                for__interp_fmt
+ .text          0x080984dc     0x1298 /opt/net/afs/apps/intel/compiler91/lib/libifcore.a(cvt_cvtas_s.o)
+                0x080996e2                cvt_text_to_ieee_s
+                0x08098518                cvt_ieee_s_to_text_ex
+                0x080984dc                cvt_ieee_s_to_text
+ .text          0x08099774     0x1394 /opt/net/afs/apps/intel/compiler91/lib/libifcore.a(cvt_cvtas_t.o)
+                0x0809aa76                cvt_text_to_ieee_t
+                0x08099774                cvt_ieee_t_to_text
+                0x080997b0                cvt_ieee_t_to_text_ex
+ .text          0x0809ab08     0x1408 /opt/net/afs/apps/intel/compiler91/lib/libifcore.a(cvt_cvtas_x.o)
+                0x0809ab08                cvt_ieee_x_to_text
+                0x0809be48                cvt_text_to_ieee_x
+                0x0809ab44                cvt_ieee_x_to_text_ex
+ .text          0x0809bf10      0x850 /opt/net/afs/apps/intel/compiler91/lib/libifcore.a(cvt_int_to_text.o)
+                0x0809bf10                cvt_integer_to_text
+                0x0809c120                cvt_unsigned_to_text
+                0x0809c2d8                cvt_integer64_to_text
+                0x0809c52e                cvt_unsigned64_to_text
+ .text          0x0809c760      0x72c /opt/net/afs/apps/intel/compiler91/lib/libifcore.a(cvt_data_to_text.o)
+                0x0809caf6                cvt_data64_to_text
+                0x0809c760                cvt_data_to_text
+ .text          0x0809ce8c      0x330 /opt/net/afs/apps/intel/compiler91/lib/libifcore.a(cvt_log_to_text.o)
+                0x0809d03e                cvt_boolean64_to_text
+                0x0809ce8c                cvt_boolean_to_text
+                0x0809cebc                cvt_boolean_to_text_ex
+ .text          0x0809d1bc      0x264 /opt/net/afs/apps/intel/compiler91/lib/libifcore.a(cvt_text_to_data.o)
+                0x0809d1bc                cvt_text_to_data64
+                0x0809d1f6                cvt_text_to_data.
+                0x0809d1ea                cvt_text_to_data
+ .text          0x0809d420      0x224 /opt/net/afs/apps/intel/compiler91/lib/libifcore.a(cvt_text_to_log.o)
+                0x0809d522                cvt_text_to_boolean64
+                0x0809d420                cvt_text_to_boolean
+ .text          0x0809d644     0x13c4 /opt/net/afs/apps/intel/compiler91/lib/libifcore.a(cvtas_a_to_s.o)
+                0x0809d644                cvtas_a_to_s
+ .text          0x0809ea08     0x2530 /opt/net/afs/apps/intel/compiler91/lib/libifcore.a(cvtas_a_to_t.o)
+                0x0809ea08                cvtas_a_to_t
+ .text          0x080a0f38     0x3acc /opt/net/afs/apps/intel/compiler91/lib/libifcore.a(cvtas_s_to_a.o)
+                0x080a0f38                cvtas_s_to_a
+ .text          0x080a4a04     0x3fe8 /opt/net/afs/apps/intel/compiler91/lib/libifcore.a(cvtas_t_to_a.o)
+                0x080a4a04                cvtas_t_to_a
+ .text          0x080a89ec       0x84 /opt/net/afs/apps/intel/compiler91/lib/libifcore.a(cvtas_nan_s.o)
+                0x080a89ec                cvtas_string_to_nan_s
+ .text          0x080a8a70       0x8c /opt/net/afs/apps/intel/compiler91/lib/libifcore.a(cvtas_nan_t.o)
+                0x080a8a70                cvtas_string_to_nan_t
+ .text          0x080a8afc     0x40bc /opt/net/afs/apps/intel/compiler91/lib/libifcore.a(cvtas_a_to_x.o)
+                0x080a8afc                cvtas_a_to_x
+ .text          0x080acbb8     0x40f4 /opt/net/afs/apps/intel/compiler91/lib/libifcore.a(cvtas_x_to_a.o)
+                0x080acbb8                cvtas_x_to_a
+ .text          0x080b0cac       0xbc /opt/net/afs/apps/intel/compiler91/lib/libifcore.a(cvtas_nan_x.o)
+                0x080b0cac                cvtas_string_to_nan_x
+ .text          0x080b0d68       0x70 /opt/net/afs/apps/intel/compiler91/lib/libimf.a(f__powi4i4.o)
+                0x080b0d68                __powi4i4
+ .text          0x080b0dd8       0x4c /opt/net/afs/apps/intel/compiler91/lib/libimf.a(f__powr4i4.o)
+                0x080b0dd8                __powr4i4
+ .text          0x080b0e24       0x28 /opt/net/afs/apps/intel/compiler91/lib/libimf.a(pow_stub.o)
+                0x080b0e24                pow
+ .text          0x080b0e4c       0x28 /opt/net/afs/apps/intel/compiler91/lib/libimf.a(sqrt_stub.o)
+                0x080b0e4c                sqrt
+ .text          0x080b0e74      0xd34 /opt/net/afs/apps/intel/compiler91/lib/libimf.a(pow_gen.o)
+                0x080b0e74                pow.A
+ .text          0x080b1ba8     0x1090 /opt/net/afs/apps/intel/compiler91/lib/libimf.a(pow_wmt.o)
+                0x080b1ba8                pow.J
+ .text          0x080b2c38       0x7c /opt/net/afs/apps/intel/compiler91/lib/libimf.a(sqrt_gen.o)
+                0x080b2c38                sqrt.A
+ .text          0x080b2cb4       0x5c /opt/net/afs/apps/intel/compiler91/lib/libimf.a(sqrt_wmt.o)
+                0x080b2cb4                sqrt.J
+ .text          0x080b2d10     0x65c0 /opt/net/afs/apps/intel/compiler91/lib/libimf.a(libm_error.ost)
+                0x080b2d10                __libm_error_support
+                0x080b92a4                __libm_setusermatherr
+                0x080b928e                __libm_setusermatherrl
+                0x080b92ba                __libm_setusermatherrf
+ .text          0x080b92d0        0x8 /opt/net/afs/apps/intel/compiler91/lib/libimf.a(matherr.o)
+                0x080b92d0                matherr
+ .text          0x080b92d8        0x8 /opt/net/afs/apps/intel/compiler91/lib/libimf.a(matherrf.o)
+                0x080b92d8                matherrf
+ .text          0x080b92e0        0x8 /opt/net/afs/apps/intel/compiler91/lib/libimf.a(matherrl.o)
+                0x080b92e0                matherrl
+ .text          0x080b92e8      0x400 /opt/net/afs/apps/intel/compiler91/lib/libirc.a(tbk_display.o)
+                0x080b92e8                tbk_string_stack_signal
+ .text          0x080b96e8      0x734 /opt/net/afs/apps/intel/compiler91/lib/libirc.a(q2ints.o)
+                0x080b9d1c                __qtou
+                0x080b96e8                __qtoj
+                0x080b9b68                __qtoi
+                0x080b998a                __qtok
+ .text          0x080b9e1c       0x18 /opt/net/afs/apps/intel/compiler91/lib/libirc.a(w_divq.o)
+                0x080b9e1c                a_divq
+ .text          0x080b9e34       0x18 /opt/net/afs/apps/intel/compiler91/lib/libirc.a(w_mulq.o)
+                0x080b9e34                a_mulq
+ .text          0x080b9e4c       0xf8 /opt/net/afs/apps/intel/compiler91/lib/libirc.a(ia32_memcmp.o)
+                0x080b9e4c                _intel_fast_memcmp
+ .text          0x080b9f44      0xdec /opt/net/afs/apps/intel/compiler91/lib/libirc.a(tbk_backtrace.o)
+                0x080b9f44                tbk_getPC
+                0x080b9f54                tbk_getFramePtr
+                0x080b9f4c                tbk_getRetAddr
+                0x080b9f5c                tbk_getModuleName
+                0x080ba20a                tbk_get_pc_info
+                0x080bab68                tbk_geterrorstring
+                0x080bab6e                tbk_trace_stack
+ .text          0x080bad30      0x1a4 /opt/net/afs/apps/intel/compiler91/lib/libirc.a(cpu_disp.o)
+                0x080baeb4                __intel_cpu_indicator_init
+ .text          0x080baed4       0x7c /opt/net/afs/apps/intel/compiler91/lib/libirc.a(fastmemcpy.o)
+                0x080baeea                _intel_fast_memcpy.J
+                0x080baf16                _intel_fast_memcpy
+                0x080baed4                _intel_fast_memcpy.A
+                0x080baf00                _intel_fast_memcpy.H
+ .text          0x080baf50       0x7c /opt/net/afs/apps/intel/compiler91/lib/libirc.a(fastmemset.o)
+                0x080baf50                _intel_fast_memset.A
+                0x080baf7c                _intel_fast_memset.H
+                0x080baf92                _intel_fast_memset
+                0x080baf66                _intel_fast_memset.J
+ .text          0x080bafcc      0x440 /opt/net/afs/apps/intel/compiler91/lib/libirc.a(proc_init.o)
+                0x080bb0b8                __intel_new_proc_init
+                0x080bb404                __intel_proc_init_N.A
+                0x080bb0f2                __intel_proc_init
+                0x080bb266                __intel_new_proc_init_B.L
+                0x080bb2f2                __intel_proc_init_B.K
+                0x080bb1cc                __intel_new_proc_init_P.L
+                0x080bb314                __intel_new_proc_init_N
+                0x080bb19e                __intel_proc_init_T.A
+                0x080bb35c                __intel_new_proc_init_N.L
+                0x080bb37c                __intel_new_proc_init_N.J
+                0x080bb3e8                __intel_proc_init_N.K
+                0x080bb3f6                __intel_proc_init_N.J
+                0x080bb30e                __intel_proc_init_B.A
+                0x080bb36c                __intel_new_proc_init_N.K
+                0x080bb0e0                __intel_new_proc_init.H
+                0x080bb0f0                __intel_new_proc_init.A
+                0x080bb3da                __intel_proc_init_N.L
+                0x080bb128                __intel_proc_init.A
+                0x080bb12a                __intel_new_proc_init_T
+                0x080bb286                __intel_new_proc_init_B.J
+                0x080bb276                __intel_new_proc_init_B.K
+                0x080bb162                __intel_new_proc_init_T.A
+                0x080bb29c                __intel_proc_init_B
+                0x080bb1e2                __intel_proc_init_P
+                0x080bb168                __intel_proc_init_T
+                0x080bb1a4                __intel_new_proc_init_P
+                0x080bb300                __intel_proc_init_B.J
+                0x080bb392                __intel_proc_init_N
+                0x080bb152                __intel_new_proc_init_T.M
+                0x080bb11a                __intel_proc_init.H
+                0x080bb21e                __intel_new_proc_init_B
+                0x080bb38c                __intel_new_proc_init_N.A
+                0x080bb20a                __intel_proc_init_P.L
+                0x080bb2e4                __intel_proc_init_B.L
+                0x080bb296                __intel_new_proc_init_B.A
+                0x080bb1dc                __intel_new_proc_init_P.A
+                0x080bb190                __intel_proc_init_T.M
+                0x080bb218                __intel_proc_init_P.A
+ .text          0x080bb40c     0x2494 /opt/net/afs/apps/intel/compiler91/lib/libirc.a(ia32_mulq.o)
+                0x080bc534                __mulq.A
+                0x080bd876                __mulq
+                0x080bb40c                __mulq.J
+ .text          0x080bd8a0     0x3b80 /opt/net/afs/apps/intel/compiler91/lib/libirc.a(ia32_divq.o)
+                0x080bf62a                __divq.A
+                0x080c13f6                __divq
+                0x080bd8a0                __divq.J
+ .text          0x080c1420      0x884 /opt/net/afs/apps/intel/compiler91/lib/libirc.a(q2fp.o)
+                0x080c17d8                __qtol
+                0x080c1420                __qtod
+                0x080c1a1a                __qtof
+ *fill*         0x080c1ca4        0xc 90909090
+ .text          0x080c1cb0      0x780 /opt/net/afs/apps/intel/compiler91/lib/libirc.a(fast_memset.o)
+                0x080c1cb0                __intel_new_memset
+ .text          0x080c2430      0xfe0 /opt/net/afs/apps/intel/compiler91/lib/libirc.a(fast_memcpy.o)
+                0x080c2430                __intel_new_memcpy
+ .text          0x080c3410      0x780 /opt/net/afs/apps/intel/compiler91/lib/libirc.a(fast_memset_p3.o)
+                0x080c3410                __intel_new_memset_P3
+ .text          0x080c3b90      0xff0 /opt/net/afs/apps/intel/compiler91/lib/libirc.a(fast_memcpy_p3.o)
+                0x080c3b90                __intel_new_memcpy_P3
+ .text          0x080c4b80      0x100 /opt/net/afs/apps/intel/compiler91/lib/libirc.a(udiv64_gcc.o)
+                0x080c4b80                __divdi3
+                0x080c4bd0                __udivdi3
+ .text          0x080c4c80      0x2c0 /opt/net/afs/apps/intel/compiler91/lib/libirc.a(fast_mem_ops.o)
+                0x080c4c96                set_memcpy_largest_cache_size
+                0x080c4d16                init_mem_ops_method
+                0x080c4ce6                get_memcpy_largest_cache_size
+                0x080c4cbe                set_memcpy_largest_cachelinesize
+                0x080c4f0c                override_mem_ops_method
+                0x080c4cfe                get_memcpy_largest_cachelinesize
+                0x080c4c80                get_mem_ops_method
+ .text          0x080c4f40       0x79 /usr/lib/libc_nonshared.a(elf-init.oS)
+                0x080c4f40                __libc_csu_fini
+                0x080c4f50                __libc_csu_init
+ .gnu.linkonce.t.__i686.get_pc_thunk.bx
+                0x080c4fb9        0x4 /usr/lib/libc_nonshared.a(elf-init.oS)
+                0x080c4fb9                __i686.get_pc_thunk.bx
+ *fill*         0x080c4fbd        0x3 90909090
+ .text          0x080c4fc0       0x28 /usr/lib/gcc/i386-redhat-linux/4.1.1/crtend.o
+ *(SORT(.text.*personality*))
+ *(SORT(.gnu.warning))
+
+.fini           0x080c4fe8       0x1c
+ *(SORT(.fini))
+ .fini          0x080c4fe8       0x13 /usr/lib/gcc/i386-redhat-linux/4.1.1/../../../crti.o
+                0x080c4fe8                _fini
+ .fini          0x080c4ffb        0x5 /usr/lib/gcc/i386-redhat-linux/4.1.1/crtbegin.o
+ .fini          0x080c5000        0x4 /usr/lib/gcc/i386-redhat-linux/4.1.1/../../../crtn.o
+                0x080c5004                PROVIDE (__etext, .)
+                0x080c5004                PROVIDE (_etext, .)
+                0x080c5004                PROVIDE (etext, .)
+
+.rodata         0x080c5020    0x191e0
+ *(SORT(.rodata) .rodata.* .gnu.linkonce.r.*)
+ .rodata        0x080c5020        0x4 /usr/lib/gcc/i386-redhat-linux/4.1.1/../../../crt1.o
+                0x080c5020                _fp_hw
+ .rodata        0x080c5024        0x4 /usr/lib/gcc/i386-redhat-linux/4.1.1/crtbegin.o
+                0x080c5024                __dso_handle
+ *fill*         0x080c5028        0x8 00
+ .rodata        0x080c5030      0x880 wave1df.o
+ .rodata        0x080c58b0       0x20 updates.o
+ .rodata        0x080c58d0       0x20 residuals.o
+ .rodata        0x080c58f0       0xd0 ../../../lib/librnpl.a(librnplf77.o)
+ .rodata        0x080c59c0      0x890 ../../../lib/librnpl.a(bbhutil.o)
+ .rodata        0x080c6250       0x14 ../../../lib/librnpl.a(librnpl.o)
+ *fill*         0x080c6264       0x1c 00
+ .rodata        0x080c6280     0x1bc0 ../../../lib/librnpl.a(sdf.o)
+ .rodata        0x080c7e40      0x980 ../../../lib/librnpl.a(gpar.tab.o)
+ .rodata        0x080c87c0      0xca0 ../../../lib/librnpl.a(lex.gpar.o)
+ .rodata        0x080c9460      0x1e8 ../../../lib/librnpl.a(cliser.o)
+ *fill*         0x080c9648       0x18 00
+ .rodata        0x080c9660      0x520 /afs/.aei-potsdam.mpg.de/u/choptuik/lib/libxvs.a(libxvs.o)
+ .rodata        0x080c9b80      0x250 /afs/.aei-potsdam.mpg.de/u/choptuik/lib/libxvs.a(sdf_util.o)
+ .rodata        0x080c9dd0      0x38c /afs/.aei-potsdam.mpg.de/u/choptuik/lib/libxvs.a(xvscliser.o)
+ .rodata        0x080ca15c        0xc /opt/net/afs/apps/intel/compiler91/lib/libifcore.a(for_close_proc.o)
+ *fill*         0x080ca168       0x18 00
+ .rodata        0x080ca180       0xc0 /opt/net/afs/apps/intel/compiler91/lib/libifcore.a(for_desc_item.o)
+                0x080ca1c0                for__dsc_itm_table
+ .rodata        0x080ca240       0x90 /opt/net/afs/apps/intel/compiler91/lib/libifcore.a(for_diags_intel.o)
+ .rodata        0x080ca2d0       0x5c /opt/net/afs/apps/intel/compiler91/lib/libifcore.a(for_init.o)
+ .rodata        0x080ca32c       0xbc /opt/net/afs/apps/intel/compiler91/lib/libifcore.a(for_inquire.o)
+ *fill*         0x080ca3e8       0x18 00
+ .rodata        0x080ca400      0x260 /opt/net/afs/apps/intel/compiler91/lib/libifcore.a(for_common_inquire.o)
+ .rodata        0x080ca660      0x240 /opt/net/afs/apps/intel/compiler91/lib/libifcore.a(for_io_util.o)
+ .rodata        0x080ca8a0       0xa0 /opt/net/afs/apps/intel/compiler91/lib/libifcore.a(for_lub_mgt.o)
+ .rodata        0x080ca940       0x60 /opt/net/afs/apps/intel/compiler91/lib/libifcore.a(for_need_lf.o)
+ .rodata        0x080ca9a0      0x720 /opt/net/afs/apps/intel/compiler91/lib/libifcore.a(for_open.o)
+ .rodata        0x080cb0c0       0x24 /opt/net/afs/apps/intel/compiler91/lib/libifcore.a(for_open_proc.o)
+ *fill*         0x080cb0e4       0x1c 00
+ .rodata        0x080cb100       0x80 /opt/net/afs/apps/intel/compiler91/lib/libifcore.a(for_reentrancy.o)
+ .rodata        0x080cb180      0x160 /opt/net/afs/apps/intel/compiler91/lib/libifcore.a(for_rseq_fmt.o)
+ .rodata        0x080cb2e0      0x480 /opt/net/afs/apps/intel/compiler91/lib/libifcore.a(for_rseq_lis.o)
+ .rodata        0x080cb760       0xa0 /opt/net/afs/apps/intel/compiler91/lib/libifcore.a(for_wint_fmt.o)
+ .rodata        0x080cb800       0xa0 /opt/net/afs/apps/intel/compiler91/lib/libifcore.a(for_wseq_fmt.o)
+ .rodata        0x080cb8a0        0x8 /opt/net/afs/apps/intel/compiler91/lib/libifcore.a(for_f90str.o)
+ *fill*         0x080cb8a8       0x18 00
+ .rodata        0x080cb8c0      0x320 /opt/net/afs/apps/intel/compiler91/lib/libifcore.a(cvt_text_to_int.o)
+ .rodata        0x080cbbe0      0x160 /opt/net/afs/apps/intel/compiler91/lib/libifcore.a(for_fmt_comp.o)
+ .rodata        0x080cbd40      0x940 /opt/net/afs/apps/intel/compiler91/lib/libifcore.a(for_fmt_val.o)
+ .rodata        0x080cc680      0x6c0 /opt/net/afs/apps/intel/compiler91/lib/libifcore.a(for_intrp_fmt.o)
+                0x080cc9e0                for__fedg_fmt_table
+                0x080cc960                for__b_fmt_table
+                0x080ccac0                for__coerce_data_types
+                0x080cccf0                for__oz_fmt_table
+                0x080ccce0                for__i_fmt_table
+ .rodata        0x080ccd40      0x200 /opt/net/afs/apps/intel/compiler91/lib/libifcore.a(for_ldir_wfs.o)
+                0x080ccd40                for__wfs_table
+                0x080cce40                for__wfs_msf_table
+ .rodata        0x080ccf40       0x10 /opt/net/afs/apps/intel/compiler91/lib/libifcore.a(cvt_cvtas_s.o)
+ .rodata        0x080ccf50       0x18 /opt/net/afs/apps/intel/compiler91/lib/libifcore.a(cvt_cvtas_t.o)
+ .rodata        0x080ccf68        0xc /opt/net/afs/apps/intel/compiler91/lib/libifcore.a(cvt_cvtas_x.o)
+ *fill*         0x080ccf74        0xc 00
+ .rodata        0x080ccf80      0x1c0 /opt/net/afs/apps/intel/compiler91/lib/libifcore.a(cvt__globals.o)
+                0x080cd0bc                cray
+                0x080ccf80                vax_c
+                0x080cd0f4                int_c
+                0x080cd030                ieee_s
+                0x080cd068                ibm_s
+                0x080cd084                ibm_l
+                0x080ccfc0                ieee_t
+ .rodata        0x080cd140        0xc /opt/net/afs/apps/intel/compiler91/lib/libifcore.a(cvt_log_to_text.o)
+ *fill*         0x080cd14c       0x14 00
+ .rodata        0x080cd160      0x180 /opt/net/afs/apps/intel/compiler91/lib/libifcore.a(cvt_text_to_data.o)
+ .rodata        0x080cd2e0      0x340 /opt/net/afs/apps/intel/compiler91/lib/libifcore.a(cvtas_a_to_s.o)
+ .rodata        0x080cd620      0x340 /opt/net/afs/apps/intel/compiler91/lib/libifcore.a(cvtas_a_to_t.o)
+ .rodata        0x080cd960       0x30 /opt/net/afs/apps/intel/compiler91/lib/libifcore.a(cvtas_s_to_a.o)
+ .rodata        0x080cd990       0x30 /opt/net/afs/apps/intel/compiler91/lib/libifcore.a(cvtas_t_to_a.o)
+ .rodata        0x080cd9c0      0x1e0 /opt/net/afs/apps/intel/compiler91/lib/libifcore.a(cvtas_nan_s.o)
+ .rodata        0x080cdba0      0x1e0 /opt/net/afs/apps/intel/compiler91/lib/libifcore.a(cvtas_nan_t.o)
+ .rodata        0x080cdd80      0x340 /opt/net/afs/apps/intel/compiler91/lib/libifcore.a(cvtas_a_to_x.o)
+ .rodata        0x080ce0c0       0x30 /opt/net/afs/apps/intel/compiler91/lib/libifcore.a(cvtas_x_to_a.o)
+ *fill*         0x080ce0f0       0x10 00
+ .rodata        0x080ce100      0x1e0 /opt/net/afs/apps/intel/compiler91/lib/libifcore.a(cvtas_nan_x.o)
+ .rodata        0x080ce2e0      0x100 /opt/net/afs/apps/intel/compiler91/lib/libifcore.a(cvtas_globals.o)
+                0x080ce3c8                cvtas_globals_s
+                0x080ce2e0                cvtas_globals_t
+                0x080ce3a0                cvtas_pten_word
+                0x080ce340                cvtas_globals_x
+ .rodata        0x080ce3e0      0x4e0 /opt/net/afs/apps/intel/compiler91/lib/libifcore.a(cvtas_pow_ten_t.o)
+                0x080ce6e0                cvtas_tiny_pten_t
+                0x080ce3e0                cvtas_pten_t
+                0x080ce780                cvtas_tiny_pten_t_map
+                0x080ce860                cvtas_huge_pten_t_map
+                0x080ce7e0                cvtas_huge_pten_t
+ .rodata        0x080ce8c0      0x5e0 /opt/net/afs/apps/intel/compiler91/lib/libifcore.a(cvtas_pow_ten_64.o)
+                0x080cee00                cvtas_huge_pten_64_map
+                0x080ce8c0                cvtas_pten_64
+                0x080ced00                cvtas_tiny_pten_64_map
+                0x080cee7c                cvtas_huge_pten_64_bexp
+                0x080cec80                cvtas_tiny_pten_64
+                0x080cee5c                cvtas_tiny_pten_64_bexp
+                0x080cebc0                cvtas_pten_64_bexp
+                0x080ced80                cvtas_huge_pten_64
+ .rodata        0x080ceea0      0x520 /opt/net/afs/apps/intel/compiler91/lib/libifcore.a(cvtas_pow_ten_128.o)
+                0x080cf380                cvtas_tiny_tiny_pten_128_bexp
+                0x080cf1e0                cvtas_huge_huge_pten_128
+                0x080cf348                cvtas_pten_128_bexp
+                0x080cf060                cvtas_tiny_tiny_pten_128
+                0x080cf220                cvtas_huge_pten_128
+                0x080ceea0                cvtas_pten_128
+                0x080cf0a0                cvtas_tiny_pten_128
+                0x080cf3a4                cvtas_huge_pten_128_bexp
+                0x080cf388                cvtas_tiny_pten_128_bexp
+                0x080cf140                cvtas_tiny_pten_128_map
+                0x080cf2c0                cvtas_huge_pten_128_map
+                0x080cf39c                cvtas_huge_huge_pten_128_bexp
+ .rodata        0x080cf3c0       0x10 /opt/net/afs/apps/intel/compiler91/lib/libimf.a(f__powi4i4.o)
+ .rodata        0x080cf3d0       0x10 /opt/net/afs/apps/intel/compiler91/lib/libimf.a(f__powr4i4.o)
+ .rodata        0x080cf3e0      0x2e0 /opt/net/afs/apps/intel/compiler91/lib/libimf.a(pow_gen.o)
+ .rodata        0x080cf6c0       0xb0 /opt/net/afs/apps/intel/compiler91/lib/libimf.a(pow_gen.o)
+ *fill*         0x080cf770       0x10 00
+ .rodata        0x080cf780     0x3120 /opt/net/afs/apps/intel/compiler91/lib/libimf.a(pow_wmt.o)
+ .rodata        0x080d28a0      0xc00 /opt/net/afs/apps/intel/compiler91/lib/libimf.a(rcp_table.o)
+                0x080d2ca0                __libm_double_rcp_table_256
+                0x080d28a0                __libm_rcp_table_256
+ .rodata        0x080d34a0       0x10 /opt/net/afs/apps/intel/compiler91/lib/libimf.a(sqrt_gen.o)
+ .rodata        0x080d34b0       0x20 /opt/net/afs/apps/intel/compiler91/lib/libimf.a(sqrt_wmt.o)
+ *fill*         0x080d34d0       0x10 00
+ .rodata        0x080d34e0      0xce0 /opt/net/afs/apps/intel/compiler91/lib/libimf.a(libm_error.ost)
+ .rodata        0x080d41c0       0xc0 /opt/net/afs/apps/intel/compiler91/lib/libimf.a(libm_error.ost)
+                0x080d4220                __libm_ldouble_zero
+                0x080d4200                __libm_double_inf
+                0x080d41c0                __libm_float_zero
+                0x080d41c8                __libm_float_one
+                0x080d4250                __libm_ldouble_inf
+                0x080d4268                __libm_ldouble_huge
+                0x080d41d0                __libm_float_inf
+                0x080d422c                __libm_ldouble_neg_zero
+                0x080d4238                __libm_ldouble_one
+                0x080d425c                __libm_ldouble_neg_inf
+                0x080d41f0                __libm_double_one
+                0x080d41d8                __libm_float_huge
+                0x080d4210                __libm_double_huge
+                0x080d41e0                __libm_double_zero
+                0x080d4244                __libm_ldouble_neg_one
+                0x080d4274                __libm_ldouble_neg_huge
+ .rodata        0x080d4280      0xe80 /opt/net/afs/apps/intel/compiler91/lib/libimf.a(exp_table.o)
+                0x080d48e0                __libm_exp_table_128
+                0x080d44a0                __libm_exp_mi_table_64
+                0x080d46c0                __libm_exp_lo_table_64
+                0x080d4280                __libm_exp_hi_table_64
+ .rodata        0x080d5100     0x1000 /opt/net/afs/apps/intel/compiler91/lib/libimf.a(log_table.o)
+                0x080d5100                __libm_log_table_256
+ .rodata        0x080d6100       0x18 /opt/net/afs/apps/intel/compiler91/lib/libirc.a(q2ints.o)
+ .rodata        0x080d6118       0x40 /opt/net/afs/apps/intel/compiler91/lib/libirc.a(tbk_backtrace.o)
+ .rodata        0x080d6158       0xa0 /opt/net/afs/apps/intel/compiler91/lib/libirc.a(ia32_mulq.o)
+ .rodata        0x080d61f8       0xa0 /opt/net/afs/apps/intel/compiler91/lib/libirc.a(ia32_divq.o)
+ .rodata        0x080d6298       0x28 /opt/net/afs/apps/intel/compiler91/lib/libirc.a(q2fp.o)
+ .rodata        0x080d62c0       0x10 /opt/net/afs/apps/intel/compiler91/lib/libirc.a(fast_mem_ops.o)
+ .rodata.cst4   0x080d62d0        0x4 /usr/lib/gcc/i386-redhat-linux/4.1.1/../../../crt1.o
+                0x080d62d0                _IO_stdin_used
+ .rodata.str1.4
+                0x080d62d4      0x303 wave1df.o
+                                0x5fc (size before relaxing)
+ *fill*         0x080d65d7        0x1 00
+ .rodata.str1.32
+                0x080d65d8      0x566 wave1df.o
+                                0x5b8 (size before relaxing)
+ *fill*         0x080d6b3e        0x2 00
+ .rodata.str1.4
+                0x080d6b40       0x20 ../../../lib/librnpl.a(librnplf77.o)
+                                 0x5c (size before relaxing)
+ .rodata.str1.32
+                0x080d6b60       0x51 ../../../lib/librnpl.a(librnplf77.o)
+                                 0x54 (size before relaxing)
+ *fill*         0x080d6bb1        0x3 00
+ .rodata.str1.4
+                0x080d6bb4        0x8 /opt/net/afs/apps/intel/compiler91/lib/libifcore.a(for_close.o)
+ .rodata.str1.4
+                0x080d6bbc       0x68 /opt/net/afs/apps/intel/compiler91/lib/libifcore.a(for_close_proc.o)
+ .rodata.str1.4
+                0x080d6c24       0x1d /opt/net/afs/apps/intel/compiler91/lib/libifcore.a(for_desc_item.o)
+                                 0x20 (size before relaxing)
+ *fill*         0x080d6c41        0x3 00
+ .rodata.str1.4
+                0x080d6c44      0xd71 /opt/net/afs/apps/intel/compiler91/lib/libifcore.a(for_diags_intel.o)
+                                0xd88 (size before relaxing)
+ *fill*         0x080d79b5        0xb 00
+ .rodata.str1.32
+                0x080d79c0     0x3479 /opt/net/afs/apps/intel/compiler91/lib/libifcore.a(for_diags_intel.o)
+                               0x3480 (size before relaxing)
+ *fill*         0x080dae39        0x3 00
+ .rodata.str1.32
+                0x080dae3c       0x20 /opt/net/afs/apps/intel/compiler91/lib/libifcore.a(for_exit_handler.o)
+ .rodata.str1.4
+                0x080dae5c       0xa4 /opt/net/afs/apps/intel/compiler91/lib/libifcore.a(for_init.o)
+                                 0xa8 (size before relaxing)
+ .rodata.str1.32
+                0x080daf00     0x174a /opt/net/afs/apps/intel/compiler91/lib/libifcore.a(for_init.o)
+                               0x1760 (size before relaxing)
+ *fill*         0x080dc64a        0x2 00
+ .rodata.str1.4
+                0x080dc64c      0x11e /opt/net/afs/apps/intel/compiler91/lib/libifcore.a(for_inquire.o)
+                                0x140 (size before relaxing)
+ *fill*         0x080dc76a        0x2 00
+ .rodata.str1.32
+                0x080dc76c       0x22 /opt/net/afs/apps/intel/compiler91/lib/libifcore.a(for_common_inquire.o)
+                                 0x24 (size before relaxing)
+ *fill*         0x080dc78e        0x2 00
+ .rodata.str1.4
+                0x080dc790       0x71 /opt/net/afs/apps/intel/compiler91/lib/libifcore.a(for_common_inquire.o)
+                                 0xa0 (size before relaxing)
+ *fill*         0x080dc801        0x3 00
+ .rodata.str1.4
+                0x080dc804        0x3 /opt/net/afs/apps/intel/compiler91/lib/libifcore.a(for_io_util.o)
+                                  0x4 (size before relaxing)
+ *fill*         0x080dc807        0x1 00
+ .rodata.str1.4
+                0x080dc808       0x43 /opt/net/afs/apps/intel/compiler91/lib/libifcore.a(for_lub_mgt.o)
+                                 0x44 (size before relaxing)
+ *fill*         0x080dc84b        0x1 00
+ .rodata.str1.4
+                0x080dc84c      0x101 /opt/net/afs/apps/intel/compiler91/lib/libifcore.a(for_open.o)
+                                0x290 (size before relaxing)
+ *fill*         0x080dc94d        0x3 00
+ .rodata.str1.4
+                0x080dc950       0x6e /opt/net/afs/apps/intel/compiler91/lib/libifcore.a(for_open_proc.o)
+                                 0xb0 (size before relaxing)
+ *fill*         0x080dc9be        0x2 00
+ .rodata.str1.32
+                0x080dc9c0       0x3f /opt/net/afs/apps/intel/compiler91/lib/libifcore.a(for_open_proc.o)
+                                 0x40 (size before relaxing)
+ *fill*         0x080dc9ff        0x1 00
+ .rodata.str1.4
+                0x080dca00       0x17 /opt/net/afs/apps/intel/compiler91/lib/libifcore.a(for_put.o)
+                                 0x18 (size before relaxing)
+ *fill*         0x080dca17        0x1 00
+ .rodata.str1.4
+                0x080dca18       0x1c /opt/net/afs/apps/intel/compiler91/lib/libifcore.a(for_rseq_fmt.o)
+                                 0x2c (size before relaxing)
+ .rodata.str1.4
+                0x080dca34        0xd /opt/net/afs/apps/intel/compiler91/lib/libifcore.a(for_rseq_lis.o)
+                                 0x18 (size before relaxing)
+ *fill*         0x080dca41        0x3 00
+ .rodata.str1.4
+                0x080dca44       0x18 /opt/net/afs/apps/intel/compiler91/lib/libifcore.a(for_stop.o)
+                                 0x20 (size before relaxing)
+ .rodata.str1.4
+                0x080dca5c       0x19 /opt/net/afs/apps/intel/compiler91/lib/libifcore.a(for_wint_fmt.o)
+                                 0x2c (size before relaxing)
+ *fill*         0x080dca75        0x3 00
+ .rodata.str1.32
+                0x080dca78       0x23 /opt/net/afs/apps/intel/compiler91/lib/libifcore.a(for_wint_fmt.o)
+                                 0x24 (size before relaxing)
+ *fill*         0x080dca9b        0x1 00
+ .rodata.str1.4
+                0x080dca9c       0x18 /opt/net/afs/apps/intel/compiler91/lib/libifcore.a(for_wseq.o)
+                                 0x20 (size before relaxing)
+ .rodata.str1.4
+                0x080dcab4       0x1c /opt/net/afs/apps/intel/compiler91/lib/libifcore.a(for_wseq_fmt.o)
+                                 0x2c (size before relaxing)
+ .rodata.str1.4
+                0x080dcad0       0x1c /opt/net/afs/apps/intel/compiler91/lib/libifcore.a(for_wseq_lis.o)
+                                 0x24 (size before relaxing)
+ .rodata.str1.4
+                0x080dcaec       0x1a /opt/net/afs/apps/intel/compiler91/lib/libifcore.a(for_f90str.o)
+                                 0x1c (size before relaxing)
+ *fill*         0x080dcb06        0x2 00
+ .rodata.str1.4
+                0x080dcb08      0x17f /opt/net/afs/apps/intel/compiler91/lib/libifcore.a(tbk_traceback.o)
+                                0x190 (size before relaxing)
+ *fill*         0x080dcc87       0x19 00
+ .rodata.str1.32
+                0x080dcca0      0x676 /opt/net/afs/apps/intel/compiler91/lib/libifcore.a(tbk_traceback.o)
+                                0x680 (size before relaxing)
+ *fill*         0x080dd316        0x2 00
+ .rodata.str1.4
+                0x080dd318       0x1c /opt/net/afs/apps/intel/compiler91/lib/libifcore.a(for_fmt_comp.o)
+ .rodata.str1.4
+                0x080dd334       0x17 /opt/net/afs/apps/intel/compiler91/lib/libifcore.a(for_get.o)
+                                 0x18 (size before relaxing)
+ *fill*         0x080dd34b        0x1 00
+ .rodata.str1.4
+                0x080dd34c       0x1d /opt/net/afs/apps/intel/compiler91/lib/libifcore.a(for_intrp_fmt.o)
+                                 0x20 (size before relaxing)
+ *fill*         0x080dd369        0x3 00
+ .rodata.str1.4
+                0x080dd36c       0x11 /opt/net/afs/apps/intel/compiler91/lib/libifcore.a(cvt_int_to_text.o)
+                                 0x14 (size before relaxing)
+ .rodata.str1.4
+                0x080dd37d        0x0 /opt/net/afs/apps/intel/compiler91/lib/libifcore.a(cvt_data_to_text.o)
+                                 0x14 (size before relaxing)
+ *fill*         0x080dd37d        0x3 00
+ .rodata.str1.4
+                0x080dd380      0xb4f /opt/net/afs/apps/intel/compiler91/lib/libimf.a(libm_error.ost)
+                                0xb50 (size before relaxing)
+ *fill*         0x080ddecf        0x1 00
+ .rodata.str1.32
+                0x080dded0       0xeb /opt/net/afs/apps/intel/compiler91/lib/libimf.a(libm_error.ost)
+                                 0xec (size before relaxing)
+ *fill*         0x080ddfbb        0x5 00
+ .rodata.str1.32
+                0x080ddfc0      0x160 /opt/net/afs/apps/intel/compiler91/lib/libirc.a(tbk_display.o)
+ .rodata.str1.4
+                0x080de120       0x22 /opt/net/afs/apps/intel/compiler91/lib/libirc.a(tbk_display.o)
+                                 0x28 (size before relaxing)
+ *fill*         0x080de142        0x2 00
+ .rodata.str1.4
+                0x080de144       0x63 /opt/net/afs/apps/intel/compiler91/lib/libirc.a(tbk_backtrace.o)
+                                 0x80 (size before relaxing)
+ *fill*         0x080de1a7        0x1 00
+ .rodata.str1.4
+                0x080de1a8       0x21 /opt/net/afs/apps/intel/compiler91/lib/libirc.a(proc_init.o)
+                                 0x24 (size before relaxing)
+ *fill*         0x080de1c9        0x3 00
+ .rodata.str1.32
+                0x080de1cc       0x34 /opt/net/afs/apps/intel/compiler91/lib/libirc.a(proc_init.o)
+
+.rodata1
+ *(SORT(.rodata1))
+
+.eh_frame_hdr   0x080de200        0x0
+ *(SORT(.eh_frame_hdr))
+
+.eh_frame       0x080de200        0x4
+ *(SORT(.eh_frame))
+ .eh_frame      0x080de200        0x4 /usr/lib/gcc/i386-redhat-linux/4.1.1/crtend.o
+
+.gcc_except_table
+ *(SORT(.gcc_except_table) .gcc_except_table.*)
+                0x080de204                . = (ALIGN (0x1000) - ((0x1000 - .) & 0xfff))
+                0x080df204                . = (0x1000 DATA_SEGMENT_ALIGN 0x1000)
+
+.eh_frame
+ *(SORT(.eh_frame))
+
+.gcc_except_table
+ *(SORT(.gcc_except_table) .gcc_except_table.*)
+
+.tdata
+ *(SORT(.tdata) .tdata.* .gnu.linkonce.td.*)
+
+.tbss
+ *(SORT(.tbss) .tbss.* .gnu.linkonce.tb.*)
+ *(SORT(.tcommon))
+
+.preinit_array  0x080df204        0x0
+                0x080df204                PROVIDE (__preinit_array_start, .)
+ *(SORT(.preinit_array))
+                0x080df204                PROVIDE (__preinit_array_end, .)
+
+.init_array     0x080df204        0x0
+                0x080df204                PROVIDE (__init_array_start, .)
+ *(SORT(.init_array.*))
+ *(SORT(.init_array))
+                0x080df204                PROVIDE (__init_array_end, .)
+
+.fini_array     0x080df204        0x0
+                0x080df204                PROVIDE (__fini_array_start, .)
+ *(SORT(.fini_array))
+ *(SORT(.fini_array.*))
+                0x080df204                PROVIDE (__fini_array_end, .)
+
+.ctors          0x080df204        0x8
+ *crtbegin*.o(SORT(.ctors))
+ *(SORT(EXCLUDE_FILE(*crtend*.o) .ctors))
+ .ctors         0x080df204        0x4 /usr/lib/gcc/i386-redhat-linux/4.1.1/crtbegin.o
+ *(SORT(.ctors.*))
+ *(SORT(.ctors))
+ .ctors         0x080df208        0x4 /usr/lib/gcc/i386-redhat-linux/4.1.1/crtend.o
+
+.dtors          0x080df20c        0x8
+ *crtbegin*.o(SORT(.dtors))
+ *(SORT(EXCLUDE_FILE(*crtend*.o) .dtors))
+ .dtors         0x080df20c        0x4 /usr/lib/gcc/i386-redhat-linux/4.1.1/crtbegin.o
+ *(SORT(.dtors.*))
+ *(SORT(.dtors))
+ .dtors         0x080df210        0x4 /usr/lib/gcc/i386-redhat-linux/4.1.1/crtend.o
+
+.jcr            0x080df214        0x4
+ *(SORT(.jcr))
+ .jcr           0x080df214        0x4 /usr/lib/gcc/i386-redhat-linux/4.1.1/crtend.o
+
+.data.rel.ro
+ *(SORT(.data.rel.ro.local*) .gnu.linkonce.d.rel.ro.local.*)
+ *(SORT(.data.rel.ro*) .gnu.linkonce.d.rel.ro.*)
+
+.dynamic        0x080df218       0xe0
+ *(SORT(.dynamic))
+ .dynamic       0x080df218       0xe0 /usr/lib/gcc/i386-redhat-linux/4.1.1/../../../crt1.o
+                0x080df218                _DYNAMIC
+
+.got            0x080df2f8        0xc
+ *(SORT(.got))
+ .got           0x080df2f8        0xc /usr/lib/gcc/i386-redhat-linux/4.1.1/../../../crt1.o
+                0x080df304                . = (. DATA_SEGMENT_RELRO_END 0xc)
+
+.got.plt        0x080df304      0x198
+ *(SORT(.got.plt))
+ .got.plt       0x080df304      0x198 /usr/lib/gcc/i386-redhat-linux/4.1.1/../../../crt1.o
+                0x080df304                _GLOBAL_OFFSET_TABLE_
+
+.data           0x080df4a0     0x2da0
+ *(SORT(.data) .data.* .gnu.linkonce.d.*)
+ .data          0x080df4a0        0x4 /usr/lib/gcc/i386-redhat-linux/4.1.1/../../../crt1.o
+                0x080df4a0                data_start
+                0x080df4a0                __data_start
+ .data          0x080df4a4        0x4 /usr/lib/gcc/i386-redhat-linux/4.1.1/crtbegin.o
+ *fill*         0x080df4a8       0x18 00
+ .data          0x080df4c0      0x360 wave1df.o
+ .data          0x080df820      0x180 ../../../lib/librnpl.a(librnplf77.o)
+ .data          0x080df9a0       0xc0 ../../../lib/librnpl.a(sdf.o)
+ .data          0x080dfa60        0x4 ../../../lib/librnpl.a(lex.gpar.o)
+ .data          0x080dfa64       0x70 /afs/.aei-potsdam.mpg.de/u/choptuik/lib/libxvs.a(libxvs.o)
+                0x080dfad0                l_DEFAULT_XVSPORT
+ .data          0x080dfad4       0x24 /afs/.aei-potsdam.mpg.de/u/choptuik/lib/libxvs.a(sdf_util.o)
+                0x080dfaf4                MAXDUMP
+ .data          0x080dfaf8        0x4 /afs/.aei-potsdam.mpg.de/u/choptuik/lib/libxvs.a(xvscliser.o)
+                0x080dfaf8                DEFAULT_XVSPORT
+ *fill*         0x080dfafc        0x4 00
+ .data          0x080dfb00     0x12a0 /opt/net/afs/apps/intel/compiler91/lib/libifcore.a(for_diags_intel.o)
+ .data          0x080e0da0        0x8 /opt/net/afs/apps/intel/compiler91/lib/libifcore.a(for_init.o)
+                0x080e0da0                for__l_current_arg
+                0x080e0da4                for__segv_default_msg
+ .data          0x080e0da8        0x4 /opt/net/afs/apps/intel/compiler91/lib/libifcore.a(for_open.o)
+ *fill*         0x080e0dac       0x14 00
+ .data          0x080e0dc0       0xe0 /opt/net/afs/apps/intel/compiler91/lib/libifcore.a(for_reentrancy.o)
+                0x080e0dc0                for__static_threadstor_private
+ .data          0x080e0ea0        0x4 /opt/net/afs/apps/intel/compiler91/lib/libifcore.a(for_rseq_lis.o)
+ .data          0x080e0ea4       0x2c /opt/net/afs/apps/intel/compiler91/lib/libifcore.a(for_stop.o)
+ .data          0x080e0ed0       0x10 /opt/net/afs/apps/intel/compiler91/lib/libimf.a(libm_error.ost)
+                0x080e0ed0                _LIB_VERSIONIMF
+                0x080e0ed4                pmatherrf
+                0x080e0edc                pmatherrl
+                0x080e0ed8                pmatherr
+ .data          0x080e0ee0        0xc /opt/net/afs/apps/intel/compiler91/lib/libirc.a(q2ints.o)
+ .data          0x080e0eec       0x18 /opt/net/afs/apps/intel/compiler91/lib/libirc.a(ia32_mulq.o)
+ .data          0x080e0f04       0x18 /opt/net/afs/apps/intel/compiler91/lib/libirc.a(ia32_divq.o)
+ .data          0x080e0f1c       0x14 /opt/net/afs/apps/intel/compiler91/lib/libirc.a(q2fp.o)
+ .data          0x080e0f30      0x350 /opt/net/afs/apps/intel/compiler91/lib/libirc.a(fast_memset.o)
+ .data          0x080e1280      0x300 /opt/net/afs/apps/intel/compiler91/lib/libirc.a(fast_memcpy.o)
+ .data          0x080e1580      0x350 /opt/net/afs/apps/intel/compiler91/lib/libirc.a(fast_memset_p3.o)
+ .data          0x080e18d0      0x300 /opt/net/afs/apps/intel/compiler91/lib/libirc.a(fast_memcpy_p3.o)
+ *fill*         0x080e1bd0       0x10 00
+ .data          0x080e1be0      0x660 /opt/net/afs/apps/intel/compiler91/lib/libirc.a(fast_mem_ops.o)
+                0x080e1be0                cache_values
+                0x080e2234                _memcpy_mem_ops_method
+ *(SORT(.gnu.linkonce.d.*personality*))
+
+.data1          0x080e2240        0x0
+ *(SORT(.data1))
+                0x080e2240                _edata = .
+                0x080e2240                PROVIDE (edata, .)
+                0x080e2240                __bss_start = .
+
+.bss            0x080e2240   0x7b00bc
+ *(SORT(.dynbss))
+ .dynbss        0x080e2240        0xc /usr/lib/gcc/i386-redhat-linux/4.1.1/../../../crt1.o
+                0x080e2240                stdout@@GLIBC_2.0
+                0x080e2244                stderr@@GLIBC_2.0
+                0x080e2248                stdin@@GLIBC_2.0
+ *(SORT(.bss) .bss.* .gnu.linkonce.b.*)
+ .bss           0x080e224c        0x1 /usr/lib/gcc/i386-redhat-linux/4.1.1/crtbegin.o
+ *fill*         0x080e224d       0x13 00
+ .bss           0x080e2260     0x27a0 wave1df.o
+ .bss           0x080e4a00        0x8 updates.o
+ .bss           0x080e4a08        0x8 residuals.o
+ *fill*         0x080e4a10       0x10 00
+ .bss           0x080e4a20     0x21e0 ../../../lib/librnpl.a(librnplf77.o)
+ .bss           0x080e6c00       0x80 ../../../lib/librnpl.a(bbhutil.o)
+                0x080e6c70                Gpar_pr
+                0x080e6c74                Gpar_prsize
+ .bss           0x080e6c80       0x14 ../../../lib/librnpl.a(librnpl.o)
+ *fill*         0x080e6c94        0xc 00
+ .bss           0x080e6ca0      0x220 ../../../lib/librnpl.a(sdf.o)
+ .bss           0x080e6ec0       0x28 ../../../lib/librnpl.a(lex.gpar.o)
+                0x080e6ee4                gparout
+                0x080e6ee0                gparin
+ .bss           0x080e6ee8       0x14 ../../../lib/librnpl.a(cliser.o)
+ .bss           0x080e6efc       0x1c /afs/.aei-potsdam.mpg.de/u/choptuik/lib/libxvs.a(libxvs.o)
+                0x080e6f10                Ltrace_l
+                0x080e6f14                Xvshost
+ .bss           0x080e6f18       0x14 /afs/.aei-potsdam.mpg.de/u/choptuik/lib/libxvs.a(xvscliser.o)
+ .bss           0x080e6f2c        0xc /opt/net/afs/apps/intel/compiler91/lib/libifcore.a(for_diags_intel.o)
+ .bss           0x080e6f38        0x4 /opt/net/afs/apps/intel/compiler91/lib/libifcore.a(for_exit_handler.o)
+                0x080e6f38                for__l_exit_termination
+ .bss           0x080e6f3c       0x28 /opt/net/afs/apps/intel/compiler91/lib/libifcore.a(for_init.o)
+                0x080e6f58                for__l_inecnt
+                0x080e6f44                for__l_fpe_mask
+                0x080e6f50                for__l_div0cnt
+                0x080e6f54                for__l_invcnt
+                0x080e6f4c                for__l_ovfcnt
+                0x080e6f5c                for__l_fmtrecl
+                0x080e6f48                for__l_undcnt
+                0x080e6f60                for__l_ufmtrecl
+ *fill*         0x080e6f64       0x1c 00
+ .bss           0x080e6f80     0x1f00 /opt/net/afs/apps/intel/compiler91/lib/libifcore.a(for_lub_mgt.o)
+                0x080e7ae0                for__lub_table
+ .bss           0x080e8e80     0x1060 /opt/net/afs/apps/intel/compiler91/lib/libifcore.a(for_need_lf.o)
+                0x080e8e80                for__file_info_hash_table
+ .bss           0x080e9ee0      0x220 /opt/net/afs/apps/intel/compiler91/lib/libifcore.a(for_open.o)
+                0x080ea0f0                for__l_exit_hand_decl
+ .bss           0x080ea100       0x18 /opt/net/afs/apps/intel/compiler91/lib/libifcore.a(for_reentrancy.o)
+                0x080ea114                for__reentrancy_initialized
+                0x080ea110                for__reentrancy_mode
+ .bss           0x080ea118        0x8 /opt/net/afs/apps/intel/compiler91/lib/libifcore.a(for_stop.o)
+ .bss           0x080ea120        0x4 /opt/net/afs/apps/intel/compiler91/lib/libifcore.a(tbk_traceback.o)
+ *fill*         0x080ea124       0x1c 00
+ .bss           0x080ea140       0x80 /opt/net/afs/apps/intel/compiler91/lib/libirc.a(tbk_backtrace.o)
+ .bss           0x080ea1c0        0x4 /opt/net/afs/apps/intel/compiler91/lib/libirc.a(cpu_disp.o)
+                0x080ea1c0                __intel_cpu_indicator
+ *fill*         0x080ea1c4        0xc 00
+ .bss           0x080ea1d0        0x8 /opt/net/afs/apps/intel/compiler91/lib/libirc.a(fast_mem_ops.o)
+                0x080ea1d0                _memcpy_largest_cache_size
+                0x080ea1d4                _memcpy_largest_cachelinesize
+ *(SORT(COMMON))
+ *fill*         0x080ea1d8        0x8 00
+ COMMON         0x080ea1e0   0x7a7bd8 wave1df.o
+                0x080ea1e0                com_oglb_int_
+                0x080ea360                com_glob_float_
+                0x080ea380                commm_
+                0x080ee220                com_oglb_float_
+                0x080ee280                com_glob_char_
+                0x080ee400                com_glob_int_
+                0x080ee4a0                com_gfuni0_
+ COMMON         0x08891db8       0x54 ../../../lib/librnpl.a(gpar.tab.o)
+                0x08891db8                first_tok
+                0x08891dbc                gparnerrs
+                0x08891dc0                gparlval
+                0x08891dd8                inputerror
+                0x08891ddc                gparchar
+                0x08891de0                sg_param_type
+                0x08891de4                myasgn
+                0x08891dfc                gotit
+                0x08891e00                sg_param_end
+                0x08891e04                sg_param_buf
+                0x08891e08                sg_param_ptr
+ COMMON         0x08891e0c        0x8 ../../../lib/librnpl.a(lex.gpar.o)
+                0x08891e0c                gparleng
+                0x08891e10                gpartext
+ *fill*         0x08891e14        0xc 00
+ COMMON         0x08891e20      0x424 /afs/.aei-potsdam.mpg.de/u/choptuik/lib/libxvs.a(libxvs.o)
+                0x08891e20                l_XVSPORT
+                0x08891e40                BL
+                0x08892240                Xvsrc
+ COMMON         0x08892244        0xc /opt/net/afs/apps/intel/compiler91/lib/libifcore.a(for_init.o)
+                0x08892244                for__l_excpt_info
+                0x08892248                for__l_argc
+                0x0889224c                for__a_argv
+ *fill*         0x08892250       0x10 00
+ COMMON         0x08892260       0x9c /opt/net/afs/apps/intel/compiler91/lib/libirc.a(tbk_backtrace.o)
+                0x08892260                tbk__jmp_env
+                0x088922fc                . = ALIGN ((. != 0x0)?0x4:0x1)
+                0x088922fc                . = ALIGN (0x4)
+                0x088922fc                . = ALIGN (0x4)
+                0x088922fc                _end = .
+                0x088922fc                PROVIDE (end, .)
+                0x088922fc                . = DATA_SEGMENT_END (.)
+
+.stab
+ *(SORT(.stab))
+
+.stabstr
+ *(SORT(.stabstr))
+
+.stab.excl
+ *(SORT(.stab.excl))
+
+.stab.exclstr
+ *(SORT(.stab.exclstr))
+
+.stab.index
+ *(SORT(.stab.index))
+
+.stab.indexstr
+ *(SORT(.stab.indexstr))
+
+.comment        0x00000000      0x342
+ *(SORT(.comment))
+ .comment       0x00000000       0x2e /usr/lib/gcc/i386-redhat-linux/4.1.1/../../../crt1.o
+ .comment       0x0000002e       0x2e /usr/lib/gcc/i386-redhat-linux/4.1.1/../../../crti.o
+ .comment       0x0000005c       0x2e /usr/lib/gcc/i386-redhat-linux/4.1.1/crtbegin.o
+ .comment       0x0000008a       0x13 wave1df.o
+ .comment       0x0000009d       0x13 updates.o
+ .comment       0x000000b0       0x13 residuals.o
+ .comment       0x000000c3       0x13 ../../../lib/librnpl.a(librnplf77.o)
+ .comment       0x000000d6       0x4f /opt/net/afs/apps/intel/compiler91/lib/libifcore.a(for_init.o)
+ .comment       0x00000125       0x4f /opt/net/afs/apps/intel/compiler91/lib/libifcore.a(for_reentrancy.o)
+ .comment       0x00000174       0x4f /opt/net/afs/apps/intel/compiler91/lib/libifcore.a(cvt_cvtas_s.o)
+ .comment       0x000001c3       0x4f /opt/net/afs/apps/intel/compiler91/lib/libifcore.a(cvt_cvtas_t.o)
+ .comment       0x00000212       0x4f /opt/net/afs/apps/intel/compiler91/lib/libifcore.a(cvt_cvtas_x.o)
+ .comment       0x00000261       0x13 /opt/net/afs/apps/intel/compiler91/lib/libimf.a(pow_stub.o)
+ .comment       0x00000274       0x13 /opt/net/afs/apps/intel/compiler91/lib/libimf.a(sqrt_stub.o)
+ .comment       0x00000287       0x13 /opt/net/afs/apps/intel/compiler91/lib/libirc.a(fastmemcpy.o)
+ .comment       0x0000029a       0x13 /opt/net/afs/apps/intel/compiler91/lib/libirc.a(fastmemset.o)
+ .comment       0x000002ad       0x13 /opt/net/afs/apps/intel/compiler91/lib/libirc.a(proc_init.o)
+ .comment       0x000002c0       0x13 /opt/net/afs/apps/intel/compiler91/lib/libirc.a(ia32_mulq.o)
+ .comment       0x000002d3       0x13 /opt/net/afs/apps/intel/compiler91/lib/libirc.a(ia32_divq.o)
+ .comment       0x000002e6       0x2e /usr/lib/gcc/i386-redhat-linux/4.1.1/crtend.o
+ .comment       0x00000314       0x2e /usr/lib/gcc/i386-redhat-linux/4.1.1/../../../crtn.o
+
+.debug
+ *(SORT(.debug))
+
+.line
+ *(SORT(.line))
+
+.debug_srcinfo
+ *(SORT(.debug_srcinfo))
+
+.debug_sfnames
+ *(SORT(.debug_sfnames))
+
+.debug_aranges
+ *(SORT(.debug_aranges))
+
+.debug_pubnames
+ *(SORT(.debug_pubnames))
+
+.debug_info     0x00000000    0x17a4f
+ *(SORT(.debug_info) .gnu.linkonce.wi.*)
+ .debug_info    0x00000000      0xd8b wave1df.o
+ .debug_info    0x00000d8b      0x164 updates.o
+ .debug_info    0x00000eef      0x185 residuals.o
+ .debug_info    0x00001074     0x12f1 ../../../lib/librnpl.a(bbhutil_f.o)
+ .debug_info    0x00002365      0x834 ../../../lib/librnpl.a(librnpl_f.o)
+ .debug_info    0x00002b99      0x823 ../../../lib/librnpl.a(librnplf77.o)
+ .debug_info    0x000033bc     0x1a78 ../../../lib/librnpl.a(sdf_f.o)
+ .debug_info    0x00004e34     0x2a1c ../../../lib/librnpl.a(bbhutil.o)
+ .debug_info    0x00007850      0x4fe ../../../lib/librnpl.a(librnpl.o)
+ .debug_info    0x00007d4e     0x60f9 ../../../lib/librnpl.a(sdf.o)
+ .debug_info    0x0000de47     0x1081 ../../../lib/librnpl.a(gpar.tab.o)
+ .debug_info    0x0000eec8     0x253f ../../../lib/librnpl.a(lex.gpar.o)
+ .debug_info    0x00011407     0x19be ../../../lib/librnpl.a(cliser.o)
+ .debug_info    0x00012dc5     0x1f4c /afs/.aei-potsdam.mpg.de/u/choptuik/lib/libxvs.a(libxvs.o)
+ .debug_info    0x00014d11     0x111f /afs/.aei-potsdam.mpg.de/u/choptuik/lib/libxvs.a(sdf_util.o)
+ .debug_info    0x00015e30     0x1c1f /afs/.aei-potsdam.mpg.de/u/choptuik/lib/libxvs.a(xvscliser.o)
+
+.debug_abbrev   0x00000000     0x1230
+ *(SORT(.debug_abbrev))
+ .debug_abbrev  0x00000000      0x143 wave1df.o
+ .debug_abbrev  0x00000143       0x68 updates.o
+ .debug_abbrev  0x000001ab       0x68 residuals.o
+ .debug_abbrev  0x00000213       0xc6 ../../../lib/librnpl.a(bbhutil_f.o)
+ .debug_abbrev  0x000002d9       0x82 ../../../lib/librnpl.a(librnpl_f.o)
+ .debug_abbrev  0x0000035b      0x121 ../../../lib/librnpl.a(librnplf77.o)
+ .debug_abbrev  0x0000047c       0xc6 ../../../lib/librnpl.a(sdf_f.o)
+ .debug_abbrev  0x00000542      0x171 ../../../lib/librnpl.a(bbhutil.o)
+ .debug_abbrev  0x000006b3       0xae ../../../lib/librnpl.a(librnpl.o)
+ .debug_abbrev  0x00000761      0x18f ../../../lib/librnpl.a(sdf.o)
+ .debug_abbrev  0x000008f0      0x1b6 ../../../lib/librnpl.a(gpar.tab.o)
+ .debug_abbrev  0x00000aa6      0x222 ../../../lib/librnpl.a(lex.gpar.o)
+ .debug_abbrev  0x00000cc8      0x127 ../../../lib/librnpl.a(cliser.o)
+ .debug_abbrev  0x00000def      0x180 /afs/.aei-potsdam.mpg.de/u/choptuik/lib/libxvs.a(libxvs.o)
+ .debug_abbrev  0x00000f6f      0x185 /afs/.aei-potsdam.mpg.de/u/choptuik/lib/libxvs.a(sdf_util.o)
+ .debug_abbrev  0x000010f4      0x13c /afs/.aei-potsdam.mpg.de/u/choptuik/lib/libxvs.a(xvscliser.o)
+
+.debug_line     0x00000000     0x3a58
+ *(SORT(.debug_line))
+ .debug_line    0x00000000      0x6de wave1df.o
+ .debug_line    0x000006de       0xd5 updates.o
+ .debug_line    0x000007b3       0xab residuals.o
+ .debug_line    0x0000085e      0x2ba ../../../lib/librnpl.a(bbhutil_f.o)
+ .debug_line    0x00000b18      0x13f ../../../lib/librnpl.a(librnpl_f.o)
+ .debug_line    0x00000c57      0x1f2 ../../../lib/librnpl.a(librnplf77.o)
+ .debug_line    0x00000e49      0x352 ../../../lib/librnpl.a(sdf_f.o)
+ .debug_line    0x0000119b      0x5e7 ../../../lib/librnpl.a(bbhutil.o)
+ .debug_line    0x00001782       0x98 ../../../lib/librnpl.a(librnpl.o)
+ .debug_line    0x0000181a      0xec9 ../../../lib/librnpl.a(sdf.o)
+ .debug_line    0x000026e3      0x53a ../../../lib/librnpl.a(gpar.tab.o)
+ .debug_line    0x00002c1d      0x4a6 ../../../lib/librnpl.a(lex.gpar.o)
+ .debug_line    0x000030c3      0x1fd ../../../lib/librnpl.a(cliser.o)
+ .debug_line    0x000032c0      0x248 /afs/.aei-potsdam.mpg.de/u/choptuik/lib/libxvs.a(libxvs.o)
+ .debug_line    0x00003508      0x2e9 /afs/.aei-potsdam.mpg.de/u/choptuik/lib/libxvs.a(sdf_util.o)
+ .debug_line    0x000037f1      0x267 /afs/.aei-potsdam.mpg.de/u/choptuik/lib/libxvs.a(xvscliser.o)
+
+.debug_frame    0x00000000     0x736c
+ *(SORT(.debug_frame))
+ .debug_frame   0x00000000     0x20a4 wave1df.o
+ .debug_frame   0x000020a4      0x138 updates.o
+ .debug_frame   0x000021dc      0x138 residuals.o
+ .debug_frame   0x00002314      0x3dc ../../../lib/librnpl.a(bbhutil_f.o)
+ .debug_frame   0x000026f0      0x25c ../../../lib/librnpl.a(librnpl_f.o)
+ .debug_frame   0x0000294c     0x21e8 ../../../lib/librnpl.a(librnplf77.o)
+ .debug_frame   0x00004b34      0x43c ../../../lib/librnpl.a(sdf_f.o)
+ .debug_frame   0x00004f70      0x930 ../../../lib/librnpl.a(bbhutil.o)
+ .debug_frame   0x000058a0      0x1b4 ../../../lib/librnpl.a(librnpl.o)
+ .debug_frame   0x00005a54      0xe24 ../../../lib/librnpl.a(sdf.o)
+ .debug_frame   0x00006878      0x148 ../../../lib/librnpl.a(gpar.tab.o)
+ .debug_frame   0x000069c0      0x354 ../../../lib/librnpl.a(lex.gpar.o)
+ .debug_frame   0x00006d14      0x10c ../../../lib/librnpl.a(cliser.o)
+ .debug_frame   0x00006e20      0x1dc /afs/.aei-potsdam.mpg.de/u/choptuik/lib/libxvs.a(libxvs.o)
+ .debug_frame   0x00006ffc      0x1fc /afs/.aei-potsdam.mpg.de/u/choptuik/lib/libxvs.a(sdf_util.o)
+ .debug_frame   0x000071f8      0x174 /afs/.aei-potsdam.mpg.de/u/choptuik/lib/libxvs.a(xvscliser.o)
+
+.debug_str
+ *(SORT(.debug_str))
+
+.debug_loc
+ *(SORT(.debug_loc))
+
+.debug_macinfo
+ *(SORT(.debug_macinfo))
+
+.debug_weaknames
+ *(SORT(.debug_weaknames))
+
+.debug_funcnames
+ *(SORT(.debug_funcnames))
+
+.debug_typenames
+ *(SORT(.debug_typenames))
+
+.debug_varnames
+ *(SORT(.debug_varnames))
+
+/DISCARD/
+ *(SORT(.note.GNU-stack))
+OUTPUT(wave1df elf32-i386)
+
+.text1          0x00000000        0x0

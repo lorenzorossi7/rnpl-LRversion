@@ -4,21 +4,73 @@
  */
 
 #include "rvs.h"
+#include <sys/ioctl.h>
+#include <fcntl.h>
 #include <stdio.h>
 #include <stdlib.h>
-#include <rpc/pmap_clnt.h>
-#include <string.h>
+#include <netdb.h>
+#include <signal.h>
+#include <sys/ttycom.h>
 #include <memory.h>
 #include <sys/socket.h>
 #include <netinet/in.h>
+#include <syslog.h>
 
-#ifndef SIG_PF
+#ifdef __STDC__
 #define SIG_PF void(*)(int)
 #endif
+
+#ifdef DEBUG
+#define RPC_SVC_FG
+#endif
+
+#define _RPCSVC_CLOSEDOWN 120
 #include <stdlib.h>
+#include <string.h> //added by LR - new compilers seem to require this
+static int _rpcpmstart;		/* Started by a port monitor ? */
+static int _rpcfdtype;		/* Whether Stream or Datagram ? */
+static int _rpcsvcdirty;	/* Still serving ? */
+
+static
+void _msgout(msg)
+	char *msg;
+{
+#ifdef RPC_SVC_FG
+	if (_rpcpmstart)
+		syslog(LOG_ERR, "%s", msg);
+	else
+		(void) fprintf(stderr, "%s\n", msg);
+#else
+	syslog(LOG_ERR, "%s", msg);
+#endif
+}
 
 static void
-rvs_1(struct svc_req *rqstp, register SVCXPRT *transp)
+closedown()
+{
+	if (_rpcsvcdirty == 0) {
+		extern fd_set svc_fdset;
+		static int size;
+		int i, openfd;
+
+		if (_rpcfdtype == SOCK_DGRAM)
+			exit(0);
+		if (size == 0) {
+			size = getdtablesize();
+		}
+		for (i = 0, openfd = 0; i < size && openfd < 2; i++)
+			if (FD_ISSET(i, &svc_fdset))
+				openfd++;
+		if (openfd <= (_rpcpmstart?0:1))
+			exit(0);
+	}
+	(void) alarm(_RPCSVC_CLOSEDOWN);
+}
+
+static void
+rvs_1(rqstp, transp)
+	struct svc_req *rqstp;
+	SVCXPRT *transp;
 {
 	union {
 		RVSSTRING_args rvsopen_1_arg;
@@ -49,249 +101,320 @@ rvs_1(struct svc_req *rqstp, register SVCXPRT *transp)
 		RVSXYTAGNT_args rvsxytagnt_1_arg;
 	} argument;
 	char *result;
-	xdrproc_t _xdr_argument, _xdr_result;
-	char *(*local)(char *, struct svc_req *);
+	bool_t (*xdr_argument)(), (*xdr_result)();
+	char *(*local)();
 
+	_rpcsvcdirty = 1;
 	switch (rqstp->rq_proc) {
 	case NULLPROC:
-		(void) svc_sendreply (transp, (xdrproc_t) xdr_void, (char *)NULL);
+		(void) svc_sendreply(transp, (xdrproc_t) xdr_void, (char *)NULL);
+		_rpcsvcdirty = 0;
 		return;
 
 	case RVSCONNECT:
-		_xdr_argument = (xdrproc_t) xdr_void;
-		_xdr_result = (xdrproc_t) xdr_int;
-		local = (char *(*)(char *, struct svc_req *)) rvsconnect_1_svc;
+		xdr_argument = xdr_void;
+		xdr_result = xdr_int;
+		local = (char *(*)()) rvsconnect_1_svc;
 		break;
 
 	case RVSOPEN:
-		_xdr_argument = (xdrproc_t) xdr_RVSSTRING_args;
-		_xdr_result = (xdrproc_t) xdr_int;
-		local = (char *(*)(char *, struct svc_req *)) rvsopen_1_svc;
+		xdr_argument = xdr_RVSSTRING_args;
+		xdr_result = xdr_int;
+		local = (char *(*)()) rvsopen_1_svc;
 		break;
 
 	case RVSXY1:
-		_xdr_argument = (xdrproc_t) xdr_RVSXY1_args;
-		_xdr_result = (xdrproc_t) xdr_int;
-		local = (char *(*)(char *, struct svc_req *)) rvsxy1_1_svc;
+		xdr_argument = xdr_RVSXY1_args;
+		xdr_result = xdr_int;
+		local = (char *(*)()) rvsxy1_1_svc;
 		break;
 
 	case RVSXY2:
-		_xdr_argument = (xdrproc_t) xdr_RVSXY2_args;
-		_xdr_result = (xdrproc_t) xdr_int;
-		local = (char *(*)(char *, struct svc_req *)) rvsxy2_1_svc;
+		xdr_argument = xdr_RVSXY2_args;
+		xdr_result = xdr_int;
+		local = (char *(*)()) rvsxy2_1_svc;
 		break;
 
 	case RVSCLOSE:
-		_xdr_argument = (xdrproc_t) xdr_RVS1INT_args;
-		_xdr_result = (xdrproc_t) xdr_int;
-		local = (char *(*)(char *, struct svc_req *)) rvsclose_1_svc;
+		xdr_argument = xdr_RVS1INT_args;
+		xdr_result = xdr_int;
+		local = (char *(*)()) rvsclose_1_svc;
 		break;
 
 	case RVSHANG:
-		_xdr_argument = (xdrproc_t) xdr_void;
-		_xdr_result = (xdrproc_t) xdr_int;
-		local = (char *(*)(char *, struct svc_req *)) rvshang_1_svc;
+		xdr_argument = xdr_void;
+		xdr_result = xdr_int;
+		local = (char *(*)()) rvshang_1_svc;
 		break;
 
 	case RVSSTATUS:
-		_xdr_argument = (xdrproc_t) xdr_RVS1INT_args;
-		_xdr_result = (xdrproc_t) xdr_int;
-		local = (char *(*)(char *, struct svc_req *)) rvsstatus_1_svc;
+		xdr_argument = xdr_RVS1INT_args;
+		xdr_result = xdr_int;
+		local = (char *(*)()) rvsstatus_1_svc;
 		break;
 
 	case RVSGETVSPID:
-		_xdr_argument = (xdrproc_t) xdr_void;
-		_xdr_result = (xdrproc_t) xdr_int;
-		local = (char *(*)(char *, struct svc_req *)) rvsgetvspid_1_svc;
+		xdr_argument = xdr_void;
+		xdr_result = xdr_int;
+		local = (char *(*)()) rvsgetvspid_1_svc;
 		break;
 
 	case RVSRESET:
-		_xdr_argument = (xdrproc_t) xdr_void;
-		_xdr_result = (xdrproc_t) xdr_int;
-		local = (char *(*)(char *, struct svc_req *)) rvsreset_1_svc;
+		xdr_argument = xdr_void;
+		xdr_result = xdr_int;
+		local = (char *(*)()) rvsreset_1_svc;
 		break;
 
 	case RVSSETMAXLXY:
-		_xdr_argument = (xdrproc_t) xdr_RVS2INT_args;
-		_xdr_result = (xdrproc_t) xdr_int;
-		local = (char *(*)(char *, struct svc_req *)) rvssetmaxlxy_1_svc;
+		xdr_argument = xdr_RVS2INT_args;
+		xdr_result = xdr_int;
+		local = (char *(*)()) rvssetmaxlxy_1_svc;
 		break;
 
 	case RVSGETPARAMETER:
-		_xdr_argument = (xdrproc_t) xdr_RVS2INT_args;
-		_xdr_result = (xdrproc_t) xdr_int;
-		local = (char *(*)(char *, struct svc_req *)) rvsgetparameter_1_svc;
+		xdr_argument = xdr_RVS2INT_args;
+		xdr_result = xdr_int;
+		local = (char *(*)()) rvsgetparameter_1_svc;
 		break;
 
 	case RVSSETPARAMETER:
-		_xdr_argument = (xdrproc_t) xdr_RVS3INT_args;
-		_xdr_result = (xdrproc_t) xdr_int;
-		local = (char *(*)(char *, struct svc_req *)) rvssetparameter_1_svc;
+		xdr_argument = xdr_RVS3INT_args;
+		xdr_result = xdr_int;
+		local = (char *(*)()) rvssetparameter_1_svc;
 		break;
 
 	case RVSSETAF:
-		_xdr_argument = (xdrproc_t) xdr_RVS2INT_args;
-		_xdr_result = (xdrproc_t) xdr_int;
-		local = (char *(*)(char *, struct svc_req *)) rvssetaf_1_svc;
+		xdr_argument = xdr_RVS2INT_args;
+		xdr_result = xdr_int;
+		local = (char *(*)()) rvssetaf_1_svc;
 		break;
 
 	case RVSSETTHIN:
-		_xdr_argument = (xdrproc_t) xdr_RVS1INT_args;
-		_xdr_result = (xdrproc_t) xdr_int;
-		local = (char *(*)(char *, struct svc_req *)) rvssetthin_1_svc;
+		xdr_argument = xdr_RVS1INT_args;
+		xdr_result = xdr_int;
+		local = (char *(*)()) rvssetthin_1_svc;
 		break;
 
 	case RVSNAMEQ:
-		_xdr_argument = (xdrproc_t) xdr_RVSSTRING_args;
-		_xdr_result = (xdrproc_t) xdr_int;
-		local = (char *(*)(char *, struct svc_req *)) rvsnameq_1_svc;
+		xdr_argument = xdr_RVSSTRING_args;
+		xdr_result = xdr_int;
+		local = (char *(*)()) rvsnameq_1_svc;
 		break;
 
 	case RVSGLT:
-		_xdr_argument = (xdrproc_t) xdr_RVS1INT_args;
-		_xdr_result = (xdrproc_t) xdr_int;
-		local = (char *(*)(char *, struct svc_req *)) rvsglt_1_svc;
+		xdr_argument = xdr_RVS1INT_args;
+		xdr_result = xdr_int;
+		local = (char *(*)()) rvsglt_1_svc;
 		break;
 
 	case RVSXYN:
-		_xdr_argument = (xdrproc_t) xdr_RVSXYN_args;
-		_xdr_result = (xdrproc_t) xdr_int;
-		local = (char *(*)(char *, struct svc_req *)) rvsxyn_1_svc;
+		xdr_argument = xdr_RVSXYN_args;
+		xdr_result = xdr_int;
+		local = (char *(*)()) rvsxyn_1_svc;
 		break;
 
 	case RVSXYNT:
-		_xdr_argument = (xdrproc_t) xdr_RVSXYNT_args;
-		_xdr_result = (xdrproc_t) xdr_int;
-		local = (char *(*)(char *, struct svc_req *)) rvsxynt_1_svc;
+		xdr_argument = xdr_RVSXYNT_args;
+		xdr_result = xdr_int;
+		local = (char *(*)()) rvsxynt_1_svc;
 		break;
 
 	case RVSXN:
-		_xdr_argument = (xdrproc_t) xdr_RVSXN_args;
-		_xdr_result = (xdrproc_t) xdr_int;
-		local = (char *(*)(char *, struct svc_req *)) rvsxn_1_svc;
+		xdr_argument = xdr_RVSXN_args;
+		xdr_result = xdr_int;
+		local = (char *(*)()) rvsxn_1_svc;
 		break;
 
 	case RVSXNT:
-		_xdr_argument = (xdrproc_t) xdr_RVSXNT_args;
-		_xdr_result = (xdrproc_t) xdr_int;
-		local = (char *(*)(char *, struct svc_req *)) rvsxnt_1_svc;
+		xdr_argument = xdr_RVSXNT_args;
+		xdr_result = xdr_int;
+		local = (char *(*)()) rvsxnt_1_svc;
 		break;
 
 	case RVSSXYNT:
-		_xdr_argument = (xdrproc_t) xdr_RVSSXYNT_args;
-		_xdr_result = (xdrproc_t) xdr_int;
-		local = (char *(*)(char *, struct svc_req *)) rvssxynt_1_svc;
+		xdr_argument = xdr_RVSSXYNT_args;
+		xdr_result = xdr_int;
+		local = (char *(*)()) rvssxynt_1_svc;
 		break;
 
 	case RVSMXYNT:
-		_xdr_argument = (xdrproc_t) xdr_RVSMXYNT_args;
-		_xdr_result = (xdrproc_t) xdr_int;
-		local = (char *(*)(char *, struct svc_req *)) rvsmxynt_1_svc;
+		xdr_argument = xdr_RVSMXYNT_args;
+		xdr_result = xdr_int;
+		local = (char *(*)()) rvsmxynt_1_svc;
 		break;
 
 	case RVSMXY1:
-		_xdr_argument = (xdrproc_t) xdr_RVSMXY1_args;
-		_xdr_result = (xdrproc_t) xdr_int;
-		local = (char *(*)(char *, struct svc_req *)) rvsmxy1_1_svc;
+		xdr_argument = xdr_RVSMXY1_args;
+		xdr_result = xdr_int;
+		local = (char *(*)()) rvsmxy1_1_svc;
 		break;
 
 	case RVSGNXYNI:
-		_xdr_argument = (xdrproc_t) xdr_RVSGNXYNI_args;
-		_xdr_result = (xdrproc_t) xdr_int;
-		local = (char *(*)(char *, struct svc_req *)) rvsgnxyni_1_svc;
+		xdr_argument = xdr_RVSGNXYNI_args;
+		xdr_result = xdr_int;
+		local = (char *(*)()) rvsgnxyni_1_svc;
 		break;
 
 	case RVSNSCT:
-		_xdr_argument = (xdrproc_t) xdr_RVSNSCT_args;
-		_xdr_result = (xdrproc_t) xdr_int;
-		local = (char *(*)(char *, struct svc_req *)) rvsnsct_1_svc;
+		xdr_argument = xdr_RVSNSCT_args;
+		xdr_result = xdr_int;
+		local = (char *(*)()) rvsnsct_1_svc;
 		break;
 
 	case RVSGXYNI:
-		_xdr_argument = (xdrproc_t) xdr_RVSGXYNI_args;
-		_xdr_result = (xdrproc_t) xdr_rget_xyvec0_res;
-		local = (char *(*)(char *, struct svc_req *)) rvsgxyni_1_svc;
+		xdr_argument = xdr_RVSGXYNI_args;
+		xdr_result = xdr_rget_xyvec0_res;
+		local = (char *(*)()) rvsgxyni_1_svc;
 		break;
 
 	case RVSGETPARAMETERN:
-		_xdr_argument = (xdrproc_t) xdr_RVSGETPARAMETERN_args;
-		_xdr_result = (xdrproc_t) xdr_int;
-		local = (char *(*)(char *, struct svc_req *)) rvsgetparametern_1_svc;
+		xdr_argument = xdr_RVSGETPARAMETERN_args;
+		xdr_result = xdr_int;
+		local = (char *(*)()) rvsgetparametern_1_svc;
 		break;
 
 	case RVSGETLXYN:
-		_xdr_argument = (xdrproc_t) xdr_RVSGETLXYN_args;
-		_xdr_result = (xdrproc_t) xdr_int;
-		local = (char *(*)(char *, struct svc_req *)) rvsgetlxyn_1_svc;
+		xdr_argument = xdr_RVSGETLXYN_args;
+		xdr_result = xdr_int;
+		local = (char *(*)()) rvsgetlxyn_1_svc;
 		break;
 
 	case RVSGXYNALL:
-		_xdr_argument = (xdrproc_t) xdr_RVSGETLXYN_args;
-		_xdr_result = (xdrproc_t) xdr_rget_xyalldata0_res;
-		local = (char *(*)(char *, struct svc_req *)) rvsgxynall_1_svc;
+		xdr_argument = xdr_RVSGETLXYN_args;
+		xdr_result = xdr_rget_xyalldata0_res;
+		local = (char *(*)()) rvsgxynall_1_svc;
 		break;
 
 	case RVSXYTAGNT:
-		_xdr_argument = (xdrproc_t) xdr_RVSXYTAGNT_args;
-		_xdr_result = (xdrproc_t) xdr_int;
-		local = (char *(*)(char *, struct svc_req *)) rvsxytagnt_1_svc;
+		xdr_argument = xdr_RVSXYTAGNT_args;
+		xdr_result = xdr_int;
+		local = (char *(*)()) rvsxytagnt_1_svc;
 		break;
 
 	case RVSKILLALL:
-		_xdr_argument = (xdrproc_t) xdr_void;
-		_xdr_result = (xdrproc_t) xdr_int;
-		local = (char *(*)(char *, struct svc_req *)) rvskillall_1_svc;
+		xdr_argument = xdr_void;
+		xdr_result = xdr_int;
+		local = (char *(*)()) rvskillall_1_svc;
 		break;
 
 	default:
-		svcerr_noproc (transp);
+		svcerr_noproc(transp);
+		_rpcsvcdirty = 0;
 		return;
 	}
-	memset ((char *)&argument, 0, sizeof (argument));
-	if (!svc_getargs (transp, (xdrproc_t) _xdr_argument, (caddr_t) &argument)) {
-		svcerr_decode (transp);
+	(void) memset((char *)&argument, 0, sizeof (argument));
+	if (!svc_getargs(transp, xdr_argument, (caddr_t) &argument)) {
+		svcerr_decode(transp);
+		_rpcsvcdirty = 0;
 		return;
 	}
-	result = (*local)((char *)&argument, rqstp);
-	if (result != NULL && !svc_sendreply(transp, (xdrproc_t) _xdr_result, result)) {
-		svcerr_systemerr (transp);
+	result = (*local)(&argument, rqstp);
+	if (result != NULL && !svc_sendreply(transp, (xdrproc_t) xdr_result, result)) {
+		svcerr_systemerr(transp);
 	}
-	if (!svc_freeargs (transp, (xdrproc_t) _xdr_argument, (caddr_t) &argument)) {
-		fprintf (stderr, "%s", "unable to free arguments");
-		exit (1);
+	if (!svc_freeargs(transp, xdr_argument, (caddr_t) &argument)) {
+		_msgout("unable to free arguments");
+		exit(1);
 	}
+	_rpcsvcdirty = 0;
 	return;
 }
 
+
+
 int
-main (int argc, char **argv)
+main(argc, argv)
+int argc;
+char *argv[];
 {
-	register SVCXPRT *transp;
+	SVCXPRT *transp = NULL;
+	int sock;
+	int proto = 0;
+	struct sockaddr_in saddr;
+	int asize = sizeof (saddr);
 
-	pmap_unset (RVS, RVSVERS);
+	if (getsockname(0, (struct sockaddr *)&saddr, &asize) == 0) {
+		int ssize = sizeof (int);
 
-	transp = svcudp_create(RPC_ANYSOCK);
-	if (transp == NULL) {
-		fprintf (stderr, "%s", "cannot create udp service.");
+		if (saddr.sin_family != AF_INET)
+			exit(1);
+		if (getsockopt(0, SOL_SOCKET, SO_TYPE,
+				(char *)&_rpcfdtype, &ssize) == -1)
+			exit(1);
+		sock = 0;
+		_rpcpmstart = 1;
+		proto = 0;
+		openlog("rvs", LOG_PID, LOG_DAEMON);
+	} else {
+#ifndef RPC_SVC_FG
+		int size;
+		int pid, i;
+
+		pid = fork();
+		if (pid < 0) {
+			perror("cannot fork");
+			exit(1);
+		}
+		if (pid)
+			exit(0);
+		size = getdtablesize();
+		for (i = 0; i < size; i++)
+			(void) close(i);
+		i = open("/dev/console", 2);
+		(void) dup2(i, 1);
+		(void) dup2(i, 2);
+		i = open("/dev/tty", 2);
+		if (i >= 0) {
+			(void) ioctl(i, TIOCNOTTY, (char *)NULL);
+			(void) close(i);
+		}
+		openlog("rvs", LOG_PID, LOG_DAEMON);
+#endif
+		sock = RPC_ANYSOCK;
+		(void) pmap_unset(RVS, RVSVERS);
+	}
+
+	if ((_rpcfdtype == 0) || (_rpcfdtype == SOCK_DGRAM)) {
+		transp = svcudp_create(sock);
+		if (transp == NULL) {
+			_msgout("cannot create udp service.");
+			exit(1);
+		}
+		if (!_rpcpmstart)
+			proto = IPPROTO_UDP;
+		if (!svc_register(transp, RVS, RVSVERS, rvs_1, proto)) {
+			_msgout("unable to register (RVS, RVSVERS, udp).");
+			exit(1);
+		}
+	}
+
+	if ((_rpcfdtype == 0) || (_rpcfdtype == SOCK_STREAM)) {
+		if (_rpcpmstart)
+			transp = svcfd_create(sock, 0, 0);
+		else
+			transp = svctcp_create(sock, 0, 0);
+		if (transp == NULL) {
+			_msgout("cannot create tcp service.");
+			exit(1);
+		}
+		if (!_rpcpmstart)
+			proto = IPPROTO_TCP;
+		if (!svc_register(transp, RVS, RVSVERS, rvs_1, proto)) {
+			_msgout("unable to register (RVS, RVSVERS, tcp).");
+			exit(1);
+		}
+	}
+
+	if (transp == (SVCXPRT *)NULL) {
+		_msgout("could not create a handle");
 		exit(1);
 	}
-	if (!svc_register(transp, RVS, RVSVERS, rvs_1, IPPROTO_UDP)) {
-		fprintf (stderr, "%s", "unable to register (RVS, RVSVERS, udp).");
-		exit(1);
+	if (_rpcpmstart) {
+		(void) signal(SIGALRM, (void(*)()) closedown);
+		(void) alarm(_RPCSVC_CLOSEDOWN);
 	}
-
-	transp = svctcp_create(RPC_ANYSOCK, 0, 0);
-	if (transp == NULL) {
-		fprintf (stderr, "%s", "cannot create tcp service.");
-		exit(1);
-	}
-	if (!svc_register(transp, RVS, RVSVERS, rvs_1, IPPROTO_TCP)) {
-		fprintf (stderr, "%s", "unable to register (RVS, RVSVERS, tcp).");
-		exit(1);
-	}
-
-	svc_run ();
-	fprintf (stderr, "%s", "svc_run returned");
-	exit (1);
+	svc_run();
+	_msgout("svc_run returned");
+	exit(1);
 	/* NOTREACHED */
 }

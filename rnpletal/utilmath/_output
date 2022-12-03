@@ -1,0 +1,2 @@
+ld: warning: directory not found for option '-L/usr/X11R6/lib'
+ld: warning: directory not found for option '-L/sw/lib'

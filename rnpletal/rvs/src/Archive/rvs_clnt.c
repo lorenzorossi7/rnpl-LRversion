@@ -9,7 +9,7 @@
 #include <rpc/rpc.h>
 #include <sys/time.h>
 #include "rvs.h"
-#include <malloc.h>
+#include <malloc/malloc.h> //Modified by Lorenzo Rossi to be able to compile on Mac OS High Sierra. Originally it used to be #include <malloc.h>
 
 /* Default timeout can be changed using clnt_control() */
 static struct timeval TIMEOUT = { 25, 0 };

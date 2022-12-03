@@ -1,6 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include <malloc.h>
+#include <malloc/malloc.h> //Modified by Lorenzo Rossi to be able to compile on Mac OS High Sierra. Originally it used to be #include <malloc.h>
 #include <bbhutil.h>
 
 /* 

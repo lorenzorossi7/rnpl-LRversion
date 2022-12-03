@@ -29,7 +29,7 @@ void die(char *mess) {
 }
  
 void usage() {
-   fprintf(stderr,"Synopsis: \n");
+   fprintf(stderr,"Synopsis (modified by HB): \n");
    fprintf(stderr,"  Dumps .sdf file to standard output in ASCII format.\n\n");
    fprintf(stderr,"Usage: \n");
    fprintf(stderr,"  %s [ -i ivec ]\n",P);
@@ -70,7 +70,9 @@ void usage() {
 } 
 
 int main(int argc, char **argv) {
-   int     ltrace =  0;
+//   int     ltrace =  0;
+//HB
+   int     ltrace =  1;
    int     ltrace_full =  0;
 
    static char default_fmt[] = "%24.16e";
@@ -187,23 +189,23 @@ int main(int argc, char **argv) {
                if( dumptime ) {
                   sprintf(outfmt,"%s %s %s\n",fmt,fmt,fmt);
                   for( ix = 0; ix < shape[0]; ix += istride[0] ) {
-                     if( csize == dsize ) {
+//                     if( csize == dsize ) { //HB
                         printf(outfmt,time,zt(coords[ix],zerotiny),
                            zt(data[ix],zerotiny));
-                     } else {
-                        fprintf(stderr,"Bounding box dumping is not implemented yet.\n");
-                        exit(1);
-                     }
+//                     } else {
+//                        fprintf(stderr,"Bounding box dumping is not implemented yet.\n");
+//                        exit(1);
+//                     }
                   }
                } else {
                   sprintf(outfmt,"%s %s\n",fmt,fmt);
                   for( ix = 0; ix < shape[0]; ix += istride[0] ) {
-                     if( csize == dsize ) {
+//                     if( csize == dsize ) { //HB
                         printf(outfmt,coords[ix],data[ix]);
-                     } else {
-                        fprintf(stderr,"Bounding box dumping is not implemented yet.\n");
-                        exit(1);
-                     }
+//                     } else {
+//                        fprintf(stderr,"Bounding box dumping is not implemented yet.\n");
+//                        exit(1);
+//                     }
                   }
                }
                break;
@@ -212,34 +214,68 @@ int main(int argc, char **argv) {
                   sprintf(outfmt,"%s %s %s %s\n",fmt,fmt,fmt,fmt);
                   for( ix = 0; ix < shape[0]; ix += istride[0] )
                    for( iy = 0; iy < shape[1]; iy += istride[1] ) {
-                     if( csize == shape[0]+shape[1] ) {
+//                     if( csize == shape[0]+shape[1] ) { //HB
                         printf(outfmt,time,zt(coords[ix],zerotiny),
                                            zt(coords[iy],zerotiny),
                                            zt(data[ix+iy*shape[0]],zerotiny));
-                     } else {
-                        fprintf(stderr,"Bounding box dumping is not implemented yet.\n");
-                        exit(1);
-                     }
+//                     } else {
+//                        fprintf(stderr,"Bounding box dumping is not implemented yet.\n");
+//                        exit(1);
+//                     }
                   }
                } else {
-                  sprintf(outfmt,"%s %s %s\n",fmt,fmt,fmt);
-                  for( ix = 0; ix < shape[0]; ix += istride[0] )
-                   for( iy = 0; iy < shape[1]; iy += istride[1] ) {
-                     if( csize == shape[0]+shape[1] ) {
-                        printf(outfmt,coords[ix],
-                                      coords[iy],
-                                      data[ix+iy*shape[0]]);
-                     } else {
-                        fprintf(stderr,"Bounding box dumping is not implemented yet.\n");
-                        exit(1);
-                     }
+//                  sprintf(outfmt,"%s %s %s\n",fmt,fmt,fmt);
+//                  for( ix = 0; ix < shape[0]; ix += istride[0] )
+//                   for( iy = 0; iy < shape[1]; iy += istride[1] ) {
+//                     if( csize == shape[0]+shape[1] ) {
+//                        printf(outfmt,coords[ix],
+//                                      coords[iy],
+//                                      data[ix+iy*shape[0]]);
+//                     } else {
+//                        fprintf(stderr,"Bounding box dumping is not implemented yet.\n");
+//                        exit(1);
+//                     }
+//                        printf(outfmt,coords[ix],
+//                                      coords[iy],
+//                                      data[ix+iy*shape[0]]);
+//                  }
+//               }
+//HB
+                  fprintf(stderr,"TESTHB,shape[0]=%i,shape[1]=%i,csize=%i,dsize=%i\n"
+                         ,shape[0],shape[1],csize,dsize);
+                  sprintf(outfmt,"%s %s %s\n","%i","%i",fmt);
+                  for( ix = 0; ix < shape[0]; ix += 1 ) 
+                   for( iy = 0; iy < shape[1]; iy += 1 ) {
+                        printf(outfmt,ix,iy,data[ix+iy*shape[0]]);
                   }
                }
                break;
             case 3:
-               fprintf(stderr,"%s: Rank-3 dumping is not implemented yet.\n",P);
+               if( dumptime ) {
+                  sprintf(outfmt,"%s %s %s %s %s\n",fmt,fmt,fmt,fmt,fmt);
+                  for( ix = 0; ix < shape[0]; ix += istride[0] )
+                   for( iy = 0; iy < shape[1]; iy += istride[1] )
+                    for( iz = 0; iz < shape[2]; iz += istride[2] ){
+                          printf(outfmt,time,zt(coords[ix],zerotiny),
+                                           zt(coords[iy],zerotiny),
+                                           zt(coords[iz],zerotiny),
+                                           zt(data[ix+shape[0]*(iy+shape[1]*iz)],zerotiny));
+                  }
+               } else {
+                  fprintf(stderr,"TESTLR,shape[0]=%i,shape[1]=%i,shape[2]=%i,csize=%i,dsize=%i\n"
+                         ,shape[0],shape[1],shape[2],csize,dsize);
+                  sprintf(outfmt,"%s %s %s %s\n","%i","%i","%i",fmt);
+                  for( ix = 0; ix < shape[0]; ix += 1 )
+                   for( iy = 0; iy < shape[1]; iy += 1 )
+                    for( iz = 0; iz < shape[2]; iz += 1 ) {
+                        printf(outfmt,ix,iy,iz,data[ix+shape[0]*(iy+shape[1]*iz)]);
+                  }
+               }
+//               fprintf(stderr,"%s: Rank-3 dumping is not implemented yet.\n",P);
+//LR
                break;
-               exit(1);
+//               exit(1);
+//LR
             default:
                fprintf(stderr,"%s: Rank-%d dumping is not implemente.\n",P,rank);
                break;

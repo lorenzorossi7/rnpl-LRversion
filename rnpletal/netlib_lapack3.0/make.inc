@@ -16,12 +16,12 @@ PLAT =
 #  selected.  Define LOADER and LOADOPTS to refer to the loader and 
 #  desired load options for your machine.
 #
-FORTRAN  = f77
-OPTS     = -g -fno-second-underscore
+FORTRAN  = gfortran
+OPTS     = -O6 -fno-second-underscore
 DRVOPTS  = $(OPTS)
-NOOPT    = 
-LOADER   = f77
-LOADOPTS = -g -fno-second-underscore -L/usr/local/lib -O6 -fno-second-underscore -L/usr/X11R6/lib
+NOOPT    = -fno-second-underscore
+LOADER   = gfortran
+LOADOPTS = -O6 -fno-second-underscore -L/usr/local/lib -L/usr/X11R6/lib -L/sw/lib -L/usr/local/gfortran/lib -L/opt/local/lib
 #
 #  The archiver and the flag(s) to use when building archive (library)
 #  If you system has no ranlib, set RANLIB = echo.

@@ -5,7 +5,7 @@
 
 #include <rpc/rpc.h>
 #include "rvs.h"
-#include <malloc.h>
+#include <malloc/malloc.h> //Modified by Lorenzo Rossi to be able to compile on Mac OS High Sierra. Originally it used to be #include <malloc.h>
 
 bool_t
 xdr_RVS1INT_args(xdrs, objp)

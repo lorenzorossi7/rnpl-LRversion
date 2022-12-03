@@ -29,6 +29,7 @@
 #include <sys/stat.h>
 #include <sys/types.h>
 #include <regex.h>
+#include <ctype.h> //added by LR - new compilers seem to require this
 
 /* For communication with gpar.tab.c for parsing assignments of vectors */
 /* with arbitrary number of elements. */

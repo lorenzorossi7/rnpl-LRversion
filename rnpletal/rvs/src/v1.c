@@ -4,6 +4,7 @@
 #include      <string.h>
 #include      <libgen.h>
 #include      "rvs_cli.h"
+#include      <stdlib.h> //added by LR - new compilers seem to require this
 
 #define        MAX_NPAIR      100000
 #define        MAX_LABEL      256

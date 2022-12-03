@@ -10,7 +10,7 @@
 #include <rpc/rpc.h>
 #include <rpc/pmap_clnt.h>
 #include "rvs.h"
-#include <malloc.h>
+#include <malloc/malloc.h> //Modified by Lorenzo Rossi to be able to compile on Mac OS High Sierra. Originally it used to be #include <malloc.h>
 
 static void rvs_1();
 
