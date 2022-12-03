@@ -5,7 +5,7 @@
 
 #include <rpc/rpc.h>
 #include "rvs.h"
-#include <malloc.h>
+#include <malloc/malloc.h> //LR: this, instead of the original #include <malloc.h>, seems to be needed by modern compilers
 
 bool_t
 xdr_RVS1INT_args(xdrs, objp)

@@ -1,5 +1,6 @@
 /* Implementation of remote vs ... */
 %#include <stdlib.h>
+%#include <string.h> //LR: this seems to be needed by modern compilers
 
 struct RVS1INT_args {
    int        arg1;

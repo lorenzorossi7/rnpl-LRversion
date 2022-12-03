@@ -18,6 +18,7 @@
 #include "sdf_priv.h"
 #include "cliser.h"
 #include "DVault.h"
+#include <ctype.h> //LR: this seems to be needed by modern compilers
 
 static char SDFC1[] = {"x"};
 static char SDFC2[] = {"x|y"};

@@ -14,6 +14,7 @@
 #include <stdarg.h>
 #include <errno.h>
 #include <sys/stat.h>
+#include "svs.h" //LR: this seems to be needed by modern compilers
 
 #define IVEC_SIZE 41
 

@@ -10,7 +10,7 @@
 #include <rpc/rpc.h>
 #include <rpc/pmap_clnt.h>
 #include "rvs.h"
-#include <malloc.h>
+#include <malloc/malloc.h> //LR: this, instead of the original #include <malloc.h>, seems to be needed by modern compilers
 
 static void rvs_1();
 

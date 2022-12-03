@@ -9,7 +9,7 @@
 #include <rpc/rpc.h>
 #include <sys/time.h>
 #include "rvs.h"
-#include <malloc.h>
+#include <malloc/malloc.h> //LR: this, instead of the original #include <malloc.h>, seems to be needed by modern compilers
 
 /* Default timeout can be changed using clnt_control() */
 static struct timeval TIMEOUT = { 25, 0 };
