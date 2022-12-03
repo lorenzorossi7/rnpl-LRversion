@@ -22,3 +22,11 @@ rnpl/src/bbhutil.c:#include <ctype.h>
 The modified lines have a comment to explain what I did also inside the files themselves.
 
 Moreover, Hans Bantilan (HB) has modified sdfdump.c to enable dumping of rank 2 .sdf files into ascii. I, Lorenzo Rossi (LR) modified it further to enable dumping of rank 3 .sdf files into ascii.
+
+
+Continuing for installation on MacOS Monterey
+
+I added
+
+rnpl/src/librnpl.c: #include "svs.h"
+rnpl/src/sdf.c: #include <ctype.h>

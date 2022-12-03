@@ -14,6 +14,7 @@
 #include <stdarg.h>
 #include <errno.h>
 #include <sys/stat.h>
+#include "svs.h" //LR: without this, function vsxynt is not recognized by the compiler
 
 #define IVEC_SIZE 41
 
