@@ -1,0 +1,584 @@
+<TITLE>netlib/linpack/index</TITLE><UL>
+<PRE>
+Netlib Index for LINPACK
+
+NOTE:
+1.  Entries are arranged in alphabetical order by the real routine name.
+(If you are looking for a specific complex Hermitian routine, you
+will find it listed with its real symmetric equivalent.)
+2.  Specifications for pairs of real and complex routines have been
+merged.  In a few cases, specifications of three routines have been
+merged, one for real symmetric, one for complex symmetric, and one
+for complex Hermitian matrices.
+3.  Specifications are given only for single precision routines.  To
+adapt them for the double precision version of the software, simply
+interpret REAL as DOUBLE PRECISION and COMPLEX and COMPLEX*16 (or
+DOUBLE COMPLEX).
+</PRE>
+<LI><EM>file: </EM><A HREF="/netlib/linpack/readme.Z">linpack/readme</A><MENU>
+<LI><EM>for: </EM>README file for LINPACK
+</MENU>
+<LI><EM>lib: </EM>linpack/chk <A HREF="/netlib/linpack/chk/index.html.Z">(index)</A> <A HREF="/netlib/linpack/chk.tar">(tar)</A><MENU>
+<LI><EM>for: </EM>test drivers for LINPACK
+</MENU>
+<LI><EM>file: </EM><A HREF="/netlib/linpack/schdc.f.Z">linpack/schdc.f</A><MENU>
+</MENU>
+<LI><EM>file: </EM><A HREF="/netlib/linpack/dchdc.f.Z">linpack/dchdc.f</A><MENU>
+</MENU>
+<LI><EM>file: </EM><A HREF="/netlib/linpack/cchdc.f.Z">linpack/cchdc.f</A><MENU>
+</MENU>
+<LI><EM>file: </EM><A HREF="/netlib/linpack/zchdc.f.Z">linpack/zchdc.f</A><MENU>
+<LI><EM>gams: </EM>D2b1b
+<LI><EM>for: </EM>computes the Cholesky decomposition of a positive definite matrix,
+<PRE>
+a pivoting option allows the user to estimate the condition of a
+positive definite matrix or determine the rank of a positive
+semidefinite matrix
+</PRE><LI><EM>prec: </EM>single, double, complex, double complex
+</MENU>
+<LI><EM>file: </EM><A HREF="/netlib/linpack/schdd.f.Z">linpack/schdd.f</A><MENU>
+</MENU>
+<LI><EM>file: </EM><A HREF="/netlib/linpack/dchdd.f.Z">linpack/dchdd.f</A><MENU>
+</MENU>
+<LI><EM>file: </EM><A HREF="/netlib/linpack/cchdd.f.Z">linpack/cchdd.f</A><MENU>
+</MENU>
+<LI><EM>file: </EM><A HREF="/netlib/linpack/zchdd.f.Z">linpack/zchdd.f</A><MENU>
+<LI><EM>gams: </EM>D7b
+<LI><EM>for: </EM>downdates an augmented Cholesky decomposition or the triangular
+<PRE>
+factor of an augmented QR decomposition
+</PRE><LI><EM>prec: </EM>single, double, complex, double complex
+</MENU>
+<LI><EM>file: </EM><A HREF="/netlib/linpack/schex.f.Z">linpack/schex.f</A><MENU>
+</MENU>
+<LI><EM>file: </EM><A HREF="/netlib/linpack/dchex.f.Z">linpack/dchex.f</A><MENU>
+</MENU>
+<LI><EM>file: </EM><A HREF="/netlib/linpack/cchex.f.Z">linpack/cchex.f</A><MENU>
+</MENU>
+<LI><EM>file: </EM><A HREF="/netlib/linpack/zchex.f.Z">linpack/zchex.f</A><MENU>
+<LI><EM>gams: </EM>D7b
+<LI><EM>for: </EM>updates the Cholesky factorization
+<LI><EM>prec: </EM>single, double, complex, double complex
+</MENU>
+<LI><EM>file: </EM><A HREF="/netlib/linpack/schud.f.Z">linpack/schud.f</A><MENU>
+</MENU>
+<LI><EM>file: </EM><A HREF="/netlib/linpack/dchud.f.Z">linpack/dchud.f</A><MENU>
+</MENU>
+<LI><EM>file: </EM><A HREF="/netlib/linpack/cchud.f.Z">linpack/cchud.f</A><MENU>
+</MENU>
+<LI><EM>file: </EM><A HREF="/netlib/linpack/zchud.f.Z">linpack/zchud.f</A><MENU>
+<LI><EM>gams: </EM>D7b
+<LI><EM>for: </EM>updates an augmented Cholesky decomposition or the triangular
+<PRE>
+part of an augmented QR decomposition
+</PRE><LI><EM>prec: </EM>single, double, complex, double complex
+</MENU>
+<LI><EM>file: </EM><A HREF="/netlib/linpack/sgbco.f.Z">linpack/sgbco.f</A><MENU>
+</MENU>
+<LI><EM>file: </EM><A HREF="/netlib/linpack/dgbco.f.Z">linpack/dgbco.f</A><MENU>
+</MENU>
+<LI><EM>file: </EM><A HREF="/netlib/linpack/cgbco.f.Z">linpack/cgbco.f</A><MENU>
+</MENU>
+<LI><EM>file: </EM><A HREF="/netlib/linpack/zgbco.f.Z">linpack/zgbco.f</A><MENU>
+<LI><EM>gams: </EM>D2a2, D2c2
+<LI><EM>for: </EM>factors a real/complex band matrix by Gaussian elimination and
+<PRE>
+estimates the condition number of the matrix
+</PRE><LI><EM>prec: </EM>single, double, complex, double complex
+</MENU>
+<LI><EM>file: </EM><A HREF="/netlib/linpack/sgbdi.f.Z">linpack/sgbdi.f</A><MENU>
+</MENU>
+<LI><EM>file: </EM><A HREF="/netlib/linpack/dgbdi.f.Z">linpack/dgbdi.f</A><MENU>
+</MENU>
+<LI><EM>file: </EM><A HREF="/netlib/linpack/cgbdi.f.Z">linpack/cgbdi.f</A><MENU>
+</MENU>
+<LI><EM>file: </EM><A HREF="/netlib/linpack/zgbdi.f.Z">linpack/zgbdi.f</A><MENU>
+<LI><EM>gams: </EM>D3a2, D3c2
+<LI><EM>for: </EM>computes the determinant of a band matrix using the factors
+<PRE>
+computed by (linpack/_gbco) or (linpack/_gbfa), if the inverse
+is needed use (linpack/_gbsl) n times
+</PRE><LI><EM>prec: </EM>single, double, complex, double complex
+</MENU>
+<LI><EM>file: </EM><A HREF="/netlib/linpack/sgbfa.f.Z">linpack/sgbfa.f</A><MENU>
+</MENU>
+<LI><EM>file: </EM><A HREF="/netlib/linpack/dgbfa.f.Z">linpack/dgbfa.f</A><MENU>
+</MENU>
+<LI><EM>file: </EM><A HREF="/netlib/linpack/cgbfa.f.Z">linpack/cgbfa.f</A><MENU>
+</MENU>
+<LI><EM>file: </EM><A HREF="/netlib/linpack/zgbfa.f.Z">linpack/zgbfa.f</A><MENU>
+<LI><EM>gams: </EM>D2a2, D2c2
+<LI><EM>for: </EM>factors a band matrix by elimination
+<LI><EM>prec: </EM>single, double, complex, double complex
+</MENU>
+<LI><EM>file: </EM><A HREF="/netlib/linpack/sgbsl.f.Z">linpack/sgbsl.f</A><MENU>
+</MENU>
+<LI><EM>file: </EM><A HREF="/netlib/linpack/dgbsl.f.Z">linpack/dgbsl.f</A><MENU>
+</MENU>
+<LI><EM>file: </EM><A HREF="/netlib/linpack/cgbsl.f.Z">linpack/cgbsl.f</A><MENU>
+</MENU>
+<LI><EM>file: </EM><A HREF="/netlib/linpack/zgbsl.f.Z">linpack/zgbsl.f</A><MENU>
+<LI><EM>gams: </EM>D2a2, D2c2
+<LI><EM>for: </EM>solves the real/complex band system Ax = b or trans(A)x = b using
+<PRE>
+the factors computed by (linpack/_gbco) or (linpack/_gbfa)
+</PRE><LI><EM>prec: </EM>single, double, complex, double complex
+</MENU>
+<LI><EM>file: </EM><A HREF="/netlib/linpack/sgeco.f.Z">linpack/sgeco.f</A><MENU>
+</MENU>
+<LI><EM>file: </EM><A HREF="/netlib/linpack/dgeco.f.Z">linpack/dgeco.f</A><MENU>
+</MENU>
+<LI><EM>file: </EM><A HREF="/netlib/linpack/cgeco.f.Z">linpack/cgeco.f</A><MENU>
+</MENU>
+<LI><EM>file: </EM><A HREF="/netlib/linpack/zgeco.f.Z">linpack/zgeco.f</A><MENU>
+<LI><EM>gams: </EM>D2a1, D2c1
+<LI><EM>for: </EM>factors a matrix by Gaussian elimination and estimates the
+<PRE>
+condition number of the matrix
+</PRE><LI><EM>prec: </EM>single, double, complex, double complex
+</MENU>
+<LI><EM>file: </EM><A HREF="/netlib/linpack/sgedi.f.Z">linpack/sgedi.f</A><MENU>
+</MENU>
+<LI><EM>file: </EM><A HREF="/netlib/linpack/dgedi.f.Z">linpack/dgedi.f</A><MENU>
+</MENU>
+<LI><EM>file: </EM><A HREF="/netlib/linpack/cgedi.f.Z">linpack/cgedi.f</A><MENU>
+</MENU>
+<LI><EM>file: </EM><A HREF="/netlib/linpack/zgedi.f.Z">linpack/zgedi.f</A><MENU>
+<LI><EM>gams: </EM>D3a1,D2a1, D2c1, D3c1
+<LI><EM>for: </EM>computes the determinant and inverse of a matrix using the 
+<PRE>
+factors computed by (linpack/_geco) or (linpack/_gefa)
+</PRE><LI><EM>prec: </EM>single, double, complex, double complex
+</MENU>
+<LI><EM>file: </EM><A HREF="/netlib/linpack/sgefa.f.Z">linpack/sgefa.f</A><MENU>
+</MENU>
+<LI><EM>file: </EM><A HREF="/netlib/linpack/dgefa.f.Z">linpack/dgefa.f</A><MENU>
+</MENU>
+<LI><EM>file: </EM><A HREF="/netlib/linpack/cgefa.f.Z">linpack/cgefa.f</A><MENU>
+</MENU>
+<LI><EM>file: </EM><A HREF="/netlib/linpack/zgefa.f.Z">linpack/zgefa.f</A><MENU>
+<LI><EM>gams: </EM>D2a1, D2c1
+<LI><EM>for: </EM>factors a real/complex matrix by Gaussian elimination
+<LI><EM>prec: </EM>single, double, complex, double complex
+</MENU>
+<LI><EM>file: </EM><A HREF="/netlib/linpack/sgesl.f.Z">linpack/sgesl.f</A><MENU>
+</MENU>
+<LI><EM>file: </EM><A HREF="/netlib/linpack/dgesl.f.Z">linpack/dgesl.f</A><MENU>
+</MENU>
+<LI><EM>file: </EM><A HREF="/netlib/linpack/cgesl.f.Z">linpack/cgesl.f</A><MENU>
+</MENU>
+<LI><EM>file: </EM><A HREF="/netlib/linpack/zgesl.f.Z">linpack/zgesl.f</A><MENU>
+<LI><EM>gams: </EM>D2a1, D2c1
+<LI><EM>for: </EM>solves the real/complex system Ax = b or trans(A)x = b using 
+<PRE>
+the factors computed by (linpack/_geco) or (linpack/_gefa)
+</PRE><LI><EM>prec: </EM>single, double, complex, double complex
+</MENU>
+<LI><EM>file: </EM><A HREF="/netlib/linpack/sgtsl.f.Z">linpack/sgtsl.f</A><MENU>
+</MENU>
+<LI><EM>file: </EM><A HREF="/netlib/linpack/dgtsl.f.Z">linpack/dgtsl.f</A><MENU>
+</MENU>
+<LI><EM>file: </EM><A HREF="/netlib/linpack/cgtsl.f.Z">linpack/cgtsl.f</A><MENU>
+</MENU>
+<LI><EM>file: </EM><A HREF="/netlib/linpack/zgtsl.f.Z">linpack/zgtsl.f</A><MENU>
+<LI><EM>gams: </EM>D2a2a, D2c2a
+<LI><EM>for: </EM>given a general tridiagonal matrix and a right hand side will 
+<PRE>
+find the solution
+</PRE><LI><EM>prec: </EM>single, double, complex, double complex
+</MENU>
+<LI><EM>file: </EM><A HREF="/netlib/linpack/spbco.f.Z">linpack/spbco.f</A><MENU>
+</MENU>
+<LI><EM>file: </EM><A HREF="/netlib/linpack/dpbco.f.Z">linpack/dpbco.f</A><MENU>
+</MENU>
+<LI><EM>file: </EM><A HREF="/netlib/linpack/cpbco.f.Z">linpack/cpbco.f</A><MENU>
+</MENU>
+<LI><EM>file: </EM><A HREF="/netlib/linpack/zpbco.f.Z">linpack/zpbco.f</A><MENU>
+<LI><EM>gams: </EM>D2b2, D2d2
+<LI><EM>for: </EM>factors a real/complex symmetric positive definite matrix stored
+<PRE>
+in band form and estimates the condition of the matrix
+</PRE><LI><EM>prec: </EM>single, double, complex, double complex
+</MENU>
+<LI><EM>file: </EM><A HREF="/netlib/linpack/spbdi.f.Z">linpack/spbdi.f</A><MENU>
+</MENU>
+<LI><EM>file: </EM><A HREF="/netlib/linpack/dpbdi.f.Z">linpack/dpbdi.f</A><MENU>
+</MENU>
+<LI><EM>file: </EM><A HREF="/netlib/linpack/cpbdi.f.Z">linpack/cpbdi.f</A><MENU>
+</MENU>
+<LI><EM>file: </EM><A HREF="/netlib/linpack/zpbdi.f.Z">linpack/zpbdi.f</A><MENU>
+<LI><EM>gams: </EM>D3b2, D3d2
+<LI><EM>for: </EM>computes the determinant of a real/complex symmetric positive
+<PRE>
+definite band matrix using the factors computed by (linpack/_pbco)
+or (linpack/_pbfa), if the inverse is needed use (linpack/dpbsl)
+n times
+</PRE><LI><EM>prec: </EM>single, double, complex, double complex
+</MENU>
+<LI><EM>file: </EM><A HREF="/netlib/linpack/spbfa.f.Z">linpack/spbfa.f</A><MENU>
+</MENU>
+<LI><EM>file: </EM><A HREF="/netlib/linpack/dpbfa.f.Z">linpack/dpbfa.f</A><MENU>
+</MENU>
+<LI><EM>file: </EM><A HREF="/netlib/linpack/cpbfa.f.Z">linpack/cpbfa.f</A><MENU>
+</MENU>
+<LI><EM>file: </EM><A HREF="/netlib/linpack/zpbfa.f.Z">linpack/zpbfa.f</A><MENU>
+<LI><EM>gams: </EM>D2b2, D2d2
+<LI><EM>for: </EM>factors a real/complex symmetric positive definite matrix stored
+<PRE>
+in band form
+</PRE><LI><EM>prec: </EM>single, double, complex, double complex
+</MENU>
+<LI><EM>file: </EM><A HREF="/netlib/linpack/spbsl.f.Z">linpack/spbsl.f</A><MENU>
+</MENU>
+<LI><EM>file: </EM><A HREF="/netlib/linpack/dpbsl.f.Z">linpack/dpbsl.f</A><MENU>
+</MENU>
+<LI><EM>file: </EM><A HREF="/netlib/linpack/cpbsl.f.Z">linpack/cpbsl.f</A><MENU>
+</MENU>
+<LI><EM>file: </EM><A HREF="/netlib/linpack/zpbsl.f.Z">linpack/zpbsl.f</A><MENU>
+<LI><EM>gams: </EM>D2b2, D2d2
+<LI><EM>for: </EM>solves the real/complex symmetric positive definite band system
+<PRE>
+Ax = b using the factors computed by (linpack/_pbco) or (linpack/_pbfa)
+</PRE><LI><EM>prec: </EM>single, double, complex, double complex
+</MENU>
+<LI><EM>file: </EM><A HREF="/netlib/linpack/spoco.f.Z">linpack/spoco.f</A><MENU>
+</MENU>
+<LI><EM>file: </EM><A HREF="/netlib/linpack/dpoco.f.Z">linpack/dpoco.f</A><MENU>
+</MENU>
+<LI><EM>file: </EM><A HREF="/netlib/linpack/cpoco.f.Z">linpack/cpoco.f</A><MENU>
+</MENU>
+<LI><EM>file: </EM><A HREF="/netlib/linpack/zpoco.f.Z">linpack/zpoco.f</A><MENU>
+<LI><EM>gams: </EM>D2b1b, D2d1b
+<LI><EM>for: </EM>factors a real/complex symmetric positive definite matrix and
+<PRE>
+estimates the condition number of the matrix
+</PRE><LI><EM>prec: </EM>single, double, complex, double complex
+</MENU>
+<LI><EM>file: </EM><A HREF="/netlib/linpack/spodi.f.Z">linpack/spodi.f</A><MENU>
+</MENU>
+<LI><EM>file: </EM><A HREF="/netlib/linpack/dpodi.f.Z">linpack/dpodi.f</A><MENU>
+</MENU>
+<LI><EM>file: </EM><A HREF="/netlib/linpack/cpodi.f.Z">linpack/cpodi.f</A><MENU>
+</MENU>
+<LI><EM>file: </EM><A HREF="/netlib/linpack/zpodi.f.Z">linpack/zpodi.f</A><MENU>
+<LI><EM>gams: </EM>D2b1b,D3b1b, D2d1b, D3d1b
+<LI><EM>for: </EM>computes the determinant and inverse of a certain real/complex
+<PRE>
+symmetric positive definite matrix using the factors computed by
+(linpack/_poco), (linpack/_pofa) or (linpack/_qrdc)
+</PRE><LI><EM>prec: </EM>single, double, complex, double complex
+</MENU>
+<LI><EM>file: </EM><A HREF="/netlib/linpack/spofa.f.Z">linpack/spofa.f</A><MENU>
+</MENU>
+<LI><EM>file: </EM><A HREF="/netlib/linpack/dpofa.f.Z">linpack/dpofa.f</A><MENU>
+</MENU>
+<LI><EM>file: </EM><A HREF="/netlib/linpack/cpofa.f.Z">linpack/cpofa.f</A><MENU>
+</MENU>
+<LI><EM>file: </EM><A HREF="/netlib/linpack/zpofa.f.Z">linpack/zpofa.f</A><MENU>
+<LI><EM>gams: </EM>D2b1b, D2d1b
+<LI><EM>for: </EM>factors a real/complex symmetric positive definite matrix
+<LI><EM>prec: </EM>single, double, complex, double complex
+</MENU>
+<LI><EM>file: </EM><A HREF="/netlib/linpack/sposl.f.Z">linpack/sposl.f</A><MENU>
+</MENU>
+<LI><EM>file: </EM><A HREF="/netlib/linpack/dposl.f.Z">linpack/dposl.f</A><MENU>
+</MENU>
+<LI><EM>file: </EM><A HREF="/netlib/linpack/cposl.f.Z">linpack/cposl.f</A><MENU>
+</MENU>
+<LI><EM>file: </EM><A HREF="/netlib/linpack/zposl.f.Z">linpack/zposl.f</A><MENU>
+<LI><EM>gams: </EM>D2b1b, D2d1b
+<LI><EM>for: </EM>solves the real/complex symmetric positive definite system
+<PRE>
+Ax = b using the factors computed by (linpack/_poco) or
+(linpack/_pofa)
+</PRE><LI><EM>prec: </EM>single, double, complex, double complex
+</MENU>
+<LI><EM>file: </EM><A HREF="/netlib/linpack/sppco.f.Z">linpack/sppco.f</A><MENU>
+</MENU>
+<LI><EM>file: </EM><A HREF="/netlib/linpack/dppco.f.Z">linpack/dppco.f</A><MENU>
+</MENU>
+<LI><EM>file: </EM><A HREF="/netlib/linpack/cppco.f.Z">linpack/cppco.f</A><MENU>
+</MENU>
+<LI><EM>file: </EM><A HREF="/netlib/linpack/zppco.f.Z">linpack/zppco.f</A><MENU>
+<LI><EM>gams: </EM>D2b1b, D2d1b
+<LI><EM>for: </EM>factors a real/complex symmetric positive definite matrix stored
+<PRE>
+in packed form and estimates the condition number of the matrix
+</PRE><LI><EM>prec: </EM>single, double, complex, double complex
+</MENU>
+<LI><EM>file: </EM><A HREF="/netlib/linpack/sppdi.f.Z">linpack/sppdi.f</A><MENU>
+</MENU>
+<LI><EM>file: </EM><A HREF="/netlib/linpack/dppdi.f.Z">linpack/dppdi.f</A><MENU>
+</MENU>
+<LI><EM>file: </EM><A HREF="/netlib/linpack/cppdi.f.Z">linpack/cppdi.f</A><MENU>
+</MENU>
+<LI><EM>file: </EM><A HREF="/netlib/linpack/zppdi.f.Z">linpack/zppdi.f</A><MENU>
+<LI><EM>gams: </EM>D2b1b,D3b1b, D2d1b, D3d1b
+<LI><EM>for: </EM>computes the determinant and inverse of a real/complex symmetric
+<PRE>
+positive definite matrix using the factors computed by
+(linpack/_ppco) or (linpack/_ppfa)
+</PRE><LI><EM>prec: </EM>single, double, complex, double complex
+</MENU>
+<LI><EM>file: </EM><A HREF="/netlib/linpack/sppfa.f.Z">linpack/sppfa.f</A><MENU>
+</MENU>
+<LI><EM>file: </EM><A HREF="/netlib/linpack/dppfa.f.Z">linpack/dppfa.f</A><MENU>
+</MENU>
+<LI><EM>file: </EM><A HREF="/netlib/linpack/cppfa.f.Z">linpack/cppfa.f</A><MENU>
+</MENU>
+<LI><EM>file: </EM><A HREF="/netlib/linpack/zppfa.f.Z">linpack/zppfa.f</A><MENU>
+<LI><EM>gams: </EM>D2b1b, D2d1b
+<LI><EM>for: </EM>factors a real/complex symmetric positive definite matrix stored
+<PRE>
+in packed form
+</PRE><LI><EM>prec: </EM>single, double, complex, double complex
+</MENU>
+<LI><EM>file: </EM><A HREF="/netlib/linpack/sppsl.f.Z">linpack/sppsl.f</A><MENU>
+</MENU>
+<LI><EM>file: </EM><A HREF="/netlib/linpack/dppsl.f.Z">linpack/dppsl.f</A><MENU>
+</MENU>
+<LI><EM>file: </EM><A HREF="/netlib/linpack/cppsl.f.Z">linpack/cppsl.f</A><MENU>
+</MENU>
+<LI><EM>file: </EM><A HREF="/netlib/linpack/zppsl.f.Z">linpack/zppsl.f</A><MENU>
+<LI><EM>gams: </EM>D2b1b, D2d1b
+<LI><EM>for: </EM>solves the real/complex symmetric positive definite system
+<PRE>
+Ax = b using the factors computed by (linpack/_ppco) or
+(linpack/_ppfa)
+</PRE><LI><EM>prec: </EM>single, double, complex, double complex
+</MENU>
+<LI><EM>file: </EM><A HREF="/netlib/linpack/sptsl.f.Z">linpack/sptsl.f</A><MENU>
+</MENU>
+<LI><EM>file: </EM><A HREF="/netlib/linpack/dptsl.f.Z">linpack/dptsl.f</A><MENU>
+</MENU>
+<LI><EM>file: </EM><A HREF="/netlib/linpack/cptsl.f.Z">linpack/cptsl.f</A><MENU>
+</MENU>
+<LI><EM>file: </EM><A HREF="/netlib/linpack/zptsl.f.Z">linpack/zptsl.f</A><MENU>
+<LI><EM>gams: </EM>D2b2a, D2d2a
+<LI><EM>for: </EM>given a positive definite tridiagonal matrix and a right hand
+<PRE>
+side will find the solution
+</PRE><LI><EM>prec: </EM>single, double, complex, double complex
+</MENU>
+<LI><EM>file: </EM><A HREF="/netlib/linpack/sqrdc.f.Z">linpack/sqrdc.f</A><MENU>
+</MENU>
+<LI><EM>file: </EM><A HREF="/netlib/linpack/dqrdc.f.Z">linpack/dqrdc.f</A><MENU>
+</MENU>
+<LI><EM>file: </EM><A HREF="/netlib/linpack/cqrdc.f.Z">linpack/cqrdc.f</A><MENU>
+</MENU>
+<LI><EM>file: </EM><A HREF="/netlib/linpack/zqrdc.f.Z">linpack/zqrdc.f</A><MENU>
+<LI><EM>gams: </EM>D5
+<LI><EM>for: </EM>uses Householder transformations to compute the QR factorization,
+<PRE>
+column pivoting based on the 2-norms of the reduced columns may
+be performed at the user's option
+</PRE><LI><EM>prec: </EM>single, double, complex, double complex
+</MENU>
+<LI><EM>file: </EM><A HREF="/netlib/linpack/sqrsl.f.Z">linpack/sqrsl.f</A><MENU>
+</MENU>
+<LI><EM>file: </EM><A HREF="/netlib/linpack/dqrsl.f.Z">linpack/dqrsl.f</A><MENU>
+</MENU>
+<LI><EM>file: </EM><A HREF="/netlib/linpack/cqrsl.f.Z">linpack/cqrsl.f</A><MENU>
+</MENU>
+<LI><EM>file: </EM><A HREF="/netlib/linpack/zqrsl.f.Z">linpack/zqrsl.f</A><MENU>
+<LI><EM>gams: </EM>D2a1, D9a1, D2c1
+<LI><EM>for: </EM>applies the output of (linpack/_qrdc) to compute coordinate
+<PRE>
+transformations, projections, and least squares solutions
+</PRE><LI><EM>prec: </EM>single, double, complex, double complex
+</MENU>
+<LI><EM>file: </EM><A HREF="/netlib/linpack/ssico.f.Z">linpack/ssico.f</A><MENU>
+</MENU>
+<LI><EM>file: </EM><A HREF="/netlib/linpack/dsico.f.Z">linpack/dsico.f</A><MENU>
+</MENU>
+<LI><EM>file: </EM><A HREF="/netlib/linpack/csico.f.Z">linpack/csico.f</A><MENU>
+</MENU>
+<LI><EM>file: </EM><A HREF="/netlib/linpack/zsico.f.Z">linpack/zsico.f</A><MENU>
+</MENU>
+<LI><EM>file: </EM><A HREF="/netlib/linpack/chico.f.Z">linpack/chico.f</A><MENU>
+</MENU>
+<LI><EM>file: </EM><A HREF="/netlib/linpack/zhico.f.Z">linpack/zhico.f</A><MENU>
+<LI><EM>gams: </EM>D2b1a, D2c1, D2d1a
+<LI><EM>for: </EM>factors a real/complex/complex symmetric/symmetric/Hermitian matrix
+<PRE>
+by elimination with symmetric pivoting and estimates the condition
+number of the matrix
+</PRE><LI><EM>prec: </EM>single, double, complex, double complex; complex, double complex
+</MENU>
+<LI><EM>file: </EM><A HREF="/netlib/linpack/ssidi.f.Z">linpack/ssidi.f</A><MENU>
+</MENU>
+<LI><EM>file: </EM><A HREF="/netlib/linpack/dsidi.f.Z">linpack/dsidi.f</A><MENU>
+</MENU>
+<LI><EM>file: </EM><A HREF="/netlib/linpack/csidi.f.Z">linpack/csidi.f</A><MENU>
+</MENU>
+<LI><EM>file: </EM><A HREF="/netlib/linpack/zsidi.f.Z">linpack/zsidi.f</A><MENU>
+</MENU>
+<LI><EM>file: </EM><A HREF="/netlib/linpack/chidi.f.Z">linpack/chidi.f</A><MENU>
+</MENU>
+<LI><EM>file: </EM><A HREF="/netlib/linpack/zhidi.f.Z">linpack/zhidi.f</A><MENU>
+<LI><EM>gams: </EM>D2b1a, D3b1a, D2c1, D3c1, D2d1a, D3d1a
+<LI><EM>for: </EM>computes the determinant, inertia and inverse of a
+<PRE>
+real/complex/complex symmetric/symmetric/Hermitian matrix using
+the factors from (linpack/_sifa or _hifa)
+</PRE><LI><EM>prec: </EM>single, double, complex, double complex; complex, double complex
+</MENU>
+<LI><EM>file: </EM><A HREF="/netlib/linpack/ssifa.f.Z">linpack/ssifa.f</A><MENU>
+</MENU>
+<LI><EM>file: </EM><A HREF="/netlib/linpack/dsifa.f.Z">linpack/dsifa.f</A><MENU>
+</MENU>
+<LI><EM>file: </EM><A HREF="/netlib/linpack/csifa.f.Z">linpack/csifa.f</A><MENU>
+</MENU>
+<LI><EM>file: </EM><A HREF="/netlib/linpack/zsifa.f.Z">linpack/zsifa.f</A><MENU>
+</MENU>
+<LI><EM>file: </EM><A HREF="/netlib/linpack/chifa.f.Z">linpack/chifa.f</A><MENU>
+</MENU>
+<LI><EM>file: </EM><A HREF="/netlib/linpack/zhifa.f.Z">linpack/zhifa.f</A><MENU>
+<LI><EM>gams: </EM>D2b1a, D2c1, D2d1a
+<LI><EM>for: </EM>factors a real/complex/complex symmetric/symmetric/Hermitian matrix
+<PRE>
+by elimination with symmetric pivoting
+</PRE><LI><EM>prec: </EM>single, double, complex, double complex; complex, double complex
+</MENU>
+<LI><EM>file: </EM><A HREF="/netlib/linpack/ssisl.f.Z">linpack/ssisl.f</A><MENU>
+</MENU>
+<LI><EM>file: </EM><A HREF="/netlib/linpack/dsisl.f.Z">linpack/dsisl.f</A><MENU>
+</MENU>
+<LI><EM>file: </EM><A HREF="/netlib/linpack/csisl.f.Z">linpack/csisl.f</A><MENU>
+</MENU>
+<LI><EM>file: </EM><A HREF="/netlib/linpack/zsisl.f.Z">linpack/zsisl.f</A><MENU>
+</MENU>
+<LI><EM>file: </EM><A HREF="/netlib/linpack/chisl.f.Z">linpack/chisl.f</A><MENU>
+</MENU>
+<LI><EM>file: </EM><A HREF="/netlib/linpack/zhisl.f.Z">linpack/zhisl.f</A><MENU>
+<LI><EM>gams: </EM>D2b1a, D2c1, D2d1a
+<LI><EM>for: </EM>solves the real/complex/complex symmetric/symmetric/Hermitian
+<PRE>
+system Ax = b using the factors computed by (linpack/_sifa or
+_hifa)
+</PRE><LI><EM>prec: </EM>single, double, complex, double complex; complex, double complex
+</MENU>
+<LI><EM>file: </EM><A HREF="/netlib/linpack/sspco.f.Z">linpack/sspco.f</A><MENU>
+</MENU>
+<LI><EM>file: </EM><A HREF="/netlib/linpack/dspco.f.Z">linpack/dspco.f</A><MENU>
+</MENU>
+<LI><EM>file: </EM><A HREF="/netlib/linpack/cspco.f.Z">linpack/cspco.f</A><MENU>
+</MENU>
+<LI><EM>file: </EM><A HREF="/netlib/linpack/zspco.f.Z">linpack/zspco.f</A><MENU>
+</MENU>
+<LI><EM>file: </EM><A HREF="/netlib/linpack/chpco.f.Z">linpack/chpco.f</A><MENU>
+</MENU>
+<LI><EM>file: </EM><A HREF="/netlib/linpack/zhpco.f.Z">linpack/zhpco.f</A><MENU>
+<LI><EM>gams: </EM>D2b1a, D2c1, D2d1a
+<LI><EM>for: </EM>factors a real/complex/complex symmetric/symmetric/Hermitian matrix
+<PRE>
+stored in packed form by elimination with symmetric pivoting and
+estimates the condition number of the matrix
+</PRE><LI><EM>prec: </EM>single, double, complex, double complex; complex, double complex
+</MENU>
+<LI><EM>file: </EM><A HREF="/netlib/linpack/sspdi.f.Z">linpack/sspdi.f</A><MENU>
+</MENU>
+<LI><EM>file: </EM><A HREF="/netlib/linpack/dspdi.f.Z">linpack/dspdi.f</A><MENU>
+</MENU>
+<LI><EM>file: </EM><A HREF="/netlib/linpack/cspdi.f.Z">linpack/cspdi.f</A><MENU>
+</MENU>
+<LI><EM>file: </EM><A HREF="/netlib/linpack/zspdi.f.Z">linpack/zspdi.f</A><MENU>
+</MENU>
+<LI><EM>file: </EM><A HREF="/netlib/linpack/chpdi.f.Z">linpack/chpdi.f</A><MENU>
+</MENU>
+<LI><EM>file: </EM><A HREF="/netlib/linpack/zhpdi.f.Z">linpack/zhpdi.f</A><MENU>
+<LI><EM>gams: </EM>D2b1a, D3b1a, D2c1, D3c1, D2d1a, D3d1a
+<LI><EM>for: </EM>computes the determinant, inertia and inverse of a
+<PRE>
+real/complex/complex symmetric/symmetric/Hermitian matrix using
+the factors from (linpack/_spfa or _hpfa), where the matrix is
+stored in packed form
+</PRE><LI><EM>prec: </EM>single, double, complex, double complex; complex, double complex
+</MENU>
+<LI><EM>file: </EM><A HREF="/netlib/linpack/sspfa.f.Z">linpack/sspfa.f</A><MENU>
+</MENU>
+<LI><EM>file: </EM><A HREF="/netlib/linpack/dspfa.f.Z">linpack/dspfa.f</A><MENU>
+</MENU>
+<LI><EM>file: </EM><A HREF="/netlib/linpack/cspfa.f.Z">linpack/cspfa.f</A><MENU>
+</MENU>
+<LI><EM>file: </EM><A HREF="/netlib/linpack/zspfa.f.Z">linpack/zspfa.f</A><MENU>
+</MENU>
+<LI><EM>file: </EM><A HREF="/netlib/linpack/chpfa.f.Z">linpack/chpfa.f</A><MENU>
+</MENU>
+<LI><EM>file: </EM><A HREF="/netlib/linpack/zhpfa.f.Z">linpack/zhpfa.f</A><MENU>
+<LI><EM>gams: </EM>D2b1a, D2c1, D2d1a
+<LI><EM>for: </EM>factors a real/complex/complex symmetric/symmetric/Hermitian matrix
+<PRE>
+stored in packed form by elimination with symmetric pivoting
+</PRE><LI><EM>prec: </EM>single, double, complex, double complex; complex, double complex
+</MENU>
+<LI><EM>file: </EM><A HREF="/netlib/linpack/sspsl.f.Z">linpack/sspsl.f</A><MENU>
+</MENU>
+<LI><EM>file: </EM><A HREF="/netlib/linpack/dspsl.f.Z">linpack/dspsl.f</A><MENU>
+</MENU>
+<LI><EM>file: </EM><A HREF="/netlib/linpack/cspsl.f.Z">linpack/cspsl.f</A><MENU>
+</MENU>
+<LI><EM>file: </EM><A HREF="/netlib/linpack/zspsl.f.Z">linpack/zspsl.f</A><MENU>
+</MENU>
+<LI><EM>file: </EM><A HREF="/netlib/linpack/chpsl.f.Z">linpack/chpsl.f</A><MENU>
+</MENU>
+<LI><EM>file: </EM><A HREF="/netlib/linpack/zhpsl.f.Z">linpack/zhpsl.f</A><MENU>
+<LI><EM>gams: </EM>D2b1a, D2c1, D2d1a 
+<LI><EM>for: </EM>solves the real/complex/complex symmetric/symmetric/Hermitian
+<PRE>
+system Ax = b using the factors computed by (linpack/_spfa or
+_hpfa)
+</PRE><LI><EM>prec: </EM>single, double, complex, double complex; complex, double complex
+</MENU>
+<LI><EM>file: </EM><A HREF="/netlib/linpack/ssvdc.f.Z">linpack/ssvdc.f</A><MENU>
+</MENU>
+<LI><EM>file: </EM><A HREF="/netlib/linpack/dsvdc.f.Z">linpack/dsvdc.f</A><MENU>
+</MENU>
+<LI><EM>file: </EM><A HREF="/netlib/linpack/csvdc.f.Z">linpack/csvdc.f</A><MENU>
+</MENU>
+<LI><EM>file: </EM><A HREF="/netlib/linpack/zsvdc.f.Z">linpack/zsvdc.f</A><MENU>
+<LI><EM>gams: </EM>D6
+<LI><EM>for: </EM>reduces a real/complex matrix to diagonal form by orthogonal/unitary
+<PRE>
+transformations
+</PRE><LI><EM>prec: </EM>single, double, complex, double complex
+</MENU>
+<LI><EM>file: </EM><A HREF="/netlib/linpack/strco.f.Z">linpack/strco.f</A><MENU>
+</MENU>
+<LI><EM>file: </EM><A HREF="/netlib/linpack/dtrco.f.Z">linpack/dtrco.f</A><MENU>
+</MENU>
+<LI><EM>file: </EM><A HREF="/netlib/linpack/ctrco.f.Z">linpack/ctrco.f</A><MENU>
+</MENU>
+<LI><EM>file: </EM><A HREF="/netlib/linpack/ztrco.f.Z">linpack/ztrco.f</A><MENU>
+<LI><EM>gams: </EM>D2a3, D2c3
+<LI><EM>for: </EM>estimates the condition number of a triangular matrix
+<LI><EM>prec: </EM>single, double, complex, double complex
+</MENU>
+<LI><EM>file: </EM><A HREF="/netlib/linpack/strdi.f.Z">linpack/strdi.f</A><MENU>
+</MENU>
+<LI><EM>file: </EM><A HREF="/netlib/linpack/dtrdi.f.Z">linpack/dtrdi.f</A><MENU>
+</MENU>
+<LI><EM>file: </EM><A HREF="/netlib/linpack/ctrdi.f.Z">linpack/ctrdi.f</A><MENU>
+</MENU>
+<LI><EM>file: </EM><A HREF="/netlib/linpack/ztrdi.f.Z">linpack/ztrdi.f</A><MENU>
+<LI><EM>gams: </EM>D2a3,D3a3, D2c3, D3c3
+<LI><EM>for: </EM>computes the determinant and inverse of a triangular matrix
+<LI><EM>prec: </EM>single, double, complex, double complex
+</MENU>
+<LI><EM>file: </EM><A HREF="/netlib/linpack/strsl.f.Z">linpack/strsl.f</A><MENU>
+</MENU>
+<LI><EM>file: </EM><A HREF="/netlib/linpack/dtrsl.f.Z">linpack/dtrsl.f</A><MENU>
+</MENU>
+<LI><EM>file: </EM><A HREF="/netlib/linpack/ctrsl.f.Z">linpack/ctrsl.f</A><MENU>
+</MENU>
+<LI><EM>file: </EM><A HREF="/netlib/linpack/ztrsl.f.Z">linpack/ztrsl.f</A><MENU>
+<LI><EM>gams: </EM>D2a3, D2c3
+<LI><EM>for: </EM>solves systems of the form Tx = b or trans(T)x = b where T is
+<PRE>
+a triangular matrix of order n, trans(T) denotes the transpose 
+of the matrix T
+</PRE><LI><EM>prec: </EM>single, double, complex, double complex
+</MENU>
+<P><LI><A HREF="/netlib/bib/thesaurus.Z">glossary/thesaurus of terms used in this index</A>
+</UL>
+<P><A HREF="/netlib/bib/ericjack.Z">ehg</EM>

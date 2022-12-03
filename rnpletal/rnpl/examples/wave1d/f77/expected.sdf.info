@@ -1,0 +1,1212 @@
+Data set 1
+name=<1d_phi_0>
+version=1
+time=0
+rank=1
+shape=(101)
+bbox=(0,10)
+csize=101
+dsize=101
+cnames=(x)
+tag=<NULL>
+|data|=0.390787, min(data)=-1.05795, max(data)=1.05795
+Data set 2
+name=<1d_phi_0>
+version=1
+time=0.8
+rank=1
+shape=(101)
+bbox=(0,10)
+csize=101
+dsize=101
+cnames=(x)
+tag=<NULL>
+|data|=0.212292, min(data)=-0.530134, max(data)=0.530134
+Data set 3
+name=<1d_phi_0>
+version=1
+time=1.6
+rank=1
+shape=(101)
+bbox=(0,10)
+csize=101
+dsize=101
+cnames=(x)
+tag=<NULL>
+|data|=0.275599, min(data)=-0.530379, max(data)=0.530379
+Data set 4
+name=<1d_phi_0>
+version=1
+time=2.4
+rank=1
+shape=(101)
+bbox=(0,10)
+csize=101
+dsize=101
+cnames=(x)
+tag=<NULL>
+|data|=0.276328, min(data)=-0.531287, max(data)=0.531287
+Data set 5
+name=<1d_phi_0>
+version=1
+time=3.2
+rank=1
+shape=(101)
+bbox=(0,10)
+csize=101
+dsize=101
+cnames=(x)
+tag=<NULL>
+|data|=0.276201, min(data)=-0.532085, max(data)=0.532085
+Data set 6
+name=<1d_phi_0>
+version=1
+time=4
+rank=1
+shape=(101)
+bbox=(0,10)
+csize=101
+dsize=101
+cnames=(x)
+tag=<NULL>
+|data|=0.241975, min(data)=-0.533022, max(data)=0.533022
+Data set 7
+name=<1d_phi_0>
+version=1
+time=4.8
+rank=1
+shape=(101)
+bbox=(0,10)
+csize=101
+dsize=101
+cnames=(x)
+tag=<NULL>
+|data|=0.354941, min(data)=-0.930858, max(data)=0.930858
+Data set 8
+name=<1d_phi_0>
+version=1
+time=5.6
+rank=1
+shape=(101)
+bbox=(0,10)
+csize=101
+dsize=101
+cnames=(x)
+tag=<NULL>
+|data|=0.212892, min(data)=-0.548134, max(data)=0.548134
+Data set 9
+name=<1d_phi_0>
+version=1
+time=6.4
+rank=1
+shape=(101)
+bbox=(0,10)
+csize=101
+dsize=101
+cnames=(x)
+tag=<NULL>
+|data|=0.272897, min(data)=-0.533682, max(data)=0.533682
+Data set 10
+name=<1d_phi_0>
+version=1
+time=7.2
+rank=1
+shape=(101)
+bbox=(0,10)
+csize=101
+dsize=101
+cnames=(x)
+tag=<NULL>
+|data|=0.276327, min(data)=-0.536022, max(data)=0.536022
+Data set 11
+name=<1d_phi_0>
+version=1
+time=8
+rank=1
+shape=(101)
+bbox=(0,10)
+csize=101
+dsize=101
+cnames=(x)
+tag=<NULL>
+|data|=0.276309, min(data)=-0.536796, max(data)=0.536796
+Data set 12
+name=<1d_phi_0>
+version=1
+time=8.8
+rank=1
+shape=(101)
+bbox=(0,10)
+csize=101
+dsize=101
+cnames=(x)
+tag=<NULL>
+|data|=0.263182, min(data)=-0.537574, max(data)=0.537574
+Data set 13
+name=<1d_phi_0>
+version=1
+time=9.6
+rank=1
+shape=(101)
+bbox=(0,10)
+csize=101
+dsize=101
+cnames=(x)
+tag=<NULL>
+|data|=0.27456, min(data)=-0.674663, max(data)=0.674663
+Data set 14
+name=<1d_phi_0>
+version=1
+time=10.4
+rank=1
+shape=(101)
+bbox=(0,10)
+csize=101
+dsize=101
+cnames=(x)
+tag=<NULL>
+|data|=0.280407, min(data)=-0.683506, max(data)=0.683506
+Data set 15
+name=<1d_phi_0>
+version=1
+time=11.2
+rank=1
+shape=(101)
+bbox=(0,10)
+csize=101
+dsize=101
+cnames=(x)
+tag=<NULL>
+|data|=0.263499, min(data)=-0.523798, max(data)=0.523798
+Data set 16
+name=<1d_phi_0>
+version=1
+time=12
+rank=1
+shape=(101)
+bbox=(0,10)
+csize=101
+dsize=101
+cnames=(x)
+tag=<NULL>
+|data|=0.276321, min(data)=-0.540593, max(data)=0.540593
+Data set 17
+name=<1d_phi_0>
+version=1
+time=12.8
+rank=1
+shape=(101)
+bbox=(0,10)
+csize=101
+dsize=101
+cnames=(x)
+tag=<NULL>
+|data|=0.276326, min(data)=-0.541336, max(data)=0.541336
+Data set 18
+name=<1d_phi_0>
+version=1
+time=13.6
+rank=1
+shape=(101)
+bbox=(0,10)
+csize=101
+dsize=101
+cnames=(x)
+tag=<NULL>
+|data|=0.272384, min(data)=-0.542073, max(data)=0.542073
+Data set 19
+name=<1d_phi_0>
+version=1
+time=14.4
+rank=1
+shape=(101)
+bbox=(0,10)
+csize=101
+dsize=101
+cnames=(x)
+tag=<NULL>
+|data|=0.215324, min(data)=-0.564042, max(data)=0.564042
+Data set 20
+name=<1d_phi_0>
+version=1
+time=15.2
+rank=1
+shape=(101)
+bbox=(0,10)
+csize=101
+dsize=101
+cnames=(x)
+tag=<NULL>
+|data|=0.36163, min(data)=-0.959166, max(data)=0.959166
+Data set 21
+name=<1d_phi_0>
+version=1
+time=16
+rank=1
+shape=(101)
+bbox=(0,10)
+csize=101
+dsize=101
+cnames=(x)
+tag=<NULL>
+|data|=0.240103, min(data)=-0.513088, max(data)=0.513088
+Data set 22
+name=<1d_phi_0>
+version=1
+time=16.8
+rank=1
+shape=(101)
+bbox=(0,10)
+csize=101
+dsize=101
+cnames=(x)
+tag=<NULL>
+|data|=0.276264, min(data)=-0.544954, max(data)=0.544954
+Data set 23
+name=<1d_phi_0>
+version=1
+time=17.6
+rank=1
+shape=(101)
+bbox=(0,10)
+csize=101
+dsize=101
+cnames=(x)
+tag=<NULL>
+|data|=0.276328, min(data)=-0.545658, max(data)=0.545658
+Data set 24
+name=<1d_phi_0>
+version=1
+time=18.4
+rank=1
+shape=(101)
+bbox=(0,10)
+csize=101
+dsize=101
+cnames=(x)
+tag=<NULL>
+|data|=0.275359, min(data)=-0.546354, max(data)=0.546354
+Data set 25
+name=<1d_phi_0>
+version=1
+time=19.2
+rank=1
+shape=(101)
+bbox=(0,10)
+csize=101
+dsize=101
+cnames=(x)
+tag=<NULL>
+|data|=0.216944, min(data)=-0.550006, max(data)=0.550006
+Data set 26
+name=<1d_phi_0>
+version=1
+time=20
+rank=1
+shape=(101)
+bbox=(0,10)
+csize=101
+dsize=101
+cnames=(x)
+tag=<NULL>
+|data|=0.39011, min(data)=-1.0561, max(data)=1.0561
+Data set 27
+name=<1d_phi_0>
+version=1
+time=20.8
+rank=1
+shape=(101)
+bbox=(0,10)
+csize=101
+dsize=101
+cnames=(x)
+tag=<NULL>
+|data|=0.206654, min(data)=-0.511503, max(data)=0.511503
+Data set 28
+name=<1d_phi_0>
+version=1
+time=21.6
+rank=1
+shape=(101)
+bbox=(0,10)
+csize=101
+dsize=101
+cnames=(x)
+tag=<NULL>
+|data|=0.275855, min(data)=-0.549044, max(data)=0.549044
+Data set 29
+name=<1d_phi_0>
+version=1
+time=22.4
+rank=1
+shape=(101)
+bbox=(0,10)
+csize=101
+dsize=101
+cnames=(x)
+tag=<NULL>
+|data|=0.276328, min(data)=-0.549718, max(data)=0.549718
+Data set 30
+name=<1d_phi_0>
+version=1
+time=23.2
+rank=1
+shape=(101)
+bbox=(0,10)
+csize=101
+dsize=101
+cnames=(x)
+tag=<NULL>
+|data|=0.276127, min(data)=-0.550365, max(data)=0.550365
+Data set 31
+name=<1d_phi_0>
+version=1
+time=24
+rank=1
+shape=(101)
+bbox=(0,10)
+csize=101
+dsize=101
+cnames=(x)
+tag=<NULL>
+|data|=0.243518, min(data)=-0.551312, max(data)=0.551312
+Data set 32
+name=<1d_phi_0>
+version=1
+time=24.8
+rank=1
+shape=(101)
+bbox=(0,10)
+csize=101
+dsize=101
+cnames=(x)
+tag=<NULL>
+|data|=0.347983, min(data)=-0.90016, max(data)=0.90016
+Data set 33
+name=<1d_phi_0>
+version=1
+time=25.6
+rank=1
+shape=(101)
+bbox=(0,10)
+csize=101
+dsize=101
+cnames=(x)
+tag=<NULL>
+|data|=0.211141, min(data)=-0.529055, max(data)=0.529055
+Data set 34
+name=<1d_phi_0>
+version=1
+time=26.4
+rank=1
+shape=(101)
+bbox=(0,10)
+csize=101
+dsize=101
+cnames=(x)
+tag=<NULL>
+|data|=0.273533, min(data)=-0.552307, max(data)=0.552307
+Data set 35
+name=<1d_phi_0>
+version=1
+time=27.2
+rank=1
+shape=(101)
+bbox=(0,10)
+csize=101
+dsize=101
+cnames=(x)
+tag=<NULL>
+|data|=0.276328, min(data)=-0.553467, max(data)=0.553467
+Data set 36
+name=<1d_phi_0>
+version=1
+time=28
+rank=1
+shape=(101)
+bbox=(0,10)
+csize=101
+dsize=101
+cnames=(x)
+tag=<NULL>
+|data|=0.276292, min(data)=-0.554059, max(data)=0.554059
+Data set 37
+name=<1d_phi_0>
+version=1
+time=28.8
+rank=1
+shape=(101)
+bbox=(0,10)
+csize=101
+dsize=101
+cnames=(x)
+tag=<NULL>
+|data|=0.262957, min(data)=-0.554666, max(data)=0.554666
+Data set 38
+name=<1d_phi_0>
+version=1
+time=29.6
+rank=1
+shape=(101)
+bbox=(0,10)
+csize=101
+dsize=101
+cnames=(x)
+tag=<NULL>
+|data|=0.269956, min(data)=-0.676044, max(data)=0.676044
+Data set 39
+name=<1d_phi_0>
+version=1
+time=30.4
+rank=1
+shape=(101)
+bbox=(0,10)
+csize=101
+dsize=101
+cnames=(x)
+tag=<NULL>
+|data|=0.287633, min(data)=-0.702419, max(data)=0.702419
+Data set 40
+name=<1d_phi_0>
+version=1
+time=31.2
+rank=1
+shape=(101)
+bbox=(0,10)
+csize=101
+dsize=101
+cnames=(x)
+tag=<NULL>
+|data|=0.263944, min(data)=-0.545457, max(data)=0.545457
+Data set 41
+name=<1d_phi_0>
+version=1
+time=32
+rank=1
+shape=(101)
+bbox=(0,10)
+csize=101
+dsize=101
+cnames=(x)
+tag=<NULL>
+|data|=0.276327, min(data)=-0.556862, max(data)=0.556862
+Data set 42
+name=<1d_phi_0>
+version=1
+time=32.8
+rank=1
+shape=(101)
+bbox=(0,10)
+csize=101
+dsize=101
+cnames=(x)
+tag=<NULL>
+|data|=0.276322, min(data)=-0.557391, max(data)=0.557391
+Data set 43
+name=<1d_phi_0>
+version=1
+time=33.6
+rank=1
+shape=(101)
+bbox=(0,10)
+csize=101
+dsize=101
+cnames=(x)
+tag=<NULL>
+|data|=0.271951, min(data)=-0.55791, max(data)=0.55791
+Data set 44
+name=<1d_phi_0>
+version=1
+time=34.4
+rank=1
+shape=(101)
+bbox=(0,10)
+csize=101
+dsize=101
+cnames=(x)
+tag=<NULL>
+|data|=0.218047, min(data)=-0.58303, max(data)=0.58303
+Data set 45
+name=<1d_phi_0>
+version=1
+time=35.2
+rank=1
+shape=(101)
+bbox=(0,10)
+csize=101
+dsize=101
+cnames=(x)
+tag=<NULL>
+|data|=0.367743, min(data)=-0.984703, max(data)=0.984703
+Data set 46
+name=<1d_phi_0>
+version=1
+time=36
+rank=1
+shape=(101)
+bbox=(0,10)
+csize=101
+dsize=101
+cnames=(x)
+tag=<NULL>
+|data|=0.237664, min(data)=-0.498499, max(data)=0.498499
+Data set 47
+name=<1d_phi_0>
+version=1
+time=36.8
+rank=1
+shape=(101)
+bbox=(0,10)
+csize=101
+dsize=101
+cnames=(x)
+tag=<NULL>
+|data|=0.276313, min(data)=-0.559864, max(data)=0.559864
+Data set 48
+name=<1d_phi_0>
+version=1
+time=37.6
+rank=1
+shape=(101)
+bbox=(0,10)
+csize=101
+dsize=101
+cnames=(x)
+tag=<NULL>
+|data|=0.276327, min(data)=-0.560324, max(data)=0.560324
+Data set 49
+name=<1d_phi_0>
+version=1
+time=38.4
+rank=1
+shape=(101)
+bbox=(0,10)
+csize=101
+dsize=101
+cnames=(x)
+tag=<NULL>
+|data|=0.275132, min(data)=-0.560771, max(data)=0.560771
+Data set 50
+name=<1d_phi_0>
+version=1
+time=39.2
+rank=1
+shape=(101)
+bbox=(0,10)
+csize=101
+dsize=101
+cnames=(x)
+tag=<NULL>
+|data|=0.220893, min(data)=-0.565299, max(data)=0.565299
+Data set 51
+name=<1d_phi_0>
+version=1
+time=40
+rank=1
+shape=(101)
+bbox=(0,10)
+csize=101
+dsize=101
+cnames=(x)
+tag=<NULL>
+|data|=0.388166, min(data)=-1.0495, max(data)=1.0495
+Data set 52
+name=<1d_phi_0>
+version=1
+time=40.8
+rank=1
+shape=(101)
+bbox=(0,10)
+csize=101
+dsize=101
+cnames=(x)
+tag=<NULL>
+|data|=0.199934, min(data)=-0.495008, max(data)=0.495008
+Data set 53
+name=<1d_phi_0>
+version=1
+time=41.6
+rank=1
+shape=(101)
+bbox=(0,10)
+csize=101
+dsize=101
+cnames=(x)
+tag=<NULL>
+|data|=0.27612, min(data)=-0.562435, max(data)=0.562435
+Data set 54
+name=<1d_phi_0>
+version=1
+time=42.4
+rank=1
+shape=(101)
+bbox=(0,10)
+csize=101
+dsize=101
+cnames=(x)
+tag=<NULL>
+|data|=0.276328, min(data)=-0.562822, max(data)=0.562822
+Data set 55
+name=<1d_phi_0>
+version=1
+time=43.2
+rank=1
+shape=(101)
+bbox=(0,10)
+csize=101
+dsize=101
+cnames=(x)
+tag=<NULL>
+|data|=0.276048, min(data)=-0.563195, max(data)=0.563195
+Data set 56
+name=<1d_phi_0>
+version=1
+time=44
+rank=1
+shape=(101)
+bbox=(0,10)
+csize=101
+dsize=101
+cnames=(x)
+tag=<NULL>
+|data|=0.244824, min(data)=-0.564077, max(data)=0.564077
+Data set 57
+name=<1d_phi_0>
+version=1
+time=44.8
+rank=1
+shape=(101)
+bbox=(0,10)
+csize=101
+dsize=101
+cnames=(x)
+tag=<NULL>
+|data|=0.341214, min(data)=-0.880502, max(data)=0.880502
+Data set 58
+name=<1d_phi_0>
+version=1
+time=45.6
+rank=1
+shape=(101)
+bbox=(0,10)
+csize=101
+dsize=101
+cnames=(x)
+tag=<NULL>
+|data|=0.210729, min(data)=-0.506145, max(data)=0.506145
+Data set 59
+name=<1d_phi_0>
+version=1
+time=46.4
+rank=1
+shape=(101)
+bbox=(0,10)
+csize=101
+dsize=101
+cnames=(x)
+tag=<NULL>
+|data|=0.27434, min(data)=-0.564747, max(data)=0.564747
+Data set 60
+name=<1d_phi_0>
+version=1
+time=47.2
+rank=1
+shape=(101)
+bbox=(0,10)
+csize=101
+dsize=101
+cnames=(x)
+tag=<NULL>
+|data|=0.276328, min(data)=-0.564861, max(data)=0.564861
+Data set 61
+name=<1d_phi_0>
+version=1
+time=48
+rank=1
+shape=(101)
+bbox=(0,10)
+csize=101
+dsize=101
+cnames=(x)
+tag=<NULL>
+|data|=0.27627, min(data)=-0.565154, max(data)=0.565154
+Data set 62
+name=<1d_phi_0>
+version=1
+time=48.8
+rank=1
+shape=(101)
+bbox=(0,10)
+csize=101
+dsize=101
+cnames=(x)
+tag=<NULL>
+|data|=0.262805, min(data)=-0.565488, max(data)=0.565488
+Data set 63
+name=<1d_phi_0>
+version=1
+time=49.6
+rank=1
+shape=(101)
+bbox=(0,10)
+csize=101
+dsize=101
+cnames=(x)
+tag=<NULL>
+|data|=0.266485, min(data)=-0.67414, max(data)=0.67414
+Data set 64
+name=<1d_phi_0>
+version=1
+time=50.4
+rank=1
+shape=(101)
+bbox=(0,10)
+csize=101
+dsize=101
+cnames=(x)
+tag=<NULL>
+|data|=0.295925, min(data)=-0.733147, max(data)=0.733147
+Data set 65
+name=<1d_phi_0>
+version=1
+time=51.2
+rank=1
+shape=(101)
+bbox=(0,10)
+csize=101
+dsize=101
+cnames=(x)
+tag=<NULL>
+|data|=0.26453, min(data)=-0.562219, max(data)=0.562219
+Data set 66
+name=<1d_phi_0>
+version=1
+time=52
+rank=1
+shape=(101)
+bbox=(0,10)
+csize=101
+dsize=101
+cnames=(x)
+tag=<NULL>
+|data|=0.276328, min(data)=-0.568096, max(data)=0.568096
+Data set 67
+name=<1d_phi_0>
+version=1
+time=52.8
+rank=1
+shape=(101)
+bbox=(0,10)
+csize=101
+dsize=101
+cnames=(x)
+tag=<NULL>
+|data|=0.276318, min(data)=-0.568872, max(data)=0.568872
+Data set 68
+name=<1d_phi_0>
+version=1
+time=53.6
+rank=1
+shape=(101)
+bbox=(0,10)
+csize=101
+dsize=101
+cnames=(x)
+tag=<NULL>
+|data|=0.271585, min(data)=-0.569639, max(data)=0.569639
+Data set 69
+name=<1d_phi_0>
+version=1
+time=54.4
+rank=1
+shape=(101)
+bbox=(0,10)
+csize=101
+dsize=101
+cnames=(x)
+tag=<NULL>
+|data|=0.220783, min(data)=-0.594548, max(data)=0.594548
+Data set 70
+name=<1d_phi_0>
+version=1
+time=55.2
+rank=1
+shape=(101)
+bbox=(0,10)
+csize=101
+dsize=101
+cnames=(x)
+tag=<NULL>
+|data|=0.372828, min(data)=-1.00682, max(data)=1.00682
+Data set 71
+name=<1d_phi_0>
+version=1
+time=56
+rank=1
+shape=(101)
+bbox=(0,10)
+csize=101
+dsize=101
+cnames=(x)
+tag=<NULL>
+|data|=0.234352, min(data)=-0.483066, max(data)=0.483066
+Data set 72
+name=<1d_phi_0>
+version=1
+time=56.8
+rank=1
+shape=(101)
+bbox=(0,10)
+csize=101
+dsize=101
+cnames=(x)
+tag=<NULL>
+|data|=0.276335, min(data)=-0.572596, max(data)=0.572596
+Data set 73
+name=<1d_phi_0>
+version=1
+time=57.6
+rank=1
+shape=(101)
+bbox=(0,10)
+csize=101
+dsize=101
+cnames=(x)
+tag=<NULL>
+|data|=0.276326, min(data)=-0.573299, max(data)=0.573299
+Data set 74
+name=<1d_phi_0>
+version=1
+time=58.4
+rank=1
+shape=(101)
+bbox=(0,10)
+csize=101
+dsize=101
+cnames=(x)
+tag=<NULL>
+|data|=0.27492, min(data)=-0.573998, max(data)=0.573998
+Data set 75
+name=<1d_phi_0>
+version=1
+time=59.2
+rank=1
+shape=(101)
+bbox=(0,10)
+csize=101
+dsize=101
+cnames=(x)
+tag=<NULL>
+|data|=0.224249, min(data)=-0.577944, max(data)=0.577944
+Data set 76
+name=<1d_phi_0>
+version=1
+time=60
+rank=1
+shape=(101)
+bbox=(0,10)
+csize=101
+dsize=101
+cnames=(x)
+tag=<NULL>
+|data|=0.385217, min(data)=-1.03648, max(data)=1.03648
+Data set 77
+name=<1d_phi_0>
+version=1
+time=60.8
+rank=1
+shape=(101)
+bbox=(0,10)
+csize=101
+dsize=101
+cnames=(x)
+tag=<NULL>
+|data|=0.192204, min(data)=-0.477962, max(data)=0.477962
+Data set 78
+name=<1d_phi_0>
+version=1
+time=61.6
+rank=1
+shape=(101)
+bbox=(0,10)
+csize=101
+dsize=101
+cnames=(x)
+tag=<NULL>
+|data|=0.276387, min(data)=-0.576527, max(data)=0.576527
+Data set 79
+name=<1d_phi_0>
+version=1
+time=62.4
+rank=1
+shape=(101)
+bbox=(0,10)
+csize=101
+dsize=101
+cnames=(x)
+tag=<NULL>
+|data|=0.276328, min(data)=-0.577317, max(data)=0.577317
+Data set 80
+name=<1d_phi_0>
+version=1
+time=63.2
+rank=1
+shape=(101)
+bbox=(0,10)
+csize=101
+dsize=101
+cnames=(x)
+tag=<NULL>
+|data|=0.275965, min(data)=-0.577945, max(data)=0.577945
+Data set 81
+name=<1d_phi_0>
+version=1
+time=64
+rank=1
+shape=(101)
+bbox=(0,10)
+csize=101
+dsize=101
+cnames=(x)
+tag=<NULL>
+|data|=0.24596, min(data)=-0.579017, max(data)=0.579017
+Data set 82
+name=<1d_phi_0>
+version=1
+time=64.8
+rank=1
+shape=(101)
+bbox=(0,10)
+csize=101
+dsize=101
+cnames=(x)
+tag=<NULL>
+|data|=0.334882, min(data)=-0.85469, max(data)=0.85469
+Data set 83
+name=<1d_phi_0>
+version=1
+time=65.6
+rank=1
+shape=(101)
+bbox=(0,10)
+csize=101
+dsize=101
+cnames=(x)
+tag=<NULL>
+|data|=0.212287, min(data)=-0.484087, max(data)=0.484087
+Data set 84
+name=<1d_phi_0>
+version=1
+time=66.4
+rank=1
+shape=(101)
+bbox=(0,10)
+csize=101
+dsize=101
+cnames=(x)
+tag=<NULL>
+|data|=0.275422, min(data)=-0.582042, max(data)=0.582042
+Data set 85
+name=<1d_phi_0>
+version=1
+time=67.2
+rank=1
+shape=(101)
+bbox=(0,10)
+csize=101
+dsize=101
+cnames=(x)
+tag=<NULL>
+|data|=0.276328, min(data)=-0.580902, max(data)=0.580902
+Data set 86
+name=<1d_phi_0>
+version=1
+time=68
+rank=1
+shape=(101)
+bbox=(0,10)
+csize=101
+dsize=101
+cnames=(x)
+tag=<NULL>
+|data|=0.276246, min(data)=-0.581456, max(data)=0.581456
+Data set 87
+name=<1d_phi_0>
+version=1
+time=68.8
+rank=1
+shape=(101)
+bbox=(0,10)
+csize=101
+dsize=101
+cnames=(x)
+tag=<NULL>
+|data|=0.262708, min(data)=-0.58205, max(data)=0.58205
+Data set 88
+name=<1d_phi_0>
+version=1
+time=69.6
+rank=1
+shape=(101)
+bbox=(0,10)
+csize=101
+dsize=101
+cnames=(x)
+tag=<NULL>
+|data|=0.263922, min(data)=-0.677446, max(data)=0.677446
+Data set 89
+name=<1d_phi_0>
+version=1
+time=70.4
+rank=1
+shape=(101)
+bbox=(0,10)
+csize=101
+dsize=101
+cnames=(x)
+tag=<NULL>
+|data|=0.304784, min(data)=-0.777221, max(data)=0.777221
+Data set 90
+name=<1d_phi_0>
+version=1
+time=71.2
+rank=1
+shape=(101)
+bbox=(0,10)
+csize=101
+dsize=101
+cnames=(x)
+tag=<NULL>
+|data|=0.265201, min(data)=-0.582779, max(data)=0.582779
+Data set 91
+name=<1d_phi_0>
+version=1
+time=72
+rank=1
+shape=(101)
+bbox=(0,10)
+csize=101
+dsize=101
+cnames=(x)
+tag=<NULL>
+|data|=0.276326, min(data)=-0.584027, max(data)=0.584027
+Data set 92
+name=<1d_phi_0>
+version=1
+time=72.8
+rank=1
+shape=(101)
+bbox=(0,10)
+csize=101
+dsize=101
+cnames=(x)
+tag=<NULL>
+|data|=0.276311, min(data)=-0.584515, max(data)=0.584515
+Data set 93
+name=<1d_phi_0>
+version=1
+time=73.6
+rank=1
+shape=(101)
+bbox=(0,10)
+csize=101
+dsize=101
+cnames=(x)
+tag=<NULL>
+|data|=0.271272, min(data)=-0.584985, max(data)=0.584985
+Data set 94
+name=<1d_phi_0>
+version=1
+time=74.4
+rank=1
+shape=(101)
+bbox=(0,10)
+csize=101
+dsize=101
+cnames=(x)
+tag=<NULL>
+|data|=0.223407, min(data)=-0.606151, max(data)=0.606151
+Data set 95
+name=<1d_phi_0>
+version=1
+time=75.2
+rank=1
+shape=(101)
+bbox=(0,10)
+csize=101
+dsize=101
+cnames=(x)
+tag=<NULL>
+|data|=0.376692, min(data)=-1.02372, max(data)=1.02372
+Data set 96
+name=<1d_phi_0>
+version=1
+time=76
+rank=1
+shape=(101)
+bbox=(0,10)
+csize=101
+dsize=101
+cnames=(x)
+tag=<NULL>
+|data|=0.22974, min(data)=-0.468641, max(data)=0.468641
+Data set 97
+name=<1d_phi_0>
+version=1
+time=76.8
+rank=1
+shape=(101)
+bbox=(0,10)
+csize=101
+dsize=101
+cnames=(x)
+tag=<NULL>
+|data|=0.276304, min(data)=-0.586823, max(data)=0.586823
+Data set 98
+name=<1d_phi_0>
+version=1
+time=77.6
+rank=1
+shape=(101)
+bbox=(0,10)
+csize=101
+dsize=101
+cnames=(x)
+tag=<NULL>
+|data|=0.276325, min(data)=-0.58711, max(data)=0.58711
+Data set 99
+name=<1d_phi_0>
+version=1
+time=78.4
+rank=1
+shape=(101)
+bbox=(0,10)
+csize=101
+dsize=101
+cnames=(x)
+tag=<NULL>
+|data|=0.274722, min(data)=-0.587498, max(data)=0.587498
+Data set 100
+name=<1d_phi_0>
+version=1
+time=79.2
+rank=1
+shape=(101)
+bbox=(0,10)
+csize=101
+dsize=101
+cnames=(x)
+tag=<NULL>
+|data|=0.22714, min(data)=-0.591942, max(data)=0.591942
+Data set 101
+name=<1d_phi_0>
+version=1
+time=80
+rank=1
+shape=(101)
+bbox=(0,10)
+csize=101
+dsize=101
+cnames=(x)
+tag=<NULL>
+|data|=0.381569, min(data)=-1.01643, max(data)=1.01643

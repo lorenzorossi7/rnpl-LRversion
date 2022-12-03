@@ -1,0 +1,133 @@
+#! /bin/sh 
+
+#############################################################################
+#  Makes or diffs expected data from RNPL test programs 
+#
+#  Robert L. Marsa
+#  Matthew W. Choptuik (Author)
+#  Center for Relativity
+#  The University of Texas at Austin
+#
+#  Copyright May 1995.
+#############################################################################
+
+Pgname=$0
+
+Attrib=".rnpl.attributes"
+Pfx="../examples"
+if test "X$BBHHDF" = "X"; then
+   Getinfo="../../../etc/sdfinfo"
+   Tag="sdf"
+else
+   Getinfo="../../../etc/hdfinfo -v"
+   Tag="hdf"
+fi
+Expected="expected.$Tag.info"
+Actual="actual.$Tag.info"
+Diffout=".diffout"
+
+Npass=0
+Nfail=0
+Ntest=0
+
+Dirs=`cat <<END
+$Pfx/wave1d/allf
+$Pfx/wave1d/c
+$Pfx/wave1d/f77
+$Pfx/wave2d/allf
+$Pfx/wave2d/c
+$Pfx/wave2d/f77
+$Pfx/wave3d/allf
+$Pfx/wave3d/c
+$Pfx/wave3d/f77
+END
+`
+
+Doctor() {
+  if [ -f $Attrib ]; then
+ed $Attrib <<END_ED 2>&1 > /dev/null
+5
+s/\[ 0/\[ 1/
+w
+q
+END_ED
+  else
+    echo "Could not find attribute file $Attrib"
+    exit 1
+  fi
+}
+
+Incpass() {
+  Npass=`expr $Npass + 1`
+  Ntest=`expr $Ntest + 1`
+}
+
+Incfail() {
+  Nfail=`expr $Nfail + 1`
+  Ntest=`expr $Ntest + 1`
+}
+
+echo $0
+
+case $0 in
+*makex) 
+   if [ \( `logname` = marsa \) -o \( `logname` = matt \) ]; then
+      Header="Making expected output (.$Tag files)"
+      Output=$Expected
+      echo $Header
+   else
+      echo "Only matt or marsa can make expected output"
+      exit 1;
+   fi
+;;
+*checkx)
+   Header="Making actual output (.$Tag files)"
+   Output=$Actual
+   echo $Header
+;;
+esac
+for d in $Dirs; do
+   (cd $d; echo; echo "$Header in $d"; sleep 1; \
+    make 2>&1 > /dev/null; make run 2>&1 > /dev/null; 
+   $Getinfo *ph*.$Tag > $Output)
+   case $0 in
+   *makex)
+      (cd $d; wc $Output)
+   ;;
+   *checkx)
+      here=`pwd`
+      cd $d; 
+      echo; echo "Checking actual and expected output (.$Tag files) in $d"; sleep 1
+      if diff $Actual $Expected 2>&1 > $Diffout; then
+          Incpass; 
+          echo; echo "Expected results computed in $d"; sleep 1; 
+      else
+          Incfail; 
+cat <<END
+
+ERROR: Expected results NOT COMPUTED in $d
+       Examine following output from 'diff' to see whether deviations
+       appear due to floating point (hardware) implementation:
+
+END
+                sleep 1
+                more $Diffout
+      fi
+      if [ -f $Diffout ]; then
+        rm $Diffout
+      fi
+      cd $here
+   ;;
+   esac
+done
+
+case $0 in
+*makex)
+   exit $Nfail
+;;
+*checkx)
+   echo; sleep 1; 
+   echo "RNPL test suite summary: $Npass of $Ntest passed"
+   exit $Nfail
+;;
+esac

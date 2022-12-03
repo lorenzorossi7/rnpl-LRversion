@@ -1,0 +1,23 @@
+parameters for wave2d
+level:=0
+Nx0 := 400
+Ny0 := 400
+iter := 400
+in_file := "id_400_400_400.sdf"
+out_file := "id_400_400_400.sdf"
+tag := "400_400_400"
+output := 0
+lambda := .5
+xmin := 0
+xmax := 10
+ymin := 0
+ymax := 10
+ser := 0
+fout := 1
+epsiter := 1.0e-6
+epsiterid := 1.0
+amp := 1.0
+cx := 5.0
+cy := 5
+sx := .8
+sy := .8

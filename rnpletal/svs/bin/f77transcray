@@ -1,0 +1,313 @@
+#!/bin/sh 
+
+########################################################################
+#
+#   'f77transcray' converts FORTRAN source describing double precision
+#   (8 byte) calculations on 32-bit machines to Cray single precision
+#   FORTRAN (also 8 byte).  Lower cases non-commented source as a 
+#   side effect.  Original source backed up to '.O' files.
+#
+#   Matthew W Choptuik
+#   The University of Texas at Austin
+#   Sept. 1995
+#
+#   History: (1) script 'd2s' with associated 'sed' file 'd2s1'
+#            (2) script 'flower' with associated 'sed' file 'flower1'
+#
+#   Modified to include invocation of 'Desngl' (C-program)
+#
+########################################################################
+
+PGM="f77transcray"
+D2SFILE=".d2s.sed";
+LOWERFILE=".lower.sed";
+LTRACE="off";
+
+MakeDesngl() {
+cat<<END>.Desngl.c
+/* Removes the sngl(s), SNGL(V(J) + 6 ), but not snglsngl etc. */
+
+#include <stdio.h>
+#include <string.h>
+
+#include ".Desngl.h"
+
+#define PC                    putchar(c)
+#define IS(_s1_,_s2_)         c == _s1_ || c == _s2_
+#define SAVE                  SaveBuf[Nbuf++] = c
+#define TRANS(_s1_,_s2_,_st_) if( IS(_s1_,_s2_) ) { SAVE; State=_st_; } else { TransAN(c); }
+
+#define S0          0
+#define S1          1
+#define S2          2
+#define S3          3
+#define S4          4
+#define S5          5
+#define S6          6
+
+char    Alphanumeric[] = 
+        "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789_";
+char    Whitespace[]   =
+        " \t";
+int     State = S0;
+
+char    SaveBuf[16];
+int     Nbuf = 0;
+
+main(int argc,char **argv)
+{
+   int    c, Nparens = 0;
+
+   while( (c = getchar()) != EOF ) {
+      switch( State ) {
+      case S0:
+         TRANS('s','S',S2) 
+         break;
+      case S1:
+         TransAN(c);
+         break;
+      case S2:
+         TRANS('n','N',S3) 
+         break;
+      case S3:
+         TRANS('g','G',S4) 
+         break;
+      case S4:
+         TRANS('l','L',S5) 
+         break;
+      case S5:
+         if( WHITE(c) ) {
+            PC;
+         } else if ( c == '(' ) {
+            ++Nparens;
+            Nbuf = 0;
+            State = S6;
+         } else {
+            TransAN(c);
+         }
+         break;
+      case S6:
+         if( c == ')' )  {    
+            --Nparens;
+            if( Nparens == 0 ) {
+               State = S0;
+            } else {
+               PC;
+            }
+         } else {
+				if( c == '(' ) ++Nparens;
+            PC;
+         }
+         break;
+      default:
+         fprintf(stderr,"%s: Unexpected <State>: %d.\n",argv[0],State);
+      }
+   }
+   exit(0);
+}
+
+int  AN(int c)
+{
+   return strchr(Alphanumeric,c) != NULL;
+}
+
+int  WHITE(int c)
+{
+   return strchr(Whitespace,c) != NULL;
+}
+
+int  TransAN(int c)
+{
+   if( AN(c) ) {
+      State = S1; DumpBuf(); PC;
+   } else {
+      State = S0; DumpBuf(); PC;
+   }
+}
+
+void DumpBuf()
+{
+   SaveBuf[Nbuf] = '\0';
+   printf("%s",SaveBuf);
+   Nbuf = 0;
+}
+END
+cat<<END>.Desngl.h
+#ifndef _DEFDESNGL
+#define _DEFDESNGL
+
+int  AN(int c);
+int  WHITE(int c);
+int  TransAN(int c);
+void DumpBuf();
+
+#endif
+END
+cc -o .Desngl .Desngl.c
+}
+
+Usage() {
+cat <<END
+usage: $PGM <f77 source file> [<f77 source file> ...]
+
+Converts 'canonical' double precision FORTRAN programs written for 
+a 32-bit machine to equivalent Cray FORTRAN.  Source code is modified 
+in place, but original source is always saved in '.O' files.
+END
+Cleanup
+exit 1;
+}
+
+Cleanup() {
+	for f in $LOWERFILE $D2SFILE .Desngl.c .Desngl.h .Desngl; do
+		if test -f $f; then
+			rm $f
+		fi
+	done
+	exit;
+}
+
+########################################################################
+# Main routine
+########################################################################
+
+case $# in
+0) Usage;;
+*)
+esac
+
+if touch $LOWERFILE; then
+cat<<END > $LOWERFILE
+/\'/ b
+/^[cC]/ !y/ABCDEFGHIJKLMNOPQRSTUVWXYZ/abcdefghijklmnopqrstuvwxyz/
+s/^C/c/
+END
+else
+	echo "$PGM: Can't create $LOWERFILE"
+	Cleanup;
+fi
+
+test $LTRACE = "on" && more $LOWERFILE 
+
+if touch $D2SFILE; then
+cat <<END > $D2SFILE
+s/\([ 	]\)double[ 	]*precision\([ 	(]\)/\1real\2/g
+s/\([ 	]\)real\*8/\1real  /g
+s/\([ 	]\)logical\*1\([ 	(]\)/\1logical  \2/g
+s/\([ 	]\)logical\*4\([ 	(]\)/\1logical  \2/g
+s/^double[  ]*precision\([  (]\)/real\1/g
+s/\([    ]\)double[  ]*precision$/\1real/g
+s/\([0123456789][ ]*\.[ ]*\)[dD]\([ ]*[-1234567890+]\)/\1e\2/g
+s/\([0123456789][ ]*\)[dD]\([ ]*[-1234567890+]\)/\1e\2/g
+s/\([0123456789][0123456789][ ]*\)[dD]\([ ]*[-1234567890]\)/\1e\2/g
+s/\([ 	]\)implicit[ 	]*undefined.*$/\1implicit none/g
+s/\([ 	]\)implicit[ 	]*logical.*$/\1implicit none/g
+s/f\(date[ 	]*(\)/\1/g
+s/dmin1/min/g
+s/dmax1/max/g
+s/\([ 	,(*+-\/]\)imag\([ 	,)(]\)/\1aimag\2/g
+s/^imag\([ 	,)(]\)/aimag\1/g
+s/\([ 	,(*+-\/]\)imag$/\1aimag/g
+s/\([ 	,(*+-\/]\)dabs\([ 	,)(]\)/\1abs\2/g
+s/^dabs\([ 	,)(]\)/abs\1/g
+s/\([ 	,(*+-\/]\)dabs$/\1abs/g
+s/\([ 	,(*+-\/]\)dacos\([ 	,)(]\)/\1acos\2/g
+s/^dacos\([ 	,)(]\)/acos\1/g
+s/\([ 	,(*+-\/]\)dacos$/\1acos/g
+s/\([ 	,(*+-\/]\)dasin\([ 	,)(]\)/\1asin\2/g
+s/^dasin\([ 	,)(]\)/asin\1/g
+s/\([ 	,(*+-\/]\)dasin$/\1asin/g
+s/\([ 	,(*+-\/]\)datan\([ 	,)(]\)/\1atan\2/g
+s/^datan\([ 	,)(]\)/atan\1/g
+s/\([ 	,(*+-\/]\)datan$/\1atan/g
+s/\([ 	,(*+-\/]\)datan2\([ 	,)(]\)/\1atan2\2/g
+s/^datan2\([ 	,)(]\)/atan2\1/g
+s/\([ 	,(*+-\/]\)datan2$/\1atan2/g
+s/\([ 	,(*+-\/]\)dconjg\([ 	,)(]\)/\1conjg\2/g
+s/^dconjg\([ 	,)(]\)/conjg\1/g
+s/\([ 	,(*+-\/]\)dconjg$/\1conjg/g
+s/\([ 	,(*+-\/]\)dcos\([ 	,)(]\)/\1cos\2/g
+s/^dcos\([ 	,)(]\)/cos\1/g
+s/\([ 	,(*+-\/]\)dcos$/\1cos/g
+s/\([ 	,(*+-\/]\)dcosh\([ 	,)(]\)/\1cosh\2/g
+s/^dcosh\([ 	,)(]\)/cosh\1/g
+s/\([ 	,(*+-\/]\)dcosh$/\1cosh/g
+s/\([ 	,(*+-\/]\)ddim\([ 	,)(]\)/\1dim\2/g
+s/^ddim\([ 	,)(]\)/dim\1/g
+s/\([ 	,(*+-\/]\)ddim$/\1dim/g
+s/\([ 	,(*+-\/]\)dexp\([ 	,)(]\)/\1exp\2/g
+s/^dexp\([ 	,)(]\)/exp\1/g
+s/\([ 	,(*+-\/]\)dexp$/\1exp/g
+s/\([ 	,(*+-\/]\)dlog\([ 	,)(]\)/\1log\2/g
+s/^dlog\([ 	,)(]\)/log\1/g
+s/\([ 	,(*+-\/]\)dlog$/\1log/g
+s/\([ 	,(*+-\/]\)dlog10\([ 	,)(]\)/\1log10\2/g
+s/^dlog10\([ 	,)(]\)/log10\1/g
+s/\([ 	,(*+-\/]\)dlog10$/\1log10/g
+s/\([ 	,(*+-\/]\)dmod\([ 	,)(]\)/\1mod\2/g
+s/^dmod\([ 	,)(]\)/mod\1/g
+s/\([ 	,(*+-\/]\)dmod$/\1mod/g
+s/\([ 	,(*+-\/]\)dprod\([ 	,)(]\)/\1prod\2/g
+s/^dprod\([ 	,)(]\)/prod\1/g
+s/\([ 	,(*+-\/]\)dprod$/\1prod/g
+s/\([ 	,(*+-\/]\)dsign\([ 	,)(]\)/\1sign\2/g
+s/^dsign\([ 	,)(]\)/sign\1/g
+s/\([ 	,(*+-\/]\)dsign$/\1sign/g
+s/\([ 	,(*+-\/]\)dsin\([ 	,)(]\)/\1sin\2/g
+s/^dsin\([ 	,)(]\)/sin\1/g
+s/\([ 	,(*+-\/]\)dsin$/\1sin/g
+s/\([ 	,(*+-\/]\)dsinh\([ 	,)(]\)/\1sinh\2/g
+s/^dsinh\([ 	,)(]\)/sinh\1/g
+s/\([ 	,(*+-\/]\)dsinh$/\1sinh/g
+s/\([ 	,(*+-\/]\)dsqrt\([ 	,)(]\)/\1sqrt\2/g
+s/^dsqrt\([ 	,)(]\)/sqrt\1/g
+s/\([ 	,(*+-\/]\)dsqrt$/\1sqrt/g
+s/\([ 	,(*+-\/]\)dtan\([ 	,)(]\)/\1tan\2/g
+s/^dtan\([ 	,)(]\)/tan\1/g
+s/\([ 	,(*+-\/]\)dtan$/\1tan/g
+s/\([ 	,(*+-\/]\)dtanh\([ 	,)(]\)/\1tanh\2/g
+s/^dtanh\([ 	,)(]\)/tanh\1/g
+s/\([ 	,(*+-\/]\)dtanh$/\1tanh/g
+s/\([ 	,(*+-\/]\)dgesv\([ 	,)(]\)/\1sgesv\2/g
+s/^dgesv\([ 	,)(]\)/sgesv\1/g
+s/\([ 	,(*+-\/]\)dgesv$/\1sgesv/g
+s/\([ 	,(*+-\/]\)dgefa\([ 	,)(]\)/\1sgefa\2/g
+s/^dgefa\([ 	,)(]\)/sgefa\1/g
+s/\([ 	,(*+-\/]\)dgefa$/\1sgefa/g
+s/\([ 	,(*+-\/]\)dgesl\([ 	,)(]\)/\1sgesl\2/g
+s/^dgesl\([ 	,)(]\)/sgesl\1/g
+s/\([ 	,(*+-\/]\)dgesl$/\1sgesl/g
+s/\([ 	,(*+-\/]\)dgtsl\([ 	,)(]\)/\1sgtsl\2/g
+s/^dgtsl\([ 	,)(]\)/sgtsl\1/g
+s/\([ 	,(*+-\/]\)dgtsl$/\1sgtsl/g
+s/\([ 	,(*+-\/]\)dgedi\([ 	,)(]\)/\1sgedi\2/g
+s/^dgedi\([ 	,)(]\)/sgedi\1/g
+s/\([ 	,(*+-\/]\)dgedi$/\1sgedi/g
+s/\([ 	,(*+-\/]\)dgbfa\([ 	,)(]\)/\1sgbfa\2/g
+s/^dgbfa\([ 	,)(]\)/sgbfa\1/g
+s/\([ 	,(*+-\/]\)dgbfa$/\1sgbfa/g
+s/\([ 	,(*+-\/]\)dgbsl\([ 	,)(]\)/\1sgbsl\2/g
+s/^dgbsl\([ 	,)(]\)/sgbsl\1/g
+s/\([ 	,(*+-\/]\)dgbsl$/\1sgbsl/g
+END
+else 
+	echo "$PGM: Can't create $D2SFILE"
+	Cleanup;
+fi
+
+test $LTRACE = "on" && more $D2SFILE 
+
+MakeDesngl;
+
+for f in $*; do
+	if test -f $f; then
+	   echo "$PGM: Translating $f"
+		mv $f $f.O
+      .Desngl < $f.O > .$f
+		sed -f $LOWERFILE < .$f | sed -f  $D2SFILE > $f
+		rm .$f
+	else
+		echo "$PGM: $f: No such file"
+	fi
+done
+Cleanup;

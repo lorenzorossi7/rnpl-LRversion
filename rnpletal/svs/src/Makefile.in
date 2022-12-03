@@ -1,0 +1,70 @@
+.IGNORE:
+
+prefix  = @prefix@
+
+bindir = $(prefix)/bin
+libdir = $(prefix)/lib
+includedir = $(prefix)/include
+
+BBH_SYSTEM = @BBH_SYSTEM@
+
+CC     = @CC@
+AR     = @AR@
+RANLIB = @RANLIB@
+PERL   = @PERL@
+RPCGEN = @RPCGEN@
+CTOF   = mfi
+
+LIBS       = @LIBS@ @BBH_RNPLAPP_CLIBS@ 
+LDFLAGS    = @LDFLAGS@ -L. @BBH_RNPLAPP_LPATHS@ 
+CPPFLAGS   = @CPPFLAGS@ @BBH_RNPLAPP_CINC@ @BBH_UTIL_CCFLAGS@
+CFLAGS     = @CFLAGS@
+DEFS       = @DEFS@ @BBH_DEFS@
+
+F77      = @F77@
+F77FLAGS = @F77FLAGS@
+
+CC_COMP    = $(CC) $(CFLAGS) $(CPPFLAGS)
+CC_LOAD    = $(CC) $(CFLAGS) $(LDFLAGS) $(LIBS)
+CC_PRE     = $(CC) -E $(CPPFLAGS)
+
+F77_COMP   = $(F77) $(F77FLAGS) 
+F77_TRANSFORM = @F77_TRANSFORM@
+F77_LOAD   = $(F77) $(F77FLAGS) $(LDFLAGS) $(LIBS)
+
+all: libsvs.a svs.h
+
+install: all
+	cp libsvs.a $(libdir)
+	(cd $(libdir); $(RANLIB) libsvs.a)
+	cp svs.h $(includedir)
+
+.c.o:
+	$(CC_COMP) -c $*.c
+
+f.o: 
+	$(F77_TRANSFORM) $*.f
+	$(F77_COMP) -c $*.f
+
+svs_f.i: svs.h
+	/bin/cp svs.h .svs_f.c
+	$(CC_PRE) .svs_f.c > svs_f.i
+	/bin/rm .svs_f.c 
+
+svs_f.c: svs_f.i
+	$(PERL) $(CTOF) svs_f.i svs_f.c $(BBH_SYSTEM) svs
+
+LIBSVS_OBJS = svs_f.o svs.o
+libsvs.a: $(LIBSVS_OBJS)
+	$(AR) r libsvs.a $(LIBSVS_OBJS)
+	$(RANLIB) libsvs.a
+
+########################################################################
+# Clean-up
+########################################################################
+clean:
+	@/bin/rm *.o
+	@/bin/rm *.a
+	@/bin/rm *.i
+	@/bin/rm svs_f.c
+	@/bin/rm Makefile

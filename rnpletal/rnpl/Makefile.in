@@ -1,0 +1,56 @@
+.IGNORE:
+
+SHELL = /bin/sh
+
+RNPL = src
+AUX  = etc \
+       examples/wave1d/allf examples/wave2d/allf examples/wave3d/allf \
+       examples/wave1d/c    examples/wave2d/c    examples/wave3d/c \
+       examples/wave1d/f77  examples/wave2d/f77  examples/wave3d/f77 \
+		 examples/get_param
+
+AUXCLEAN = examples/templates/allf examples/templates/c examples/templates/f77
+
+all: rnpl aux
+full: rnpl aux test
+install: all
+
+rnpl:
+	echo; echo "Compiling and installing RNPL" 
+	(cd $(RNPL); make install)
+
+debug:
+	echo; echo "Compiling and installing debug version of RNPL" 
+	(cd $(RNPL); make debug)
+
+aux: 
+	echo; echo "Compiling and installing utilities and example programs" 
+	for f in $(AUX); do \
+		(cd $$f; make all) \
+	done
+
+test:
+	echo; echo "Running and evaluating tests"
+	(cd etc; ./checkx)
+
+makex:
+	echo; echo "Making expected results for tests"
+	(cd etc; ./makex)
+
+clean:
+	echo; echo "Cleaning up"
+	(cd $(RNPL); make clean)
+	for f in $(AUX); do \
+      (cd $$f; make clean) \
+	done
+	for f in $(AUXCLEAN); do \
+      (cd $$f; /bin/rm Makefile) \
+	done
+	/bin/rm -rf *.cache > /dev/null 2>&1
+	rm config.cache config.log config.status > /dev/null 2>&1
+	rm include/* > /dev/null 2>&1
+	rm lib/* > /dev/null 2>&1
+	rm bin/* > /dev/null 2>&1
+	rm work.pc work.pcl > /dev/null 2>&1
+	rm -r autom4te.cache 2>&1
+	rm Makefile > /dev/null 2>&1

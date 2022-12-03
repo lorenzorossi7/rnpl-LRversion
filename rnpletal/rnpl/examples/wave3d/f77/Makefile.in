@@ -1,0 +1,44 @@
+.IGNORE:
+
+SHELL = /bin/sh
+
+RNPL      = @RNPL@
+
+F77       = @F77@ @F77FLAGS@ @BBH_RNPLAPP_FINC@
+
+CC        = @CC@ $(COPT) @CFLAGS@ -L../../../include @CPPFLAGS@ @BBH_RNPLAPP_CINC@ @DEFS@ @BBH_DEFS@ 
+CC_LOAD   = @CC@ $(COPT) @CFLAGS@ -L../../../lib @LDFLAGS@ @BBH_RNPLAPP_LPATHS@
+
+CLIBS     = @BBH_RNPLAPP_CLIBS@ @CCF77LIBS@
+
+.c.o:
+	$(CC) -c $*.c
+
+.f.o:
+	$(F77) -c $*.f
+
+all:  wave3df wave3df_init
+
+wave3df.c: wave3df_rnpl
+	$(RNPL) -l f77 @BBH_RNPL_FLAGS@ wave3df_rnpl
+
+wave3df_init.c: wave3df_rnpl
+updates.f: wave3df_rnpl 
+initializers.f: wave3df_rnpl
+residuals.f: wave3df_rnpl
+
+wave3df_init: wave3df_init.o updates.o residuals.o initializers.o
+	$(CC_LOAD) wave3df_init.o updates.o residuals.o initializers.o $(CLIBS) -o wave3df_init
+
+wave3df: wave3df.o updates.o residuals.o
+	$(CC_LOAD) wave3df.o updates.o residuals.o $(CLIBS) -o wave3df
+
+run:
+	./wave3df_init w3d_0 > /dev/null 2>&1
+	./wave3df w3d_0 > /dev/null 2>&1
+
+clean: 
+	rm *.sdf *.hdf .rn* actual*info wave3df wave3df_init > /dev/null 2>&1
+	rm *.o *.f *.c *.inc > /dev/null 2>&1
+	/bin/rm work.pc work.pcl > /dev/null 2>&1
+	rm Makefile > /dev/null 2>&1

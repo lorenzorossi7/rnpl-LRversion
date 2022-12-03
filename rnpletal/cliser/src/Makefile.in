@@ -1,0 +1,58 @@
+.IGNORE:
+
+prefix  = @prefix@
+
+bindir = $(prefix)/bin
+libdir = $(prefix)/lib
+includedir = $(prefix)/include
+
+BBH_SYSTEM = @BBH_SYSTEM@
+
+CC     = @CC@
+AR     = @AR@
+RANLIB = @RANLIB@
+PERL   = @PERL@
+RPCGEN = @RPCGEN@
+CTOF   = @CTOF@
+
+LIBS       = @LIBS@
+LDFLAGS    = @LDFLAGS@ -L. 
+CPPFLAGS   = @CPPFLAGS@ 
+CFLAGS     = @CFLAGS@
+DEFS       = @DEFS@ @BBH_DEFS@
+
+F77      = @F77@
+F77FLAGS = @F77FLAGS@
+
+CC_COMP    = $(CC) $(CFLAGS) $(CPPFLAGS)
+CC_LOAD    = $(CC) $(CFLAGS) $(LDFLAGS) $(LIBS)
+
+F77_COMP   = $(F77) $(F77FLAGS) 
+F77_LOAD   = $(F77) $(F77FLAGS) $(LDFLAGS) $(LIBS)
+
+all: libcliser.a 
+
+install: all
+	cp libcliser.a $(libdir)
+	(cd $(libdir); $(RANLIB) libcliser.a)
+	cp cliser.h $(includedir)
+
+cliser.o: cliser.c cliser.h 
+
+.c.o:
+	$(CC_COMP) -c $*.c
+
+f.o: 
+	$(F77_COMP) -c $*.f
+
+libcliser.a: cliser.o 
+	$(AR) r libcliser.a cliser.o
+	$(RANLIB) libcliser.a
+
+########################################################################
+# Clean-up
+########################################################################
+clean:
+	@/bin/rm *.o
+	@/bin/rm *.a
+	@/bin/rm Makefile

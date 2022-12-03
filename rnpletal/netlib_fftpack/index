@@ -1,0 +1,383 @@
+file	bihar/dbihar.f
+for	biharmonic PDE solver in rectangular geometry
+prec	double
+gams	I2b1c
+
+file	bihar/dbiplr.f
+for	biharmonic PDE solver in polar coordinates
+prec	double
+gams	I2b1c
+
+file	bihar/dbmult.f
+for	biharmonic multiply in rectangular geometry
+prec	double
+gams	I2b4
+
+file	bihar/dbplrm.f
+for	biharmonic multiply in polar coordinates
+prec	double
+gams	I2b4
+
+file	bihar/dlmult.f
+for	Laplace multiply in rectangular geometry
+prec	double
+gams	I2b4
+
+file	bihar/dlplrm.f
+for	Laplace multiply in polar coordinates
+prec	double
+gams	I2b4
+
+file	bihar/sbihar.f
+for	biharmonic PDE solver in rectangular geometry
+prec	single
+gams	I2b1c
+
+file	bihar/sbiplr.f
+for	biharmonic PDE solver in polar coordinates
+prec	single
+gams	I2b1c
+
+file	bihar/sbmult.f
+for	biharmonic multiply in rectangular geometry
+prec	single
+gams	I2b4
+
+file	bihar/sbplrm.f
+for	biharmonic multiply in polar coordinates
+prec	single
+gams	I2b4
+
+file	bihar/slmult.f
+for	Laplace multiply in rectangular geometry
+prec	single
+gams	I2b4
+
+file	bihar/slplrm.f
+for	Laplace multiply in polar coordinates
+prec	single
+gams	I2b4
+
+file	bihar/fft.doc
+for	documentation of FFT routines used in the bihar routines
+prec	double
+see	fftpack
+
+file	bihar/drffti.f
+for	initialize  drfftf and drfftb
+prec	double
+see	fftpack
+
+file	bihar/drfftf.f
+for	forward transform of a real periodic sequence
+prec	double
+see	fftpack
+
+file	bihar/drfftb.f
+for	backward transform of a real coefficient array
+prec	double
+see	fftpack
+
+file	bihar/defftf.f
+for	a simplified real periodic forward transform
+prec	double
+see	fftpack
+
+file	bihar/defftb.f
+for	a simplified real periodic backward transform
+prec	double
+see	fftpack
+
+file	bihar/dsinti.f
+for	initialize dsint
+prec	double
+see	fftpack
+
+file	bihar/dsint.f
+for	sine transform of a real odd sequence
+prec	double
+see	fftpack
+
+file	bihar/dcosti.f
+for	initialize dcost
+prec	double
+see	fftpack
+
+file	bihar/dcost.f
+for	cosine transform of a real even sequence
+prec	double
+see	fftpack
+
+file	bihar/dsinqi.f
+for	initialize dsinqf and dsinqb
+prec	double
+see	fftpack
+
+file	bihar/dsinqf.f
+for	forward sine transform with odd wave numbers
+prec	double
+see	fftpack
+
+file	bihar/dsinqb.f
+for	unnormalized inverse of dsinqf
+prec	double
+see	fftpack
+
+file	bihar/dcosqi.f
+for	initialize dcosqf and dcosqb
+prec	double
+see	fftpack
+
+file	bihar/dcosqf.f
+for	forward cosine transform with odd wave numbers
+prec	double
+see	fftpack
+
+file	bihar/dcosqb.f
+for	unnormalized inverse of dcosqf
+prec	double
+see	fftpack
+
+file	bihar/dcffti.f
+for	initialize dcfftf and dcfftb
+prec	double
+see	fftpack
+
+file	bihar/dcfftf.f
+for	forward transform of a complex periodic sequence
+prec	double
+see	fftpack
+
+file	bihar/dcfftb.f
+for	unnormalized inverse of dcfftf
+prec	double
+see	fftpack
+
+file	bihar/changes
+
+file	bihar/dbipl.f
+
+file	bihar/dbisld.f
+
+file	bihar/dbislf.f
+
+file	bihar/dcftb1.f
+
+file	bihar/dcftf1.f
+
+file	bihar/dcfti1.f
+
+file	bihar/dcmult.f
+
+file	bihar/dconju.f
+
+file	bihar/dcsqb1.f
+
+file	bihar/dcsqf1.f
+
+file	bihar/defft1.f
+
+file	bihar/deffti.f
+
+file	bihar/dftrnx.f
+
+file	bihar/dftrny.f
+
+file	bihar/dpssb.f
+
+file	bihar/dhzeri.f
+
+file	bihar/dhzero.f
+
+file	bihar/dmatge.f
+
+file	bihar/dpentf.f
+
+file	bihar/dpmult.f
+
+file	bihar/dpplrm.f
+
+file	bihar/dpreco.f
+
+file	bihar/dpssb2.f
+
+file	bihar/dpssb3.f
+
+file	bihar/dpssb4.f
+
+file	bihar/dpssb5.f
+
+file	bihar/dpssf.f
+
+file	bihar/dpssf2.f
+
+file	bihar/dpssf3.f
+
+file	bihar/dpssf4.f
+
+file	bihar/dpssf5.f
+
+file	bihar/dradb2.f
+
+file	bihar/dradb3.f
+
+file	bihar/dradb4.f
+
+file	bihar/dradb5.f
+
+file	bihar/dradbg.f
+
+file	bihar/dradf2.f
+
+file	bihar/dradf3.f
+
+file	bihar/dradf4.f
+
+file	bihar/dradf5.f
+
+file	bihar/dradfg.f
+
+file	bihar/drftb1.f
+
+file	bihar/drftf1.f
+
+file	bihar/drfti1.f
+
+file	bihar/dstart.f
+
+file	bihar/dtrigi.f
+
+file	bihar/dupdat.f
+
+file	bihar/pois.f
+
+file	bihar/sbipl.f
+
+file	bihar/sbisld.f
+
+file	bihar/sbislf.f
+
+file	bihar/scfftb.f
+
+file	bihar/scfftf.f
+
+file	bihar/scffti.f
+
+file	bihar/scftb1.f
+
+file	bihar/scftf1.f
+
+file	bihar/scfti1.f
+
+file	bihar/scmult.f
+
+file	bihar/sconju.f
+
+file	bihar/scosqb.f
+
+file	bihar/scosqf.f
+
+file	bihar/scosqi.f
+
+file	bihar/scost.f
+
+file	bihar/scosti.f
+
+file	bihar/scsqb1.f
+
+file	bihar/scsqf1.f
+
+file	bihar/sefft1.f
+
+file	bihar/sefftb.f
+
+file	bihar/sefftf.f
+
+file	bihar/seffti.f
+
+file	bihar/sftrnx.f
+
+file	bihar/sftrny.f
+
+file	bihar/shzeri.f
+
+file	bihar/shzero.f
+
+file	bihar/smatge.f
+
+file	bihar/spentf.f
+
+file	bihar/spmult.f
+
+file	bihar/spplrm.f
+
+file	bihar/spreco.f
+
+file	bihar/spssb.f
+
+file	bihar/spssb2.f
+
+file	bihar/spssb3.f
+
+file	bihar/spssb4.f
+
+file	bihar/spssb5.f
+
+file	bihar/spssf.f
+
+file	bihar/spssf2.f
+
+file	bihar/spssf3.f
+
+file	bihar/spssf4.f
+
+file	bihar/spssf5.f
+
+file	bihar/sradb2.f
+
+file	bihar/sradb3.f
+
+file	bihar/sradb4.f
+
+file	bihar/sradb5.f
+
+file	bihar/sradbg.f
+
+file	bihar/sradf2.f
+
+file	bihar/sradf3.f
+
+file	bihar/sradf4.f
+
+file	bihar/sradf5.f
+
+file	bihar/sradfg.f
+
+file	bihar/srfftb.f
+
+file	bihar/srfftf.f
+
+file	bihar/srffti.f
+
+file	bihar/srftb1.f
+
+file	bihar/srftf1.f
+
+file	bihar/srfti1.f
+
+file	bihar/ssinqb.f
+
+file	bihar/ssinqf.f
+
+file	bihar/ssinqi.f
+
+file	bihar/ssint.f
+
+file	bihar/ssinti.f
+
+file	bihar/sstart.f
+
+file	bihar/strigi.f
+
+file	bihar/supdat.f
+

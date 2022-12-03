@@ -1,0 +1,130 @@
+.IGNORE:
+
+SHELL = /bin/sh
+
+prefix = @prefix@
+bindir = $(prefix)/bin
+includedir = $(prefix)/include
+libdir = $(prefix)/lib
+
+prefix  = @prefix@
+
+BBH_SYSTEM = @BBH_SYSTEM@
+
+AR     = @AR@
+RANLIB = @RANLIB@
+
+F77_TRANSFORM = @F77_TRANSFORM@
+
+LIBS       = @LIBS@
+LDFLAGS    = @LDFLAGS@ -L.
+
+CC       = @CC@
+CFLAGS   = -c @CFLAGS@
+CPPFLAGS = @CPPFLAGS@
+
+CC_COMP  = $(CC) $(CFLAGS) $(CPPFLAGS)
+CC_LOAD  = $(CC) $(LDFLAGS)
+
+F77      = @F77@
+F77FLAGS = @F77FLAGS@
+
+F77_COMP   = $(F77) -c $(F77FLAGS) 
+F77_LOAD   = $(F77) $(F77FLAGS) $(LDFLAGS)
+
+.f.o:
+	$(F77_COMP) $*.f 
+
+.c.o:
+	$(CC_COMP) $*.c
+
+EXECUTABLES = td1mach
+
+LIBS     = libodepack.a
+
+install: all
+	if test ! -d $(libdir); then\
+		mkdir -p $(libdir);\
+	fi
+	cp $(LIBS) $(libdir)
+
+all: $(LIBS)
+
+LIB_ODEPACK_OBJ =\
+adjlr.o\
+aigbt.o\
+ainvg.o\
+blkdta000.o\
+bnorm.o\
+cdrv.o\
+cfode.o\
+cntnzu.o\
+decbt.o\
+d1mach.o\
+ewset.o\
+fnorm.o\
+intdy.o\
+iprep.o\
+jgroup.o\
+lsoda.o\
+lsodar.o\
+lsode.o\
+lsodes.o\
+lsodi.o\
+lsoibt.o\
+md.o\
+mdi.o\
+mdm.o\
+mdp.o\
+mdu.o\
+nnfc.o\
+nnsc.o\
+nntc.o\
+nroc.o\
+nsfc.o\
+odrv.o\
+pjibt.o\
+prep.o\
+prepj.o\
+prepji.o\
+prja.o\
+prjs.o\
+rchek.o\
+roots.o\
+slsbt.o\
+slss.o\
+solbt.o\
+solsy.o\
+srcar.o\
+srcma.o\
+srcms.o\
+srcom.o\
+sro.o\
+stoda.o\
+stode.o\
+stodi.o\
+vmnorm.o\
+vnorm.o\
+xerrwv.o\
+xsetf.o\
+xsetun.o
+
+libodepack.a: $(LIB_ODEPACK_OBJ)
+	$(AR) r libodepack.a $(LIB_ODEPACK_OBJ)
+
+td1mach: td1mach.o d1mach.o
+	$(F77_LOAD) td1mach.o d1mach.o -o td1mach
+	echo "Running 'td1mach'"
+	sleep 1
+	td1mach
+
+########################################################################
+# Clean-up
+########################################################################
+clean:
+	/bin/rm *.o 
+	/bin/rm *.a
+	/bin/rm $(EXECUTABLES)
+	/bin/rm -rf *.cache > /dev/null 2>&1
+	/bin/rm -r autom4te.cache 2>&1
+	/bin/rm  Makefile config.cache config.log config.status

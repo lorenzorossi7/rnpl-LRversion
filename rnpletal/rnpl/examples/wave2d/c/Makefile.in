@@ -1,0 +1,39 @@
+.IGNORE:
+
+SHELL = /bin/sh
+
+RNPL      = @RNPL@
+
+CC        = @CC@ $(COPT) @CFLAGS@ -L../../../include @CPPFLAGS@ @BBH_RNPLAPP_CINC@ @DEFS@ @BBH_DEFS@ 
+CC_LOAD   = @CC@ $(COPT) @CFLAGS@ -L../../../lib @LDFLAGS@ @BBH_RNPLAPP_LPATHS@
+
+CLIBS     = @BBH_RNPLAPP_CLIBS@ 
+
+.c.o:
+	$(CC) -c $*.c
+
+all:  wave2d wave2d_init
+
+wave2d.c: wave2d_rnpl
+	$(RNPL) -l c wave2d_rnpl
+
+wave2d_init.c: wave2d_rnpl
+updates.c: wave2d_rnpl
+residuals.c: wave2d_rnpl
+initializers.c: wave2d_rnpl
+
+wave2d_init: wave2d_init.o updates.o residuals.o initializers.o 
+	$(CC_LOAD) wave2d_init.o updates.o residuals.o initializers.o $(CLIBS) -o wave2d_init
+
+wave2d: wave2d.o updates.o residuals.o
+	$(CC_LOAD) wave2d.o updates.o residuals.o $(CLIBS) -o wave2d
+
+run:
+	./wave2d_init w2d_0 > /dev/null 2>&1
+	./wave2d w2d_0 > /dev/null 2>&1
+
+clean: 
+	rm *.sdf *.hdf .rn* actual*info wave2d  wave2d_init > /dev/null 2>&1
+	rm *.o *.c *.h > /dev/null 2>&1
+	/bin/rm work.pc work.pcl > /dev/null 2>&1
+	rm Makefile > /dev/null 2>&1

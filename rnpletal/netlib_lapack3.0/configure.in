@@ -1,0 +1,18 @@
+dnl Process this file with autoconf to produce a configure script.
+AC_INIT(Makefile.in)
+
+dnl Determine system type
+BBH_SYS_GETSYSTEM
+
+AC_PROG_CC
+dnl Checks for library functions---hack to ensure that 'conftest.c' is removed
+AC_CHECK_FUNCS(strdup)
+
+AC_CHECK_PROG(PERL,perl,perl,no)
+AC_CHECK_PROG(RANLIB,ranlib,ranlib,touch)
+AC_CHECK_PROG(AR,ar,ar,touch)
+
+BBH_F77_CONFIGURE
+AC_SUBST(BBH_DEFS)
+
+AC_OUTPUT(Makefile make.inc)

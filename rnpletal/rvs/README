@@ -1,0 +1,7 @@
+######################################################################
+RVS Notes
+######################################################################
+Sat Feb 26 14:26:29 PST 2000
+
+(1) Changing (char *) prototypes to (const char *) to fix problem 
+    on Linux with 'mfi'-generated Fortran interfaces

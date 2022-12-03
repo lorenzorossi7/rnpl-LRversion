@@ -1,0 +1,132 @@
+Data set 1
+name=<2d_phi_0>
+version=1
+time=0
+rank=2
+shape=(101,101)
+bbox=(0,10,0,10)
+csize=202
+dsize=10201
+cnames=(x|y)
+tag=<NULL>
+|data|=0.0992724, min(data)=1.17691e-34, max(data)=1
+Data set 2
+name=<2d_phi_0>
+version=1
+time=0.5
+rank=2
+shape=(101,101)
+bbox=(0,10,0,10)
+csize=202
+dsize=10201
+cnames=(x|y)
+tag=<NULL>
+|data|=0.0717808, min(data)=1.17691e-34, max(data)=0.400311
+Data set 3
+name=<2d_phi_0>
+version=1
+time=1
+rank=2
+shape=(101,101)
+bbox=(0,10,0,10)
+csize=202
+dsize=10201
+cnames=(x|y)
+tag=<NULL>
+|data|=0.0605738, min(data)=-0.240569, max(data)=0.237375
+Data set 4
+name=<2d_phi_0>
+version=1
+time=1.5
+rank=2
+shape=(101,101)
+bbox=(0,10,0,10)
+csize=202
+dsize=10201
+cnames=(x|y)
+tag=<NULL>
+|data|=0.0666839, min(data)=-0.233786, max(data)=0.204181
+Data set 5
+name=<2d_phi_0>
+version=1
+time=2
+rank=2
+shape=(101,101)
+bbox=(0,10,0,10)
+csize=202
+dsize=10201
+cnames=(x|y)
+tag=<NULL>
+|data|=0.0685556, min(data)=-0.149542, max(data)=0.181941
+Data set 6
+name=<2d_phi_0>
+version=1
+time=2.5
+rank=2
+shape=(101,101)
+bbox=(0,10,0,10)
+csize=202
+dsize=10201
+cnames=(x|y)
+tag=<NULL>
+|data|=0.0692111, min(data)=-0.118543, max(data)=0.165685
+Data set 7
+name=<2d_phi_0>
+version=1
+time=3
+rank=2
+shape=(101,101)
+bbox=(0,10,0,10)
+csize=202
+dsize=10201
+cnames=(x|y)
+tag=<NULL>
+|data|=0.0695323, min(data)=-0.101008, max(data)=0.15314
+Data set 8
+name=<2d_phi_0>
+version=1
+time=3.5
+rank=2
+shape=(101,101)
+bbox=(0,10,0,10)
+csize=202
+dsize=10201
+cnames=(x|y)
+tag=<NULL>
+|data|=0.0696767, min(data)=-0.0894417, max(data)=0.143065
+Data set 9
+name=<2d_phi_0>
+version=1
+time=4
+rank=2
+shape=(101,101)
+bbox=(0,10,0,10)
+csize=202
+dsize=10201
+cnames=(x|y)
+tag=<NULL>
+|data|=0.0683723, min(data)=-0.0810922, max(data)=0.134742
+Data set 10
+name=<2d_phi_0>
+version=1
+time=4.5
+rank=2
+shape=(101,101)
+bbox=(0,10,0,10)
+csize=202
+dsize=10201
+cnames=(x|y)
+tag=<NULL>
+|data|=0.0583972, min(data)=-0.0754156, max(data)=0.127731
+Data set 11
+name=<2d_phi_0>
+version=1
+time=5
+rank=2
+shape=(101,101)
+bbox=(0,10,0,10)
+csize=202
+dsize=10201
+cnames=(x|y)
+tag=<NULL>
+|data|=0.0573243, min(data)=-0.134458, max(data)=0.121553

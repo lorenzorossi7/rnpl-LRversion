@@ -1,0 +1,340 @@
+------------------------------------------------------------
+Copyright (c) 1998-2008 by
+
+Matthew W. Choptuik
+University of British Columbia
+Robert L. Marsa
+
+Supported in part by
+
+NSERC (Canada)
+Canadian Institute for Advanced Research
+------------------------------------------------------------
+Copyright (c) 1986-1998 by
+Matthew W. Choptuik
+The University of Texas at Austin
+Robert L. Marsa
+The University of Texas at Austin
+
+Supported in part by
+NSF PHY9310083 to Richard A. Matzner
+NSF PHY9318152 (ARPA supplemented) to Richard A. Matzner, et. al.
+Cray Research Grant to Richard A. Matzner
+NSF PHY9510895 to the University of Pittsburgh
+------------------------------------------------------------
+The following instructions are horribly antiquated, and unlikely
+to be of much use.  
+
+Plese refer to 
+
+  http://bh0.phas.ubc.ca/Doc/rnpletal/
+
+for more current installation instructions, and contact 
+Matt Choptuik (choptuik@phas.ubc.ca) with questions re 
+installation, bug reports, suggestions etc. 
+
+------------------------------------------------------------
+IT IS ADVISABLE TO READ ALL INSTRUCTIONS BEFORE INSTALLING
+------------------------------------------------------------
+To install rnpl on UNIX systems:
+
+1.  Ensure that all required software has been installed (see 1 below)
+2.  set environment variables if necessary (see 2 below)
+3.  'configure' (see 2 and 3 below)
+4.  edit Makefiles if necessary
+5.  'make all' (see 3 below)    or
+    'make full'  to compile and run test suite as well as install 
+
+rnpl has been successfully installed on the following platforms:
+
+   (a) SGI running IRIX
+   (b) DEC Alpha running OSF1
+   (c) IBM RS6000 running AIX
+   (d) CRAY J90,C90,T90, and T-3E running UNICOS
+   (e) Sun 4 running SunOS 5.3 (only 'C' support verified thus far)*
+   (f) HP 9000 running HP-UX (only 'C' support verified thus far)
+   (g) Macintosh Quadra running A/UX 3.0.2
+
+* Early versions of SunOS (4.x included) have an incompatible version
+  of sprintf which causes problems during FORTRAN code generation.
+
+Modifications by the authors may be necessary for use on other platforms.
+Send requests for such modifications along with bug reports, comments,
+general queries etc. to
+
+   marsa@einstein.ph.utexas.edu  matt@einstein.ph.utexas.edu
+
+If support for a new platform is requested it will usually help 
+if we can have access to a guest account on said platform for 
+testing purposes.
+
+Robert Marsa
+Matthew Choptuik
+------------------------------------------------------------
+1. Software Prerequisites:
+------------------------------------------------------------
+
+(1)  perl (4.0 or more recent recommended)
+     Available from ftp://prep.ai.mit.edu/pub/gnu/
+
+(2)  a version of lex which supports -P
+     Flex is available from ftp://prep.ai.mit.edu/pub/gnu/
+		 
+(3)  a version of yacc which supports -p and -b
+     Bison is available from ftp://prep.ai.mit.edu/pub/gnu/
+		 		 
+(4)  (optional and not recommended) hdf (HDF4.0r1 or more recent)
+     Available from ftp://ftp.ncsa.uiuc.edu/HDF/
+
+------------------------------------------------------------
+2. Environment variables:
+------------------------------------------------------------
+
+NOTE: 'configure' is a 'sh' script.  DO NOT use 'csh' tilde-notation 
+such as '~/bin' to set environment variables: use '$HOME/bin' etc. instead.
+
+If you want hdf support, set the environment variable HDF before building.
+
+If the hdf libraries and/or header files 
+have been installed in some non-canonical location (i.e. NOT
+in /usr/local/lib or /usr/local/hdf/lib (libraries) or 
+/usr/local/include or /usr/local/hdf/include (headers), set the 
+environment variable(s) 
+
+LIB_PATHS
+INCLUDE_PATHS
+
+to define all necessary *paths* to the libraries and headers 
+respectively before configuring. For example assuming 
+that 
+
+   'libdf.a'     lives in '/home/jdoe/HDF/lib'
+   'libmfhdf.a'  lives in '/home/jdoe/NETCDF/lib'
+   'df.h'        lives in '/home/jdoe/HDF/include'
+   'netcdf.h'    lives in '/home/jdoe/NETCDF/include'
+
+then
+
+   setenv LIB_PATHS /home/jdoe/HDF/lib /home/jdoe/NETCDF/lib
+   setenv INCLUDE_PATHS /home/jdoe/HDF/include /home/jdoe/NETCDF/include
+
+before configuring.
+
+If configure gets some of the variables wrong in the makefile,
+just set the appropriate environment variable to the value you
+prefer and rerun configure.
+
+For instance, configure looks for gcc.  If it finds gcc,
+configure sets CC to gcc, otherwise it is set to cc.  To override
+this behaviour (you have both gcc and cc, but want to use cc)
+just setenv CC cc and then run configure.
+
+By default, configure will set CFLAGS in the makefiles to -g.  If you
+would like this changed to something else, for instance -O2, simply
+setenv CFLAGS -O2
+and then run configure.
+
+The Sun f77 compiler does not support the -I option for non-local include
+files.  If you would like to use FORTRAN on a Sun, you must set the
+environment variable RNPL_F77_INCLUDE to point to the location of the
+RNPL include files.  This variable MUST end with a "/".  For instance, if
+the include files are installed in /usr/local/include, type
+setenv RNPL_F77_INCLUDE /usr/local/include/
+before running configure.  Be careful with long paths.  If the path is too
+long, the line will exceed the FORTRAN 72 character line length and will 
+cause compile errors.
+------------------------------------------------------------
+3. Environment variables and 'configure' (GLOSSARY)
+------------------------------------------------------------
+
+LIST of environment variables which can be used to communicate
+with the 'configure' script
+
+(a) Standard autoconfig variables
+
+    Variable: CC     
+    Synopsis: Name of C compiler.
+    Sample usage: The following will ensure that 'cc' is used
+       for the C compiler.
+
+       setenv CC cc
+    
+    Variable: CXX
+    Synopsis: Name of C++ compiler.
+    Sample usage: The following will ensure that 'CC' is used
+       for the C++ compiler.
+
+       setenv CXX CC
+    
+    Variable: CFLAGS
+    Synopsis: Flags to be passed to the C compiler (the configure 
+       script will generally append additional flags)
+    Sample usage: 
+
+       setenv CFLAGS -O2
+    
+    Variable: CPPFLAGS
+    Synopsis: Flags to be passed to the C pre-processor  (the configure 
+       script will generally append additional flags)
+    Sample usage: 
+
+       setenv CPPFLAGS -DSOME_FLAG
+
+    Variable: CXXFLAGS
+    Synopsis: Flags to be passed to the C++ compiler (the configure
+       script will generally append additional flags)
+    Sample usage: 
+
+       setenv CXXFLAGS -O2
+
+    Variable: LDFLAGS
+    Synopsis: Flags to be passed to the loader/linker (the configure
+       script will generally append additional flags)
+    Sample usage: 
+
+       setenv LDFLAGS -lrnpl
+    
+
+(a) BBH/DAGH specific variables
+
+    Variable: BBHHDF
+    Synopsis: At runtime, tells bbhutil routines to send output
+		   to hdf files instead of sdf files.  Not used if BBHHOST is
+			 set.
+    Sample usage:
+
+        setenv BBHHDF on
+				
+    Variable: BBHHOST
+    Synopsis: At runtime, directs the output of bbhutil routines
+		   to a visualization server instead of a file.
+    Sample usage:
+
+        setenv BBHHOST mymachine.myschool.edu
+				
+    Variable: BBHSDF
+    Synopsis: At runtime, tells bbhutil routines to send output
+		   to an sdf visualization server if BBHHOST is set or SDF files
+			 (default) if BBHHOST is not set.
+    Sample usage:
+
+        setenv BBHSDF on
+				
+    Variable: BBHSV
+    Synopsis: At runtime, tells bbhutil routines to send output
+		   to the scivis visualization server if BBHHOST is set.
+    Sample usage:
+
+        setenv BBHSV on
+				
+    Variable: HDF
+    Synopsis: Tells configure to include hdf support in library.
+    Sample usage:
+
+        setenv HDF on
+				
+    Variable: INCLUDE_PATHS
+    Synopsis: Prepends specified paths to list of places to search
+       for C, C++ header files.
+    Sample usage:
+
+        setenv INCLUDE_PATHS "$HOME/hdf/include $HOME/rnpl/include"
+
+    Variable: LIB_PATHS
+    Synopsis: Prepends specified paths to list of places to search
+       for libraries
+    Sample usage:
+
+        setenv LIB_PATHS "$HOME/hdf/lib $HOME/rnpl/lib"
+
+    Variable: BBH_RNPLAPP_CLIBS
+    Synopsis: Similar to 'LDFLAGS'; accumulates list of 
+       all libraries which are needed for RNPL and (in this case) 
+       DAGH applications.  Used in application Makefile.in's. 
+       Should not require installer-intervention.
+
+    Variable: BBH_RNPLBLD_CLIBS
+    Synopsis: Accumulates libraries needed to build RNPL and (in 
+       this case) DAGH.  Should not require installer-intervention.
+
+    Variable: F77 
+    Synopsis: Name of Fortran 77 compiler.  Set 
+       automatically by 'aclocal.m4' (macro BBH_PROG_F77),
+       but can be overridden by setting F77 environment variable.
+
+    Variable: F77FLAGS
+    Synopsis: Flags to be passed to Fortran 77 compiler.  
+        Setting the corresponding environment variable will
+        OVERRIDE any settings normally made by 'aclocal.m4'
+    Sample usage:
+
+        setenv F77FLAGS -O2
+
+    Variable: F90 
+    Synopsis: Name of Fortran 90 compiler.  Set 
+       automatically by 'aclocal.m4' (macro BBH_PROG_F90),
+       but can be overridden by setting F90 environment variable.
+
+    Variable: F90FLAGS
+    Synopsis: Flags to be passed to Fortran 90 compiler.  
+        Setting the corresponding environment variable will
+        OVERRIDE any settings normally made by 'aclocal.m4'
+    Sample usage:
+
+        setenv F90FLAGS "-n32 -O"
+
+    Variable: LEX
+    Synopsis: Defines name of lex-compatible lexer generator. 
+       As currently used, must be either 'lex' or 'flex.  If the 
+       user has both, but prefers to use flex, then he/she should 
+
+       setenv LEX flex
+     
+       before configuring
+
+    Variable: YACC
+    Synopsis: Defines name of yacc-compatible parser generator
+       As currently used, must be either 'yacc' or 'bison -y'.  If the 
+       user has both, but prefers to use 'bison', then he/she should 
+
+       setenv YACC "bison -y"
+     
+       before configuring                                   
+
+    Variable: PERL
+    Synopsis: Defines name of perl interpreter. As currently 
+       used, must evaluate to 'perl'.
+       
+    Variable: RANLIB
+    Synopsis: Defines name of 'ranlib' command. As currently
+       used, will evaluate to either 'ranlib' or 'touch'.
+
+    Variable: AR
+    Synopsis: Defines name of library-building command. As 
+       currently used,  will evaluate to either 'ar' or 
+       'touch'.
+
+------------------------------------------------------------
+4. Miscellaneous and machine-specific notes
+------------------------------------------------------------
+(a) Installation prefix:
+
+    'make' installs the programs in /usr/local(bin,lib,include) by
+    default.  To override this, use the --prefix=mydir option when
+    executing configure.
+
+(b) On RS6000 systems (TICAM machines for example)
+
+       setenv F77FLAGS "-qarch=pwr2"
+       setenv F90FLAGS "-qarch=pwr2"
+
+    before configuring.  This will override the default setting of 
+    F77FLAGS and F90FLAGS for this architecture which includes "-qextname"
+
+(c) On lonestar.cc.utexas.edu (CRAY T3E)
+
+       setenv LIB_PATHS /opt/ctl/mpt/1.1.0.1/lib
+       setenv INCLUDE_PATHS /opt/ctl/mpt/1.1.0.1/include
+
+    before configuring 
+------------------------------------------------------------

@@ -1,0 +1,8 @@
+intpar1 := 22;;;
+intpar3 := a
+realpar1 := 3.14159265358
+realpar3 := a
+vstr1 := [ "a" "b" ];
+vstr3 := 10
+ivec1 := 1,100,200
+ivec3 := a

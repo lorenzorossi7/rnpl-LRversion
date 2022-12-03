@@ -1,0 +1,81 @@
+.IGNORE:
+
+SHELL = /bin/sh
+
+prefix = @prefix@
+bindir = $(prefix)/bin
+
+CC        = @CC@ @CFLAGS@ -I../include @CPPFLAGS@ @BBH_RNPLAPP_CINC@ @DEFS@ @BBH_DEFS@ 
+CC_LOAD   = @CC@ @CFLAGS@ -L../lib @LDFLAGS@ @BBH_RNPLAPP_LPATHS@
+
+CLIBS     = @BBH_RNPLAPP_CLIBS@
+CCF77LIBS = @CCF77LIBS@
+
+F77 = @F77@
+F77FLAGS = @F77FLAGS@
+
+.c.o:
+	$(CC) -c $*.c
+
+.f.o:
+	$(F77) $(F77FLAGS) -c $*.f
+
+UTILITIES = sdfinfo sdftosv sdffilter sdftranspose sdfdump sdfslice sdfrank
+EXAMPLES = sdftemplate
+SCRIPTS   = rnpl_fix_f77 ss
+
+all: $(UTILITIES) $(SCRIPTS) $(EXAMPLES) install
+
+install: $(UTILITIES)
+	if test ! -d $(bindir); then\
+		mkdir $(bindir);\
+	fi
+	cp $(UTILITIES) $(SCRIPTS) $(bindir)
+
+hdfinfo: hdfinfo.o 
+	$(CC_LOAD) hdfinfo.o $(CLIBS) -o hdfinfo
+
+hdftovs: hdftovs.o 
+	$(CC_LOAD) hdftovs.o $(CLIBS) -o hdftovs
+
+sdftovs: sdftovs.o 
+	$(CC_LOAD) sdftovs.o $(CLIBS) -o sdftovs
+
+sdftovsx: sdftovsx.o 
+	$(CC_LOAD) sdftovsx.o $(CLIBS) -o sdftovsx
+
+sdftosv: sdftosv.o 
+	$(CC_LOAD) sdftosv.o $(CLIBS) -o sdftosv
+
+sdftosvx: sdftosvx.o
+	$(CC_LOAD) sdftosvx.o $(CLIBS) -o sdftosvx
+
+sdfinfo: sdfinfo.o 
+	$(CC_LOAD) sdfinfo.o $(CLIBS) -o sdfinfo
+
+sdffilter: sdffilter.o 
+	$(CC_LOAD) sdffilter.o $(CLIBS) -o sdffilter
+
+sdfdump: sdfdump.o 
+	$(CC_LOAD) sdfdump.o $(CLIBS) -o sdfdump
+
+sdftranspose: sdftranspose.o 
+	$(CC_LOAD) sdftranspose.o $(CLIBS) -o sdftranspose
+
+sdfrank: sdfrank.o 
+	$(CC_LOAD) sdfrank.o $(CLIBS) -o sdfrank
+
+sdfslice_util.o: sdfslice_util.c sdfslice_util.h
+
+sdfslice: sdfslice.o sdfslice_util.o sdfslice_util_f.o
+	$(CC_LOAD) sdfslice.o sdfslice_util.o sdfslice_util_f.o \
+		$(CLIBS) $(CCF77LIBS) -o sdfslice
+
+sdftemplate: sdftemplate.o 
+	$(CC_LOAD) sdftemplate.o $(CLIBS) -o sdftemplate
+
+clean:
+	rm *.o $(UTILITIES) $(EXAMPLES) *.sdf > /dev/null 2>&1
+	(cd ../bin; rm $(UTILITIES) > /dev/null 2>&1)
+	/bin/rm work.pc work.pcl > /dev/null 2>&1
+	rm Makefile > /dev/null 2>&1

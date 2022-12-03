@@ -1,0 +1,132 @@
+Data set 1
+name=<3d_phi_0>
+version=1
+time=0
+rank=3
+shape=(33,33,33)
+bbox=(0,10,0,10,0,10)
+csize=99
+dsize=35937
+cnames=(x|y|z)
+tag=<NULL>
+|data|=0.0303165, min(data)=1.27678e-51, max(data)=1
+Data set 2
+name=<3d_phi_0>
+version=1
+time=0.09375
+rank=3
+shape=(33,33,33)
+bbox=(0,10,0,10,0,10)
+csize=99
+dsize=35937
+cnames=(x|y|z)
+tag=<NULL>
+|data|=0.0297166, min(data)=-5.35172e-44, max(data)=0.961503
+Data set 3
+name=<3d_phi_0>
+version=1
+time=0.1875
+rank=3
+shape=(33,33,33)
+bbox=(0,10,0,10,0,10)
+csize=99
+dsize=35937
+cnames=(x|y|z)
+tag=<NULL>
+|data|=0.0280059, min(data)=-2.10259e-44, max(data)=0.851234
+Data set 4
+name=<3d_phi_0>
+version=1
+time=0.28125
+rank=3
+shape=(33,33,33)
+bbox=(0,10,0,10,0,10)
+csize=99
+dsize=35937
+cnames=(x|y|z)
+tag=<NULL>
+|data|=0.025431, min(data)=1.27678e-51, max(data)=0.682296
+Data set 5
+name=<3d_phi_0>
+version=1
+time=0.375
+rank=3
+shape=(33,33,33)
+bbox=(0,10,0,10,0,10)
+csize=99
+dsize=35937
+cnames=(x|y|z)
+tag=<NULL>
+|data|=0.0223893, min(data)=1.27678e-51, max(data)=0.474178
+Data set 6
+name=<3d_phi_0>
+version=1
+time=0.46875
+rank=3
+shape=(33,33,33)
+bbox=(0,10,0,10,0,10)
+csize=99
+dsize=35937
+cnames=(x|y|z)
+tag=<NULL>
+|data|=0.0194072, min(data)=1.27678e-51, max(data)=0.267166
+Data set 7
+name=<3d_phi_0>
+version=1
+time=0.5625
+rank=3
+shape=(33,33,33)
+bbox=(0,10,0,10,0,10)
+csize=99
+dsize=35937
+cnames=(x|y|z)
+tag=<NULL>
+|data|=0.0170795, min(data)=1.27678e-51, max(data)=0.186695
+Data set 8
+name=<3d_phi_0>
+version=1
+time=0.65625
+rank=3
+shape=(33,33,33)
+bbox=(0,10,0,10,0,10)
+csize=99
+dsize=35937
+cnames=(x|y|z)
+tag=<NULL>
+|data|=0.0158871, min(data)=-0.159403, max(data)=0.15568
+Data set 9
+name=<3d_phi_0>
+version=1
+time=0.75
+rank=3
+shape=(33,33,33)
+bbox=(0,10,0,10,0,10)
+csize=99
+dsize=35937
+cnames=(x|y|z)
+tag=<NULL>
+|data|=0.0159072, min(data)=-0.309888, max(data)=0.138077
+Data set 10
+name=<3d_phi_0>
+version=1
+time=0.84375
+rank=3
+shape=(33,33,33)
+bbox=(0,10,0,10,0,10)
+csize=99
+dsize=35937
+cnames=(x|y|z)
+tag=<NULL>
+|data|=0.0167606, min(data)=-0.411768, max(data)=0.126915
+Data set 11
+name=<3d_phi_0>
+version=1
+time=0.9375
+rank=3
+shape=(33,33,33)
+bbox=(0,10,0,10,0,10)
+csize=99
+dsize=35937
+cnames=(x|y|z)
+tag=<NULL>
+|data|=0.0179339, min(data)=-0.46407, max(data)=0.118202

@@ -1,0 +1,62 @@
+.IGNORE:
+
+prefix  = @prefix@
+
+bindir = $(prefix)/bin
+libdir = $(prefix)/lib
+
+BBH_SYSTEM = @BBH_SYSTEM@
+
+CC     = @CC@
+AR     = @AR@
+RANLIB = @RANLIB@
+PERL   = @PERL@
+RPCGEN = @RPCGEN@
+CTOF   = @CTOF@
+
+LIBS       = @LIBS@
+LDFLAGS    = @LDFLAGS@ -L../src
+CPPFLAGS   = @CPPFLAGS@ 
+CFLAGS     = @CFLAGS@
+DEFS       = @DEFS@ @BBH_DEFS@
+
+F77      = @F77@
+F77FLAGS = @F77FLAGS@
+
+CC_COMP    = $(CC) $(CFLAGS) $(CPPFLAGS) -I../src
+CC_LOAD    = $(CC) $(CFLAGS) $(LDFLAGS) $(LIBS)
+
+F77_COMP   = $(F77) $(F77FLAGS) 
+F77_LOAD   = $(F77) $(F77FLAGS) $(LDFLAGS) $(LIBS)
+
+all: cli0 ser0
+
+install:
+	echo "+++ Example programs do not install"
+
+.c.o:
+	$(CC_COMP) -c $*.c
+
+f.o: 
+	$(F77_COMP) -c $*.f
+
+stream.h: stream.x
+	$(RPCGEN) stream.x
+
+stream_xdr.o: stream.h
+	 $(CC_COMP) -c stream_xdr.c
+
+cli0: stream_xdr.o cli0.o
+	$(CC_LOAD) cli0.o stream_xdr.o -lcliser -o cli0
+
+ser0: stream_xdr.o ser0.o
+	$(CC_LOAD) ser0.o stream_xdr.o -lcliser -o ser0
+
+########################################################################
+# Clean-up
+########################################################################
+clean:
+	@/bin/rm ser0 cli0
+	@/bin/rm *.o
+	@/bin/rm stream.h stream_xdr.c
+	@/bin/rm Makefile

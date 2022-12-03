@@ -1,0 +1,60 @@
+########################################################################
+# Generic Makefile for RNPL 'c' application
+########################################################################
+.IGNORE:
+
+########################################################################
+#  NOTE: This Makefile uses the Bourne shell, 'sh'
+########################################################################
+SHELL = /bin/sh
+
+########################################################################
+#  Set 'APP' to application name stem (prefix) then execute
+#  'make fix' to convert Makefile to use explicit targets
+########################################################################
+APP        =  app
+
+########################################################################
+# If your application uses headers and/or libraries from
+# non-system locations, define the following macros appropriately ...
+# (set to white-space separated path names, don't use 'csh' ~ notation
+# for home directories)
+########################################################################
+USER_INC_PATHS =
+USER_LIB_PATHS =
+
+RNPL      = @RNPL@
+
+CC        = @CC@ $(COPT) $(USER_INC_PATHS) @CFLAGS@ @CPPFLAGS@ @BBH_RNPLAPP_CINC@ @DEFS@ @BBH_DEFS@
+CC_LOAD   = @CC@ $(COPT) @CFLAGS@ $(USER_LIB_PATHS) @LDFLAGS@  @BBH_RNPLAPP_LPATHS@
+
+CLIBS     = @BBH_RNPLAPP_CLIBS@
+
+.c.o:
+	$(CC) -c $*.c
+
+all:  $(APP) $(APP)_init
+
+fix: Makefile
+	sed "s@.(APP)@$(APP)@g" < Makefile > .Makefile 
+	mv .Makefile Makefile
+
+$(APP).c: $(APP)_rnpl
+	$(RNPL) -l c  $(APP)_rnpl
+
+updates.c: $(APP)_rnpl
+residuals.c: $(APP)_rnpl
+initializers.c: $(APP)_rnpl
+$(APP)_init.c: $(APP)_rnpl
+
+$(APP)_init: $(APP)_init.o updates.o initializers.o residuals.o
+	$(CC_LOAD) $(APP)_init.o updates.o initializers.o residuals.o $(CLIBS) -o $(APP)_init
+
+$(APP): $(APP).o updates.o residuals.o
+	$(CC_LOAD) $(APP).o updates.o residuals.o $(CLIBS) -o $(APP)
+
+clean: 
+	rm *.hdf *.sdf .rn* $(APP) $(APP)_init > /dev/null 2>&1
+	rm *.o > /dev/null 2>&1
+	/bin/rm work.pc work.pcl > /dev/null 2>&1
+	rm $(APP).c $(APP)_init.c updates.c initializers.c residuals.c > /dev/null 2>&1

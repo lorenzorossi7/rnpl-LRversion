@@ -1,0 +1,39 @@
+#!/bin/sh
+
+# Sends .sdf files to xvs or DV dependent on rank.
+
+# Needs: sdfrank
+
+P=`basename $0`
+
+usage() {
+cat<<END
+usage: $P sdf_file [sdf_file ...]
+
+Sends .sdf files to xvs or DV dependent on rank.
+END
+exit 1
+}
+
+warn() {
+   echo "$P: $1"
+}
+
+die() {
+   echo "$P: $1"
+   exit 1
+}
+
+case $# in
+   0) usage;;
+esac
+
+for f; do
+   case `sdfrank $f` in 
+      1) sdftoxvs $f;;
+      2|3) sdftodv $f;;
+      0) warn "'$f' is not an .sdf file or has inconsistent rank.";;
+   esac
+done
+
+exit 0

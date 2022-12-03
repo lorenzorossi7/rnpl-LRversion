@@ -1,0 +1,60 @@
+.IGNORE:
+
+prefix  = @prefix@
+
+bindir = $(prefix)/bin
+libdir = $(prefix)/lib
+
+BBH_SYSTEM = @BBH_SYSTEM@
+
+CC     = @CC@
+AR     = @AR@
+RANLIB = @RANLIB@
+PERL   = @PERL@
+RPCGEN = @RPCGEN@
+CTOF   = @CTOF@
+
+LIBS       = -lsvs @LIBS@ @BBH_RNPLAPP_CLIBS@
+LDFLAGS    = @LDFLAGS@ -L../src  @BBH_RNPLAPP_LPATHS@ 
+CPPFLAGS   = @CPPFLAGS@  @BBH_RNPLAPP_CINC@  @BBH_UTIL_CCFLAGS@
+CFLAGS     = @CFLAGS@
+DEFS       = @DEFS@ @BBH_DEFS@
+
+F77      = @F77@
+F77FLAGS = @F77FLAGS@
+F77_TRANSFORM = @F77_TRANSFORM@
+
+CC_COMP    = $(CC) $(CFLAGS) $(CPPFLAGS) -I../src
+CC_LOAD    = $(CC) $(CFLAGS) $(LDFLAGS) 
+
+F77_COMP   = $(F77) $(F77FLAGS) 
+F77_LOAD   = $(F77) $(F77FLAGS) $(LDFLAGS) @BBH_MISC_FLFLAGS@ 
+
+EXECUTABLES = f_thvs c_thvs
+
+all: $(EXECUTABLES)
+
+install:
+	echo "+++ Example programs do not install"
+
+.c.o:
+	$(CC_COMP) -c $*.c
+
+.f.o: 
+	$(F77_TRANSFORM) $*.f
+	$(F77_COMP) -c $*.f
+
+f_thvs: f_thvs.o
+	$(F77_LOAD) f_thvs.o $(LIBS) -o f_thvs
+
+c_thvs: c_thvs.o
+	$(CC_LOAD) c_thvs.o $(LIBS) -o c_thvs
+
+########################################################################
+# Clean-up
+########################################################################
+clean:
+	@/bin/rm $(EXECUTABLES)
+	@/bin/rm *.o
+	@/bin/rm *.hdf
+	@/bin/rm *.sdf

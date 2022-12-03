@@ -1,0 +1,218 @@
+-----------------------------------------------------------------------------
+*** Sep 2008. CHANGES TO RNPL's PARAMETER HANDLING ROUTINES
+
+The following should be viewed as an addendum to the 'man page style' 
+documentation available at http://laplace.phas.ubc.ca/Doc/rnpl/bbhutil.ps
+
+Report any problems, bugs, comments etc. to Matt Choptuik (choptuik@phas.ubc.ca)
+
+----------
+0) Summary 
+----------
+
+There have been significant changes in the 'bbhutil' library routines 
+that provide RNPL's parameter-handling facilities, and some new routines
+for more convenient handling of vector parameters have been added to 
+the library.
+
+These changes should NOT affect any existing RNPL applications, but they 
+may affect code that uses any of the routines discussed below. 
+
+Importantly, the current version of PAMR/AMRD makes use of the new 
+implementation, and applications built using the new PAMR/AMRD but old
+'bbhutil' (or vice versa) are likely to execute incorrectly.
+
+----------------------
+1) Added functionality 
+----------------------
+
+Largely for historical reasons, routines that fetch vector parameters
+have had to supply the expected length of the vector as an argument. 
+In practice, this has had the inconvenient effect that in instances where the 
+vector length varies from run to run, the length itself must be treated
+as a parameter.  For example: 
+
+  n_gf_out = 5
+  gf_out = [ 'phi' 'pi' 'a' 'alpha' 'dmdr' ]
+
+To redress this issue, the following functions have been added to the library:
+
+   int get_int_param_v(const char *p_file, const char *name,
+                      int **pp, int *psize);
+
+   int get_real_param_v(const char *p_file, const char *name,
+                       double **pp, int *psize);
+
+   int get_str_param_v(const char *p_file, const char *name,
+                      char ***pp, int *psize);
+
+These routines fetch vector parameters of arbitrary length, and of type 
+int, double and string (char *) respectively.  On return, and following 
+a successful fetch, *psize will be set to the number of values parsed (the 
+length of the vector), and (*pp)[i], i = 0, 1, *psize - 1 will be set to 
+the individual elements of the parameter vector.  IMPORTANT: These routines 
+allocate memory as necessary using malloc, and users are responsible for 
+subsequent freeing of this memory.  Refer to the demo program,
+examples/get_param/t_get_param_v.c, in the RNPL distribution for a full 
+example.
+
+See the next section for a discussion of the return values (return codes)
+of these new functions.
+
+-------------------------
+2) Modified functionality 
+-------------------------
+
+This modification addresses a long standing issue concerning the 
+return values (return codes) of the parameter-fetching routines: it will 
+only affect programs that actually use the return values to control program 
+flow.  Conversely, programs that DO use the return codes in this capacity may 
+need modification for use with the new version of the library. 
+
+The original specification for the parameter handling routines, and 
+what the old, 'man style' documentation for the bbhutil library claims
+was implemented, was as follows ('rc' is the return value of the routine):
+
+  rc = 1   ->   Successful fetch
+  rc = 0   ->   Syntax error encountered in parsing, or memory error
+  rc = -1  ->   Requested parameter not found in file/string
+
+However, the old version of the library only partially implemented such 
+a scheme: in essence, only the 'rc = 1' case was consistently and 
+correctly coded. 
+
+The new scheme, which slightly alters and extends the above, is 
+
+  rc = 1   ->   Successful fetch
+  rc = 0   ->   Requested parameter not found in file/string
+  rc = -1  ->   Generic parsing error 
+  rc = -2  ->   Error parsing requested number of values (for 
+                fetches of vector parameters only)
+
+and applies to the following routines
+
+   get_param
+   sget_param
+   get_param_nc
+   get_param_nc_v
+
+   sget_fvec_param
+   sget_ivec_param
+   sget_int_param
+   sget_real_param
+   sget_str_param
+
+   get_fvec_param
+   get_ivec_param
+   get_int_param
+   get_real_param
+   get_str_param
+
+   get_int_param_v
+   get_real_param_v
+   get_str_param_v
+
+Note that this includes the new routines that fetch vector parameters
+of arbitrary length, with the proviso that the 'rc = -2' case is 
+not applicable in those instances.
+
+-----------------
+3) Usage examples
+-----------------
+
+See the sample programs
+
+   t_get_param.c
+   t_get_param_v.c
+   t_get_str_param.c
+
+
+in the examples/get_param subdirectory of the distribution for examples 
+of usage of the new and modified routines.
+
+-----------------------------------------------------------------------------
+*** Jan 2004. IMPORTANT NOTE FOR THOSE USING 'C' AS THE RNPL TARGET LANGUAGE.
+
+RNPL generated 'C' applications store, manipulate and output multi-dimensional
+arrays in row-major order, rather than column-major (Fortran) order.  
+
+Much of the anciliary software, such as DV, cvtestsdf, sdffilter, etc.
+assumes that the data is stored in column-major order. 
+
+Eventually, we hope to modify the RNPL compiler so that column-major order
+is consistently used.  As a fix for the time being you can use the 
+'sdftranspose' command, included in this distribution, to convert an input 
+.sdf stored in row-major order to an equivalent output .sdf stored in 
+column-major order.
+
+Report any further problems with 'C' applications to Matt Choptuik
+(choptuik@physics.ubc.ca).
+
+(Of course one can also avoid problems with 'C' by using a real scientific
+programming language as the target language :-) )
+
+-----------------------------------------------------------------------------
+This version incorporates some changes by Choptuik beginning 
+
+1) Nov 22 1999
+
+Changes to src/sdf_f.h  (char *names -> const char *names ...)
+
+int gft_out_full(const char *func_name, double time, int *shape, 
+                 const char *cnames, int rank, double *coords, double *data);
+int gft_outm_full(const char *func_name, double *time, int *shape, const char **cnames, 
+                  const int nt, int *rank, double *coords, double *data); 
+
+------------------------------------------------------------
+Copyright (c) 1998-2008 by
+
+Matthew W. Choptuik
+University of British Columbia
+Robert L. Marsa
+
+Supported in part by
+
+NSERC (Canada)
+Canadian Institute for Advanced Research
+-----------------------------------------------------------------------------
+Copyright (c) 1986-1999 by
+Matthew W. Choptuik
+The University of Texas at Austin
+Robert L. Marsa
+The University of Texas at Austin
+
+Supported in part by
+NSF PHY9310083 to Richard A. Matzner
+NSF PHY9318152 (ARPA supplemented) to Richard A. Matzner, et. al.
+Cray Research Grant to Richard A. Matzner
+NSF PHY9510895 to the University of Pittsburgh
+-----------------------------------------------------------------------------
+
+For installation instructions, see the file INSTALL
+
+For instructions on using RNPL and associated utilities, see the LaTeX 
+documents refman.tex, users_guide.tex and bbhutil.tex in rnpl/doc.
+
+See 'wave[123]d' subdirectories in rnpl/examples for sample RNPL applications.
+
+See 
+    rnpl/examples/templates/c/Makefile
+    rnpl/examples/templates/f77/Makefile
+
+for template Makefiles for 'c' and 'f77' RNPL applications respectively.
+
+-----------------------------------------------------------------------------
+There appears to be some limitations with the NCSA HDF libraries:  namely,
+only about 5000/rank 1 element data sets can be written to a single file,
+with even smaller numbers for larger data sets.  These limits are on the SGI.
+Somewhat lower limits exist on the Crays.
+
+We recommend not using hdf.
+-----------------------------------------------------------------------------
+
+REPORT ALL PROBLEMS/DIRECT ALL INQUIRIES TO
+
+   marsa@einstein.ph.utexas.edu
+   matt@einstein.ph.utexas.edu
+
+-----------------------------------------------------------------------------

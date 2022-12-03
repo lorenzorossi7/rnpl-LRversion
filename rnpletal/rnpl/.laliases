@@ -1,0 +1,10 @@
+a c 'cvs commit -m ""'
+a u 'cvs update -d'
+a b 'iopt; make clean; configure --prefix=`pwd`; make'
+a bdbg 'idbg; make clean; configure --prefix=`pwd`; make'
+a b64 'iopt64; make clean; configure --prefix=`pwd`; make'
+a bg4dbg 'idbg64; make clean; configure --prefix=`pwd`; make'
+a gb 'gopt; make clean; configure --prefix=`pwd`; make'
+a gbdbg 'gdbg; make clean; configure --prefix=`pwd`; make'
+a v 'Arc README; vi README'
+cala

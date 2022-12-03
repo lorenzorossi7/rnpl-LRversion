@@ -1,0 +1,586 @@
+#	Netlib Index for LINPACK
+#
+#	NOTE:
+#	1.  Entries are arranged in alphabetical order by the real routine name.
+#	(If you are looking for a specific complex Hermitian routine, you
+#	will find it listed with its real symmetric equivalent.)
+#	2.  Specifications for pairs of real and complex routines have been
+#	merged.  In a few cases, specifications of three routines have been
+#	merged, one for real symmetric, one for complex symmetric, and one
+#	for complex Hermitian matrices.
+#	3.  Specifications are given only for single precision routines.  To
+#	adapt them for the double precision version of the software, simply
+#	interpret REAL as DOUBLE PRECISION and COMPLEX and COMPLEX*16 (or
+#	DOUBLE COMPLEX).
+
+
+file	linpack/readme
+for	README file for LINPACK
+
+
+lib	linpack/chk
+for	test drivers for LINPACK
+
+
+file	linpack/schdc.f
+
+file	linpack/dchdc.f
+
+file	linpack/cchdc.f
+
+file	linpack/zchdc.f
+gams	D2b1b
+for	computes the Cholesky decomposition of a positive definite matrix,
+#	a pivoting option allows the user to estimate the condition of a
+#	positive definite matrix or determine the rank of a positive
+#	semidefinite matrix
+prec	single, double, complex, double complex
+
+
+file	linpack/schdd.f
+
+file	linpack/dchdd.f
+
+file	linpack/cchdd.f
+
+file	linpack/zchdd.f
+gams	D7b
+for	downdates an augmented Cholesky decomposition or the triangular
+#	factor of an augmented QR decomposition
+prec	single, double, complex, double complex
+
+
+file	linpack/schex.f
+
+file	linpack/dchex.f
+
+file	linpack/cchex.f
+
+file	linpack/zchex.f
+gams	D7b
+for	updates the Cholesky factorization
+prec	single, double, complex, double complex
+
+
+file	linpack/schud.f
+
+file	linpack/dchud.f
+
+file	linpack/cchud.f
+
+file	linpack/zchud.f
+gams	D7b
+for	updates an augmented Cholesky decomposition or the triangular
+#	part of an augmented QR decomposition
+prec	single, double, complex, double complex
+
+
+file	linpack/sgbco.f
+
+file	linpack/dgbco.f
+
+file	linpack/cgbco.f
+
+file	linpack/zgbco.f
+gams	D2a2, D2c2
+for	factors a real/complex band matrix by Gaussian elimination and
+#	estimates the condition number of the matrix
+prec	single, double, complex, double complex
+
+
+file	linpack/sgbdi.f
+
+file	linpack/dgbdi.f
+
+file	linpack/cgbdi.f
+
+file	linpack/zgbdi.f
+gams	D3a2, D3c2
+for	computes the determinant of a band matrix using the factors
+#	computed by (linpack/_gbco) or (linpack/_gbfa), if the inverse
+#	is needed use (linpack/_gbsl) n times
+prec	single, double, complex, double complex
+
+
+file	linpack/sgbfa.f
+
+file	linpack/dgbfa.f
+
+file	linpack/cgbfa.f
+
+file	linpack/zgbfa.f
+gams	D2a2, D2c2
+for	factors a band matrix by elimination
+prec	single, double, complex, double complex
+
+
+file	linpack/sgbsl.f
+
+file	linpack/dgbsl.f
+
+file	linpack/cgbsl.f
+
+file	linpack/zgbsl.f
+gams	D2a2, D2c2
+for	solves the real/complex band system Ax = b or trans(A)x = b using
+#	the factors computed by (linpack/_gbco) or (linpack/_gbfa)
+prec	single, double, complex, double complex
+
+
+file	linpack/sgeco.f
+
+file	linpack/dgeco.f
+
+file	linpack/cgeco.f
+
+file	linpack/zgeco.f
+gams	D2a1, D2c1
+for	factors a matrix by Gaussian elimination and estimates the
+#	condition number of the matrix
+prec	single, double, complex, double complex
+
+
+file	linpack/sgedi.f
+
+file	linpack/dgedi.f
+
+file	linpack/cgedi.f
+
+file	linpack/zgedi.f
+gams	D3a1,D2a1, D2c1, D3c1
+for	computes the determinant and inverse of a matrix using the 
+#	factors computed by (linpack/_geco) or (linpack/_gefa)
+prec	single, double, complex, double complex
+
+
+file	linpack/sgefa.f
+
+file	linpack/dgefa.f
+
+file	linpack/cgefa.f
+
+file	linpack/zgefa.f
+gams	D2a1, D2c1
+for	factors a real/complex matrix by Gaussian elimination
+prec	single, double, complex, double complex
+
+
+file	linpack/sgesl.f
+
+file	linpack/dgesl.f
+
+file	linpack/cgesl.f
+
+file	linpack/zgesl.f
+gams	D2a1, D2c1
+for	solves the real/complex system Ax = b or trans(A)x = b using 
+#	the factors computed by (linpack/_geco) or (linpack/_gefa)
+prec	single, double, complex, double complex
+
+
+file	linpack/sgtsl.f
+
+file	linpack/dgtsl.f
+
+file	linpack/cgtsl.f
+
+file	linpack/zgtsl.f
+gams	D2a2a, D2c2a
+for	given a general tridiagonal matrix and a right hand side will 
+#	find the solution
+prec	single, double, complex, double complex
+
+
+file	linpack/spbco.f
+
+file	linpack/dpbco.f
+
+file	linpack/cpbco.f
+
+file	linpack/zpbco.f
+gams	D2b2, D2d2
+for	factors a real/complex symmetric positive definite matrix stored
+#	in band form and estimates the condition of the matrix
+prec	single, double, complex, double complex
+
+
+file	linpack/spbdi.f
+
+file	linpack/dpbdi.f
+
+file	linpack/cpbdi.f
+
+file	linpack/zpbdi.f
+gams	D3b2, D3d2
+for	computes the determinant of a real/complex symmetric positive
+#	definite band matrix using the factors computed by (linpack/_pbco)
+#	or (linpack/_pbfa), if the inverse is needed use (linpack/dpbsl)
+#	n times
+prec	single, double, complex, double complex
+
+
+file	linpack/spbfa.f
+
+file	linpack/dpbfa.f
+
+file	linpack/cpbfa.f
+
+file	linpack/zpbfa.f
+gams	D2b2, D2d2
+for	factors a real/complex symmetric positive definite matrix stored
+#	in band form
+prec	single, double, complex, double complex
+
+
+file	linpack/spbsl.f
+
+file	linpack/dpbsl.f
+
+file	linpack/cpbsl.f
+
+file	linpack/zpbsl.f
+gams	D2b2, D2d2
+for	solves the real/complex symmetric positive definite band system
+#	Ax = b using the factors computed by (linpack/_pbco) or (linpack/_pbfa)
+prec	single, double, complex, double complex
+
+
+file	linpack/spoco.f
+
+file	linpack/dpoco.f
+
+file	linpack/cpoco.f
+
+file	linpack/zpoco.f
+gams	D2b1b, D2d1b
+for	factors a real/complex symmetric positive definite matrix and
+#	estimates the condition number of the matrix
+prec	single, double, complex, double complex
+
+
+file	linpack/spodi.f
+
+file	linpack/dpodi.f
+
+file	linpack/cpodi.f
+
+file	linpack/zpodi.f
+gams	D2b1b,D3b1b, D2d1b, D3d1b
+for	computes the determinant and inverse of a certain real/complex
+#	symmetric positive definite matrix using the factors computed by
+#	(linpack/_poco), (linpack/_pofa) or (linpack/_qrdc)
+prec	single, double, complex, double complex
+
+
+file	linpack/spofa.f
+
+file	linpack/dpofa.f
+
+file	linpack/cpofa.f
+
+file	linpack/zpofa.f
+gams	D2b1b, D2d1b
+for	factors a real/complex symmetric positive definite matrix
+prec	single, double, complex, double complex
+
+
+file	linpack/sposl.f
+
+file	linpack/dposl.f
+
+file	linpack/cposl.f
+
+file	linpack/zposl.f
+gams	D2b1b, D2d1b
+for	solves the real/complex symmetric positive definite system
+#	Ax = b using the factors computed by (linpack/_poco) or
+#	(linpack/_pofa)
+prec	single, double, complex, double complex
+
+
+file	linpack/sppco.f
+
+file	linpack/dppco.f
+
+file	linpack/cppco.f
+
+file	linpack/zppco.f
+gams	D2b1b, D2d1b
+for	factors a real/complex symmetric positive definite matrix stored
+#	in packed form and estimates the condition number of the matrix
+prec	single, double, complex, double complex
+
+
+file	linpack/sppdi.f
+
+file	linpack/dppdi.f
+
+file	linpack/cppdi.f
+
+file	linpack/zppdi.f
+gams	D2b1b,D3b1b, D2d1b, D3d1b
+for	computes the determinant and inverse of a real/complex symmetric
+#	positive definite matrix using the factors computed by
+#	(linpack/_ppco) or (linpack/_ppfa)
+prec	single, double, complex, double complex
+
+
+file	linpack/sppfa.f
+
+file	linpack/dppfa.f
+
+file	linpack/cppfa.f
+
+file	linpack/zppfa.f
+gams	D2b1b, D2d1b
+for	factors a real/complex symmetric positive definite matrix stored
+#	in packed form
+prec	single, double, complex, double complex
+
+
+file	linpack/sppsl.f
+
+file	linpack/dppsl.f
+
+file	linpack/cppsl.f
+
+file	linpack/zppsl.f
+gams	D2b1b, D2d1b
+for	solves the real/complex symmetric positive definite system
+#	Ax = b using the factors computed by (linpack/_ppco) or
+#	(linpack/_ppfa)
+prec	single, double, complex, double complex
+
+
+file	linpack/sptsl.f
+
+file	linpack/dptsl.f
+
+file	linpack/cptsl.f
+
+file	linpack/zptsl.f
+gams	D2b2a, D2d2a
+for	given a positive definite tridiagonal matrix and a right hand
+#	side will find the solution
+prec	single, double, complex, double complex
+
+
+file	linpack/sqrdc.f
+
+file	linpack/dqrdc.f
+
+file	linpack/cqrdc.f
+
+file	linpack/zqrdc.f
+gams	D5
+for	uses Householder transformations to compute the QR factorization,
+#	column pivoting based on the 2-norms of the reduced columns may
+#	be performed at the user's option
+prec	single, double, complex, double complex
+
+
+file	linpack/sqrsl.f
+
+file	linpack/dqrsl.f
+
+file	linpack/cqrsl.f
+
+file	linpack/zqrsl.f
+gams	D2a1, D9a1, D2c1
+for	applies the output of (linpack/_qrdc) to compute coordinate
+#	transformations, projections, and least squares solutions
+prec	single, double, complex, double complex
+
+
+file	linpack/ssico.f
+
+file	linpack/dsico.f
+
+file	linpack/csico.f
+
+file	linpack/zsico.f
+
+file	linpack/chico.f
+
+file	linpack/zhico.f
+gams	D2b1a, D2c1, D2d1a
+for	factors a real/complex/complex symmetric/symmetric/Hermitian matrix
+#	by elimination with symmetric pivoting and estimates the condition
+#	number of the matrix
+prec	single, double, complex, double complex; complex, double complex
+
+
+file	linpack/ssidi.f
+
+file	linpack/dsidi.f
+
+file	linpack/csidi.f
+
+file	linpack/zsidi.f
+
+file	linpack/chidi.f
+
+file	linpack/zhidi.f
+gams	D2b1a, D3b1a, D2c1, D3c1, D2d1a, D3d1a
+for	computes the determinant, inertia and inverse of a
+#	real/complex/complex symmetric/symmetric/Hermitian matrix using
+#	the factors from (linpack/_sifa or _hifa)
+prec	single, double, complex, double complex; complex, double complex
+
+
+file	linpack/ssifa.f
+
+file	linpack/dsifa.f
+
+file	linpack/csifa.f
+
+file	linpack/zsifa.f
+
+file	linpack/chifa.f
+
+file	linpack/zhifa.f
+gams	D2b1a, D2c1, D2d1a
+for	factors a real/complex/complex symmetric/symmetric/Hermitian matrix
+#	by elimination with symmetric pivoting
+prec	single, double, complex, double complex; complex, double complex
+
+
+file	linpack/ssisl.f
+
+file	linpack/dsisl.f
+
+file	linpack/csisl.f
+
+file	linpack/zsisl.f
+
+file	linpack/chisl.f
+
+file	linpack/zhisl.f
+gams	D2b1a, D2c1, D2d1a
+for	solves the real/complex/complex symmetric/symmetric/Hermitian
+#	system Ax = b using the factors computed by (linpack/_sifa or
+#	_hifa)
+prec	single, double, complex, double complex; complex, double complex
+
+
+file	linpack/sspco.f
+
+file	linpack/dspco.f
+
+file	linpack/cspco.f
+
+file	linpack/zspco.f
+
+file	linpack/chpco.f
+
+file	linpack/zhpco.f
+gams	D2b1a, D2c1, D2d1a
+for	factors a real/complex/complex symmetric/symmetric/Hermitian matrix
+#	stored in packed form by elimination with symmetric pivoting and
+#	estimates the condition number of the matrix
+prec	single, double, complex, double complex; complex, double complex
+
+
+file	linpack/sspdi.f
+
+file	linpack/dspdi.f
+
+file	linpack/cspdi.f
+
+file	linpack/zspdi.f
+
+file	linpack/chpdi.f
+
+file	linpack/zhpdi.f
+gams	D2b1a, D3b1a, D2c1, D3c1, D2d1a, D3d1a
+for	computes the determinant, inertia and inverse of a
+#	real/complex/complex symmetric/symmetric/Hermitian matrix using
+#	the factors from (linpack/_spfa or _hpfa), where the matrix is
+#	stored in packed form
+prec	single, double, complex, double complex; complex, double complex
+
+
+file	linpack/sspfa.f
+
+file	linpack/dspfa.f
+
+file	linpack/cspfa.f
+
+file	linpack/zspfa.f
+
+file	linpack/chpfa.f
+
+file	linpack/zhpfa.f
+gams	D2b1a, D2c1, D2d1a
+for	factors a real/complex/complex symmetric/symmetric/Hermitian matrix
+#	stored in packed form by elimination with symmetric pivoting
+prec	single, double, complex, double complex; complex, double complex
+
+
+file	linpack/sspsl.f
+
+file	linpack/dspsl.f
+
+file	linpack/cspsl.f
+
+file	linpack/zspsl.f
+
+file	linpack/chpsl.f
+
+file	linpack/zhpsl.f
+gams	D2b1a, D2c1, D2d1a 
+for	solves the real/complex/complex symmetric/symmetric/Hermitian
+#	system Ax = b using the factors computed by (linpack/_spfa or
+#	_hpfa)
+prec	single, double, complex, double complex; complex, double complex
+
+
+file	linpack/ssvdc.f
+
+file	linpack/dsvdc.f
+
+file	linpack/csvdc.f
+
+file	linpack/zsvdc.f
+gams	D6
+for	reduces a real/complex matrix to diagonal form by orthogonal/unitary
+#	transformations
+prec	single, double, complex, double complex
+
+
+file	linpack/strco.f
+
+file	linpack/dtrco.f
+
+file	linpack/ctrco.f
+
+file	linpack/ztrco.f
+gams	D2a3, D2c3
+for	estimates the condition number of a triangular matrix
+prec	single, double, complex, double complex
+
+
+file	linpack/strdi.f
+
+file	linpack/dtrdi.f
+
+file	linpack/ctrdi.f
+
+file	linpack/ztrdi.f
+gams	D2a3,D3a3, D2c3, D3c3
+for	computes the determinant and inverse of a triangular matrix
+prec	single, double, complex, double complex
+
+
+file	linpack/strsl.f
+
+file	linpack/dtrsl.f
+
+file	linpack/ctrsl.f
+
+file	linpack/ztrsl.f
+gams	D2a3, D2c3
+for	solves systems of the form Tx = b or trans(T)x = b where T is
+#	a triangular matrix of order n, trans(T) denotes the transpose 
+#	of the matrix T
+prec	single, double, complex, double complex

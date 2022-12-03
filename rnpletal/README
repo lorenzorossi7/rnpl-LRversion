@@ -1,0 +1,50 @@
+############################################################
+Consolidated distribution of RNPL, MWC Fortran utilities
+and related software.
+
+Send problem reports/remarks etc. to Matt Choptuik at 
+choptuik@physics.ubc.ca.  If possible, send contents of 
+'Install.log' file (see below) with problem report.
+############################################################
+
+Installation instructions:
+
+1. Edit 'Install' script, and modify/enable environment variable
+   settings ('CC', 'CFLAGS', etc.) as necessary to match your 
+   desired compilation environment.  If you skip this step, the
+   various 'configure' scripts included in this distribution will 
+   use default values that will depend on your operating system. 
+
+2. Execute the 'Install' script, supplying as the single argument
+   the desired installation prefix, e.g.:
+
+   % Install /usr/local
+
+   Configure/install progress will be echoed to standard output, 
+   as well as to the file 'Install.log'
+
+   The following versions of 'Install', that have all of the 
+   environment variables appropriately set are also currently 
+   available:
+
+      Install.Pathscale
+      Install.gnu
+      Install.gnu.FreeBSD
+      Install.gnu.mpich
+      Install.intel.AMD64
+      Install.intel.P4
+      Install.osf1
+      Install.osx.gnu
+      Install.pgi.AMD64
+      Install.pgi.P4
+      Install.pgi.PIII
+      Install.sgi
+      Install.sun
+      Install.sun.gnu
+
+Known problems:
+
+1. Unless you have previously installed the 'xvs' package, the 
+   executable 'seg2xvs' in the 'utilio' package will not build.
+   Unless you *really* want to send .segdat files to 'xvs', 
+   you can safely ignore the resulting error messages.

@@ -1,0 +1,89 @@
+#!/bin/bash 
+############################################################
+# Install script for use with GNU compilers on Darwin
+############################################################
+. PACKAGES.sh
+
+P=`basename $0`
+
+usage() {
+cat<<END
+usage: $P installation-prefix
+
+Example: $P /usr/local
+
+Note: See script source for user-modifiable environment variables that may 
+need to be tailored to your desired compilation environment.
+END
+exit 1
+}
+
+warn() {
+   echo "$P: $1"
+}
+
+header() {
+cat<<END | tee -a Install.log
++++++++++++++++++++++++++++++++++++++++
+LOG: rnpletal/Install 
+
+date=`date`
+
+hostname=`hostname`
+uname -a=`uname -a`
+USER=$USER
+
+CC=<$CC>
+CXX=<$CXX>
+CFLAGS=<$CFLAGS>
+CFLAGS_NOOPT=<$CFLAGS_NOOPT>
+CPPFLAGS=<$CPPFLAGS>
+LDFLAGS=<$LDFLAGS>
+F77=<$F77>
+F77FLAGS=<$F77FLAGS>
+F77FLAGSNOOPT=<$F77FLAGSNOOPT>
+F77LFLAGS=<$F77LFLAGS>
+F90=<$F90>
+F90FLAGS=<$F90FLAGS>
+LIB_PATHS=<$LIB_PATHS>
+INCLUDE_PATHS=<$INCLUDE_PATHS>
++++++++++++++++++++++++++++++++++++++++
+
+END
+}
+
+case $# in
+1) PREFIX=$1;;
+*) usage;;
+esac
+
+export F77="gfortran"
+export CC="gcc"
+export CXX="g++"
+export INCLUDE_PATHS="/usr/local/include /sw/include /opt/local/include"
+export LIB_PATHS="/usr/local/lib /sw/lib /opt/local/include /usr/local/gfortran/lib"
+
+export CFLAGS="-O2"
+export CFLAGS_NOOPT="-O2"
+export F77FLAGS="-O2 -fno-second-underscore"
+export F77LFLAGS="-O2 -fno-second-underscore"
+export F90LFLAGS="-O2 -fno-second-underscore"
+export CCF77LIBS='-lgfortran -lm'
+export RNPL=/usr/local/bin/rnpl
+export F77FLAGSNOOPT="-O2 -fno-second-underscore"
+
+export LDFLAGS="-O2 -fno-second-underscore -L/usr/local/gfortran/lib"
+
+
+test -f Install.log && rm Install.log
+header
+for pack in $PACKAGES; do
+   if test -d $pack; then
+      echo "+++++++++++++++++++++++++++++++++++++++" | tee -a Install.log
+      echo "Configuring and installing in $pack ..." | tee -a Install.log
+      echo "+++++++++++++++++++++++++++++++++++++++" | tee -a Install.log
+      (cd $pack; ./configure --prefix=$PREFIX; make install) 2>&1 | tee -a Install.log
+   else
+      warn "Directory $pack not found in this distribution." 
+   fi
+done

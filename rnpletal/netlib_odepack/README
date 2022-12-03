@@ -1,0 +1,8 @@
+# Changed xsetun.f from
+
+      if (lun .gt. 0) lunit = lun
+
+# to
+      if (lun .ge. 0) lunit = lun
+
+# so that output to standard error is supported 

@@ -1,0 +1,72 @@
+########################################################################
+# Generic Makefile for RNPL 'f77' application
+########################################################################
+.IGNORE:
+
+########################################################################
+#  NOTE: This Makefile uses the Bourne shell, 'sh'
+########################################################################
+SHELL = /bin/sh
+
+########################################################################
+#  Set 'APP' to application name stem (prefix) then execute
+#  'make fix' to convert Makefile to use explicit targets
+########################################################################
+APP        =  app
+
+########################################################################
+# If your application uses headers and/or libraries from 
+# non-system locations, define the following macros appropriately ...
+# (set to white-space separated path names, don't use 'csh' ~ notation
+# for home directories)
+########################################################################
+USER_INC_PATHS =
+USER_LIB_PATHS = 
+
+########################################################################
+# If you want to set non-default flags for the 'f77' compiler, do so
+# here
+########################################################################
+F77_FLAGS =
+
+RNPL      = @RNPL@
+
+F77       = @F77@ $(F77_FLAGS) @F77FLAGS@ @BBH_RNPLAPP_FINC@ $(USER_INC_PATHS)
+
+CC        = @CC@ $(COPT) @CFLAGS@ $(USER_INC_PATHS) @CPPFLAGS@ @BBH_RNPLAPP_CINC@ @DEFS@ @BBH_DEFS@
+CC_LOAD   = @CC@ $(COPT) @CFLAGS@ $(USER_LIB_PATHS) @LDFLAGS@ @BBH_RNPLAPP_LPATHS@
+
+CLIBS     = @BBH_RNPLAPP_CLIBS@ @CCF77LIBS@ 
+
+.c.o:
+	$(CC) -c $*.c
+
+.f.o:
+	$(F77) -c $*.f
+
+all: $(APP) $(APP)_init
+
+fix: Makefile
+	sed "s@.(APP)@$(APP)@g" < Makefile > .Makefile 
+	mv .Makefile Makefile
+
+$(APP).c:      $(APP)_rnpl
+	$(RNPL) -l f77 @BBH_RNPL_FLAGS@ $(APP)_rnpl
+
+updates.f:     $(APP)_rnpl
+residuals.f:     $(APP)_rnpl
+initializers.f:     $(APP)_rnpl
+$(APP)_init.c: $(APP)_rnpl
+
+$(APP)_init: $(APP)_init.o updates.o initializers.o residuals.o
+	$(CC_LOAD) $(APP)_init.o updates.o residuals.o initializers.o $(CLIBS) -o $(APP)_init
+
+$(APP): $(APP).o updates.o residuals.o
+	$(CC_LOAD) $(APP).o updates.o residuals.o $(CLIBS) -o $(APP)
+
+clean: 
+	 rm *.hdf *.sdf .rn*  $(APP)  $(APP)_init > /dev/null 2>&1
+	 rm *.o > /dev/null 2>&1
+	 rm residuals.f updates.f initializers.f $(APP).c $(APP)_init.c > /dev/null 2>&1
+	/bin/rm work.pc work.pcl > /dev/null 2>&1
+	 rm gfuni0.inc globals.inc other_glbs.inc sys_param.inc > /dev/null 2>&1

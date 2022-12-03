@@ -1,0 +1,41 @@
+# Sample program written in rnpl as a language guide
+# This program solves 2D 2nd order wave equation
+# phi_tt = phi_xx + phi_yy 
+
+parameter float xmin := 0
+parameter float xmax := 100
+parameter float ymin := 0
+parameter float ymax := 100
+parameter float amp := 1.0
+parameter float cx := 50.0
+parameter float cy := 50
+parameter float sx
+parameter float sy
+
+rec coordinates t,x,y
+
+uniform rec grid g1 [1:Nx][1:Ny] {xmin:xmax}{ymin:ymax}
+
+float phi on g1 at -1,0,1 { out_gf := 1 }
+
+operator D_LF(f,x) := (<0>f[1][0] - <0>f[-1][0])/(2*dx)
+operator D_LF(f,y) := (<0>f[0][1] - <0>f[0][-1])/(2*dy)
+operator D_LF(f,t) := (<1>f[0][0] - <-1>f[0][0])/(2*dt)
+operator D_LF(f,t,t) := (<1>f[0][0] - 2*<0>f[0][0] + <-1>f[0][0])/(dt*dt)
+operator D_LF(f,x,x) := (<0>f[1][0] - 2*<0>f[0][0] + <0>f[-1][0])/(dx*dx)
+operator D_LF(f,y,y) := (<0>f[0][1] - 2*<0>f[0][0] + <0>f[0][-1])/(dy*dy)
+
+evaluate residual phi { 
+          [1:Nx][1:1] := D_LF(phi,t);
+        [1:Nx][Ny:Ny] := D_LF(phi,t);
+          [1:1][1:Ny] := D_LF(phi,t);
+        [Nx:Nx][1:Ny] := D_LF(phi,t);
+     [2:Nx-1][2:Ny-1] := D_LF(phi,t,t) - D_LF(phi,x,x) - D_LF(phi,y,y)
+                      }
+
+initialize phi { [1:Nx][1:Ny]:= amp*exp(-(x-cx)^2/sx^2)*exp(-(y-cy)^2/sy^2) }
+
+looper iterative
+
+auto update phi
+

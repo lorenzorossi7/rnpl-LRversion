@@ -1,0 +1,102 @@
+.IGNORE:
+
+prefix  = @prefix@
+
+BBH_SYSTEM = @BBH_SYSTEM@
+
+CC     = @CC@
+AR     = @AR@
+RANLIB = @RANLIB@
+PERL   = @PERL@
+RPCGEN = @RPCGEN@
+
+LIBS       = @LIBS@
+LDFLAGS    = @LDFLAGS@ -L. 
+CPPFLAGS   = @CPPFLAGS@ 
+CFLAGS     = @CFLAGS@
+DEFS       = @DEFS@ @BBH_DEFS@
+
+F77      = @F77@
+F77FLAGS = @F77FLAGS@
+
+CC_COMP    = $(CC) $(CFLAGS) $(CPPFLAGS)
+CC_LOAD    = $(CC) $(CFLAGS) $(LDFLAGS) 
+
+F77_COMP   = $(F77) $(F77FLAGS) 
+F77_LOAD   = $(F77) $(F77FLAGS) $(LDFLAGS)
+
+LIBRARY = libvs.a
+EXECUTABLES = v1 vn
+TESTEXECUTABLES = tvs
+
+all: $(LIBRARY) $(EXECUTABLES)
+
+full: all $(TESTEXECUTABLES) test
+
+test: all
+	Test
+
+.c.o:
+	$(CC_COMP) -c $*.c
+
+f.o: 
+	$(F77_COMP) -c $*.f
+
+RPC_SRCS = rvs.x rvs_cli_includes.h rvs_cli_headers.h rvs_cli.h \
+           rvs_cli.c v1.c bbh_types.h f77_types.h v_types.h vs_server_names.h \
+           mfi Makefile
+
+rvs.h: rvs.x
+	$(RPCGEN) rvs.x 
+
+rvs_cli_cf.c: rvs_cli_headers.h
+	$(PERL) mfi rvs_cli_headers.h rvs_cli_cf.c $(BBH_SYSTEM)
+
+RVSOBJS =     rvs_clnt.o rvs_xdr.o rvs_cli_cf.o rvs_cli.o 
+
+rvs_clnt.o: rvs.h
+	 $(CC_COMP) -c rvs_clnt.c
+
+rvs_xdr.o: rvs.h
+	 $(CC_COMP) -c rvs_xdr.c
+
+rvs_cli_cf.o: rvs.h rvs_cli_cf.c
+	 $(CC_COMP) -c rvs_cli_cf.c
+
+rvs_cli.o: rvs.h
+	 $(CC_COMP) -c rvs_cli.c
+
+$(LIBRARY): $(RVSOBJS)
+	$(AR) r $(LIBRARY) $(RVSOBJS)
+	$(RANLIB) $(LIBRARY) 
+
+v1: v1.o $(LIBRARY)
+	$(CC_LOAD) v1.o -lvs $(LIBS) -o v1
+
+vn: vn.o $(LIBRARY)
+	$(CC_LOAD) vn.o -lvs $(LIBS) -o vn
+
+tvs: tvs.o $(LIBRARY)
+	$(CC_LOAD) tvs.o -lvs $(LIBS) -o tvs
+
+install: all
+	mkdir -p $(prefix)
+	(cd $(prefix); mkdir -p bin include lib)
+	cp $(LIBRARY) $(prefix)/lib
+	(cd $(prefix)/lib; $(RANLIB) $(LIBRARY))
+	cp bbh_types.h $(prefix)/include
+	cp $(EXECUTABLES) $(prefix)/bin
+
+########################################################################
+# Clean-up
+########################################################################
+clean:
+	@/bin/rm rvs.h rvs_cli_cf.c rvs_clnt.c rvs_xdr.c 
+	@/bin/rm $(EXECUTABLES)
+	@/bin/rm $(TESTEXECUTABLES)
+	@/bin/rm tvs
+	@/bin/rm *.o
+	@/bin/rm *.a
+	@/bin/rm ../bin/*
+	@/bin/rm ../lib/*
+	rm Makefile 

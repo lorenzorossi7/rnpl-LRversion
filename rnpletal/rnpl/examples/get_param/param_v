@@ -1,0 +1,6 @@
+vstr1 := [ "a" "bc" "def" "ghij" "klmno" "pqrstu"]
+vstr3 := q
+vint1 := [ 1 1 2 3 5 8 13 ]
+vint3 := [ 1.0 2.0 ]
+vreal1 := [ 3.1 4.1 5.9 2.6 5.3 5.8 9.7 9.3 ]
+vreal3 := ["a" "b" ]

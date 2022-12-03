@@ -1,0 +1,157 @@
+.IGNORE:
+# Previously used .F as suffix for Fortran file to pass through pre-processor,
+# but 'make' in Darwin apparently doesn't distinguish between foo.F and foo.f
+#.SUFFIXES: .F
+#.SUFFIXES: .fp
+
+SHELL = /bin/sh
+
+prefix = @prefix@
+bindir = $(prefix)/bin
+includedir = $(prefix)/include
+libdir = $(prefix)/lib
+
+prefix  = @prefix@
+
+BBH_SYSTEM = @BBH_SYSTEM@
+
+AR     = @AR@
+RANLIB = @RANLIB@
+
+F77_TRANSFORM = @F77_TRANSFORM@
+
+LIBS       = @LIBS@ @VSLIB@ -lutilio @VUTILLIB@ @BBH_MISC_FLIBS@
+XLIBS      = @LIBS@ @XVSLIB@ -lutilio @VUTILLIB@ @BBH_MISC_FLIBS@
+LDFLAGS    = @LDFLAGS@ -L. @VSPATH@ @VUTILPATH@
+
+CC       = @CC@
+CFLAGS   = -c @CFLAGS@
+CPPFLAGS = @CPPFLAGS@
+
+CC_COMP  = $(CC) $(CFLAGS) $(CPPFLAGS)
+CC_LOAD  = $(CC) $(LDFLAGS)
+
+F77      = @F77@
+F77FLAGS = @F77FLAGS@
+
+F77_COMP   = $(F77) -c $(F77FLAGS) 
+F77_LOAD   = $(F77) $(F77FLAGS) $(LDFLAGS)
+
+.f.o:
+	$(F77_COMP) $*.f 
+
+.c.o:
+	$(CC_COMP) $*.c
+
+# Eschew this rule in favour of producing utilsgi.f from utilsgi.h since 
+# some compilers/pre-processors won't process non .[cCh] etc. files 
+#.fp.f: 
+#	$(CC) $(CPPFLAGS) -E $*.fp | grep -v '^#' > $*.f
+
+LIBS = libfvs.a libfile_c.a libf77sig.a libutilio.a
+BINS = nss seg2vs seg2xvs vs2seg segdump segrtr
+INCLUDES  = *.h
+TEST      = tsig
+
+all: translate $(LIBS) $(BINS)
+
+install: install_libs install_bins
+
+install_libs: translate $(LIBS)
+	if test ! -d $(bindir); then\
+		mkdir -p $(bindir);\
+	fi
+	if test ! -d $(includedir); then\
+		mkdir -p $(includedir);\
+	fi
+	if test ! -d $(libdir); then\
+		mkdir -p $(libdir);\
+	fi
+	cp $(LIBS) $(libdir)
+	(cd $(libdir); $(RANLIB) $(LIBS))
+	cp $(INCLUDES) $(includedir)
+
+install_bins: $(BINS)
+	cp $(BINS) $(bindir)
+
+SRC = *.f *.inc
+
+translate:
+	$(F77_TRANSFORM) $(SRC)
+	touch translate
+
+utilsgi.o: utilsgi.f
+
+#  2005-05-06: cpp starts to mung leading space, thus subverting my attempt to 
+#  pre-process fortran with it 
+utilsgi.f: utilsgi.h 
+	$(CC) $(CPPFLAGS) -E utilsgi.h | grep -v '^#' | sed 's/^/      /' > utilsgi.f
+	cat utilsgi.f
+
+nss: nss.o
+	$(F77_LOAD) nss.o -o nss @VUTILLIB@ $(LIBS)
+
+seg2vs: seg2vs.o
+	$(F77_LOAD) seg2vs.o -o seg2vs @VUTILLIB@ $(LIBS)
+
+seg2xvs: seg2vs.o
+	$(F77_LOAD) seg2vs.o -o seg2xvs @VUTILLIB@ $(XLIBS)
+
+segdump: segdump.o
+	$(F77_LOAD) segdump.o -o segdump -lutilio @VUTILLIB@ @BBH_MISC_FLIBS@
+
+segrtr: segrtr.o
+	$(F77_LOAD) segrtr.o -o segrtr -lutilio @VUTILLIB@ @BBH_MISC_FLIBS@
+
+vs2seg: vs2seg.o
+	$(F77_LOAD) vs2seg.o -o vs2seg @VSLIB@ $(LIBS)
+
+LIBFVS_OBJ  = filevs.o filevs_c.o
+libfvs.a: $(LIBFVS_OBJ)
+	$(AR) r libfvs.a $(LIBFVS_OBJ)
+	$(RANLIB) libfvs.a
+
+LIBFILE_C_OBJ = file_c.o
+libfile_c.a: $(LIBFILE_C_OBJ)
+	$(AR) r libfile_c.a $(LIBFILE_C_OBJ)
+	$(RANLIB) libfile_c.a
+
+LIBF77SIG_OBJ = f77sig.o f77sig_c.o
+libf77sig.a: $(LIBF77SIG_OBJ)
+	$(AR) r libf77sig.a $(LIBF77SIG_OBJ)
+	$(RANLIB)  libf77sig.a
+
+LIBUTILIO_OBJ = ctoirang.o string.o string_c.o utilio.o utilpde.o \
+                misc.o file_c.o arg.o env.o utilsgi.o \
+                utilexplorer_f.o utilexplorer_c.o \
+                utilemp.o utilcray.o
+
+libutilio.a: $(LIBUTILIO_OBJ)
+	$(AR) r libutilio.a  $(LIBUTILIO_OBJ)
+	$(RANLIB) libutilio.a
+
+test: tsig
+	echo "Type 'tsig' to start interrupt test"
+
+tsig: tsig.o
+	$(F77_LOAD) tsig.o -lf77sig -o tsig
+
+export:
+	autoconf
+	make clean
+	(cd ..; rm utilio.tar.Z; tar cfL utilio.tar utilio; compress utilio.tar; /bin/cp utilio.tar.Z $(HOME)/autoconf)
+
+########################################################################
+# Clean-up
+########################################################################
+clean:
+	/bin/rm *.o 
+	/bin/rm *.a
+	/bin/rm utilsgi.f
+	/bin/rm translate
+	/bin/rm $(BINS)
+	/bin/rm $(TEST)
+	/bin/rm utilsgi.f > /dev/null 2>&1
+	/bin/rm work.pc work.pcl > /dev/null 2>&1
+	/bin/rm -r autom4te.cache 2>&1
+	/bin/rm  Makefile config.cache config.log config.status

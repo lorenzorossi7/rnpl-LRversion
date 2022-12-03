@@ -1,0 +1,29 @@
+parameters for wave3d
+tag := "3d_"
+lambda := .3
+Nx0 := 32
+Ny0 := 32
+Nz0 := 32
+xmin := 0
+xmax := 10
+ymin := 0
+ymax := 10
+zmin := 0
+zmax := 10
+ser := 0
+fout := 1
+iter := 10
+output := *-*/1
+epsiter := 1.0e-5
+epsiterid := 1.0
+amp := 1.0
+cx := 5.0
+cy := 5
+cz := 5
+sx := .8
+sy := .8
+sz := .8
+in_file := "w3d_in.sdf"
+out_file := "w3d_out.sdf"
+level:=0
+

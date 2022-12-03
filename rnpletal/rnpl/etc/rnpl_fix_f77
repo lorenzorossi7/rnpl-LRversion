@@ -1,0 +1,17 @@
+#!/usr/bin/perl -i
+
+# Fixes a few F77 syntax errors that RNPL generates.
+
+$Pgname = `basename $0`; chop $Pgname;
+
+sub usage {
+   print "usage: $Pgname <file> ... \n";
+   exit;
+}
+
+&usage unless scalar(@ARGV) > 0;
+while( <> ) {
+   s/\+\+/\+/g;
+   s/\+\-/\-/g;
+   print;
+}

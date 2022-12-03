@@ -1,0 +1,71 @@
+########################################################################
+Notes on modifications of return codes of parameter fetching routines,
+and description of new vector-parameter fetching routines.
+
+Please direct any questions/bug-reports/problem-reports to Matt
+(choptuik@physics.ubc.ca)
+########################################################################
+ 
+#-----------------------------------------------------------------------
+1) Return codes of parameter fetching routines (Fortran or C)
+#-----------------------------------------------------------------------
+
+The parameter fetching routines defined in the bbhutil/rnpl libraries,
+namely
+   
+   sget_fvec_param
+   sget_ivec_param
+   sget_int_param
+   sget_real_param
+   sget_str_param
+   get_fvec_param
+   get_ivec_param
+   get_int_param
+   get_real_param
+   get_str_param
+   sget_param
+   get_param
+   get_param_nc
+
+have been modified so that they uniformly return the following values
+to the invoking environment
+
+    1: success
+    0: parameter not assigned in file
+   -1: generic parsing error
+   -2: error parsing requested number of values
+ 
+#-----------------------------------------------------------------------
+2) New vector-parameter fetching routines (callable from C only!!)
+
+See t_get_param_v.c for usage example
+#-----------------------------------------------------------------------
+
+/* ---------------------------------------------------------------------
+The following routines fetch an arbitrary length int/real/str vector 
+parameter 'name' assigned in file 'p_file', e.g.
+
+   vint  := [ 1 1 2 3 5 8 ]
+   vreal := [ 3.14 1.59 2.65 3.89 7.93 ]
+   vstr  := [ "a" "bc" "def" ]
+
+On success, *psize is set to the length of the vector read, the 
+values read  are returned in (*pp)[i] , i = 0 , ... (*psize)-1, and 
+the routine itself returns 1.
+
+On failure, *psize is set to 0, and the routine returns 0 if there 
+was no assignment for the requested variable in the parameter file,
+and -1 otherwise.
+
+NOTE: Memory for (*pp) is allocated using 'malloc', (*pp) should be 
+unallocated (null) on input.
+--------------------------------------------------------------------- */
+
+int get_int_param_v(const char *p_file, const char *name, 
+   int **pp, int *psize);
+
+int get_real_param_v(const char *p_file, const char *name, 
+   double **pp, int *psize);
+
+int get_str_param_v(const char *p_file, const char *name,
+   char ***pp, int *psize);

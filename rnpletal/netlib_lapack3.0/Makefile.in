@@ -1,0 +1,40 @@
+.IGNORE:
+
+SHELL = /bin/sh
+
+prefix = @prefix@
+bindir = $(prefix)/bin
+includedir = $(prefix)/include
+libdir = $(prefix)/lib
+
+prefix  = @prefix@
+
+LIBS    = libblas.a liblapack.a
+
+install: all
+	if test ! -d $(libdir); then\
+		mkdir -p $(libdir);\
+	fi
+	cp $(LIBS) $(libdir)
+
+all: $(LIBS)
+
+include make.inc
+
+libblas.a:
+	( cd BLAS/SRC; make )
+
+liblapack.a:
+	( cd SRC; make )
+
+clean:
+	/bin/rm $(LIBS)
+	test -d lib && /bin/rm -rf lib
+	( cd INSTALL; $(MAKE) clean )
+	( cd BLAS/SRC; $(MAKE) clean )
+	( cd SRC; $(MAKE) clean )
+	/bin/rm -rf *.cache > /dev/null 2>&1
+	rm config.cache config.log config.status > /dev/null 2>&1
+	rm work.pc work.pcl > /dev/null 2>&1
+	rm -r autom4te.cache 2>&1
+	rm Makefile > /dev/null 2>&1

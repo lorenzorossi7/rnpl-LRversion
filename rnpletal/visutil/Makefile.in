@@ -1,0 +1,29 @@
+.IGNORE:
+
+SHELL = /bin/sh
+
+PACKAGE = sdfutil
+
+DIRS = xvsutil sdftodv
+
+all: 
+	echo; echo "Building libraries and utilities"
+	for f in $(DIRS); do \
+		(cd $$f; make) \
+	done
+
+install: all
+	echo; echo "Installing libraries and utilities"
+	for f in $(DIRS); do \
+		(cd $$f; make install) \
+	done
+
+clean: 
+	echo; echo "Cleaning up"
+	for f in $(DIRS); do \
+		(cd $$f; make clean) \
+	done
+	rm work.pc work.pcl > /dev/null 2>&1
+	rm core > /dev/null 2>&1
+	rm -r autom4te.cache 2>&1
+	rm Makefile config.cache config.log config.status > /dev/null 2>&1

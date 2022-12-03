@@ -1,0 +1,139 @@
+#!/bin/sh 
+############################################################
+# Install script for use with GNU compilers
+############################################################
+. PACKAGES.sh
+
+P=`basename $0`
+
+usage() {
+cat<<END
+usage: $P installation-prefix
+
+Example: $P /usr/local
+
+Note: See script source for user-modifiable environment variables that may 
+need to be tailored to your desired compilation environment.
+END
+exit 1
+}
+
+warn() {
+   echo "$P: $1"
+}
+
+header() {
+cat<<END | tee -a Install.log
++++++++++++++++++++++++++++++++++++++++
+LOG: rnpletal/Install 
+
+date=`date`
+
+hostname=`hostname`
+uname -a=`uname -a`
+USER=$USER
+
+CC=<$CC>
+CXX=<$CXX>
+CFLAGS=<$CFLAGS>
+CFLAGS_NOOPT=<$CFLAGS_NOOPT>
+CPPFLAGS=<$CPPFLAGS>
+LDFLAGS=<$LDFLAGS>
+F77=<$F77>
+F77FLAGS=<$F77FLAGS>
+F77FLAGSNOOPT=<$F77FLAGSNOOPT>
+F77LFLAGS=<$F77LFLAGS>
+F90=<$F90>
+F90FLAGS=<$F90FLAGS>
+LIB_PATHS=<$LIB_PATHS>
+INCLUDE_PATHS=<$INCLUDE_PATHS>
++++++++++++++++++++++++++++++++++++++++
+
+END
+}
+
+case $# in
+1) PREFIX=$1;;
+*) usage;;
+esac
+
+# Name of C compiler
+CC='cc'
+export CC
+
+# Name of C++ compiler
+CXX="cc"
+export CXX
+
+# Generic C flags WITH optimization
+CFLAGS="-64 -mips4 -O3"
+export CFLAGS
+
+# Generic C flags WITHOUT optimization
+CFLAGS_NOOPT="-64 -mips4"
+export CFLAGS_NOOPT
+
+# C pre-processor flags (specify non-standard include locations etc.)
+CPPFLAGS="-I${PREFIX}/include"
+export CPPFLAGS
+
+# Generic C++ flags (optimization etc.)
+CXXFLAGS="$CFLAGS"
+export CXXFLAGS
+
+# Loader flags (specify non-standard library locations etc.)
+LDFLAGS="-L${PREFIX}/lib"
+export LDFLAGS
+
+# Name of Fortran 77 compiler
+F77="f77"
+export F77
+
+# Generic Fortran 77 flags WITH optimization
+F77FLAGS="$CFLAGS"
+export F77FLAGS
+
+# Generic Fortran 77 flags WITHOUT optimization
+F77FLAGSNOOPT="$CFLAGS_NOOPT"
+export F77FLAGSNOOPT
+
+
+# Fortran 77 load phase flags (specify non-standard library locations etc.)
+F77LFLAGS="-L${PREFIX}/lib"
+export F77LFLAGS
+
+# Name of Fortran 90 compiler
+F90="f90"
+export F90
+
+# Generic Fortran 90 flags (optimization etc.)
+F90FLAGS="$F77FLAGS"
+export F90FLAGS
+
+# Additional paths to search for libraries (white space separated)
+LIB_PATHS="${PREFIX}/lib"
+export LIB_PATHS
+
+# Additional paths to search for include files (white space separated)
+INCLUDE_PATHS="${PREFIX}/include"
+export INCLUDE_PATHS
+
+DAGH_NO_MPI='on'
+export DAGH_NO_MPI
+BBH_CHECK_DEFAULTS='on'
+export BBH_CHECK_DEFAULTS
+
+unset  CCF77LIBS
+
+test -f Install.log && rm Install.log
+header
+for pack in $PACKAGES; do
+   if test -d $pack; then
+      echo "+++++++++++++++++++++++++++++++++++++++" | tee -a Install.log
+      echo "Configuring and installing in $pack ..." | tee -a Install.log
+      echo "+++++++++++++++++++++++++++++++++++++++" | tee -a Install.log
+      (cd $pack; ./configure --prefix=$PREFIX; make install) 2>&1 | tee -a Install.log
+   else
+      warn "Directory $pack not found in this distribution." 
+   fi
+done

@@ -1,0 +1,94 @@
+.IGNORE:
+
+PACKAGE = utilmath
+
+SHELL = /bin/sh
+
+prefix = @prefix@
+bindir = $(prefix)/bin
+includedir = $(prefix)/include
+libdir = $(prefix)/lib
+
+prefix  = @prefix@
+
+BBH_SYSTEM = @BBH_SYSTEM@
+
+AR     = @AR@
+RANLIB = @RANLIB@
+
+F77_TRANSFORM = @F77_TRANSFORM@
+
+LIBS       = @LIBS@
+LDFLAGS    = @LDFLAGS@ -L.
+
+CC       = @CC@
+CFLAGS   = -c @CFLAGS@
+CPPFLAGS = @CPPFLAGS@
+
+CC_COMP  = $(CC) $(CFLAGS) $(CPPFLAGS)
+CC_LOAD  = $(CC) $(LDFLAGS)
+
+F77      = @F77@
+F77FLAGS = @F77FLAGS@
+
+F77_COMP   = $(F77) -c $(F77FLAGS) 
+F77_LOAD   = $(F77) $(F77FLAGS) $(LDFLAGS)
+
+.f.o:
+	$(F77_COMP) $*.f 
+
+.c.o:
+	$(CC_COMP) $*.c
+
+LIBS     = libutilmath.a libutilmathc.a 
+INCLUDES = utilmathc.h
+
+default: all
+
+install: all
+	if test ! -d $(bindir); then\
+		mkdir -p $(bindir);\
+	fi
+	if test ! -d $(includedir); then\
+		mkdir -p $(includedir);\
+	fi
+	if test ! -d $(libdir); then\
+		mkdir -p $(libdir);\
+	fi
+	cp $(LIBS) $(libdir)
+	(cd $(libdir); $(RANLIB) $(LIBS))
+	cp $(INCLUDES) $(includedir)
+
+all: translate $(LIBS)
+
+SRC = *.f 
+
+translate:
+	$(F77_TRANSFORM) $(SRC)
+	touch translate
+
+LIB_UTILMATH_OBJ  = utilmath_c.o utilmathc.o utilmath.o
+libutilmath.a: $(LIB_UTILMATH_OBJ)
+	$(AR) r libutilmath.a $(LIB_UTILMATH_OBJ)
+	$(RANLIB) libutilmath.a
+
+LIB_UTILMATHC_OBJ  = utilmathc.o 
+libutilmathc.a: $(LIB_UTILMATHC_OBJ)
+	$(AR) r libutilmathc.a $(LIB_UTILMATHC_OBJ)
+	$(RANLIB) libutilmathc.a
+
+export:
+	autoconf
+	make clean
+	(cd ..; tar cfL $(PACKAGE).tar $(PACKAGE); rm $(PACKAGE).tar.Z; compress $(PACKAGE).tar; cp $(PACKAGE).tar.Z $(HOME)/autoconf)
+
+########################################################################
+# Clean-up
+########################################################################
+clean:
+	/bin/rm *.o 
+	/bin/rm *.a
+	/bin/rm translate
+	/bin/rm work.pc work.pcl > /dev/null 2>&1
+	/bin/rm -r autom4te.cache 2>&1
+	/bin/rm  Makefile config.cache config.log config.status

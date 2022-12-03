@@ -1,0 +1,351 @@
+
+
+
+                  Brief Description of
+      ODEPACK - A Systematized Collection of ODE Solvers
+
+
+
+                   Alan C. Hindmarsh
+                   Computing & Mathematics Research Division, L-316
+                   Lawrence Livermore National Laboratory
+                   Livermore, CA 94550, U.S.A.
+
+
+                   30 March 1987
+
+
+
+
+  Work performed under the auspices of the U.S. Department of Energy
+  by the Lawrence Livermore National Laboratory under contract
+  No. W-7405-Eng-48, and supported (formerly) by the DOE Office of Energy
+  Research, Applied Mathematical Sciences Research Program.
+
+
+--------------------------------------------------------------------------------
+
+
+       ODEPACK is a collection of Fortran solvers for the initial value
+  problem for ordinary differential equation (ODE) systems.  It currently
+  includes six solvers, suitable for both stiff and nonstiff systems,
+  and includes solvers for systems given in linearly implicit form as well
+  as solvers for systems given in explicit form.
+
+       The solvers are written in Fortran IV (1966 ANSI Fortran) with a few
+  exceptions, and with minimal machine dependencies.  Each solver consists of
+  a driver having the same name as the solver (i.e. LSODE etc.), and some
+  number of subordinate routines.
+
+       What follows is a summary of the capabilities of ODEPACK, comments
+  about usage documentation, and notes about installing the collection.
+  Further details are available in the reference given at the end, and in the
+  references cited there.
+
+
+
+--------------------------------------------------------------------------------
+
+
+                     I. Summary of the ODEPACK Solvers
+
+
+  A. Solvers for explicitly given systems.
+
+       In the solvers below, it is assumed that the ODE's are given
+  explicitly, so that the system can be written in the form
+          dy/dt  =  f(t,y) ,
+  where y is the vector of dependent variables, and t is the independent
+  variable.
+
+
+  1. LSODE (Livermore Solver for Ordinary Differential Equations) is the
+     basic solver of the collection.  It solves stiff and nonstiff systems
+     of the form dy/dt = f.  In the stiff case, it treats the Jacobian matrix
+     df/dy as either a full or a banded matrix, and as either user-supplied
+     or internally approximated by difference quotients.  It uses Adams methods
+     (predictor-corrector) in the nonstiff case, and Backward Differentiation
+     Formula (BDF) methods in the stiff case.  The linear systems that arise
+     are solved by direct methods (LU factor/solve).  LSODE supersedes the older
+     GEAR and GEARB packages, and reflects a complete redesign of the user
+     interface and internal organization, with some algorithmic improvements.
+
+
+  2. LSODES, written jointly with A. H. Sherman, solves systems dy/dt = f
+     and in the stiff case treats the Jacobian matrix in general sparse
+     form.  It determines the sparsity structure on its own (or optionally
+     accepts this information from the user), and uses parts of the Yale Sparse
+     Matrix Package (YSMP) to solve the linear systems that arise.
+     LSODES supersedes, and improves upon, the older GEARS package.
+
+
+  3. LSODA, written jointly with L. R. Petzold, solves systems dy/dt = f
+     with a full or banded Jacobian when the problem is stiff, but it
+     automatically selects between nonstiff (Adams) and stiff (BDF) methods.
+     It uses the nonstiff method initially, and dynamically monitors data
+     in order to decide which method to use.
+
+
+  4. LSODAR, also written jointly with L. R. Petzold, is a variant of LSODA
+     with a rootfinding capability added.  Thus it solves problems dy/dt = f
+     with full or banded Jacobian and automatic method selection, and at
+     the same time, it finds the roots of any of a set of given functions
+     of the form g(t,y).  This is often useful for finding stop conditions
+     or points at which switches are to be made in the function f.
+
+
+  B. Solvers for linearly implicit systems.
+
+       In the solvers below, it is assumed that the derivative dy/dt is
+  implicit, but occurs linearly, so that the system can be written
+          A(t,y) dy/dt  =  g(t,y) ,
+  where A is a square matrix.  These solvers allow A to be singular,
+  in which case the system is a differential-algebraic system, but in that
+  case users must be very careful to supply a well-posed problem with
+  consistent initial conditions.
+
+
+  5. LSODI, written jointly with J. F. Painter, solves linearly implicit
+     systems in which the matrices involved (A, dg/dy, and d(A dy/dt)/dy) are
+     all assumed to be either full or banded.  LSODI supersedes the older
+     GEARIB solver and improves upon it in numerous ways.
+
+
+  6. LSOIBT, written jointly with C. S. Kenney, solves linearly implicit
+     systems in which the matrices involved are all assumed to be
+     block-tridiagonal.  Linear systems are solved by the LU method.
+
+
+--------------------------------------------------------------------------------
+
+                          II. Usage Documentation
+
+
+     Each of the solvers in the ODEPACK collection is headed by a
+  user-callable driver subroutine, whose call sequence includes the names
+  of one or more user-supplied subroutines that define the ODE system.
+  Complete user documentation is given in the initial block of comment
+  cards (the prologue) in the driver routine.  In each case, this prologue
+  is organized as follows:
+
+     Summary of Usage (short, for standard modes of use)
+     Example Problem (with code and output)
+     Full Description of User Interface, further divided as follows:
+        I.   Call sequence description (including optional inputs/outputs)
+        II.  Optionally callable routines
+        III. Descriptions of internal Common blocks
+        IV.  Optionally user-replaceable routines
+
+     First-time users should read only the Summary of Usage and look
+  at the Example Problem, then later refer to the Full Description if and
+  when more details or nonstandard options are needed.
+
+     Depending on the user environment, it may be desirable to create
+  separate copies of these prologues as user manuals.  (The installation notes
+  that follow should be checked first, however, to see if usage instructions
+  are affected by changes made upon istallation.)
+
+
+
+--------------------------------------------------------------------------------
+
+
+
+                          III. Installation Notes
+
+
+  1. ODEPACK is being made available in separate single and double
+     precision versions.  For each precision, a file is provided containing
+     the required subroutines and function routines in source form, along
+     with a file containing demonstration (quick check) programs.
+     It is expected that any one user will be interested in only one of
+     the two precisions.  Therefore, not all of the routine names in the two
+     precisions were made distinct.  If instead both precisions of one or more
+     of the solvers are to be combined as a library, then renaming must be done
+     for all routines which involve real numbers and which have non-unique
+     names initially (e.g. SLSODE and DLSODE instead of LSODE).
+
+
+  2. These source files are complete except for needed routines from the
+     LINPACK and BLAS collections and machine constant routines.  These are:
+
+        From LINPACK:  SGEFA, SGESL, SGBFA, SGBSL (in single precision solvers)
+                       DGEFA, DGESL, DGBFA, DGBSL (in double precision solvers)
+
+        From the BLAS:  SAXPY, SCOPY, SDOT, SSCAL, ISAMAX (single precision)
+                        DAXPY, DCOPY, DDOT, DSCAL, IDAMAX (double precision)
+
+        Machine constant routines: R1MACH (in S.P.), D1MACH (in D.P.)
+                                   (used only to provide the unit roundoff)
+
+
+  3. The source files (for each precision) include a small error handling
+     package XERRWV/XSETUN/XSETF.  This is a reduced version of the much larger
+     SLATEC Error Handling Package, and is sufficient for the needs of ODEPACK.
+     If the SLATEC version is available, the reduced version can be discarded.
+     If the reduced version is used, its machine-dependent features should be
+     checked first (see comments in Subroutine XERRWV).
+
+
+  4. In each solver, there are four integer variables, in two internal labeled
+     Common blocks, which need to be loaded with DATA statements.  (They
+     can vary during execution, and are in Common to assure their
+     retention between calls.)  This is legal in ANSI Fortran only if
+     done in a Block Data subprogram, and the double precision source
+     file has a Block Data subprogram for this purpose.  However, because
+     Block Data subprograms can be difficult to install in libraries,
+     and because many compilers allow such DATA statements in subroutines,
+     the single precision source file is being supplied with
+     two such DATA statements.  If, for your system, the way in which
+     this is handled is incorrect in the version you are installing,
+     it is easy to change to the other way.  The locations of these
+     DATA statements in a version without Block Data are just after the
+     initial type and Common declarations in each driver subroutine and
+     in XERRWV.  In each driver, ILLIN and NTREP are DATA-loaded as 0.
+     In XERRWV, MESFLG is loaded as 1 and LUNIT is loaded as the
+     appropriate default logical unit number.  The Block Data subprogram
+     (if used) must of course have copies of the Common declarations,
+     and also a type declaration in the double precision case.  If
+     necessary for uniqueness, name the subprogram.
+
+
+  5. ODEPACK contains a few instances where ANSI Fortran (1966) is violated:
+
+     (a) Subscripts of the form I + J, I - J, I + J + const,
+         and I + J - const  occur in various routines.
+         In the sparse matrix routines, there are subscripted subscripts,
+         i.e. subsripts of the form I(J), I(J)+1, -I(J), I(J+K), and
+         (in NNFC only) I(J(K)).
+         If any of these forms is unacceptable to your compiler, make the
+         obvious changes to the source code accordingly.  (But this should
+         be done only where necessary, to avoid loss of efficiency.)
+
+     (b) The intrinsic function DFLOAT (conversion from integer to double
+         precision) is used by ODEPACK, but is not required in ANSI Fortran.
+         Thus it may have to be supplied separately for the double precision
+         versions.
+
+
+     (c) In various places in the LSODES solver, a call to a
+         subroutine has a subscripted real array as an argument where
+         the subroutine called has an integer array.  Calls of this form
+         occur in Subroutine LSODES (to STODE) and in IPREP (to PREP).
+         Another such call occurs in the LSODES demonstration program, from
+         the main program to Subroutine SSOUT.  This is done in order
+         to use work space in an efficient manner, as the same space
+         is sometimes used for real work space and sometimes for integer
+         work space.  If your compiler does not accept this feature,
+         one possible way to get the desired result is to compile the
+         called routines and calling routines in separate jobs, and then
+         combine the binary modules in an appropriate manner.  If this
+         procedure is still not acceptable under your system, it will
+         be necessary to alter radically the structure of the array RWORK
+         within the LSODES package.  (See also the note below about LSODES.)
+
+
+     (d) Each ODEPACK solver treats the arguments NEQ, Y, RTOL, and ATOL as
+         arrays, even though the length may be only 1.  Moreover, except for Y,
+         the usage instructions say that these arguments may be either arrays
+         or scalars.  If your system does not allow such a mismatch, then the
+         documentation of these arguments should be changed accordingly.
+
+
+  6. For maximum storage economy, the LSODES solver makes
+     use of the real to integer wordlength ratio.  This is assumed to be
+     an integer L such that if a real array R and an integer array M
+     occupy the same space in memory, R(1) having the same bit address
+     as M(1), then R(I) has the same address as M((I-1)*L+1).
+     This ratio L is usually 1 for single precision and 2 for double
+     precision, and these are the values used in the single and double
+     precision versions supplied, respectively.  If the value supplied is
+     incorrect, it needs to be changed in two places:
+       (a) The integer LENRAT is DATA-loaded in Subroutine LSODES
+           to this ratio, shortly below the prologue.
+       (b) The integer LRATIO is DATA-loaded in Subroutine CDRV to this
+           ratio, shortly below the prologue of that routine.
+     (See comments in both places.)  If the ratio is not an integer, use the
+     greatest integer not exceeding the ratio.
+
+
+  7. For installation of ODEPACK on a Cray computer, the source files
+     supplied include compiler directives for the CFT compiler.
+     These have the form  CDIR$ IVDEP  and occur prior to certain loops
+     that involve subscript shifts (and would otherwise not be vectorized).
+     These directives are (or should be) treated as comments by any
+     other compiler.
+
+
+  8. On first obtaining ODEPACK, the demonstration programs should be
+     compiled and executed prior to any other use of the solvers.  These
+     excercise all of the major method options in each solver, and are
+     self-checking.
+
+
+  9. If you are installing the current version of ODEPACK on a system
+     containing older versions of one or more ODEPACK solvers, first discard
+     the older versions.  Since the various solvers share many routines,
+     older versions and new versions cannot safely be mixed.
+
+
+ 10. If some subset of the whole ODEPACK collection is desired, without
+     unneeded routines, the appropriate routines must be extracted accordingly.
+     The following lists give the routines needed for each solver.
+
+        The LSODE solver consists of the routines
+     LSODE, INTDY, STODE, CFODE, PREPJ, SOLSY, EWSET, VNORM, SRCOM,
+     SGEFA or DGEFA, SGESL or DGESL, SGBFA or DGBFA, SGBSL or DGBSL,
+     SAXPY or DAXPY, SSCAL or DSCAL, ISAMAX or IDAMAX, SDOT or DDOT,
+     R1MACH or D1MACH, XERRWV, XSETUN, XSETF,
+     and a Block Data subprogram (double precision version only)
+
+        The LSODES solver consists of the routines
+     LSODES, IPREP, PREP, JGROUP, ADJLR, CNTNZU, INTDY, STODE, CFODE,
+     PRJS, SLSS, EWSET, VNORM, SRCMS,
+     ODRV, MD, MDI, MDM, MDP, MDU, SRO,
+     CDRV, NROC, NSFC, NNFC, NNSC, NNTC,
+     R1MACH or D1MACH, XERRWV, XSETUN, XSETF,
+     and a Block Data subprogram (double precision version only)
+
+        The LSODA solver consists of the routines
+     LSODA, INTDY, STODA, CFODE, PRJA, SOLSY, EWSET,
+     VMNORM, FNORM, BNORM, SRCMA,
+     SGEFA or DGEFA, SGESL or DGESL, SGBFA or DGBFA, SGBSL or DGBSL,
+     SAXPY or DAXPY, SSCAL or DSCAL, ISAMAX or IDAMAX, SDOT or DDOT,
+     R1MACH or D1MACH, XERRWV, XSETUN, XSETF,
+     and a Block Data subprogram (double precision version only)
+
+        The LSODAR solver consists of the routines
+     LSODAR, RCHEK, ROOTS, INTDY, STODA, CFODE, PRJA, SOLSY, EWSET,
+     VMNORM, FNORM, BNORM, SRCAR,
+     SGEFA or DGEFA, SGESL or DGESL, SGBFA or DGBFA, SGBSL or DGBSL,
+     SAXPY or DAXPY, SSCAL or DSCAL, ISAMAX or IDAMAX, SDOT or DDOT,
+     SCOPY or DCOPY, R1MACH or D1MACH, XERRWV, XSETUN, XSETF,
+     and a Block Data subprogram (double precision version only)
+
+        The LSODI solver consists of the routines
+     LSODI, AINVG, INTDY, STODI, CFODE, PREPJI, SOLSY, EWSET, VNORM, SRCOM,
+     SGEFA or DGEFA, SGESL or DGESL, SGBFA or DGBFA, SGBSL or DGBSL,
+     SAXPY or DAXPY, SSCAL or DSCAL, ISAMAX or IDAMAX, SDOT or DDOT,
+     R1MACH or D1MACH, XERRWV, XSETUN, XSETF,
+     and a Block Data subprogram (double precision version only).
+
+        The LSOIBT solver consists of the routines
+     LSOIBT, AIGBT, INTDY, STODI, CFODE, PJIBT, SLSBT, EWSET, VNORM, SRCOM,
+     DECBT, SOLBT, SGEFA or DGEFA, SGESL or DGESL,
+     SAXPY or DAXPY, SSCAL or DSCAL, ISAMAX or IDAMAX, SDOT or DDOT,
+     R1MACH or D1MACH, XERRWV, XSETUN, XSETF,
+     and a Block Data subprogram (double precision version only).
+
+
+--------------------------------------------------------------------------------
+
+
+                                Reference
+
+
+  A. C. Hindmarsh, "ODEPACK, A Systematized Collection of ODE Solvers,"
+  in Scientific Computing, R. S. Stepleman et al. (eds.), North-Holland,
+  Amsterdam, 1983 (vol. 1 of IMACS Transactions on Scientific Computation),
+  pp. 55-64.  Also available as LLNL Report UCRL-88007, August 1982.
+
+--------------------------------------------------------------------------------

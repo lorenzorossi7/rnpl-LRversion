@@ -1,0 +1,280 @@
+3d_phi_0.hdf contains 44 data sets and 2 attributes.
+Scientific Data Sets:
+3d_phi_0[0] has rank 3 size (33 33 33 )
+Data info for sds <3d_phi_0[0]>: Minimum: 1.27678e-51  Maximum: 1
+  has dim x[0] id: 327680
+Scale info for dimension 0: Minimum: 0  Maximum: 10
+  has dim y[0] id: 327681
+Scale info for dimension 1: Minimum: 0  Maximum: 10
+  has dim z[0] id: 327682
+Scale info for dimension 2: Minimum: 0  Maximum: 10
+  type: 6  attributes: 1
+    name: t  type: 6  count: 1
+x[0] has rank 1 size (33 )
+Data info for sds <x[0]>: Minimum: 0  Maximum: 10
+  has dim x[0] id: 327680
+Scale info for dimension 0: Minimum: 0  Maximum: 10
+  type: 6  attributes: 0
+y[0] has rank 1 size (33 )
+Data info for sds <y[0]>: Minimum: 0  Maximum: 10
+  has dim y[0] id: 327681
+Scale info for dimension 0: Minimum: 0  Maximum: 10
+  type: 6  attributes: 0
+z[0] has rank 1 size (33 )
+Data info for sds <z[0]>: Minimum: 0  Maximum: 10
+  has dim z[0] id: 327682
+Scale info for dimension 0: Minimum: 0  Maximum: 10
+  type: 6  attributes: 0
+3d_phi_0[1] has rank 3 size (33 33 33 )
+Data info for sds <3d_phi_0[1]>: Minimum: -5.35172e-44  Maximum: 0.961503
+  has dim x[1] id: 327683
+Scale info for dimension 0: Minimum: 0  Maximum: 10
+  has dim y[1] id: 327684
+Scale info for dimension 1: Minimum: 0  Maximum: 10
+  has dim z[1] id: 327685
+Scale info for dimension 2: Minimum: 0  Maximum: 10
+  type: 6  attributes: 1
+    name: t  type: 6  count: 1
+x[1] has rank 1 size (33 )
+Data info for sds <x[1]>: Minimum: 0  Maximum: 10
+  has dim x[1] id: 327683
+Scale info for dimension 0: Minimum: 0  Maximum: 10
+  type: 6  attributes: 0
+y[1] has rank 1 size (33 )
+Data info for sds <y[1]>: Minimum: 0  Maximum: 10
+  has dim y[1] id: 327684
+Scale info for dimension 0: Minimum: 0  Maximum: 10
+  type: 6  attributes: 0
+z[1] has rank 1 size (33 )
+Data info for sds <z[1]>: Minimum: 0  Maximum: 10
+  has dim z[1] id: 327685
+Scale info for dimension 0: Minimum: 0  Maximum: 10
+  type: 6  attributes: 0
+3d_phi_0[2] has rank 3 size (33 33 33 )
+Data info for sds <3d_phi_0[2]>: Minimum: -2.10259e-44  Maximum: 0.851234
+  has dim x[2] id: 327686
+Scale info for dimension 0: Minimum: 0  Maximum: 10
+  has dim y[2] id: 327687
+Scale info for dimension 1: Minimum: 0  Maximum: 10
+  has dim z[2] id: 327688
+Scale info for dimension 2: Minimum: 0  Maximum: 10
+  type: 6  attributes: 1
+    name: t  type: 6  count: 1
+x[2] has rank 1 size (33 )
+Data info for sds <x[2]>: Minimum: 0  Maximum: 10
+  has dim x[2] id: 327686
+Scale info for dimension 0: Minimum: 0  Maximum: 10
+  type: 6  attributes: 0
+y[2] has rank 1 size (33 )
+Data info for sds <y[2]>: Minimum: 0  Maximum: 10
+  has dim y[2] id: 327687
+Scale info for dimension 0: Minimum: 0  Maximum: 10
+  type: 6  attributes: 0
+z[2] has rank 1 size (33 )
+Data info for sds <z[2]>: Minimum: 0  Maximum: 10
+  has dim z[2] id: 327688
+Scale info for dimension 0: Minimum: 0  Maximum: 10
+  type: 6  attributes: 0
+3d_phi_0[3] has rank 3 size (33 33 33 )
+Data info for sds <3d_phi_0[3]>: Minimum: 1.27678e-51  Maximum: 0.682296
+  has dim x[3] id: 327689
+Scale info for dimension 0: Minimum: 0  Maximum: 10
+  has dim y[3] id: 327690
+Scale info for dimension 1: Minimum: 0  Maximum: 10
+  has dim z[3] id: 327691
+Scale info for dimension 2: Minimum: 0  Maximum: 10
+  type: 6  attributes: 1
+    name: t  type: 6  count: 1
+x[3] has rank 1 size (33 )
+Data info for sds <x[3]>: Minimum: 0  Maximum: 10
+  has dim x[3] id: 327689
+Scale info for dimension 0: Minimum: 0  Maximum: 10
+  type: 6  attributes: 0
+y[3] has rank 1 size (33 )
+Data info for sds <y[3]>: Minimum: 0  Maximum: 10
+  has dim y[3] id: 327690
+Scale info for dimension 0: Minimum: 0  Maximum: 10
+  type: 6  attributes: 0
+z[3] has rank 1 size (33 )
+Data info for sds <z[3]>: Minimum: 0  Maximum: 10
+  has dim z[3] id: 327691
+Scale info for dimension 0: Minimum: 0  Maximum: 10
+  type: 6  attributes: 0
+3d_phi_0[4] has rank 3 size (33 33 33 )
+Data info for sds <3d_phi_0[4]>: Minimum: 1.27678e-51  Maximum: 0.474178
+  has dim x[4] id: 327692
+Scale info for dimension 0: Minimum: 0  Maximum: 10
+  has dim y[4] id: 327693
+Scale info for dimension 1: Minimum: 0  Maximum: 10
+  has dim z[4] id: 327694
+Scale info for dimension 2: Minimum: 0  Maximum: 10
+  type: 6  attributes: 1
+    name: t  type: 6  count: 1
+x[4] has rank 1 size (33 )
+Data info for sds <x[4]>: Minimum: 0  Maximum: 10
+  has dim x[4] id: 327692
+Scale info for dimension 0: Minimum: 0  Maximum: 10
+  type: 6  attributes: 0
+y[4] has rank 1 size (33 )
+Data info for sds <y[4]>: Minimum: 0  Maximum: 10
+  has dim y[4] id: 327693
+Scale info for dimension 0: Minimum: 0  Maximum: 10
+  type: 6  attributes: 0
+z[4] has rank 1 size (33 )
+Data info for sds <z[4]>: Minimum: 0  Maximum: 10
+  has dim z[4] id: 327694
+Scale info for dimension 0: Minimum: 0  Maximum: 10
+  type: 6  attributes: 0
+3d_phi_0[5] has rank 3 size (33 33 33 )
+Data info for sds <3d_phi_0[5]>: Minimum: 1.27678e-51  Maximum: 0.267166
+  has dim x[5] id: 327695
+Scale info for dimension 0: Minimum: 0  Maximum: 10
+  has dim y[5] id: 327696
+Scale info for dimension 1: Minimum: 0  Maximum: 10
+  has dim z[5] id: 327697
+Scale info for dimension 2: Minimum: 0  Maximum: 10
+  type: 6  attributes: 1
+    name: t  type: 6  count: 1
+x[5] has rank 1 size (33 )
+Data info for sds <x[5]>: Minimum: 0  Maximum: 10
+  has dim x[5] id: 327695
+Scale info for dimension 0: Minimum: 0  Maximum: 10
+  type: 6  attributes: 0
+y[5] has rank 1 size (33 )
+Data info for sds <y[5]>: Minimum: 0  Maximum: 10
+  has dim y[5] id: 327696
+Scale info for dimension 0: Minimum: 0  Maximum: 10
+  type: 6  attributes: 0
+z[5] has rank 1 size (33 )
+Data info for sds <z[5]>: Minimum: 0  Maximum: 10
+  has dim z[5] id: 327697
+Scale info for dimension 0: Minimum: 0  Maximum: 10
+  type: 6  attributes: 0
+3d_phi_0[6] has rank 3 size (33 33 33 )
+Data info for sds <3d_phi_0[6]>: Minimum: 1.27678e-51  Maximum: 0.186695
+  has dim x[6] id: 327698
+Scale info for dimension 0: Minimum: 0  Maximum: 10
+  has dim y[6] id: 327699
+Scale info for dimension 1: Minimum: 0  Maximum: 10
+  has dim z[6] id: 327700
+Scale info for dimension 2: Minimum: 0  Maximum: 10
+  type: 6  attributes: 1
+    name: t  type: 6  count: 1
+x[6] has rank 1 size (33 )
+Data info for sds <x[6]>: Minimum: 0  Maximum: 10
+  has dim x[6] id: 327698
+Scale info for dimension 0: Minimum: 0  Maximum: 10
+  type: 6  attributes: 0
+y[6] has rank 1 size (33 )
+Data info for sds <y[6]>: Minimum: 0  Maximum: 10
+  has dim y[6] id: 327699
+Scale info for dimension 0: Minimum: 0  Maximum: 10
+  type: 6  attributes: 0
+z[6] has rank 1 size (33 )
+Data info for sds <z[6]>: Minimum: 0  Maximum: 10
+  has dim z[6] id: 327700
+Scale info for dimension 0: Minimum: 0  Maximum: 10
+  type: 6  attributes: 0
+3d_phi_0[7] has rank 3 size (33 33 33 )
+Data info for sds <3d_phi_0[7]>: Minimum: -0.159403  Maximum: 0.15568
+  has dim x[7] id: 327701
+Scale info for dimension 0: Minimum: 0  Maximum: 10
+  has dim y[7] id: 327702
+Scale info for dimension 1: Minimum: 0  Maximum: 10
+  has dim z[7] id: 327703
+Scale info for dimension 2: Minimum: 0  Maximum: 10
+  type: 6  attributes: 1
+    name: t  type: 6  count: 1
+x[7] has rank 1 size (33 )
+Data info for sds <x[7]>: Minimum: 0  Maximum: 10
+  has dim x[7] id: 327701
+Scale info for dimension 0: Minimum: 0  Maximum: 10
+  type: 6  attributes: 0
+y[7] has rank 1 size (33 )
+Data info for sds <y[7]>: Minimum: 0  Maximum: 10
+  has dim y[7] id: 327702
+Scale info for dimension 0: Minimum: 0  Maximum: 10
+  type: 6  attributes: 0
+z[7] has rank 1 size (33 )
+Data info for sds <z[7]>: Minimum: 0  Maximum: 10
+  has dim z[7] id: 327703
+Scale info for dimension 0: Minimum: 0  Maximum: 10
+  type: 6  attributes: 0
+3d_phi_0[8] has rank 3 size (33 33 33 )
+Data info for sds <3d_phi_0[8]>: Minimum: -0.309888  Maximum: 0.138077
+  has dim x[8] id: 327704
+Scale info for dimension 0: Minimum: 0  Maximum: 10
+  has dim y[8] id: 327705
+Scale info for dimension 1: Minimum: 0  Maximum: 10
+  has dim z[8] id: 327706
+Scale info for dimension 2: Minimum: 0  Maximum: 10
+  type: 6  attributes: 1
+    name: t  type: 6  count: 1
+x[8] has rank 1 size (33 )
+Data info for sds <x[8]>: Minimum: 0  Maximum: 10
+  has dim x[8] id: 327704
+Scale info for dimension 0: Minimum: 0  Maximum: 10
+  type: 6  attributes: 0
+y[8] has rank 1 size (33 )
+Data info for sds <y[8]>: Minimum: 0  Maximum: 10
+  has dim y[8] id: 327705
+Scale info for dimension 0: Minimum: 0  Maximum: 10
+  type: 6  attributes: 0
+z[8] has rank 1 size (33 )
+Data info for sds <z[8]>: Minimum: 0  Maximum: 10
+  has dim z[8] id: 327706
+Scale info for dimension 0: Minimum: 0  Maximum: 10
+  type: 6  attributes: 0
+3d_phi_0[9] has rank 3 size (33 33 33 )
+Data info for sds <3d_phi_0[9]>: Minimum: -0.411768  Maximum: 0.126915
+  has dim x[9] id: 327707
+Scale info for dimension 0: Minimum: 0  Maximum: 10
+  has dim y[9] id: 327708
+Scale info for dimension 1: Minimum: 0  Maximum: 10
+  has dim z[9] id: 327709
+Scale info for dimension 2: Minimum: 0  Maximum: 10
+  type: 6  attributes: 1
+    name: t  type: 6  count: 1
+x[9] has rank 1 size (33 )
+Data info for sds <x[9]>: Minimum: 0  Maximum: 10
+  has dim x[9] id: 327707
+Scale info for dimension 0: Minimum: 0  Maximum: 10
+  type: 6  attributes: 0
+y[9] has rank 1 size (33 )
+Data info for sds <y[9]>: Minimum: 0  Maximum: 10
+  has dim y[9] id: 327708
+Scale info for dimension 0: Minimum: 0  Maximum: 10
+  type: 6  attributes: 0
+z[9] has rank 1 size (33 )
+Data info for sds <z[9]>: Minimum: 0  Maximum: 10
+  has dim z[9] id: 327709
+Scale info for dimension 0: Minimum: 0  Maximum: 10
+  type: 6  attributes: 0
+3d_phi_0[10] has rank 3 size (33 33 33 )
+Data info for sds <3d_phi_0[10]>: Minimum: -0.46407  Maximum: 0.118202
+  has dim x[10] id: 327710
+Scale info for dimension 0: Minimum: 0  Maximum: 10
+  has dim y[10] id: 327711
+Scale info for dimension 1: Minimum: 0  Maximum: 10
+  has dim z[10] id: 327712
+Scale info for dimension 2: Minimum: 0  Maximum: 10
+  type: 6  attributes: 1
+    name: t  type: 6  count: 1
+x[10] has rank 1 size (33 )
+Data info for sds <x[10]>: Minimum: 0  Maximum: 10
+  has dim x[10] id: 327710
+Scale info for dimension 0: Minimum: 0  Maximum: 10
+  type: 6  attributes: 0
+y[10] has rank 1 size (33 )
+Data info for sds <y[10]>: Minimum: 0  Maximum: 10
+  has dim y[10] id: 327711
+Scale info for dimension 0: Minimum: 0  Maximum: 10
+  type: 6  attributes: 0
+z[10] has rank 1 size (33 )
+Data info for sds <z[10]>: Minimum: 0  Maximum: 10
+  has dim z[10] id: 327712
+Scale info for dimension 0: Minimum: 0  Maximum: 10
+  type: 6  attributes: 0
+Global Attributes:
+rnpl_file  type: 24  count: 1
+rnpl_hdf_vers  type: 24  count: 1

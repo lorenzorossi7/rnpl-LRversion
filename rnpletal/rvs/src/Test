@@ -1,0 +1,41 @@
+#!/bin/sh -x
+P=`basename $0`
+
+warn() {
+cat<<END
+$P: $1
+END
+}
+
+die() {
+cat<<END
+$P: $1
+END
+exit 1;
+}
+
+gendata() {
+cat<<END
+0.0 0.0
+1.0 1.0
+2.0 4.0
+3.0 9.0
+4.0 16.0
+END
+}
+
+checkVSHOST() {
+if test "X" = "X${VSHOST}"; then
+	die "Please set VSHOST variable before running this test"
+fi
+}
+
+checkVSHOST
+test -x v1 || die "Executable 'v1' not found"
+test -x vn || die "Executable 'vn' not found"
+n1="tv1.vs.`hostname -s`"
+nn="tvn.vs.`hostname -s`"
+gendata | v1 $n1
+for i in 0 1 2 3 4 5; do
+	gendata | vn $nn $i
+done

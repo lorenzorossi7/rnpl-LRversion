@@ -1,0 +1,24 @@
+parameters for wave2d
+tag := "2d_"
+lambda := .5
+Nx0 := 100
+Ny0 := 100
+xmin := 0
+xmax := 10
+ymin := 0
+ymax := 10
+ser := 0
+fout := 1
+iter := 100
+epsiter := 1.0e-6
+epsiterid := 1.0
+output := *-*/10
+amp := 1.0
+cx := 5.0
+cy := 5
+sx := .8
+sy := .8
+in_file := "w2d1_in.sdf"
+out_file := "w2d1_out.sdf"
+level:=1
+

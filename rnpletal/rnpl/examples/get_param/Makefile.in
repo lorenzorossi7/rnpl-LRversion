@@ -1,0 +1,38 @@
+.IGNORE:
+
+SHELL = /bin/sh
+
+CC        = @CC@ $(COPT) @CFLAGS@ -L../../include @CPPFLAGS@ @BBH_RNPLAPP_CINC@ @DEFS@ @BBH_DEFS@ 
+CC_LOAD   = @CC@ $(COPT) @CFLAGS@ -L../../lib @LDFLAGS@ @BBH_RNPLAPP_LPATHS@
+
+CLIBS     = @BBH_RNPLAPP_CLIBS@
+
+.c.o:
+	$(CC) -c $*.c
+
+EXECUTABLES = t_get_param t_get_param_v t_get_str_param \
+				  t_regex t_is_param_assigned
+
+LIBS = -lbbhutil -lm
+
+all: $(EXECUTABLES)
+
+t_get_param: t_get_param.o
+	$(CC_LOAD) t_get_param.o $(LIBS) -o t_get_param
+
+t_get_param_v: t_get_param_v.o
+	$(CC_LOAD) t_get_param_v.o $(LIBS) -lm -o t_get_param_v
+	
+t_get_str_param: t_get_str_param.o
+	$(CC_LOAD) t_get_str_param.o $(LIBS) -o t_get_str_param
+	
+t_regex: t_regex.o
+	$(CC_LOAD) t_regex.o -o t_regex
+
+t_is_param_assigned: t_is_param_assigned.o
+	$(CC_LOAD) t_is_param_assigned.o $(LIBS) -o t_is_param_assigned
+	
+clean:
+	rm *.o
+	rm $(EXECUTABLES)
+	rm Makefile

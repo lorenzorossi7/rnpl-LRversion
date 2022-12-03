@@ -1,0 +1,10 @@
+#!/bin/sh
+
+case $# in
+1) n=$1;; 
+*) echo "Usage: Test <n>"; exit 1;;
+esac
+
+for i in `ifor 1 $n`; do
+	cli0 $i $i $i
+done

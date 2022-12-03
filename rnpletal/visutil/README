@@ -1,0 +1,11 @@
+############################################################
+Contains stand-alone source code for utilities that send 
+data to visualization programs xvs and DV.
+
+   sdftoxvs 
+   sdftodv 
+
+Copyright 2003-  
+
+M.W. Choptuik, F. Pretorius
+############################################################

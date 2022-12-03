@@ -1,0 +1,35 @@
+# Sample program written in rnpl as a language guide
+# This program solves 1D 2nd order wave equation
+# phi_tt = phi_xx (string with endpoints fixed)
+# Phi=phi_x  Pi=phi_t
+
+parameter float xmin := 0
+parameter float xmax := 100
+parameter float amp := 1.0
+parameter float cent
+parameter float sigma
+
+rect coordinates t,x
+
+uniform rect grid g1 [1:Nx] {xmin:xmax}
+
+float phi on g1 at -1,0,1 { out_gf := 1 }
+
+operator D_LF(f,x,x) := (<0>f[1] - 2*<0>f[0] + <0>f[-1])/(dx*dx)
+operator D_LF(f,t,t) := (<1>f[0] - 2*<0>f[0] + <-1>f[0])/(dt*dt)
+operator D_LF(f,x) := (<0>f[1] - <0>f[-1])/(2*dx)
+operator D_LF(f,t) := (<1>f[0] - <-1>f[0])/(2*dt)
+
+evaluate residual phi { [1:1] := D_LF(phi,t);
+            [2:Nx-1] := D_LF(phi,t,t) - D_LF(phi,x,x);
+             [Nx:Nx] := D_LF(phi,t) }
+
+# Initial pulse profile is the derivative of a Gaussian
+initialize phi {  [1:1] := 0; 
+               [2:Nx-1] := D_LF(amp*exp(-(x-cent)^2/sigma^2),x);
+							  [Nx:Nx] := 0
+               }
+
+looper iterative
+
+auto update phi

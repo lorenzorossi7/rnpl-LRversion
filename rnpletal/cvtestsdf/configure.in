@@ -1,0 +1,20 @@
+dnl Process this file with autoconf to produce a configure script.
+AC_INIT(Makefile.in)
+ 
+dnl Determine system type
+BBH_SYS_GETSYSTEM
+ 
+AC_PROG_CC
+dnl Checks for library functions---hack to ensure that 'conftest.c' is removed
+AC_CHECK_FUNCS(strdup)
+BBH_CHECK_HEADERS("bbhutil.h v.h","$INCLUDE_PATHS /usr/local/include",APPINCPATHS,yes) 
+
+BBH_F77_CONFIGURE
+BBH_CHECK_LIBS("vutil v2util v3util bbhutil","$LIB_PATHS /usr/local/lib",APPLDPATHS,APPLDLIBS,no)
+
+AC_SUBST(BBH_DEFS)
+AC_SUBST(APPLDPATHS)
+AC_SUBST(APPLDLIBS)
+AC_SUBST(APPINCPATHS)
+ 
+AC_OUTPUT(Makefile)

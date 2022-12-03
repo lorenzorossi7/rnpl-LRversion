@@ -1,0 +1,20 @@
+# parameters for wave
+
+level := 1
+in_file := "in1.sdf"
+out_file := "out1.sdf"
+
+tag := ""
+lambda := .5
+Nx0 := 32
+xmin := 0
+xmax := 10
+ser := 0
+fout := 1
+iter := 128
+output := *-*
+epsiter := 1.0e-5
+epsiterid := 1.0
+amp := 1.0
+cent := 5.0
+sigma := 0.8

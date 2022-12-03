@@ -1,0 +1,7 @@
+#!/bin/sh
+
+for d in *; do
+	test -d $d && (cd $d; make clean)
+done
+
+test -f Install.log && rm Install.log

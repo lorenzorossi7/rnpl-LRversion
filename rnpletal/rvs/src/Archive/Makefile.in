@@ -1,0 +1,87 @@
+.IGNORE:
+
+prefix  = @prefix@
+
+BBH_SYSTEM = @BBH_SYSTEM@
+
+CC     = @CC@
+AR     = @AR@
+RANLIB = @RANLIB@
+PERL   = @PERL@
+RPCGEN = @RPCGEN@
+
+LIBS       = @LIBS@
+LDFLAGS    = @LDFLAGS@ -L. 
+CPPFLAGS   = @CPPFLAGS@ 
+CFLAGS     = @CFLAGS@
+DEFS       = @DEFS@ @BBH_DEFS@
+
+F77      = @F77@
+F77FLAGS = @F77FLAGS@
+
+CC_COMP    = $(CC) $(CFLAGS) $(CPPFLAGS)
+CC_LOAD    = $(CC) $(CFLAGS) $(LDFLAGS) $(LIBS)
+
+F77_COMP   = $(F77) $(F77FLAGS) 
+F77_LOAD   = $(F77) $(F77FLAGS) $(LDFLAGS) $(LIBS)
+
+all: libvs.a v1
+
+full: all tvs
+
+.c.o:
+	$(CC_COMP) -c $*.c
+
+f.o: 
+	$(F77_COMP) -c $*.f
+
+RPC_SRCS = rvs.x rvs_cli_includes.h rvs_cli_headers.h rvs_cli.h \
+           rvs_cli.c v1.c bbh_types.h f77_types.h v_types.h vs_server_names.h \
+           mfi Makefile
+
+rvs.h: rvs.x
+	$(RPCGEN) rvs.x 
+
+rvs_cli_cf.c: rvs_cli_headers.h
+	$(PERL) mfi rvs_cli_headers.h rvs_cli_cf.c $(BBH_SYSTEM)
+
+RVSOBJS =     rvs_clnt.o rvs_xdr.o rvs_cli_cf.o rvs_cli.o 
+
+rvs_clnt.o: rvs.h
+	 $(CC_COMP) -c rvs_clnt.c
+
+rvs_xdr.o: rvs.h
+	 $(CC_COMP) -c rvs_xdr.c
+
+rvs_cli_cf.o: rvs.h rvs_cli_cf.c
+	 $(CC_COMP) -c rvs_cli_cf.c
+
+rvs_cli.o: rvs.h
+	 $(CC_COMP) -c rvs_cli.c
+
+libvs.a: $(RVSOBJS)
+	$(AR) r libvs.a $(RVSOBJS)
+	$(RANLIB) libvs.a 
+
+v1: v1.o libvs.a
+	$(CC_LOAD) v1.o -lvs -o v1
+
+tvs: tvs.o libvs.a
+	$(CC_LOAD) tvs.o -lvs -o tvs
+
+install: all
+	mkdir $(prefix)
+	(cd $(prefix); mkdir bin include lib)
+	cp libvs.a $(prefix)/lib
+	cp bbh_types.h $(prefix)/include
+	cp v1 $(prefix)/bin
+
+########################################################################
+# Clean-up
+########################################################################
+clean:
+	@/bin/rm rvs.h rvs_cli_cf.c rvs_clnt.c rvs_xdr.c v1
+	@/bin/rm tvs
+	@/bin/rm *.o
+	@/bin/rm *.a
+	rm Makefile 

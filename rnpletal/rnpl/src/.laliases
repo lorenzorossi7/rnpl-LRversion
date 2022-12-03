@@ -1,0 +1,6 @@
+#setenv C Tpart
+setenv C tpart
+a d 'make $C; $C 100 0; sdfinfo *sdf; ls -lt *.sdf'
+a d1 'make $C; $C 100 1; sdfinfo *sdf; ls -lt *.sdf'
+a d2 'make $C; $C 100 2; sdfinfo *sdf; ls -lt *.sdf'
+mola

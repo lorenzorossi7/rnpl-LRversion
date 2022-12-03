@@ -1,0 +1,121 @@
+.IGNORE:
+
+PACKAGE = vutil
+
+SHELL = /bin/sh
+
+prefix = @prefix@
+bindir = $(prefix)/bin
+includedir = $(prefix)/include
+libdir = $(prefix)/lib
+
+prefix  = @prefix@
+
+BBH_SYSTEM = @BBH_SYSTEM@
+
+AR     = @AR@
+RANLIB = @RANLIB@
+
+F77_TRANSFORM = @F77_TRANSFORM@
+
+LIBS       = @LIBS@
+LDFLAGS    = @LDFLAGS@ -L.
+
+CC       = @CC@
+CFLAGS   = -c @CFLAGS@
+CPPFLAGS = @CPPFLAGS@ @DEFS@
+
+CC_COMP  = $(CC) $(CFLAGS) $(CPPFLAGS)
+CC_LOAD  = $(CC) $(LDFLAGS)
+
+F77      = @F77@
+F77FLAGS = @F77FLAGS@
+
+F77_COMP   = $(F77) -c $(F77FLAGS) 
+F77_LOAD   = $(F77) $(F77FLAGS) $(LDFLAGS)
+
+.f.o:
+	$(F77_COMP) $*.f 
+
+.c.o:
+	$(CC_COMP) $*.c
+
+INCLUDES = ds.h ds_types.h dv.h dveclib.h dveclib1.h iv.h iveclib.h \
+           lv.h nestcf.h sv.h sveclib.h v.h v_types.h \
+			  imatlib.h dmatlib.h d3lib.h 
+
+LIBS        = libvutil.a libvutilc.a libv2util.a libv3util.a
+# dvgmesh awaits making linking C programs against F77 libs. portable
+BINS = dvmesh dvgmesh
+#BINS = dvmesh 
+
+all: translate $(LIBS) $(BINS)
+
+SRC = *.f *.inc
+
+translate: 
+	$(F77_TRANSFORM) $(SRC)
+	touch translate
+
+install: install_libs install_bins
+
+install_libs: translate $(LIBS)
+	if test ! -d $(bindir); then\
+		mkdir -p $(bindir);\
+	fi
+	if test ! -d $(includedir); then\
+		mkdir -p $(includedir);\
+	fi
+	if test ! -d $(libdir); then\
+		mkdir -p $(libdir);\
+	fi
+	cp $(LIBS) $(libdir)
+	(cd $(libdir); $(RANLIB) $(LIBS))
+	cp $(INCLUDES) $(includedir)
+
+install_bins: $(BINS)
+	cp $(BINS) $(bindir)
+
+LIB_VUTIL_OBJ = dveclib.o dveclib1.o dv.o ds.o nestcf.o \
+                sveclib.o sv.o iveclib.o iv.o lv.o
+libvutil.a: $(LIB_VUTIL_OBJ)
+	$(AR) r libvutil.a $(LIB_VUTIL_OBJ)
+	$(RANLIB) libvutil.a
+
+LIB_VUTILC_OBJ = dv.o sv.o iv.o lv.o
+libvutilc.a: $(LIB_VUTILC_OBJ)
+	$(AR) r libvutilc.a $(LIB_VUTILC_OBJ)
+	$(RANLIB) libvutilc.a
+
+LIB_V2UTIL_OBJ = dmatlib.o imatlib.o
+libv2util.a: $(LIB_V2UTIL_OBJ)
+	$(AR) r libv2util.a $(LIB_V2UTIL_OBJ)
+	$(RANLIB) libv2util.a
+
+#LIB_V3UTIL_OBJ = d3lib.o gf3.o
+LIB_V3UTIL_OBJ = d3lib.o 
+libv3util.a: $(LIB_V3UTIL_OBJ)
+	$(AR) r libv3util.a $(LIB_V3UTIL_OBJ)
+	$(RANLIB) libv3util.a
+
+dvmesh: dvmesh.o 
+	$(CC_LOAD) dvmesh.o -o dvmesh
+
+dvgmesh: dvgmesh.o 
+	$(CC_LOAD) dvgmesh.o -lvutil @CCF77LIBS@ -o dvgmesh
+
+export:
+	autoconf
+	make clean
+	(cd ..; tar cfL $(PACKAGE).tar $(PACKAGE); rm $(PACKAGE).tar.Z; compress $(PACKAGE).tar; cp $(PACKAGE).tar.Z $(HOME)/autoconf)
+
+########################################################################
+# Clean-up
+########################################################################
+clean:
+	/bin/rm *.o 
+	/bin/rm *.a
+	/bin/rm $(BINS)
+	/bin/rm work.pc work.pcl > /dev/null 2>&1
+	/bin/rm  Makefile config.cache config.log config.status
+	/bin/rm -rf autom4te.cache > /dev/null 2>&1

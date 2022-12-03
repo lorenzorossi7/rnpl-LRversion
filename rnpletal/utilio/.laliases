@@ -1,0 +1,4 @@
+a e1 'segrtr 3.14 in in1'
+a e2 'segrtr 3.14 foo in1'
+a e3 'segrtr a foo in1'
+a doit 'segrtr 3.14 in out'

@@ -1,0 +1,190 @@
+#!/bin/bash 
+############################################################
+# Install script for use with Intel compilers on 32/64 
+# bit machines with version 10 or later with 16 bit 
+# precision
+############################################################
+
+#-----------------------------------------------------------
+# Functions to determine information about Intel compilers, 
+# including name of compiler, versions, libraries needed to 
+# link F77/C ...
+#-----------------------------------------------------------
+
+cc_compiler() {
+   for name in icc; do
+      if $name 2>&1 | grep -v 'command not found' > /dev/null; then
+         RVAL=$name
+         return
+      fi
+   done
+   RVAL="NONE"
+}
+
+cc_version() {
+   cc_compiler
+   CC=$RVAL
+   RVAL=`$CC -V 2>&1 | grep Version | sed 's/^.*Version[ ]*//g' | sed 's/\..*$//g'`
+}
+
+f77_compiler() {
+   for name in ifort ifc; do
+      if $name 2>&1 | grep -iv 'command not found' > /dev/null; then
+         RVAL=$name
+         return
+      fi
+   done
+   RVAL="NONE"
+}
+
+f77_version() {
+   f77_compiler
+   F77=$RVAL
+   if test "$F77" != "NONE"; then
+      RVAL=`$F77 -V 2>&1 | grep Version | sed 's/^.*Version[ ]*//g' | sed 's/\..*$//g'`
+   else
+      RVAL="NONE";
+   fi
+}
+. PACKAGES.sh
+
+P=`basename $0`
+
+usage() {
+cat<<END
+usage: $P installation-prefix
+
+Example: $P /usr/local
+
+Note: See script source for user-modifiable environment variables that may 
+need to be tailored to your desired compilation environment.
+END
+exit 1
+}
+
+warn() {
+   echo "$P: $1"
+}
+
+header() {
+cat<<END | tee -a Install.log
++++++++++++++++++++++++++++++++++++++++
+LOG: rnpletal/Install 
+
+date=`date`
+
+hostname=`hostname`
+uname -a=`uname -a`
+USER=$USER
+
+CC=<$CC>
+CXX=<$CXX>
+CFLAGS=<$CFLAGS>
+CFLAGS_NOOPT=<$CFLAGS_NOOPT>
+CPPFLAGS=<$CPPFLAGS>
+LDFLAGS=<$LDFLAGS>
+F77=<$F77>
+F77FLAGS=<$F77FLAGS>
+F77FLAGSNOOPT=<$F77FLAGSNOOPT>
+F77LFLAGS=<$F77LFLAGS>
+F90=<$F90>
+F90FLAGS=<$F90FLAGS>
+LIB_PATHS=<$LIB_PATHS>
+INCLUDE_PATHS=<$INCLUDE_PATHS>
++++++++++++++++++++++++++++++++++++++++
+
+END
+}
+
+case $# in
+1) PREFIX=$1;;
+*) usage;;
+esac
+
+# Name of C compiler
+export CC="icc"
+
+# Name of C++ compiler
+export CXX="icpc"
+
+# Generic C flags WITH optimization
+export CFLAGS="-O3"
+
+# Generic C flags WITHOUT optimization
+export CFLAGS_NOOPT=""
+
+# C pre-processor flags (specify non-standard include locations etc.)
+export CPPFLAGS="-I${PREFIX}/include"
+
+# Generic C++ flags (optimization etc.)
+export CXXFLAGS="-O3"
+
+# Loader flags (specify non-standard library locations etc.)
+export LDFLAGS="-L${PREFIX}/lib"
+
+# Name of Fortran 77 compiler
+f77_compiler
+export F77=$RVAL
+
+f77_version
+case $RVAL in
+8|9|10|11)
+	# Generic Fortran 77 flags WITH optimization
+	export F77FLAGS="-O3 -r16"
+
+	# Generic Fortran 77 flags WITHOUT optimization
+	export F77FLAGSNOOPT="-r16"
+
+	# Fortran 77 load phase flags (specify non-standard library locations etc.)
+	export F77LFLAGS="-L${PREFIX}/lib"
+;;
+12)
+	# Generic Fortran 77 flags WITH optimization
+	export F77FLAGS="-O3 -r16"
+
+	# Generic Fortran 77 flags WITHOUT optimization
+	export F77FLAGSNOOPT=""
+
+	# Fortran 77 load phase flags (specify non-standard library locations etc.)
+	export F77LFLAGS="-L${PREFIX}/lib"
+;;
+esac
+
+# Name of Fortran 90 compiler
+f77_compiler
+export F90=$RVAL
+
+f77_version
+case $RVAL in
+8|9|10|11)
+	# Generic Fortran 90 flags (optimization etc.)
+	export F90FLAGS="-O3 -r16"
+;;
+12)
+	export F90FLAGS="-O3 -r16"
+;;
+esac
+
+# Additional paths to search for libraries (white space separated)
+export LIB_PATHS="${PREFIX}/lib"
+
+# Additional paths to search for include files (white space separated)
+export INCLUDE_PATHS="${PREFIX}/include"
+
+export DAGH_NO_MPI="on"
+export BBH_CHECK_DEFAULTS="on"
+
+unset  CCF77LIBS
+
+test -f Install.log && rm Install.log
+header
+for pack in $PACKAGES; do
+   if test -d $pack; then
+      echo "+++++++++++++++++++++++++++++++++++++++" | tee -a Install.log
+      echo "Configuring and installing in $pack ..." | tee -a Install.log
+      echo "+++++++++++++++++++++++++++++++++++++++" | tee -a Install.log
+      (cd $pack; ./configure --prefix=$PREFIX; make install) 2>&1 | tee -a Install.log
+   else
+      warn "Directory $pack not found in this distribution." 
+   fi
+done

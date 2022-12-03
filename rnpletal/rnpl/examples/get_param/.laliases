@@ -1,0 +1,7 @@
+a d 't_get_param param'
+a d1 't_get_param param1'
+a dv 't_get_param_v param_v'
+a ds 't_get_str_param param_str'
+a ds1 't_get_str_param param_str1'
+a dis 't_is_param_assigned param_is'
+cala
