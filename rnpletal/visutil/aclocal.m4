@@ -697,7 +697,9 @@ dnl ----------------------------------------------------------------------
 dnl              Various locations that Darwin software gets installed
 dnl              by various and sundry packages.
 dnl ----------------------------------------------------------------------
-                 LDFLAGS="$LDFLAGS -L/usr/X11R6/lib -L/sw/lib -L/usr/local/gfortran/lib -L/opt/local/lib"
+                #LR changed this so that the library for -lgfortran is found on Monterey with gfortran 12.2.0
+                #LDFLAGS="$LDFLAGS -L/usr/X11R6/lib -L/sw/lib -L/usr/local/gfortran/lib -L/opt/local/lib"
+                 LDFLAGS="$LDFLAGS -L/usr/X11R6/lib -L/sw/lib -L/usr/local/opt/gcc/lib/gcc/current -L/opt/local/lib"
                  if test "X$LIBGL" = "X"; then
                     LIBGL="-lXpm -lGLU -lGL -lXext -lX11 -lm"
                     LIBGLUT="-lXpm -lglut -lGLU -lGL -lXmu -lXi -lXext -lX11 -lm"

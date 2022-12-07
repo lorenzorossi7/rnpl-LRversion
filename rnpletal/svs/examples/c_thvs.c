@@ -1,5 +1,7 @@
 #include <stdio.h>
 #include <math.h>
+#include "svs.h" //LR: this seems to be needed by modern compilers
+#include "bbhutil.h" //LR: this seems to be needed by modern compilers
 
 int main(int argc,char **argv) {
    int     vsrc;

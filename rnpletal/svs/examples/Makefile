@@ -15,8 +15,8 @@ RPCGEN = rpcgen
 CTOF   = @CTOF@
 
 LIBS       = -lsvs   -lrnpl  -lxvs -lm
-LDFLAGS    = -L/usr/local//lib -L/usr/X11R6/lib -L/sw/lib -L/usr/local/gfortran/lib -L/opt/local/lib -L../src    -L/usr/local/lib  -L/usr/local//lib 
-CPPFLAGS   = -I/usr/local//include -I/opt/local/include -DDARWIN -D__L -DWant_c_files    -I/usr/local/include    -I/usr/local//include
+LDFLAGS    = -L/usr/local/lib -L/usr/X11R6/lib -L/sw/lib -L/usr/local/gfortran/lib -L/opt/local/lib -L../src    -L/usr/local/lib 
+CPPFLAGS   = -I/usr/local/include -I/opt/local/include -DDARWIN -D__L -DWant_c_files    -I/usr/local/include    -I/usr/local/include
 CFLAGS     = -O6
 DEFS       = -DPACKAGE_NAME=\"\" -DPACKAGE_TARNAME=\"\" -DPACKAGE_VERSION=\"\" -DPACKAGE_STRING=\"\" -DPACKAGE_BUGREPORT=\"\" -DPACKAGE_URL=\"\" -DSTDC_HEADERS=1 -DHAVE_STRDUP=1  -DF77_HAS_SYSTEM -DF77_HAS_CHDIR -DHAVE_LIBVS=1
 

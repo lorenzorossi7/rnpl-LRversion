@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <bbhutil.h>
+#include <stdlib.h> //LR: this is needed by modern compilers
 
 /* 
  *   Test RNPL parameter-fetching utility routines

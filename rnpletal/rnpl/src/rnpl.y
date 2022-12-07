@@ -7,6 +7,7 @@
 
 #include <stdlib.h>
 #include "rnpl.h"
+#include <getopt.h>
 
 param_dec *pd;
 coord_dec *cd;
@@ -22,6 +23,12 @@ update *ud,*iz;
 void setup_tables();
 
 extern FILE *rnplin;
+%}
+
+%{
+/* LR - this seems to be needed by modern compilers */
+int yylex();
+void yyerror(const char *s);
 %}
 
 %union {

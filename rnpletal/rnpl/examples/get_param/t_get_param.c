@@ -2,6 +2,7 @@
 #include <stdlib.h>
 #include <malloc/malloc.h> //LR: this, instead of the original #include <malloc.h>, seems to be needed by modern compilers
 #include <bbhutil.h>
+#include <string.h> //LR: this is needed by modern compilers
 
 /* 
  *   Test RNPL parameter-fetching routines

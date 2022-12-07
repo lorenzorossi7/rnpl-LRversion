@@ -7,6 +7,7 @@
 #include <sdf_priv.h>
 #include <sdf.h>
 #include "sdftranspose.h"
+#include <bbhutil.h> //LR - modern compilers seem to require this or it won't recognise function gft_close
 
 int main(int argc, char **argv) {
    static char P[] = "sdftranspose";

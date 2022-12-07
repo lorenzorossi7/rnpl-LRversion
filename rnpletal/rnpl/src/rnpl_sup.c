@@ -15,8 +15,9 @@
 #include <stdlib.h>
 #include "rnpl.h"
 #include "rnpl.tab.h"
+#include "bbhutil.h" //LR - modern compilers seem to require this or it won't recognise function strcmp_nc
+#include <math.h> // LR - moved this here from below line with "#ifdef __POWERPC__" or the compiler won't recognise it
 #ifdef __POWERPC__
-#include <math.h>
 char * strdup(const char *);
 #endif
 #define MAXRANK 5
@@ -1448,6 +1449,18 @@ void array_reff_to_string(FILE *fp, const gfunction *f, const grid_table *gr)
     }
   }
 }
+
+//LR moved this here from below - it seems that we need to define function coordsys_to_index before calling it the first time in modern compilers//
+int coordsys_to_index(const coord_table *cd)
+{
+   int i;
+   
+   if(cd >= coords)
+      i=(int)(cd-coords);
+   else fatal_error("coordsys_to_index: pointer out of range.");
+   return i;
+}
+///////////////////////////////////////////////////////
 
 void array_ref0_to_string(FILE *fp, const grid_table *gr)
 {
@@ -4638,15 +4651,17 @@ int offset_to_index(const int tof, offset_type *ofl)
   return i; 
 }
 
-int coordsys_to_index(const coord_table *cd)
-{
-   int i;
-   
-   if(cd >= coords)
-      i=(int)(cd-coords);
-   else fatal_error("coordsys_to_index: pointer out of range.");
-   return i;
-}
+//Moved above first call of coordsys_to_index by LR - needed for modern compilers//
+//int coordsys_to_index(const coord_table *cd)
+//{
+//   int i;
+//   
+//   if(cd >= coords)
+//      i=(int)(cd-coords);
+//   else fatal_error("coordsys_to_index: pointer out of range.");
+//   return i;
+//}
+//////////////////////////////
 
 int gbase_to_gindex(name_list *nm)
 {

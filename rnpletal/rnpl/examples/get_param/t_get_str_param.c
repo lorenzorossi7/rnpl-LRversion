@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <bbhutil.h>
+#include <stdlib.h> //LR: this is needed by modern compilers
 
 int main(int argc, char **argv) {
    FILE   *fp;

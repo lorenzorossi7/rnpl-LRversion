@@ -24,6 +24,12 @@ int gotit;
 
 %}
 
+%{
+/* LR - this seems to be needed by modern compilers */
+int yylex();
+void yyerror(const char *s);
+%}
+
 %union {
   int inum;
   double num;

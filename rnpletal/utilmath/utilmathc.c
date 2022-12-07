@@ -1,4 +1,5 @@
 #include "utilmathc.h"
+#include <math.h> //LR: needed by modern compilers
 
 double    drange_um(double dmin,double dmax,double d) {
    return( d < dmin ? dmin : (d > dmax ? dmax : d ) ) ;

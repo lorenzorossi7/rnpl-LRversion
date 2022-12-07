@@ -3,6 +3,7 @@
 #include <stdio.h>
 #include <string.h>
 #include "string_c.h"
+#include <stdlib.h> //LR: this is needed by modern compilers
 
 /* Returns pointer to first non blank character in string ... */
 

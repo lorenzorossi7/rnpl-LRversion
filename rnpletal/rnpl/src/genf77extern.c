@@ -1,4 +1,5 @@
 #include <string.h>
+#include <ctype.h> //LR- this is needed in modern compilers to recognise the function tolower
 
 void fort_call(char *s)
 {

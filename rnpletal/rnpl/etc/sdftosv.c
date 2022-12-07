@@ -8,6 +8,8 @@
 #include <stdio.h>
 #include <bbhutil.h>
 #include <sdf_priv.h>
+#include <getopt.h> //LR - modern compilers seem to require this or it won't recognise function getopt
+#include <string.h> //LR - modern compilers seem to require this or it won't recognise function strcpy
 
 #define VERSION "1.0"
 #define CHUNK_SIZE (32 * (1024*1024))
@@ -97,6 +99,20 @@ double mean(const double *data, const int len)
     s+=data[i]/l;
   return s;
 }
+
+//LR moved this here from below - it seems that we need to define function dump_mser before calling it the first time in modern compilers//
+int dump_mser(char *nm,int nlvls,double *tv,double *x,double *y,int *nx) {
+   int i; 
+   double *xp, *yp;
+   fprintf(stderr,"dump_ser: nm=<%s>\n",nm);
+   fprintf(stderr,"dump_ser: nlvls=<%d>\n",nlvls);
+   xp = x; yp = y;
+   for( i = 0; i < nlvls; i++ ) {
+      fprintf(stderr,"dump_ser: t[%d]=%g nx[%d]=%d\n",i,tv[i],i,nx[i]);
+   }
+   return 1;
+}
+///////////////////////////////////////////////////////
 
 main(int argc, char **argv)
 {
@@ -403,14 +419,17 @@ main(int argc, char **argv)
   gft_close_all();
 
 }
-int dump_mser(char *nm,int nlvls,double *tv,double *x,double *y,int *nx) {
-   int i; 
-   double *xp, *yp;
-   fprintf(stderr,"dump_ser: nm=<%s>\n",nm);
-   fprintf(stderr,"dump_ser: nlvls=<%d>\n",nlvls);
-   xp = x; yp = y;
-   for( i = 0; i < nlvls; i++ ) {
-      fprintf(stderr,"dump_ser: t[%d]=%g nx[%d]=%d\n",i,tv[i],i,nx[i]);
-   }
-   return 1;
-}
+
+//Moved above first call of dump_mser by LR - needed for modern compilers//
+//int dump_mser(char *nm,int nlvls,double *tv,double *x,double *y,int *nx) {
+//   int i; 
+//   double *xp, *yp;
+//   fprintf(stderr,"dump_ser: nm=<%s>\n",nm);
+//   fprintf(stderr,"dump_ser: nlvls=<%d>\n",nlvls);
+//   xp = x; yp = y;
+//   for( i = 0; i < nlvls; i++ ) {
+//      fprintf(stderr,"dump_ser: t[%d]=%g nx[%d]=%d\n",i,tv[i],i,nx[i]);
+//   }
+//   return 1;
+//}
+/////////////////////////////////////////////////////////////////////////

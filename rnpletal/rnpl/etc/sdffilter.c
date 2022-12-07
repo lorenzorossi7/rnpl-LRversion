@@ -7,6 +7,7 @@
 #include <sdf_priv.h>
 #include <sdf.h>
 #include "sdffilter.h"  
+#include <bbhutil.h> //LR - modern compilers seem to require this or it won't recognise function sget_ivec_param
 
 #define    ON       1
 #define    OFF      0

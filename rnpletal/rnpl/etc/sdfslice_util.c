@@ -1,4 +1,5 @@
 #include "sdfslice_util.h"
+#include "d3lib.h" //LR - modern compilers seem to require this or it won't recognise function d3slice_
 
 /*----------------------------------------------------------------------
  * Slices data in 'in' according to ivec and/or fvec specificiations 
